@@ -1,0 +1,5 @@
+﻿Build started...
+1>------ Build started: Project: 2D exo, Configuration: Debug x64 ------
+1>2D exo.cpp
+1>2D exo.vcxproj -> C:\Users\PRAIT2401\Desktop\project\projet\MyFirstProject\x64\Debug\2D exo.exe
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

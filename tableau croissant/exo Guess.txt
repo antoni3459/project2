@@ -1,0 +1,7 @@
+﻿Build started...
+1>------ Build started: Project: GuessNbre, Configuration: Debug x64 ------
+1>GuessNbre.cpp
+1>C:\Users\PRAIT2401\Desktop\GuessNbre\GuessNbre.cpp(20,7): warning C4101: '_localbel': unreferenced local variable
+1>GuessNbre.vcxproj -> C:\Users\PRAIT2401\Desktop\GuessNbre\x64\Debug\GuessNbre.exe
+1>Done building project "GuessNbre.vcxproj".
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========

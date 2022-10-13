@@ -1,0 +1,7 @@
+﻿Build started...
+1>------ Build started: Project: exo guess nbr, Configuration: Debug x64 ------
+1>exo guess nbr.cpp
+1>C:\Users\PRAIT2401\Desktop\exo guess nbr\exo guess nbr.cpp(39): warning C4717: 'GuessNbr': recursive on all control paths, function will cause runtime stack overflow
+1>exo guess nbr.vcxproj -> C:\Users\PRAIT2401\Desktop\exo guess nbr\x64\Debug\exo guess nbr.exe
+1>Done building project "exo guess nbr.vcxproj".
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
