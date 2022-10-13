@@ -1,3 +1,4 @@
+
 #include <iostream>
 
 template<typename T>
@@ -97,6 +98,6 @@ int main()
     Array<int> _tab1 = Array<int>(10);
     for (int i = 0; i < 10; i++)
     {
-        _tab1.GetAt(i) = i;
+       _tab1.GetAt(i) = i;
     }
 }
