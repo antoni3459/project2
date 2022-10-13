@@ -4,12 +4,17 @@
 #include "File.h"
 #include "Case.h"
 #include "Vector2.h"
+#include "Player.h"
+#include "Utils.h"
 #include <iostream>
 
 Map::Map(const std::string& _mapName)
 {
 	mapName = _mapName;
 	Init();
+	if (!IsValid()) return;
+	player = new Player(Utils::UserChoice<std::string>("enter your username: "), enter->Position ());
+	
 }
 
 Map::Map(const Map& _copy)
@@ -49,6 +54,14 @@ void Map::Display()
 	const size_t _size = cases.size();
 	for (size_t i = 0; i < _size; i++)
 	{
-		std::cout << cases[i]->CaseValue();
+		if (player->Position()->Equal(cases[i]->Position()))
+			std::cout << MapDataBase::Player;
+		else
+			std::cout << cases[i]->CaseValue();
 	}
+}
+
+bool Map::IsValid() const
+{
+	return enter != nullptr && exit !=nullptr;
 }

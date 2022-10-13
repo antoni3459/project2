@@ -37,6 +37,30 @@
     <Filter Include="item\weapon">
       <UniqueIdentifier>{d7796763-b3c7-4e5e-b319-95d643d6c8de}</UniqueIdentifier>
     </Filter>
+    <Filter Include="environement">
+      <UniqueIdentifier>{829d93b9-5297-4e0a-a90f-6962eb2da5d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cases">
+      <UniqueIdentifier>{31514623-d4d9-4aa8-a009-7bf8fb84e37a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{3ef16b7e-cbc1-4db6-9189-27d831aad7d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map\Base">
+      <UniqueIdentifier>{bd29050d-4dfb-4f60-87d8-9521e382ee2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Path">
+      <UniqueIdentifier>{44d42a86-60f8-45a7-bdc2-55ba3f581982}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vector2">
+      <UniqueIdentifier>{a26bc253-547b-435e-8b51-7fec2ceb42a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File">
+      <UniqueIdentifier>{68a95ac9-c4c6-4159-bcbd-e69089d70f6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stringUtils">
+      <UniqueIdentifier>{be262a05-eb5b-4bd4-ae26-82c2e5fc4071}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="InventoryCorrection.cpp">
@@ -66,29 +90,29 @@
     <ClCompile Include="Weapon.cpp">
       <Filter>item\weapon</Filter>
     </ClCompile>
-    <ClCompile Include="MapDaBase.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="environement.cpp">
+      <Filter>environement</Filter>
     </ClCompile>
     <ClCompile Include="Case.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="File.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="environement.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Path.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="StringUtils.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>cases</Filter>
     </ClCompile>
     <ClCompile Include="Map.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="MapDaBase.cpp">
+      <Filter>Map\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Path.cpp">
+      <Filter>Path</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Vector2</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>File</Filter>
+    </ClCompile>
+    <ClCompile Include="StringUtils.cpp">
+      <Filter>stringUtils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,29 +140,29 @@
     <ClInclude Include="Weapon.h">
       <Filter>item\weapon</Filter>
     </ClInclude>
-    <ClInclude Include="MapDaBase.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="environement.h">
+      <Filter>environement</Filter>
     </ClInclude>
     <ClInclude Include="Case.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="File.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="environement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Path.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StringUtils.h">
-      <Filter>Header Files</Filter>
+      <Filter>cases</Filter>
     </ClInclude>
     <ClInclude Include="Map.h">
-      <Filter>Header Files</Filter>
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="MapDaBase.h">
+      <Filter>Map\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Path.h">
+      <Filter>Path</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Vector2</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="StringUtils.h">
+      <Filter>stringUtils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

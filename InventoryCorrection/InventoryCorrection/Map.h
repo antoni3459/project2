@@ -26,6 +26,7 @@ public:
 
 	void Init();
 	void Display();
+	bool IsValid() const;
 #pragma endregion method
 
 };

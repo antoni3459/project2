@@ -7,7 +7,7 @@ std::string StringUtils::Replace(const std::string _str, const char _old, const 
     for (size_t i = 0; i < _size; i++)
     {
         if (_result[i] == _old)
-            _result[i] == _new;
+            _result[i] = _new;
     }
     return _result;
 
