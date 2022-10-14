@@ -36,7 +36,6 @@ public:
 public :
 	T& operator[](int _index);
 #pragma endregion operator
-
 };
 
 #pragma region constructor

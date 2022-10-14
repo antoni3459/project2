@@ -11,10 +11,8 @@
 Map::Map(const std::string& _mapName)
 {
 	mapName = _mapName;
+	player = new Player(Utils::UserChoice<std::string>("enter your username: "), this, new Vector2(0, 0));
 	Init();
-	if (!IsValid()) return;
-	player = new Player(Utils::UserChoice<std::string>("enter your username: "), enter->Position ());
-	
 }
 
 Map::Map(const Map& _copy)
@@ -28,9 +26,14 @@ Map::~Map()
 	cases.clear();
 }
 
+Player* Map::GetPlayer()
+{
+	return player;
+}
+
 void Map::Init()
 {
-	const std::string& _path = Path::Combine(Environement::CurrentDirectory(), "Maps", mapName + ".level");
+	const std::string& _path = Path::Combine(Environement::CurrentDirectory(), "Maps", mapName + ".txt");
 	std::vector<std::string> _lines = File::GetAllLines(_path);
 	const size_t _size = _lines.size();
 	for (size_t y = 0; y < _size;y++)
@@ -41,13 +44,18 @@ void Map::Init()
 		{
 			Vector2* _position = new Vector2(x, y);
 			Case* _case = new Case(_line[x], _position);
-			if (_case->IsEnter()) enter = _case;
+			if (_case->IsEnter())
+			{
+				enter = _case;
+				player->Position()->Set(*_position);
+			}
 			else if (_case->IsExit()) exit = _case;
 			cases.push_back(_case);
 		}
 		cases.push_back(new Case('\n', new Vector2(-1, -1)));//TODO to chaange!
 	}
 }
+
 
 void Map::Display()
 {
@@ -64,4 +72,30 @@ void Map::Display()
 bool Map::IsValid() const
 {
 	return enter != nullptr && exit !=nullptr;
+}
+
+Case* Map::GetCaseAtPosition(const Vector2& _position)
+{
+	const size_t _size = cases.size();
+	for (size_t i = 0; i < _size; i++)
+	{
+		if (cases[i]->Position()->Equal(&_position))
+			return cases[i];
+	}
+	return nullptr;
+}
+
+Player* Map::GetPlayer() const
+{
+	return player;
+}
+
+Case* Map::Enter() const
+{
+	return enter;
+}
+
+Case* Map::Exit() const
+{
+	return exit;
 }

@@ -3,7 +3,7 @@
 #include "Vector2.h"
 
 #pragma region constructor
-Entity::Entity(const std::string& _name, Vector2* _position,const float _maxLife, const float _maxMana)
+Entity::Entity(const std::string& _name, Map* _current, Vector2* _position,const float _maxLife, const float _maxMana)
 {
 	name = _name;
 	position = _position;
@@ -98,5 +98,9 @@ void Entity::SetMaxMana(const float _maxMana)
 void Entity::DecreaseMana(const float _value)
 {
 	mana = Utils::Clamp(mana - _value, 0.0f, maxMana);
+}
+Map* Entity::GetMap() const
+{
+	return currentMap;
 }
 #pragma endregion methods

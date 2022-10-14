@@ -23,9 +23,7 @@ template<typename T>
 inline void List<T>::AddFirst(const T& _item)
 {
 	Node<T>* _newNode = new Node<T>(_item);
-	if (head == nullptr)
-		Node<T>* _newNode = new Node<T>(_item);
-	if (head == nullptr) // met une sécurité et initialise tout les pointeur
+	if (head == nullptr) 
 	{
 		head = _newNode;
 		first = _newNode;
@@ -33,9 +31,9 @@ inline void List<T>::AddFirst(const T& _item)
 	}
 	else
 	{
-		_newNode->SetNext(first); // permet de pointer le bloc suivant 
-		first->SetPrev(_newNode); // permet de définir les précédent en tant que le reste des bloc 
-		head = first = _newNode; // permet de rassembler sur head 
+		_newNode->SetNext(first); 
+		first->SetPrev(_newNode); 
+		head = first = _newNode; 
 	}
 	count++;
 

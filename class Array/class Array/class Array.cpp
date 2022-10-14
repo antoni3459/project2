@@ -12,6 +12,7 @@ public:
         count = _count;
         tab = new T[count];
     }
+
     Array(T _item, int _count)
     {
         count = _count;
@@ -20,8 +21,8 @@ public:
         {
             tab[i] = _item;
         }
-
     }
+
     Array(std::initializer_list<T> _tab)
     {
         tab = new T[_tab.size()];
@@ -38,10 +39,12 @@ public:
     {
         return tab[_index];
     }
-    T GetFront()
+
+    T& GetFront()
     {
         return tab[count - 1];
     }
+
     T GetBack()
     {
         return tab[0];
@@ -78,14 +81,6 @@ public:
         }
         count = _count;
     }
-    void Display()
-    {
-        for (int i = 0; i < count; i++)
-        {
-            std::cout << tab[i] << " ";
-        }
-
-    }
 };
 
 
@@ -94,9 +89,4 @@ public:
 
 int main()
 {
-    Array<int> _tab1 = Array<int>(10);
-    for (int i = 0; i < 10; i++)
-    {
-        _tab1.GetAt(i) = i;
-    }
 }

@@ -55,8 +55,6 @@ template<typename T>
 inline void List<T>::AddFirst(const T& _item)
 {
 	Node<T>* _newNode = new Node<T>(_item);
-	if (head == nullptr) 
-	Node<T>* _newNode = new Node<T>(_item);
 	if (head == nullptr) // met une sécurité et initialise tout les pointeur
 	{
 		head = _newNode;

@@ -7,7 +7,7 @@ class Utils
 public:
 	template<typename T>
 	static T Clamp(const T& _value, const T& _min, const T& _max);
-
+	static void Log(const std::string& _msg);
 	template<typename T>
 	static T UserChoice(const std::string& _msg);
 #pragma endregion methods
