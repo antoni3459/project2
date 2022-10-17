@@ -7,6 +7,7 @@
 class Inventory;
 class Vector2;
 class Case;
+
 class Player : public Entity 
 {
 #pragma region f/p
@@ -19,7 +20,7 @@ private:
 #pragma region constructor/destructor
 public:
 	Player() = default;
-	Player(const std::string& _name, Map* _CurrentMap, Vector2* _position, const float _maxLife = 100.0f, const float _maxMana = 100.0f);
+	Player(const std::string& _name, Vector2* _position= new Vector2(0, 0), const float _maxLife = 100.0f, const float _maxMana = 100.0f);
 	Player(const Player& _copy);
 	~Player();
 #pragma endregion constructor/destructor

@@ -61,6 +61,12 @@
     <Filter Include="stringUtils">
       <UniqueIdentifier>{be262a05-eb5b-4bd4-ae26-82c2e5fc4071}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MapLoader">
+      <UniqueIdentifier>{6be27390-b27f-4a8c-baef-19db5c839641}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mob">
+      <UniqueIdentifier>{d30ee657-8747-45a2-a4eb-527acc7bca26}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="InventoryCorrection.cpp">
@@ -99,9 +105,6 @@
     <ClCompile Include="Map.cpp">
       <Filter>Map</Filter>
     </ClCompile>
-    <ClCompile Include="MapDaBase.cpp">
-      <Filter>Map\Base</Filter>
-    </ClCompile>
     <ClCompile Include="Path.cpp">
       <Filter>Path</Filter>
     </ClCompile>
@@ -113,6 +116,12 @@
     </ClCompile>
     <ClCompile Include="StringUtils.cpp">
       <Filter>stringUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="MapLoader.cpp">
+      <Filter>MapLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="Mob.cpp">
+      <Filter>Mob</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +172,12 @@
     </ClInclude>
     <ClInclude Include="StringUtils.h">
       <Filter>stringUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="MapLoader.h">
+      <Filter>MapLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="Mob.h">
+      <Filter>Mob</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

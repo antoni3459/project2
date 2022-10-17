@@ -6,13 +6,17 @@
 #include "Vector2.h"
 #include "Player.h"
 #include "Utils.h"
+#include "Mob.h"
 #include <iostream>
 
-Map::Map(const std::string& _mapName)
+
+
+Map::Map(const std::string _mapPath)
 {
-	mapName = _mapName;
-	player = new Player(Utils::UserChoice<std::string>("enter your username: "), this, new Vector2(0, 0));
+	mapPath = _mapPath;
+	mapName = Path::GetFileNameWhithoutExtension(mapPath);
 	Init();
+	
 }
 
 Map::Map(const Map& _copy)
@@ -33,8 +37,7 @@ Player* Map::GetPlayer()
 
 void Map::Init()
 {
-	const std::string& _path = Path::Combine(Environement::CurrentDirectory(), "Maps", mapName + ".txt");
-	std::vector<std::string> _lines = File::GetAllLines(_path);
+	std::vector<std::string> _lines = File::GetAllLines(mapPath);
 	const size_t _size = _lines.size();
 	for (size_t y = 0; y < _size;y++)
 	{
@@ -47,9 +50,14 @@ void Map::Init()
 			if (_case->IsEnter())
 			{
 				enter = _case;
-				player->Position()->Set(*_position);
 			}
 			else if (_case->IsExit()) exit = _case;
+			else if (_case->HasMob())
+			{
+				Mob* temp = new Mob("orc",_position);
+				temp->SetMap(this);
+				mobList.push_back(temp);
+			}
 			cases.push_back(_case);
 		}
 		cases.push_back(new Case('\n', new Vector2(-1, -1)));//TODO to chaange!
@@ -64,8 +72,21 @@ void Map::Display()
 	{
 		if (player->Position()->Equal(cases[i]->Position()))
 			std::cout << MapDataBase::Player;
+		
 		else
-			std::cout << cases[i]->CaseValue();
+		{
+			for (int j = 0;j < mobList.size();j++)
+			{
+				if (mobList[j]->Position()->Equal(cases[i]->Position()))
+				{
+					std::cout << MapDataBase::Mob;
+				}
+			}
+			if (cases[i]->HasMob())//J'essaie de ne plus afficher les endroits ou les mobs ont spawn mais j'y arrive pas vraiment
+				std::cout << MapDataBase::Passage;
+			else
+				std::cout << cases[i]->CaseValue();
+		}
 	}
 }
 
@@ -85,9 +106,27 @@ Case* Map::GetCaseAtPosition(const Vector2& _position)
 	return nullptr;
 }
 
+void Map::SetPlayer(Player* _player)
+{
+	player = _player;
+	player->Position()->Set(*enter->Position());
+	player->SetMap(this);
+}
+
 Player* Map::GetPlayer() const
 {
 	return player;
+}
+
+
+Mob* Map::GetMob() const
+{
+	return mob;
+}
+
+std::vector<Mob*> Map::GetMobList() const
+{
+	return mobList;
 }
 
 Case* Map::Enter() const
@@ -99,3 +138,10 @@ Case* Map::Exit() const
 {
 	return exit;
 }
+
+std::string Map::MapName() const
+{
+	return mapName;
+}
+
+

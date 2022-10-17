@@ -7,11 +7,10 @@
 #include <iostream>
 
 #pragma region constructor/destructor
-Player::Player(const std::string& _name,Map* _CurrentMap, Vector2* _position , const float _maxLife, const float _maxMana)
-    : Entity(_name, _CurrentMap, _position ,_maxLife, _maxMana)
+Player::Player(const std::string& _name, Vector2* _position , const float _maxLife, const float _maxMana)
+    : Entity(_name, _position ,_maxLife, _maxMana)
 {
     inventory = new Inventory(_name + " Inventory", this);
-    currentMap = _CurrentMap;
 }
 
 Player::Player(const Player& _copy) : Entity(_copy)

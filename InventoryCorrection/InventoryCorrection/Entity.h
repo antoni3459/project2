@@ -19,7 +19,7 @@ private:
 #pragma region constructor/destructor
 public:
 	Entity() = default;
-	Entity(const std::string& _name,Map* _current,  Vector2*_position ,const float _maxLife = 100.0f, const float _maxMana = 100.0f);
+	Entity(const std::string& _name,  Vector2*_position = new Vector2(0,0) ,const float _maxLife = 100.0f, const float _maxMana = 100.0f);
 	Entity(const Entity& _copy);
 	virtual ~Entity() ;
 	Map* currentMap = nullptr;
@@ -46,6 +46,7 @@ public:
 	void DecreaseMana(const float _value);
 	Map* GetMap() const;
 	virtual void Move()=0;
+	void SetMap(Map* _map);
 
 #pragma endregion methods
 };
