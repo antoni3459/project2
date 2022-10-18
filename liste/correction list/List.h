@@ -72,7 +72,6 @@ inline void List<T>::FinfOff(const T& _item)
 		if (tab[i] == _item)
 			return i;
 	return -1;
-
 }
 template<typename T>
 inline void List<T>::Add(const T& _item)

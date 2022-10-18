@@ -212,7 +212,7 @@ inline int List<T>::Count() const
 }
 
 template<typename T>
- T& List<T>::At(const int& _index)
+ T& List<T>::At(const int& _index) // permet de montrer la valeur 
 {
 	 if (_index <0 || _index >count) throw out_of_range("out of range !");
 	 Node<T>* _head = head;
