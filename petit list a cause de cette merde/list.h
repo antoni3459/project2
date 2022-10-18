@@ -28,10 +28,8 @@ public:
 	void Remove(T _item);
 	void RemoveAt(const int& _index);
 	void RemoveAll();
-	bool Contains();
-	void At();
+	bool Contains(const T& _item);
 	int Count();
-	void Display();
 	void Clear();
 
 #pragma endregion method
@@ -80,6 +78,9 @@ template<typename T>
 template<typename T>
  void List<T>::Remove(T _item)
 {
+	 const int _index = FinfOff(_item);
+	 if (_index == -1) throw out_of_range("[List] =>can't find item !");
+	 RemoveAt(_index);
 }
 
 template<typename T>
@@ -97,18 +98,16 @@ template<typename T>
 template<typename T>
  void List<T>::RemoveAll()
 {
-
+	 while (Contains(_item))
+	 {
+		 RemoveAt(FinfOff(_item));
+	 }
 }
 
 template<typename T>
- bool List<T>::Contains()
+ bool List<T>::Contains(const T& _item)
 {
-	return false;
-}
-
-template<typename T>
- void List<T>::At()
-{
+	 return FinfOff(_item) != -1;
 }
 
 template<typename T>
