@@ -86,7 +86,7 @@ void List<T>::Add(T _tab)
 template<typename T>
 void List<T>::Remove(T _item)
 {
-	 int _index = FinfOff(_item);
+	const int _index = FinfOff(_item);
 	if (_index == -1) throw std::out_of_range("[List] =>can't find item !");
 	RemoveAt(_index);
 }
@@ -115,7 +115,7 @@ void List<T>::RemoveAll(const T& _item)
 template<typename T>
 bool List<T>::Contains(const T& _item)
 {
-	return FinfOff(_item) = -1;
+	return FinfOff(_item) != -1;
 }
 
 template<typename T>
@@ -143,4 +143,4 @@ inline void List<T>::Display()
 		std::cout << tab[i] << std::endl;
 	}
 }
-#pragma endregion method
+#pragma endregion method		
