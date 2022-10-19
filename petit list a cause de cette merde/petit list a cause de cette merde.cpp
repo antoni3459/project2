@@ -9,7 +9,13 @@ int main()
 {
 	List<int> list = List<int>();
 	list.Add(5);
+	list.Add(6);
+	list.Add(9);
+	list.Add(2);
+	list.Remove(2);
+	list.Contains(2);
 
+	list.Display();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
