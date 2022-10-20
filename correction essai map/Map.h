@@ -40,17 +40,13 @@ public:
 	}
 #pragma endregion Typedef
 
-#pragma region Typedef
-#pragma endregion constructor
-
-
+#pragma region constructor
 public:
 	Map() = default;
 	Map(std::initializer_list< KeyValuePair<TKey, TValue>> _tab);
 	Map(const Map& _copy);
 	~Map();
 
-#pragma region constructor
 #pragma endregion constructor
 
 
@@ -65,7 +61,9 @@ public:
 	bool IsEmpty()const;
 	void Remove(const TKey& _key);
 	bool Contains(const TKey& _key);
+
 #pragma endregion method
+
 #pragma region operator
 	TValue& operator[](const TKey& _key);
 #pragma endregion operator
@@ -104,10 +102,10 @@ int Map<TKey, TValue>::IndexOfKey(const TKey& _key) const
 {
 	for (size_t i = 0; i < count; i++)
 	{
-		if (tab[i].Key() == _key)
-			return i;
+		if (tab[i].Key() == _key) // permet de vérifier si l'objet existe
+			return i;// permet de return la key 
 	}
-	return -1;
+	return -1; // sinon il renvoi -1 pour etre utiliser plus tard de le contains
 }
 
 template<typename TKey, typename TValue>
@@ -132,9 +130,9 @@ void Map<TKey, TValue>::Insert(const KeyValuePair<TKey, TValue>& _pair)
 template<typename TKey, typename TValue>
 TValue& Map<TKey, TValue>::At(const TKey& _key)
 {
-	const int _index = IndexOfKey(_key);
-	if (_index == -1) throw std::exception("key doesn't exist !");
-	return tab[_index].Value();
+	const int _index = IndexOfKey(_key); //prend la clef
+	if (_index == -1) throw std::exception("key doesn't exist !"); // break le logiciel par une erreur car la key n'existe pas
+	return tab[_index].Value(); // return la valeur de la key
 }
 
 template<typename TKey, typename TValue>
@@ -149,16 +147,16 @@ void Map<TKey, TValue>::Clear()
 template<typename TKey, typename TValue>
 bool Map<TKey, TValue>::IsEmpty() const
 {
-	return tab.size() == 0;;
+	return tab.size() == 0; // vérifie si la liste est vide 
 }
 
 template<typename TKey, typename TValue>
 void Map<TKey, TValue>::Remove(const TKey& _key)
 {
-	const int _index = IndexOfKey(_key);
-	if (_index == -1) throw std::exception("key doesn't exist");
+	const int _index = IndexOfKey(_key); // prend la key
+	if (_index == -1) throw std::exception("key doesn't exist"); //break si il y a pas la key
 	KeyValuePair<TKey, TValue>* _tmp = tab;
-	tab = new KeyValuePair<TKey, TValue>[count - 1];
+	tab = new KeyValuePair<TKey, TValue>[count - 1]; 
 	for (int i = 0; i < _index; i++)
 		tab[i] = _tmp[i];
 	for (int i = _index + 1; i < count; i++)
@@ -169,7 +167,7 @@ void Map<TKey, TValue>::Remove(const TKey& _key)
 template<typename TKey, typename TValue>
 bool Map<TKey, TValue>::Contains(const TKey& _key)
 {
-	return IndexOfKey(_key) != -1;
+	return IndexOfKey(_key) != -1; // confirme si l'objet existe 
 }
 #pragma region constructor
 #pragma endregion constructor
