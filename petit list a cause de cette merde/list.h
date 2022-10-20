@@ -62,9 +62,9 @@ List<T>::~List()
 
 #pragma region method
 template<typename T>
-void List<T>::FinfOff(const T& _item)
+void List<T>::FinfOff(const T& _item) // return l'indice du bloc choisi
 {
-	for (int i = 0;i < count;i++)
+	for (int i = 0;i < count;i++) 
 		if (tab[i] == _item)
 			return i;
 	return -1;
@@ -86,7 +86,7 @@ void List<T>::Add(T _tab)
 template<typename T>
 void List<T>::Remove(T _item)
 {
-	const int _index = FinfOff(_item);
+	const int _index = FinfOff(_item); // ressort l'indice pour séléctionner le bloc 
 	if (_index == -1) throw std::out_of_range("[List] =>can't find item !");
 	RemoveAt(_index);
 }
@@ -96,9 +96,9 @@ void List<T>::RemoveAt(const int& _index)
 {
 	T* _tmp = tab;
 	tab = new T[count - 1];
-	for (int i = 0;i < _index;i++)
+	for (int i = 0;i < _index;i++)// séléctionne le bon bloc
 		tab[i] = _tmp[i];
-	for (int i = _index + 1;i < count;i++)
+	for (int i = _index + 1;i < count;i++)// enlève le lien du précedent 
 		tab[i - 1] = _tmp[i];
 	count--;
 }
@@ -115,7 +115,7 @@ void List<T>::RemoveAll(const T& _item)
 template<typename T>
 bool List<T>::Contains(const T& _item)
 {
-	return FinfOff(_item) != -1;
+	return FinfOff(_item) != -1; // vérifie si il existe avec l'indice de FinOff
 }
 
 template<typename T>

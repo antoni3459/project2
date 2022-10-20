@@ -16,7 +16,7 @@ public:
     Array(T _item, int _count)
     {
         count = _count;
-        tab = new T[count];
+        tab = new T[count]; //met les item dans la liste 
         for (int i = 0; i < count; i++)
         {
             tab[i] = _item;
