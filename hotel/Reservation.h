@@ -38,6 +38,7 @@ public:
 #pragma endregion method
 };
 
+#pragma region constructor
 template<typename T>
 inline Reservation<T>::Reservation(const std::initializer_list<T>& _reservation)
 {
@@ -49,8 +50,9 @@ inline Reservation<T>::Reservation(const Reservation* _copy)
 {
 	reservation = _copy.reservation;
 }
+#pragma endregion constructor
 
-
+#pragma region method
 
 template<typename T>
 inline bool Reservation<T>::Hotel()
@@ -95,7 +97,7 @@ inline void Reservation<T>::Add()
 	LastName(lastname);
 	std::cout << "age : ";
 	std::cin >> age;
-	Age(age);1
+	Age(age);
 
 	Affiche();
 }
@@ -168,9 +170,9 @@ inline void Reservation<T>::Display()
 		std::cout << reservation[i] << std::endl;
 	std::cout << "return Y/N" << std::endl;
 	std::cin >> _rep;
-	if (_rep == "y"||_rep =="yes"|| _rep == "oui")
+	if (_rep == "y" || _rep == "yes" || _rep == "oui")
 		Affiche();
-	if (_rep =="n" || _rep == "non" || _rep == "no")
+	if (_rep == "n" || _rep == "non" || _rep == "no")
 		Display();
 }
 
@@ -180,9 +182,9 @@ inline void Reservation<T>::Clear()
 	reservation = nullptr;
 	count = 0;
 	firstname = "";
-	lastname="";
-	age="";
+	lastname = "";
+	age = "";
 
 }
-
+#pragma endregion method
 
