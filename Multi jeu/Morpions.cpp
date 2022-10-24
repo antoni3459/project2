@@ -8,9 +8,7 @@ Morpions::Morpions() : Menu("Morpions", {})
 
 Morpions::~Morpions()
 {
-	if (end == true)
-		delete plateaux;
-	
+
 }
 
 void Morpions::Open()
@@ -20,7 +18,7 @@ void Morpions::Open()
 
 void Morpions::Play()
 {
-	while (EndGame())
+	while (EndGame() == false)
 	{
 		Display();
 		Players();
