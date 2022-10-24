@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{c8e520f1-d9ec-4405-8434-69ca76e6e381}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{1954364a-cf72-4c0b-afa2-aeed02ecb0c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MenuItem">
+      <UniqueIdentifier>{e9f9076d-cc56-4f84-92a9-5186fde7234d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu\Home">
+      <UniqueIdentifier>{b1c7cd81-1a66-410e-ab8d-9c2e8cbe6000}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu\Menu morpion">
+      <UniqueIdentifier>{de165656-8054-491a-8d1c-7d62c41b23c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu\Menu morpion\morpions">
+      <UniqueIdentifier>{44f982a2-178e-4881-a267-46d8d4c941ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu\Menu morpion\morpions IA">
+      <UniqueIdentifier>{d36d76a1-2d16-406c-b8ae-d2729f887acf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{a9405b20-7792-4f5f-ae1a-23e8f53d1d83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\string Utils">
+      <UniqueIdentifier>{6da257e4-cc16-4894-ab78-cc4b1064d677}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Multi jeu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuItem.cpp">
+      <Filter>MenuItem</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="HomeMenu.cpp">
+      <Filter>Menu\Home</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Sigleton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuMorpion.cpp">
+      <Filter>Menu\Menu morpion</Filter>
+    </ClCompile>
+    <ClCompile Include="Morpions.cpp">
+      <Filter>Menu\Menu morpion\morpions</Filter>
+    </ClCompile>
+    <ClCompile Include="MorpionsIA.cpp">
+      <Filter>Menu\Menu morpion\morpions IA</Filter>
+    </ClCompile>
+    <ClCompile Include="StringUtils.cpp">
+      <Filter>Utils\string Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HomeMenu.h">
+      <Filter>Menu\Home</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuItem.h">
+      <Filter>MenuItem</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuMorpion.h">
+      <Filter>Menu\Menu morpion</Filter>
+    </ClInclude>
+    <ClInclude Include="Morpions.h">
+      <Filter>Menu\Menu morpion\morpions</Filter>
+    </ClInclude>
+    <ClInclude Include="MorpionsIA.h">
+      <Filter>Menu\Menu morpion\morpions IA</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="StringUtils.h">
+      <Filter>Utils\string Utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
