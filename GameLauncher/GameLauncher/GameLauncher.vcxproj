@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{8ecd5482-f5cf-4dee-a5ee-d3bc7fdf0028}</ProjectGuid>
-    <RootNamespace>MenuJeux</RootNamespace>
+    <ProjectGuid>{25d7c514-0ca8-449b-9371-57166085cfa2}</ProjectGuid>
+    <RootNamespace>GameLauncher</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,7 +128,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="MenuJeux.cpp" />
+    <ClCompile Include="GameLauncher.cpp" />
+    <ClCompile Include="Launcher.cpp" />
+    <ClCompile Include="LauncherItem.cpp" />
+    <ClCompile Include="MorpionAI.cpp" />
+    <ClCompile Include="MorpionBoard.cpp" />
+    <ClCompile Include="MorpionGame.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IGame.h" />
+    <ClInclude Include="Launcher.h" />
+    <ClInclude Include="LauncherItem.h" />
+    <ClInclude Include="MorpionAI.h" />
+    <ClInclude Include="MorpionBoard.h" />
+    <ClInclude Include="MorpionGame.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

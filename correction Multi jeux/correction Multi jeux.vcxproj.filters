@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{c61c117d-5e08-4efd-acaf-0311b2cb67c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Morpions">
+      <UniqueIdentifier>{a377f74c-da20-4322-b8ea-84c2e0d962b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Morpions\AI">
+      <UniqueIdentifier>{7c9fbc04-7ac1-48a9-b5ce-328de58f8f4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Morpions\Board">
+      <UniqueIdentifier>{fb8975b6-51c2-433e-b35c-c3117d56dc88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Interfarce">
+      <UniqueIdentifier>{30d21250-b323-49fa-b662-6c9b1e88215f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Launcher">
+      <UniqueIdentifier>{80df8a04-1fe7-4158-b98b-5b0df7223760}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Launcher\Items">
+      <UniqueIdentifier>{2aabfa82-568e-495d-a38b-c54e4bdea020}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{b8017d71-34aa-4004-99f9-2f0a40e5d4db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{59bf4b58-e8dd-4bf9-a7a3-f60c8c7b4f27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\FlappyBird">
+      <UniqueIdentifier>{bcef4499-af56-43c3-b32a-6cce64c65d8e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="correction Multi jeux.cpp">
+      <Filter>Resource Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MorpionGame.cpp">
+      <Filter>Game\Morpions</Filter>
+    </ClCompile>
+    <ClCompile Include="MorpionAI.cpp">
+      <Filter>Game\Morpions\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="MorpionBoard.cpp">
+      <Filter>Game\Morpions\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="Launcher.cpp">
+      <Filter>Launcher</Filter>
+    </ClCompile>
+    <ClCompile Include="LauncherItem.cpp">
+      <Filter>Launcher\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyBird.cpp">
+      <Filter>Game\FlappyBird</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MorpionGame.h">
+      <Filter>Game\Morpions</Filter>
+    </ClInclude>
+    <ClInclude Include="MorpionAI.h">
+      <Filter>Game\Morpions\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="MorpionBoard.h">
+      <Filter>Game\Morpions\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="IGame.h">
+      <Filter>Interfarce</Filter>
+    </ClInclude>
+    <ClInclude Include="Launcher.h">
+      <Filter>Launcher</Filter>
+    </ClInclude>
+    <ClInclude Include="LauncherItem.h">
+      <Filter>Launcher\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird.h">
+      <Filter>Game\FlappyBird</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

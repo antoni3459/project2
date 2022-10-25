@@ -36,8 +36,8 @@ void Morpions::Display()
 
 	for (int i = 0; i < 3; i++)
 	{
-		for (int j = 0; j < 5; j++)
-			std::cout << plateaux[i][j] << " ";
+		for (int j = 0; j <3 ; j++)
+			std::cout << plateaux[i][j] <<" || ";
 		std::cout << std::endl;
 	}
 }
@@ -56,10 +56,17 @@ void Morpions::Play1()
 	std::cin >> _input;
 	for (char i = 0; i < 3; i++)
 	{
-		for (char j = 0; j < 5; j++)
+		for (char j = 0; j < 3; j++)
 		{
-			if (_input == jeux[i][j])
+			if (_input == jeux[i][j] && Verif(i, j) == false)
+			{
+				std::cout << "recommence" << std::endl;
+				
+			}
+			if (_input == jeux[i][j] && Verif(i, j) == true)
+			{
 				plateaux[i][j] = "X";
+			}
 		}
 	
 	}
@@ -72,16 +79,40 @@ void Morpions::Play2()
 	std::cin >> _input;
 	for (char i = 0; i < 3; i++)
 	{
-		for (char j = 0; j < 5; j++)
+		for (char j = 0; j < 3; j++)
 		{
-			if (_input == jeux[i][j])
+			if (_input == jeux[i][j] && Verif(i, j) == false)
+			{
+				std::cout << "recommence" << std::endl;
+				return;
+			}
+			if (_input == jeux[i][j] && Verif(i, j) == true)
+			{
 				plateaux[i][j] = "O";
+			}
 		}
 	}
 	players = true;
 }
 
+bool Morpions::Verif(int _i, int _y)
+{
+	if (plateaux[_i][_y] == "X" || plateaux[_i][_y] == "O")
+		return false;
+	else
+		return true;
+}
+
+
+
 bool Morpions::EndGame()
 {
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			
+		}
+	}
 	return false;
 }

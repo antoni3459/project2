@@ -6,13 +6,13 @@ class Morpions :public Menu
 {
 #pragma region f/p
 private:
-	std::string plateaux[3][5] = { {"- ", "||", "-","||", "-"},
-							 {"- ", "||", "-","||", "-"},
-							 {"- ", "||", "-","||", "-"}
+	std::string plateaux[3][3] = { {"- ", "-", "-"},
+							       {"- ", "-", "-"} ,
+							       {"- ", "-", "-"}
 	};
-	char jeux[3][5] = { {'7', ' ', '8',' ', '9'},
-						{'4', ' ', '5',' ', '6'},
-						{'1', ' ', '2',' ','3'} 
+	char jeux[3][5] = { {'7', '8', '9'},
+						{'4', '5', '6'},
+						{'1', '2','3'} 
 	};
 	bool end = false,
 		players = true;
@@ -32,6 +32,7 @@ public:
 	void Players();
 	void Play1();
 	void Play2();
+	bool Verif(int _i, int _y);
 	bool EndGame();
 #pragma endregion method
 };

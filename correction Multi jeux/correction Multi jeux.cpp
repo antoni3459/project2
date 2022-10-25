@@ -1,11 +1,21 @@
-// MenuJeux.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// correction Multi jeux.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
+#include <windows.h>
+#include "Launcher.h"
+#include "LauncherItem.h"
+#include "MorpionGame.h"
+#include "FlappyBird.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	SetConsoleTitle(L"Launcher");
+	Launcher _launcher = Launcher({
+		new LauncherItem(new MorpionGame()),
+		new LauncherItem(new FlappyBird())
+		});
+	_launcher.Open();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
