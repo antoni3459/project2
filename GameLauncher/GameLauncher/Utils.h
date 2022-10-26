@@ -1,6 +1,12 @@
 #pragma once
 #include <string>
+#include <vector>
 #include <iostream>
+#include <windows.h>
+#include "Object.h"
+
+#pragma warning(disable: 4996)
+
 class Object;
 
 #define color_white 15
@@ -8,8 +14,12 @@ class Object;
 
 class Utils
 {
+private:
+	static inline HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+	static inline COORD cursorPosition = {};
 #pragma region Log
 public:
+
 	static void Log(const std::string& _msg);
 	static void Log(const Object& _obj);
 	static void Log(const Object* _obj);
@@ -29,6 +39,8 @@ public:
 	static T UserChoice(const std::string& _msg = "");
 	template<typename T>
 	static T UserChoice(const std::string& _msg, const T& _defaultValue, const T& _a, const T& _b);
+	static void SetCursorPosition(const int _x, const int _y);
+	static int CinNOBlock();
 #pragma endregion Utils
 
 };

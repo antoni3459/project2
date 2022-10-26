@@ -1,6 +1,7 @@
 #include "Utils.h"
 #include "Object.h"
 #include <windows.h>
+#include <conio.h>
 
 void Utils::Log(const std::string& _msg)
 {
@@ -97,3 +98,20 @@ std::string Utils::Separator(const int _count, const char _c)
 {
     return std::string(_count, _c);
 }
+
+void Utils::SetCursorPosition(const int _x, const int _y)
+{
+    cursorPosition.X = _x;
+    cursorPosition.Y = _y;
+    SetConsoleCursorPosition(console, cursorPosition);
+}
+
+int Utils::CinNOBlock()
+{
+    if (kbhit()) //=> conio.h
+    {
+        return getch(); //=> conio.h
+    }
+    return -1;
+}
+

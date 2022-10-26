@@ -40,6 +40,9 @@
     <Filter Include="Games\Morpion\AI">
       <UniqueIdentifier>{0717208a-8f12-417a-946c-8ce57d50489e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Games\FlappyBird">
+      <UniqueIdentifier>{b78706d4-2192-41c5-9408-6334017bf099}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameLauncher.cpp">
@@ -66,6 +69,9 @@
     <ClCompile Include="MorpionAI.cpp">
       <Filter>Games\Morpion\AI</Filter>
     </ClCompile>
+    <ClCompile Include="FlappyBird.cpp">
+      <Filter>Games\FlappyBird</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object.h">
@@ -91,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="MorpionAI.h">
       <Filter>Games\Morpion\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird.h">
+      <Filter>Games\FlappyBird</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
