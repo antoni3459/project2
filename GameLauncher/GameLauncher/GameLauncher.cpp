@@ -3,18 +3,17 @@
 #include "LauncherItem.h"
 #include "MorpionGame.h"
 #include "MorpionBoard.h"
-#include "FlappyBird.h"
+#include "Flappybird2.h"
 
 #include <windows.h>
 
 int main()
 {
-	FlappyBird flapp = FlappyBird();
-	flapp.DrawBorder();
-	/*SetConsoleTitle(L"Launcher");
+	
+	SetConsoleTitle(L"Launcher");
 	Launcher _launcher = Launcher({
 		new LauncherItem(new MorpionGame()),
-		new LauncherItem(new FlappyBird())
+		new LauncherItem(new Flappybird2())
 		});
-	_launcher.Open();*/
+	_launcher.Open();
 }

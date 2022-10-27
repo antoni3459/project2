@@ -43,6 +43,18 @@
     <Filter Include="Games\FlappyBird">
       <UniqueIdentifier>{b78706d4-2192-41c5-9408-6334017bf099}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Games\FlappyBird\Map">
+      <UniqueIdentifier>{a87a15ca-91a2-4de1-9c1f-44dc7e0003e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\FlappyBird\FlappyPlayer">
+      <UniqueIdentifier>{fbd1a155-c105-435b-8bc3-5d052684cd29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\FlappyBird\pipe">
+      <UniqueIdentifier>{dfa03af0-a40b-423c-b03d-ad37c5230cbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Games\FlappyBird\score">
+      <UniqueIdentifier>{996fda77-2f3c-4b02-9e76-94af082b6073}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameLauncher.cpp">
@@ -72,6 +84,21 @@
     <ClCompile Include="FlappyBird.cpp">
       <Filter>Games\FlappyBird</Filter>
     </ClCompile>
+    <ClCompile Include="FlappyMap.cpp">
+      <Filter>Games\FlappyBird\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Flappybird2.cpp">
+      <Filter>Games\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyPlayer.cpp">
+      <Filter>Games\FlappyBird\FlappyPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Pipe.cpp">
+      <Filter>Games\FlappyBird\pipe</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyScore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object.h">
@@ -100,6 +127,24 @@
     </ClInclude>
     <ClInclude Include="FlappyBird.h">
       <Filter>Games\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyMap.h">
+      <Filter>Games\FlappyBird\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Flappybird2.h">
+      <Filter>Games\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyPlayer.h">
+      <Filter>Games\FlappyBird\FlappyPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="IDrawable.h">
+      <Filter>Games\FlappyBird\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Pipe.h">
+      <Filter>Games\FlappyBird\pipe</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyScore.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

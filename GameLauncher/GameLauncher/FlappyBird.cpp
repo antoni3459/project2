@@ -163,7 +163,5 @@ bool FlappyBird::Dead()
 }
 void FlappyBird::Tuyaux()
 {
-	for (int i=0; i<gap; i++)
-	{
-		Utils::SetCursorPosition(WIN_WIDTH - position
+	
 }

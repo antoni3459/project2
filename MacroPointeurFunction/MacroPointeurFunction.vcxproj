@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{25d7c514-0ca8-449b-9371-57166085cfa2}</ProjectGuid>
-    <RootNamespace>GameLauncher</RootNamespace>
+    <ProjectGuid>{bcc40d8e-86d9-47a7-8cb0-ef1836b4ec94}</ProjectGuid>
+    <RootNamespace>MacroPointeurFunction</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -104,7 +104,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,37 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FlappyMap.cpp" />
-    <ClCompile Include="FlappyBird.cpp" />
-    <ClCompile Include="Flappybird2.cpp" />
-    <ClCompile Include="FlappyPlayer.cpp" />
-    <ClCompile Include="FlappyScore.cpp" />
-    <ClCompile Include="GameLauncher.cpp" />
-    <ClCompile Include="Launcher.cpp" />
-    <ClCompile Include="LauncherItem.cpp" />
-    <ClCompile Include="MorpionAI.cpp" />
-    <ClCompile Include="MorpionBoard.cpp" />
-    <ClCompile Include="MorpionGame.cpp" />
-    <ClCompile Include="Object.cpp" />
-    <ClCompile Include="Pipe.cpp" />
-    <ClCompile Include="Utils.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="FlappyMap.h" />
-    <ClInclude Include="FlappyBird.h" />
-    <ClInclude Include="Flappybird2.h" />
-    <ClInclude Include="FlappyPlayer.h" />
-    <ClInclude Include="FlappyScore.h" />
-    <ClInclude Include="IDrawable.h" />
-    <ClInclude Include="IGame.h" />
-    <ClInclude Include="Launcher.h" />
-    <ClInclude Include="LauncherItem.h" />
-    <ClInclude Include="MorpionAI.h" />
-    <ClInclude Include="MorpionBoard.h" />
-    <ClInclude Include="MorpionGame.h" />
-    <ClInclude Include="Object.h" />
-    <ClInclude Include="Pipe.h" />
-    <ClInclude Include="Utils.h" />
+    <ClCompile Include="MacroPointeurFunction.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

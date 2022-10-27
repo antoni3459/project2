@@ -12,6 +12,9 @@ class Object;
 #define color_white 15
 #define color_red 4
 
+#define SPACE 32
+#define ESCAPE 27
+
 class Utils
 {
 private:
@@ -19,7 +22,7 @@ private:
 	static inline COORD cursorPosition = {};
 #pragma region Log
 public:
-
+	static void Sleep(const int _milliseconds);
 	static void Log(const std::string& _msg);
 	static void Log(const Object& _obj);
 	static void Log(const Object* _obj);
@@ -31,6 +34,8 @@ public:
 #pragma endregion Log
 #pragma region Utils
 public:
+	static int Random(const int _min, const int _max);
+	static void LogWhithEffect(const std::string& _msg, const int _time = 20);
 	static std::string Underline(const std::string& _str);
 	static void ClearConsole();
 	static void Pause();
@@ -41,6 +46,7 @@ public:
 	static T UserChoice(const std::string& _msg, const T& _defaultValue, const T& _a, const T& _b);
 	static void SetCursorPosition(const int _x, const int _y);
 	static int CinNOBlock();
+	static void SetCursor(const bool _visible, const int _size);
 #pragma endregion Utils
 
 };

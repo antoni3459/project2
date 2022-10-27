@@ -2,6 +2,12 @@
 #include "Object.h"
 #include <windows.h>
 #include <conio.h>
+#include <random>
+
+void Utils::Sleep(const int _milliseconds)
+{
+    ::Sleep(_milliseconds);
+}
 
 void Utils::Log(const std::string& _msg)
 {
@@ -69,6 +75,23 @@ void Utils::LoadingBar(const std::string& _msg)
     }
 }
 
+int Utils::Random(const int _min, const int _max)
+{
+    std::random_device _device = std::random_device();
+    std::mt19937 _gen(_device());
+    const std::uniform_int_distribution<> _distr = std::uniform_int_distribution<>(_min, _max);
+    return _distr(_gen);
+}
+
+void Utils::LogWhithEffect(const std::string& _msg, const int _time)
+{
+    for (char _c : _msg)
+    {
+        std::cout << _c;
+        ::Sleep(_time);
+    }
+}
+
 std::string Utils::Underline(const std::string& _str)
 {
     int _tabCount = 0, _count = 0;
@@ -113,5 +136,15 @@ int Utils::CinNOBlock()
         return getch(); //=> conio.h
     }
     return -1;
+}
+
+void Utils::SetCursor(const bool _visible, const int _size)
+{
+    int _currentSize = _size;
+    if (_currentSize == 0) _currentSize = 20;
+    CONSOLE_CURSOR_INFO _cursorInfo = {};
+    _cursorInfo.bVisible = _visible;
+    _cursorInfo.dwSize = _currentSize;
+    SetConsoleCursorInfo(console, &_cursorInfo);
 }
 

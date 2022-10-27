@@ -52,6 +52,7 @@ public:
 	bool Dead();
 	bool Wall();
 	void Tuyaux();
+
 #pragma endregion method
 };
 
