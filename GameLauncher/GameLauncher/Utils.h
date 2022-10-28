@@ -1,13 +1,11 @@
 #pragma once
 #include <string>
-#include <vector>
 #include <iostream>
 #include <windows.h>
-#include "Object.h"
+#include <conio.h>
+class Object;
 
 #pragma warning(disable: 4996)
-
-class Object;
 
 #define color_white 15
 #define color_red 4
@@ -17,12 +15,14 @@ class Object;
 
 class Utils
 {
+#pragma region f/p
 private:
 	static inline HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
 	static inline COORD cursorPosition = {};
+#pragma endregion f/p
 #pragma region Log
 public:
-	static void Sleep(const int _milliseconds);
+	static void LogWithEffect(const std::string& _msg, const int _time = 20);
 	static void Log(const std::string& _msg);
 	static void Log(const Object& _obj);
 	static void Log(const Object* _obj);
@@ -35,7 +35,11 @@ public:
 #pragma region Utils
 public:
 	static int Random(const int _min, const int _max);
-	static void LogWhithEffect(const std::string& _msg, const int _time = 20);
+	static void SetWindowSize(const int _width, const int _height);
+	static void Sleep(const int _milliSeconds);
+	static int CinNoBlock();
+	static void SetCursor(const bool _visible, const int _size);
+	static void SetCursorPosition(const int _x, const int _y);
 	static std::string Underline(const std::string& _str);
 	static void ClearConsole();
 	static void Pause();
@@ -44,9 +48,6 @@ public:
 	static T UserChoice(const std::string& _msg = "");
 	template<typename T>
 	static T UserChoice(const std::string& _msg, const T& _defaultValue, const T& _a, const T& _b);
-	static void SetCursorPosition(const int _x, const int _y);
-	static int CinNOBlock();
-	static void SetCursor(const bool _visible, const int _size);
 #pragma endregion Utils
 
 };

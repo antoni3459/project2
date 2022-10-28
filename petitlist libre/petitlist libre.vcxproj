@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{e783b165-5454-4d35-8da1-9b253b4f1b05}</ProjectGuid>
-    <RootNamespace>jairiencompris</RootNamespace>
+    <ProjectGuid>{198aec4b-5264-4756-8323-8a3f4b2d05fe}</ProjectGuid>
+    <RootNamespace>petitlistlibre</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -104,7 +104,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,20 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="A.cpp" />
-    <ClCompile Include="Action.cpp" />
-    <ClCompile Include="Exception.cpp" />
-    <ClCompile Include="Func.cpp" />
-    <ClCompile Include="j%27ai rien compris.cpp" />
-    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="List.cpp" />
+    <ClCompile Include="petitlist libre.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="A.h" />
-    <ClInclude Include="Action.h" />
-    <ClInclude Include="Exception.h" />
-    <ClInclude Include="Func.h" />
-    <ClInclude Include="IGame.h" />
-    <ClInclude Include="Object.h" />
+    <ClInclude Include="List.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

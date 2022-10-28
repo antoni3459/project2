@@ -1,31 +1,30 @@
 #pragma once
 #include "IDrawable.h"
 
-class FlappyPipe;
+#define PIPE "***"
 
-class FlappyPlayer : public IDrawable
+class FlappyPipe : public IDrawable
 {
 #pragma region f/p
 private:
-	char bird[2][6] = { '/','-','-','o','\\',' ', '|','_','_','_',' ','>' };
-	int position = 6;
-	bool isDead = false;
+	int gapPosition = 0;
+	int position = 0;
+	bool canDraw = false;
 #pragma endregion f/p
 #pragma region constructor/destructor
 public:
-	FlappyPlayer() = default;
-	~FlappyPlayer() override = default;
+	FlappyPipe() = default;
+	~FlappyPipe() override = default;
 #pragma endregion constructor/destructor
 #pragma region methods
 public:
-	int Position() const;
-	bool IsDead() const;
+	void SetGapPosition(const int _gap);
 	void SetPosition(const int _position);
-	void SetDead(const bool _status);
-	void Jump();
-	bool IsCollide(const FlappyPipe* _pipe);
+	void SetCanDraw(const bool _status);
+	int GapPosition() const;
+	int Position() const;
+	bool CanDraw() const;
 #pragma endregion methods
-
 #pragma region override
 public:
 	virtual void Draw() override;

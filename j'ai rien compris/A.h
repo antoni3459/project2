@@ -1,11 +1,11 @@
 #pragma once
 #include <iostream>
 #include "Action.h"
-template <typename T>
+template <typename Args>
 class A
 {
 public :
-    T Add(const T _a, const T _b)
+    Args Add(const Args _a, const Args _b)
     {
         return _a + _b;
     }

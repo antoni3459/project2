@@ -98,17 +98,17 @@ void List<T>::RemoveAt(const int& _index)
 	tab = new T[count - 1];
 	for (int i = 0;i < _index;i++)// séléctionne le bon bloc
 		tab[i] = _tmp[i];
-	for (int i = _index + 1;i < count;i++)// enlève le lien du précedent 
-		tab[i - 1] = _tmp[i];
+	for (int i = _index + 1;i < count;i++)// séléectionne le bon bloc 
+		tab[i - 1] = _tmp[i]; // suprime le bloc en le faisant correspondre au celui d'aprés
 	count--;
 }
 
 template<typename T>
 void List<T>::RemoveAll(const T& _item)
 {
-	while (Contains(_item))
+	while (Contains(_item)) //séléctionne tout les bloc contenant le même nombre
 	{
-		RemoveAt(FinfOff(_item));
+		RemoveAt(FinfOff(_item)); // suprime se nombre et grâce a la boucle suprime tout les bloc contenant se nombre 
 	}
 }
 

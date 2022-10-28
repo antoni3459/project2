@@ -128,9 +128,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FlappyMap.cpp" />
     <ClCompile Include="FlappyBird.cpp" />
-    <ClCompile Include="Flappybird2.cpp" />
+    <ClCompile Include="FlappyMap.cpp" />
+    <ClCompile Include="FlappyPipe.cpp" />
     <ClCompile Include="FlappyPlayer.cpp" />
     <ClCompile Include="FlappyScore.cpp" />
     <ClCompile Include="GameLauncher.cpp" />
@@ -140,13 +140,12 @@
     <ClCompile Include="MorpionBoard.cpp" />
     <ClCompile Include="MorpionGame.cpp" />
     <ClCompile Include="Object.cpp" />
-    <ClCompile Include="Pipe.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FlappyMap.h" />
     <ClInclude Include="FlappyBird.h" />
-    <ClInclude Include="Flappybird2.h" />
+    <ClInclude Include="FlappyMap.h" />
+    <ClInclude Include="FlappyPipe.h" />
     <ClInclude Include="FlappyPlayer.h" />
     <ClInclude Include="FlappyScore.h" />
     <ClInclude Include="IDrawable.h" />
@@ -157,7 +156,6 @@
     <ClInclude Include="MorpionBoard.h" />
     <ClInclude Include="MorpionGame.h" />
     <ClInclude Include="Object.h" />
-    <ClInclude Include="Pipe.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

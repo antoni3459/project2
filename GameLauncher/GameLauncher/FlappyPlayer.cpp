@@ -1,7 +1,9 @@
 #include "FlappyPlayer.h"
 #include "Utils.h"
-#include "Flappybird2.h"
+#include "FlappyPipe.h"
+#include "FlappyBird.h"
 
+#pragma region methods
 int FlappyPlayer::Position() const
 {
     return position;
@@ -25,20 +27,21 @@ void FlappyPlayer::SetDead(const bool _status)
 
 void FlappyPlayer::Jump()
 {
-    if (position >3)
+    if (position > 3)
         position -= 3;
 }
-
-bool FlappyPlayer::IsCollide(const Pipe* _pipe)
+bool FlappyPlayer::IsCollide(const FlappyPipe* _pipe)
 {
     if (_pipe->Position() >= 61)
     {
-        if (position <_pipe->GapPosition() || position >_pipe->GapPosition() + GAP_SIZE)
+        if (position < _pipe->GapPosition() || position > _pipe->GapPosition() + GAP_SIZE)
             return true;
     }
     return false;
 }
+#pragma endregion methods
 
+#pragma region override
 void FlappyPlayer::Draw()
 {
     for (int i = 0; i < 2; i++)
@@ -67,3 +70,4 @@ void FlappyPlayer::Update()
 {
     position += 1;
 }
+#pragma endregion override

@@ -35,6 +35,7 @@ void MorpionGame::OnUpdate()
 		{
 			int _currentMove = ai->BestMove(*board);
 			board->At(_currentMove) = 1;
+			_moves++;
 		}
 		else
 		{
@@ -64,7 +65,6 @@ void MorpionGame::OnEnd()
 	board->ShowBoard();
 	board->Reset();
 	if (winner == 0)
-
 		Utils::Log("Equality");
 	else
 	{

@@ -1,12 +1,15 @@
 #include "Utils.h"
 #include "Object.h"
 #include <windows.h>
-#include <conio.h>
 #include <random>
 
-void Utils::Sleep(const int _milliseconds)
+void Utils::LogWithEffect(const std::string& _msg, const int _time)
 {
-    ::Sleep(_milliseconds);
+    for (char _c : _msg)
+    {
+        std::cout << _c;
+        ::Sleep(_time);
+    }
 }
 
 void Utils::Log(const std::string& _msg)
@@ -57,6 +60,7 @@ void Utils::LogTitle(const std::string& _title)
 
 void Utils::LoadingBar(const std::string& _msg)
 {
+    const HANDLE _handle = GetStdHandle(STD_OUTPUT_HANDLE);
     float _progress = 0.0f;
     const int _barWidth = 70;
     while (_progress < 1.0f)
@@ -77,19 +81,49 @@ void Utils::LoadingBar(const std::string& _msg)
 
 int Utils::Random(const int _min, const int _max)
 {
-    std::random_device _device = std::random_device();
-    std::mt19937 _gen(_device());
-    const std::uniform_int_distribution<> _distr = std::uniform_int_distribution<>(_min, _max);
-    return _distr(_gen);
+    std::random_device _rd;
+    std::mt19937 _gen(_rd());
+    std::uniform_int_distribution<> _distrib(_min, _max);
+    return _distrib(_gen);
 }
 
-void Utils::LogWhithEffect(const std::string& _msg, const int _time)
+void Utils::SetWindowSize(const int _width, const int _height)
 {
-    for (char _c : _msg)
+    HWND _console = GetConsoleWindow();
+    RECT _rect;
+    GetWindowRect(_console, &_rect);
+    MoveWindow(_console, _rect.left, _rect.top, _width, _height, true);
+}
+
+void Utils::Sleep(const int _milliSeconds)
+{
+    ::Sleep(_milliSeconds);
+}
+
+int Utils::CinNoBlock()
+{
+    if (kbhit())
     {
-        std::cout << _c;
-        ::Sleep(_time);
+        return getch();
     }
+    return -1;
+}
+
+void Utils::SetCursor(const bool _visible, const int _size)
+{
+    int _currentSize = _size;
+    if (_currentSize == 0)_currentSize = 20;
+    CONSOLE_CURSOR_INFO _cursorInfo = {};
+    _cursorInfo.bVisible = _visible;
+    _cursorInfo.dwSize = _currentSize;
+    SetConsoleCursorInfo(console, &_cursorInfo);
+}
+
+void Utils::SetCursorPosition(const int _x, const int _y)
+{
+    cursorPosition.X = _x;
+    cursorPosition.Y = _y;
+    SetConsoleCursorPosition(console, cursorPosition);
 }
 
 std::string Utils::Underline(const std::string& _str)
@@ -121,30 +155,3 @@ std::string Utils::Separator(const int _count, const char _c)
 {
     return std::string(_count, _c);
 }
-
-void Utils::SetCursorPosition(const int _x, const int _y)
-{
-    cursorPosition.X = _x;
-    cursorPosition.Y = _y;
-    SetConsoleCursorPosition(console, cursorPosition);
-}
-
-int Utils::CinNOBlock()
-{
-    if (kbhit()) //=> conio.h
-    {
-        return getch(); //=> conio.h
-    }
-    return -1;
-}
-
-void Utils::SetCursor(const bool _visible, const int _size)
-{
-    int _currentSize = _size;
-    if (_currentSize == 0) _currentSize = 20;
-    CONSOLE_CURSOR_INFO _cursorInfo = {};
-    _cursorInfo.bVisible = _visible;
-    _cursorInfo.dwSize = _currentSize;
-    SetConsoleCursorInfo(console, &_cursorInfo);
-}
-
