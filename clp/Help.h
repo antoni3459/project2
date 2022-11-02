@@ -54,7 +54,7 @@ inline void Help<T>::Open()
 template<typename T>
 inline void Help<T>::List()
 {
-	className->GetName()
+	EccoLeDauphins::GetName()->className;
 	count = 1;
 	Display();
 }
