@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{30dbe410-8d61-4229-9944-0b86cdd84a62}</ProjectGuid>
-    <RootNamespace>clp</RootNamespace>
+    <ProjectGuid>{66a0f075-1d04-4283-bea7-3f2276f2fe15}</ProjectGuid>
+    <RootNamespace>TraductionExo</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -128,23 +128,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="clp.cpp" />
-    <ClCompile Include="Cls.cpp" />
-    <ClCompile Include="EccoLeDauphins.cpp" />
-    <ClCompile Include="Help.cpp" />
-    <ClCompile Include="Object.cpp" />
-    <ClCompile Include="ShowConsole.cpp" />
-    <ClCompile Include="Time.cpp" />
+    <ClCompile Include="Directory.cpp" />
+    <ClCompile Include="Environment.cpp" />
+    <ClCompile Include="File.cpp" />
+    <ClCompile Include="FileReader.cpp" />
+    <ClCompile Include="FileStream.cpp" />
+    <ClCompile Include="FileWriter.cpp" />
+    <ClCompile Include="Path.cpp" />
+    <ClCompile Include="StringUtils.cpp" />
+    <ClCompile Include="TraductionExo.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Cls.h" />
-    <ClInclude Include="EccoLeDauphins.h" />
-    <ClInclude Include="ExitProg.h" />
-    <ClInclude Include="Help.h" />
-    <ClInclude Include="Object.h" />
-    <ClInclude Include="ShowConsole.h" />
-    <ClInclude Include="Time.h" />
+    <ClInclude Include="Directory.h" />
+    <ClInclude Include="Environment.h" />
+    <ClInclude Include="File.h" />
+    <ClInclude Include="FileReader.h" />
+    <ClInclude Include="FileStream.h" />
+    <ClInclude Include="FileWriter.h" />
+    <ClInclude Include="Path.h" />
+    <ClInclude Include="StringUtils.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

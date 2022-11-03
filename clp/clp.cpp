@@ -1,5 +1,6 @@
 #include <iostream>
 #include "ShowConsole.h"
+#include "EccoLeDauphins.h"
 
 int main()
 {

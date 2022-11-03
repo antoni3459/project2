@@ -13,48 +13,81 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Command">
+      <UniqueIdentifier>{9341fec9-7c18-4674-beaa-2c15d36cb9d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Command\Ecco">
+      <UniqueIdentifier>{0ff16321-a163-4823-8df5-18ad798c25c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Command\Cls">
+      <UniqueIdentifier>{0fbbcf55-3211-4c08-af2c-b07fb38545a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Command\Help">
+      <UniqueIdentifier>{a711a545-2e11-458a-8ee5-87dd3875aeca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{989cb75b-69c4-4e52-8161-ee84d6d78702}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{7d589b50-22b4-40d8-bf57-b5a12331220e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Command\Time">
+      <UniqueIdentifier>{f6ac9102-b0be-4bc1-8e88-5bb4039b8d4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Command\Exit">
+      <UniqueIdentifier>{186d2935-1701-4da4-9437-c54b67abfe16}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="clp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Utils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Object.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Help.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ShowConsole.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Command</Filter>
     </ClCompile>
     <ClCompile Include="EccoLeDauphins.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Command\Ecco</Filter>
+    </ClCompile>
+    <ClCompile Include="Cls.cpp">
+      <Filter>Command\Cls</Filter>
+    </ClCompile>
+    <ClCompile Include="Help.cpp">
+      <Filter>Command\Help</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="Time.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Command\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Utils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Help.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ShowConsole.h">
-      <Filter>Header Files</Filter>
+      <Filter>Command</Filter>
     </ClInclude>
     <ClInclude Include="EccoLeDauphins.h">
-      <Filter>Header Files</Filter>
+      <Filter>Command\Ecco</Filter>
+    </ClInclude>
+    <ClInclude Include="Cls.h">
+      <Filter>Command\Cls</Filter>
+    </ClInclude>
+    <ClInclude Include="Help.h">
+      <Filter>Command\Help</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Object</Filter>
     </ClInclude>
     <ClInclude Include="Time.h">
-      <Filter>Header Files</Filter>
+      <Filter>Command\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="ExitProg.h">
+      <Filter>Command\Exit</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

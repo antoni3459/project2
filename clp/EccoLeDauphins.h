@@ -1,20 +1,19 @@
 #pragma once
 #include <iostream>
-#include "ShowConsole.h"
+#include <string>
+#include "Help.h"
+ 
 
-class EccoLeDauphins : public ShowConsole
+class Echo : public Help
 {
-private:
-	std::string name = "echo";
-
-
 public:
-	EccoLeDauphins()=default;
-	~EccoLeDauphins();
+	Echo()=default;
+	~Echo() = default;
 
 public:
 	void Open();
 	std::string Ecco();
-	std::string GetName();
+	std::string Name() override;
+	std::string Description() override;
 };
 

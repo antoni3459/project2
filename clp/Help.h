@@ -1,68 +1,31 @@
 #pragma once
 #include <iostream>
+#include <string>
+#include <vector>
 #include "ShowConsole.h"
 #include "Utils.h"
-#include "EccoLeDauphins.h"
-#include "Utils.h"
 
-class EccoLeDauphins;
 
-template <typename T>
-class Help: public ShowConsole
+
+class Help
 {
-private :
+private:
 	std::string name = "Help";
-	Help* className = nullptr;
+	std::vector<std::string> classNames = std::vector<std::string>();
 	int count = 0;
 
 public:
 	Help()=default;
-	Help(const std::initializer_list<T> _className);
-	Help(const Help* _copy);
-	~Help();
+	Help(const std::initializer_list<std::string> _className);
+	Help(const Help& _copy);
+	virtual ~Help() = default;
 
 public:
+	void PushBack();
+	virtual std::string Name() ;
+	virtual std::string Description();
 	void Open();
-	void List();
+	int FindIndex(const std::string _cmd);
 	void Display();
 };
-
-template<typename T>
-inline Help<T>::Help(const std::initializer_list<T> _className)
-{
-	className = _className;
-}
-
-template<typename T>
-inline Help<T>::Help(const Help* _copy)
-{
-	className = _copy.className;
-}
-
-template<typename T>
-inline Help<T>::~Help()
-{
-	Utils::ClearConsole();
-}
-
-template<typename T>
-inline void Help<T>::Open()
-{
-	List();
-}
-
-template<typename T>
-inline void Help<T>::List()
-{
-	EccoLeDauphins::GetName()->className;
-	count = 1;
-	Display();
-}
-
-template<typename T>
-inline void Help<T>::Display()
-{
-	for (int i = 0; i < count; i++)
-		std::cout << className << std::endl;
-}
 

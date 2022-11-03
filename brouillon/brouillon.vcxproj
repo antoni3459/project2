@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{30dbe410-8d61-4229-9944-0b86cdd84a62}</ProjectGuid>
-    <RootNamespace>clp</RootNamespace>
+    <ProjectGuid>{81d6adb0-abe5-44f5-90fc-5741bf926f72}</ProjectGuid>
+    <RootNamespace>brouillon</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -128,24 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="clp.cpp" />
-    <ClCompile Include="Cls.cpp" />
-    <ClCompile Include="EccoLeDauphins.cpp" />
-    <ClCompile Include="Help.cpp" />
-    <ClCompile Include="Object.cpp" />
-    <ClCompile Include="ShowConsole.cpp" />
-    <ClCompile Include="Time.cpp" />
-    <ClCompile Include="Utils.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Cls.h" />
-    <ClInclude Include="EccoLeDauphins.h" />
-    <ClInclude Include="ExitProg.h" />
-    <ClInclude Include="Help.h" />
-    <ClInclude Include="Object.h" />
-    <ClInclude Include="ShowConsole.h" />
-    <ClInclude Include="Time.h" />
-    <ClInclude Include="Utils.h" />
+    <ClCompile Include="brouillon.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

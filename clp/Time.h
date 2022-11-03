@@ -1,5 +1,8 @@
 #pragma once
-class Time
+#include "Help.h"
+#include <string>
+
+class Time:public Help
 {
 public:
 	Time() = default;
@@ -8,4 +11,7 @@ public:
 public:
 	void Open();
 	void GetTime();
+	std::string Name() override;
+	std::string Description() override;
+
 };

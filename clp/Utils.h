@@ -31,7 +31,7 @@ public:
 	static void LogTitle(const std::string& _title);
 	static void ClearConsole();
 	static void Pause();
-
+	static void HelpU();
 #pragma endregion Utils
 };
 

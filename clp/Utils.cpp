@@ -1,5 +1,11 @@
 #include "Utils.h"
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <format>
+#include <stdlib.h>
 
+#pragma comment(lib, "version.lib")
 
 #pragma region Log
 void Utils::Log(const std::string& _str)
@@ -139,4 +145,9 @@ void Utils::Pause()
 {
 	system("pause");
 }
+void Utils::HelpU()
+{
+	std::cout << std::setw(10) << std::right << command.first << "\t\t" << command.second->Help() << std::endl;
+}
+
 #pragma endregion Log
