@@ -1,3 +1,5 @@
+#include "Action.h"
+#include "Action.h"
 #pragma once
 #include <iostream>
 #include <vector>
@@ -40,10 +42,22 @@ public:
 };
 
 
+template<typename Res, typename ...Args>
+inline Action<Res, ...Args>::Action(nullptr_t)
+{
+}
+
 template<typename... Args>
 inline Action<Args...>::~Action()
 {
 	functions.clear();
+}
+
+template<typename Res, typename ...Args>
+inline size_t Action<Res, Args...>::FindIndex(const Action<Res, Args...>& _function)
+{
+	for (size_t i=0; i<
+	return -1;
 }
 
 template<typename... Args>

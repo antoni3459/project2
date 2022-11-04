@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{81d6adb0-abe5-44f5-90fc-5741bf926f72}</ProjectGuid>
-    <RootNamespace>brouillon</RootNamespace>
+    <ProjectGuid>{12833967-d860-418a-97d6-d6de9e45c2e9}</ProjectGuid>
+    <RootNamespace>correctionclp</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -128,7 +128,45 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="brouillon.cpp" />
+    <ClCompile Include="Command\CD\CdCommand.cpp" />
+    <ClCompile Include="Command\EchoCommand\EchoCommand.cpp" />
+    <ClCompile Include="Command\Exit\ExitCommand.cpp" />
+    <ClCompile Include="Command\Drive\DriveCommand.cpp" />
+    <ClCompile Include="Command\Help\Help.cpp" />
+    <ClCompile Include="IO\File\File.cpp" />
+    <ClCompile Include="IO\Directory\Directory.cpp" />
+    <ClCompile Include="Manager\CommandManager.cpp" />
+    <ClCompile Include="Command\Cls\ClsComand.cpp" />
+    <ClCompile Include="correction clp.cpp" />
+    <ClCompile Include="Object\Object.cpp" />
+    <ClCompile Include="Path\Path.cpp" />
+    <ClCompile Include="Command\TaskList\TaskListCommand.cpp" />
+    <ClCompile Include="Command\Tree\TreeCommand.cpp" />
+    <ClCompile Include="Command\Time\TimeCommand.cpp" />
+    <ClCompile Include="Command\Type\TypeCommand.cpp" />
+    <ClCompile Include="Utils\Utils.cpp" />
+    <ClCompile Include="Utils\String\StringUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Command\CD\CdCommand.h" />
+    <ClInclude Include="Command\EchoCommand\EchoCommand.h" />
+    <ClInclude Include="Command\Exit\ExitCommand.h" />
+    <ClInclude Include="Command\Drive\DriveCommand.h" />
+    <ClInclude Include="Command\Help\Help.h" />
+    <ClInclude Include="IO\File\File.h" />
+    <ClInclude Include="IO\Directory\Directory.h" />
+    <ClInclude Include="Manager\CommandManager.h" />
+    <ClInclude Include="Command\Cls\ClsComand.h" />
+    <ClInclude Include="Command\ICommand.h" />
+    <ClInclude Include="Object\Object.h" />
+    <ClInclude Include="Path\Path.h" />
+    <ClInclude Include="Sigleton\Singleton.h" />
+    <ClInclude Include="Command\TaskList\TaskListCommand.h" />
+    <ClInclude Include="Command\Tree\TreeCommand.h" />
+    <ClInclude Include="Command\Time\TimeCommand.h" />
+    <ClInclude Include="Command\Type\TypeCommand.h" />
+    <ClInclude Include="Utils\Utils.h" />
+    <ClInclude Include="Utils\String\StringUtils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
