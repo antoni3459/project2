@@ -4,6 +4,7 @@
 #include <ctime>
 #include <format>
 #include <stdlib.h>
+#include <windows.h>
 
 #pragma comment(lib, "version.lib")
 
