@@ -1,6 +1,6 @@
-#include "Vector.h"
+#include "Vector4.h"
 
-Vector::Vector(float _x, float _y, float _z, float _w)
+Vector4::Vector4(float _x, float _y, float _z, float _w)
 {
 	vectorx = _x;
 	vectory = _y;
@@ -8,7 +8,7 @@ Vector::Vector(float _x, float _y, float _z, float _w)
 	vectorw = _w;
 }
 
-Vector::Vector(const Vector& _copy)
+Vector4::Vector4(const Vector4& _copy)
 {
 	vectorx=_copy.vectorx;
 		vectory = _copy.vectory;
@@ -16,19 +16,19 @@ Vector::Vector(const Vector& _copy)
 		vectorw = _copy.vectorw;
 }
 
-Vector::~Vector()
+Vector4::~Vector4()
 {
 		Clear();
 }
 
 
-float Vector::ABS()
+float Vector4::ABS()
 {
 	return std::abs(vectorx), std::abs(vectory),std::abs(vectorz), std::abs(vectorw);
 }
 
 
-Vector Vector::Add(float _x,float _y,float _z,float _w)
+Vector4 Vector4::Add(float _x,float _y,float _z,float _w)
 {
 	vectorx += _x;
 	vectory += _y;
@@ -36,44 +36,49 @@ Vector Vector::Add(float _x,float _y,float _z,float _w)
 	vectorw += _w;
 }
 
-Vector Vector::Clamp(float _items)
+Vector4 Vector4::Clamp(float _items)
 {
 	if (std::abs(vectorx) > _items || std::abs(vectory) > _items || std::abs(vectorz) > _items || std::abs(vectorw) > _items)
 		throw std::out_of_range("c'est trop grand");
 }
 
-Vector Vector::Min()
+Vector4 Vector4::Min()
 {
 	for (int i =0; i<4; 
 }
 
-Vector Vector::Max()
+Vector4 Vector4::Max()
 {
 }
 
-float Vector::Lerp(float _t)
+float Vector4::Lerp(float _t)
 {
 
 	float a = vectorx + vectory;
 	float b = vectorz + vectorw;
-	float L = a + (b - a);
-	
+	float t = a /(b - a);
+	if (t == 0)
+		return a;
+	if (t == 1)
+		return b;
+	else
+		return a, b;
 }
 
-float Vector::Dot(float _x, float _y, float _z, float _w)
+float Vector4::Dot(float _x, float _y, float _z, float _w)
 {
 	float x = (vectorx + vectorz) * (vectory + vectorw);
 	return x;
 }
 
-float Vector::Magnitude()
+float Vector4::Magnitude()
 {
 	float x = vectorx - vectory;
 	float y = vectorz - vectorw;
 	return x, y;
 }
 
-float Vector::Distance(float _vector)
+float Vector4::Distance(float _vector)
 {
 	float x = vectorx - vectorz;
 	float y = vectory - vectorw;
@@ -81,7 +86,7 @@ float Vector::Distance(float _vector)
 	return z;
 }
 
-Vector Vector::Set(float _x, float _y, float _z, float _w)
+Vector4 Vector4::Set(float _x, float _y, float _z, float _w)
 {
 	vectorx = _x;
 		vectory = _y;
@@ -89,21 +94,21 @@ Vector Vector::Set(float _x, float _y, float _z, float _w)
 		vectorw = _w;
 }
 
-float Vector::Lenght()
+float Vector4::Lenght()
 {
 	return 0.0f;
 }
 
-float Vector::LenghtSquared()
+float Vector4::LenghtSquared()
 {
 	return 0.0f;
 }
 
-Vector Vector::Normalize()
+Vector4 Vector4::Normalize()
 {
 }
 
-void Vector::Clear()
+void Vector4::Clear()
 {
 	vectorx = 0.0f;
 	vectory = 0.0f;

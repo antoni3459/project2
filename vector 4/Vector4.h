@@ -2,7 +2,7 @@
 #include <vector >
 #include <iostream>
 
-class Vector
+class Vector4
 {
 #pragma region f/p
 private :
@@ -14,27 +14,27 @@ private :
 
 #pragma region constructor
 public :
-	Vector(float _x, float _y, float _z, float _w);
-	Vector(const Vector& _copy);
-	~Vector();
+	Vector4(float _x, float _y, float _z, float _w);
+	Vector4(const Vector& _copy);
+	~Vector4();
 
 #pragma region constructor
 
 #pragma region method
 public:
 	float ABS();
-	Vector Add(float _x, float _y, float _z, float _w);
-	Vector Clamp(float _items);
-	Vector Min();
-	Vector Max();
-	Vector Lerp(float _t);
+	Vector4 Add(float _x, float _y, float _z, float _w);
+	Vector4 Clamp(float _items);
+	Vector4 Min();
+	Vector4 Max();
+	Vector4 Lerp(float _t);
 	float Dot(float _x, float _y, float _z, float _w);
 	float Magnitude();
 	float Distance(float _vector);
-	Vector Set(float _x, float _y, float _z, float _w);
+	Vector4 Set(float _x, float _y, float _z, float _w);
 	float Lenght();
 	float LenghtSquared();
-	Vector Normalize();
+	Vector4 Normalize();
 	void Clear();
 #pragma region method
 
