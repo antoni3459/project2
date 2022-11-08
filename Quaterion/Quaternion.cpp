@@ -47,19 +47,24 @@ float Quaternion::Negative()
     return -x,-y,-z,-w;
 }
 
-Quaternion Quaternion::Lerp(float _t)
+Quaternion Quaternion::Lerp(const Quaternion& _a, const Quaternion& _b, const float _t)
 {
-    return Quaternion();
+    return Quaternion(
+        _a.x + (_b.x - _a.x) * _t,
+        _a.y + (_b.y - _a.y) * _t,
+        _a.z + (_b.z - _a.z) * _t,
+        _a.w + (_b.w - _a.w) * _t);
 }
 
 float Quaternion::Dot(Quaternion* _a, Quaternion* _b)
 {
-    return 0.0f;
+    float a = Length(_a) * Length(_b);
+    return a;
 }
 
 float Quaternion::Length(Quaternion* _a)
 {
-    return 0.0f;
+    return _a->GetX()+_a->GetY()+_a->GetZ()+_a->GetW();
 }
 
 float Quaternion::LengthSquared(Quaternion* _a)

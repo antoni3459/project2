@@ -28,7 +28,7 @@ public:
 	float GetW();
 	float Identity();
 	float Negative();
-	Quaternion Lerp(float _t);
+	Quaternion Lerp(const Quaternion& _a, const Quaternion& _b, const float _t);
 	float Dot(Quaternion* _a, Quaternion* _b);
 	float Length(Quaternion* _a);
 	float LengthSquared(Quaternion* _a);
