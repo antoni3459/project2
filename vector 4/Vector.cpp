@@ -1,190 +1,141 @@
 #include "Vector4.h"
 
-Vector4::Vector4(const std::initializer_list<Vector4> _vector)
-{
-	count = _vector.size();
-	vector = new Vector4[count];
-}
-
 Vector4::Vector4(const float _x, const float _y, const float _z, const float _w)
 {
 	
-	vectorx = _x;
-	vectory = _y;
-	vectorz = _z;
-	vectorw = _w;
+	x = _x;
+	y = _y;
+	z = _z;
+	w = _w;
 }
 
 Vector4::Vector4(const Vector4& _copy)
 {
-	vector = _copy.vector;
-	vectorx=_copy.vectorx;
-		vectory = _copy.vectory;
-		vectorz = _copy.vectorz;
-		vectorw = _copy.vectorw;
-}
-
-Vector4::~Vector4()
-{
-		Clear();
+	x=_copy.x;
+		y = _copy.y;
+		z = _copy.z;
+		w = _copy.w;
 }
 
 
-bool Vector4::FinOf()
+float Vector4::Lenght(Vector4* _a)
 {
-	if (count < 1)
-	{
-		return false;
-	}
-	return true;
+	float a = _a->GetX() + _a->GetY() + _a->GetZ() + _a->GetW();
+	return a;
+}
 
+float Vector4::GetX()
+{
+	return x;
+}
+
+float Vector4::GetY()
+{
+	return y;
+}
+
+float Vector4::GetZ()
+{
+	return z;
+}
+
+float Vector4::GetW()
+{
+	return w;
 }
 
 float Vector4::ABS()
 {
-	return std::abs(vectorx), std::abs(vectory),std::abs(vectorz), std::abs(vectorw);
+	return std::abs(x), std::abs(y),std::abs(z), std::abs(w);
 }
 
 
 Vector4 Vector4::Add(float _x,float _y,float _z,float _w)
 {
-	vectorx += _x;
-	vectory += _y;
-	vectorz += _z;
-	vectorw += _w;
-	Vector4* tmp = vector;
-	vector = new Vector4();
-	for (int i = 0; i < count; i++)
-	{
-		tmp[i] = vector[i];
-	}
-	vector[count] = Vector4(vectorx, vectory, vectorz, vectorw);
-	count++;
-	return  Vector4(vectorx, vectory, vectorz, vectorw);
+	x += _x;
+	y += _y;
+	z += _z;
+	w += _w;
+}
+
+Vector4 Vector4::Min(Vector4 _a,Vector4 _b )
+{
+	x = _a.GetX() < _b.GetX() ? _a.GetX() : _b.GetX();
+	y = _a.GetY() < _b.GetY() ? _a.GetY() : _b.GetY();
+	z = _a.GetZ() < _b.GetZ() ? _a.GetZ() : _b.GetZ();
+	w = _a.GetW() < _b.GetW() ? _a.GetW() : _b.GetW();
+	Vector4 a = Vector4(x, y, z, w);
+	return a;
+}
+
+Vector4 Vector4::Max(Vector4 _a, Vector4 _b)
+{
+	x = _a.GetX() > _b.GetX() ? _a.GetX() : _b.GetX();
+	y = _a.GetY() > _b.GetY() ? _a.GetY() : _b.GetY();
+	z = _a.GetZ() > _b.GetZ() ? _a.GetZ() : _b.GetZ();
+	w = _a.GetW() > _b.GetW() ? _a.GetW() : _b.GetW();
+	Vector4 a = Vector4(x, y, z, w);
+	return a;
+}
+
+Vector4* Vector4::Lerp(Vector4* _a, Vector4* _b)
+{
+	float a = Lenght(_a);
+	float b = Lenght(_b);
+	float t = a / (b - a);
+	if (t == 0)
+		return _a;
+	if (t == 1)
+		return _b;
+	else
+		return _a, _b;
+}
+
+float Vector4::Dot(Vector4* _a, Vector4* _b)
+{
+	float a = (_a->GetX() + _a->GetY() + _a->GetZ() + _a->GetW()) * (_b->GetX() + _b->GetY() + _b->GetZ() + _b->GetW());
+	return a;
+}
+
+float Vector4::Magnitude(Vector4* _a)
+{
+	float a = -Lenght(_a);
+	return a;
+}
+
+float Vector4::Distance(Vector4* _a, Vector4* _b)
+{
+	return std::abs(_b->GetX() - _a->GetX()) + std::abs(_b->GetY() - _a->GetY()) + std::abs(_b->GetZ() - _a->GetZ()) + std::abs(_b->GetW() - _a->GetW());
 }
 
 Vector4 Vector4::Clamp(float _items)
 {
-	if (std::abs(vectorx) > _items || std::abs(vectory) > _items || std::abs(vectorz) > _items || std::abs(vectorw) > _items)
+	if (std::abs(x) > _items || std::abs(y) > _items || std::abs(z) > _items || std::abs(w) > _items)
 		throw std::out_of_range("c'est trop grand");
 }
 
-Vector4 Vector4::Min()
-{
-	for (int i =0; i<4; 
-}
-
-Vector4 Vector4::Max()
-{
-}
-
-Vector4 Vector4::Lerp(float _t)
-{
-	float x = 0;
-	float y = 0;
-	float z = 0;
-	float w = 0;
-	Vector4(x, y, z, w) = vector[1];
-	Vector4(vectorx, vectory, vectorz, vectorw) = vector[count];
-	
-	float a = x + y+z+w;
-	float b = vectorx + vectory + vectorz + vectorw;
-	float t = a /(b - a);
-	if (t == 0)
-		return vector[1];
-	if (t == 1)
-		return vector[count];
-	else
-		return vector[1], vector[count];
-}
-
-float Vector4::Dot()
-{
-	float x = 0;
-	float y = 0;
-	float z = 0;
-	float w = 0;
-	float a = 0;
-	if (FinOf())
-	{
-		Vector4(x, y, z, w) = vector[1];
-		Vector4(vectorx, vectory, vectorz, vectorw) = vector[count];
-		a = (x + y + z + w) * (vectorx + vectory + vectorz + vectorw);
-		return a;
-		
-	}
-	else
-	{
-		throw std::out_of_range("pas assez de vecteur");
-		return -1;
-	}
-}
-
-float Vector4::Magnitude()
-{
-	float x = vectorx - vectory - vectorz - vectorw;
-	return x;
-}
-
-float Vector4::Distance()
-{
-	float x = 0;
-	float y = 0;
-	float z = 0;
-	float w = 0;
-	float a = 0;
-	if (FinOf())
-	{
-		Vector4(x, y, z, w) = vector[1];
-		Vector4(vectorx, vectory, vectorz, vectorw) = vector[count];
-		a = (x + y + z + w) - (vectorx + vectory + vectorz + vectorw);
-		return a;
-	}
-	else
-	{
-		throw std::out_of_range("pas assez de vecteur");
-		return -1;
-	}
-}
-	
-
 Vector4 Vector4::Set(float _x, float _y, float _z, float _w)
 {
-	vectorx = _x;
-	vectory = _y;
-	vectorz = _z;
-	vectorw = _w;
-	Vector4* tmp = vector;
-	vector = new Vector4();
-	for (int i = 0; i < count; i++)
-	{
-		tmp[i] = vector[i];
-	}
-	vector[count] = Vector4(vectorx, vectory, vectorz, vectorw);
-	count++;
-	return  Vector4(vectorx, vectory, vectorz, vectorw);
+	x = _x;
+	y = _y;
+	z = _z;
+	w = _w;
 }
 
-Vector4 Vector4::Lenght()
+float Vector4::LenghtSquared(Vector4* _a)
 {
-	return ;
-}
-
-float Vector4::LenghtSquared()
-{
-	return 0.0f;
+	return Lenght( _a);
 }
 
 Vector4 Vector4::Normalize()
 {
+
 }
 
-void Vector4::Clear()
+
+void Vector4::Display()
 {
-	delete vector;
-	vector = nullptr;
-	vectorx = 0.0f;
-	vectory = 0.0f;
-	vectorz = 0.0f;
-	vectorw = 0.0f;
+	std::cout << x << "\n" << y << "\n" << z << "\n" << w;
 }
+
+
