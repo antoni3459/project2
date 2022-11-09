@@ -1,50 +1,47 @@
 #include "Quaternion.h"
+#include <cmath>
+#include <format>
+#include <iostream>
 
+#pragma region constructeur 
 Quaternion::Quaternion(const float _x, const float _y, const float _z, const float _w)
 {
     x=_x;
-        y = _y;
-        z = _z;
-        w = _w;
+    y = _y;
+    z = _z;
+    w = _w;
 }
 
 Quaternion::Quaternion(const Quaternion& _copy)
 {
     x = _copy.x;
-        y = _copy.y;
-        z = _copy.z;
-        w = _copy.w;
+    y = _copy.y;
+    z = _copy.z;
+    w = _copy.w;
 
 }
 
-float Quaternion::GetX()
+#pragma endregion constructeur 
+
+#pragma region method
+float Quaternion::Dot(const Quaternion& _a,const Quaternion& _b)
 {
-    return x;
+    return _a.x * _b.x + _a.y * _b.y + _a.z * _b.z + _a.w * _b.w;
 }
 
-float Quaternion::GetY()
+Quaternion Quaternion::Identity(const Quaternion& _a)
 {
-    return y;
+    return _a;
 }
 
-float Quaternion::GetZ()
+float Quaternion::Normalize(Quaternion& _a)
 {
-    return z;
+    return x/Length(_a),y/Length(_a),z/Length(_a),w/Length(_a) ;
 }
 
-float Quaternion::GetW()
+Quaternion Quaternion::Inverse(const Quaternion& _a)
 {
-    return w;
-}
-
-float Quaternion::Identity()
-{
-    return 0.0f;
-}
-
-float Quaternion::Negative()
-{
-    return -x,-y,-z,-w;
+    return Quaternion (-_a.x,-_a.y,-_a.z,_a.w);
 }
 
 Quaternion Quaternion::Lerp(const Quaternion& _a, const Quaternion& _b, const float _t)
@@ -56,33 +53,93 @@ Quaternion Quaternion::Lerp(const Quaternion& _a, const Quaternion& _b, const fl
         _a.w + (_b.w - _a.w) * _t);
 }
 
-float Quaternion::Dot(Quaternion* _a, Quaternion* _b)
+float Quaternion::Length(const Quaternion& _a)
 {
-    float a = Length(_a) * Length(_b);
+    return _a.x + _a.y + _a.z + _a.w;
+}
+
+float Quaternion::LengthSquared(const Quaternion& _a)
+{
+    return pow(Length(_a),2);
+}
+
+Quaternion Quaternion::Conjugate(Quaternion& _a)
+{
+    return Inverse(_a);
+}
+
+Quaternion Quaternion::Negate(const Quaternion& _a)
+{
+    return Quaternion (-x, -y, -z, -w);
+}
+
+float Quaternion::Angle(Quaternion& _a, Quaternion& _b)
+{ 
+    float b = Dot(_a, _b)/(Length(_a)* Length(_b));
+    float a = acos(b);
     return a;
 }
 
-float Quaternion::Length(Quaternion* _a)
+
+std::string Quaternion::ToString() const
 {
-    return _a->GetX()+_a->GetY()+_a->GetZ()+_a->GetW();
+    return std::format("{},{},{},{}", x, y, z, w);
+}
+#pragma endregion method
+
+#pragma region operator
+
+//
+//float& Quaternion::operator[](const int _index)
+//{
+//
+//}
+
+bool Quaternion::operator==(const Quaternion& _other)
+{
+    return x == _other.x && y == _other.y && z == _other.z && w == _other.w;
 }
 
-float Quaternion::LengthSquared(Quaternion* _a)
+bool Quaternion::operator!=(const Quaternion& _other) 
 {
-    return 0.0f;
+    return x != _other.x&& y != _other.y&& z != _other.z&& w != _other.w;;
 }
 
-float Quaternion::Conjugate()
+Quaternion Quaternion::operator+(const Quaternion& _other)
 {
-    return 0.0f;
+    return Quaternion(x + _other.x, y + _other.y, z + _other.z, w + _other.w);
 }
 
-Quaternion Quaternion::Negate()
+Quaternion Quaternion::operator-(const Quaternion& _other)
 {
-    return Quaternion();
+    return Quaternion(x - _other.x, y - _other.y, z - _other.z, w - _other.w);
 }
 
-Quaternion Quaternion::Angle()
+Quaternion Quaternion::operator*(const Quaternion& _other)
 {
-    return Quaternion();
+    return Quaternion(x * _other.x, y * _other.y, z * _other.z, w * _other.w);
 }
+
+Quaternion Quaternion::operator/(const Quaternion& _other)
+{
+    return Quaternion(x / _other.x, y / _other.y, z / _other.z, w / _other.w);
+}
+
+Quaternion Quaternion::operator=(const Quaternion& _other)
+{
+    x = _other.x;
+    y = _other.y;
+    z = _other.z;
+    w = _other.w;
+    return *this;
+}
+
+Quaternion Quaternion::operator-()
+{
+    x = -x;
+    y = -y;
+    z = -z;
+    w = -w;
+    return *this;
+}
+#pragma endregion operator
