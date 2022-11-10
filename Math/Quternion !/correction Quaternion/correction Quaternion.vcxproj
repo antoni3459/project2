@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b6cef83a-4688-4235-b957-a88973d676c9}</ProjectGuid>
-    <RootNamespace>environement</RootNamespace>
+    <ProjectGuid>{3d67229f-9e87-439e-8875-2fd34d6fbc3b}</ProjectGuid>
+    <RootNamespace>correctionQuaternion</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,7 +128,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="environement.cpp" />
+    <ClInclude Include="AssertMacro\AssertMacro.h" />
+    <ClInclude Include="Mathf\Mathf.h" />
+    <ClInclude Include="Quaternion\Quaternion.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AssertMacro\AssertMacro.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mathf\Mathf.cpp" />
+    <ClCompile Include="Quaternion\Quaternion.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

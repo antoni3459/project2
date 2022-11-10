@@ -15,24 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Quaternion.h">
+    <ClInclude Include="Quaternion\Quaternion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Mathf.h">
+    <ClInclude Include="Mathf\Mathf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AssertMacro.h">
+    <ClInclude Include="AssertMacro\AssertMacro.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Quaternion.cpp">
+    <ClCompile Include="Quaternion\Quaternion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Mathf.cpp">
+    <ClCompile Include="Mathf\Mathf.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AssertMacro.cpp">
+    <ClCompile Include="AssertMacro\AssertMacro.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">

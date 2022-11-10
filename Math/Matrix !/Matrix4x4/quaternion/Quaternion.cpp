@@ -1,23 +1,23 @@
 #include "Quaternion.h"
-#include "Mathf.h"
-#include "AssertMacro.h"
+#include "../AssertMacro/AssertMacro.h"
+#include "../Mathf/Mathf.h"
 
 Quaternion const Quaternion::Identity = Quaternion(0, 0, 0, 1);
 
 Quaternion::Quaternion(const float _x, const float _y, const float _z, const float _w)
 {
-	x=_x;
-		y = _y;
-		z = _z;
-		w = _w;
+	x = _x;
+	y = _y;
+	z = _z;
+	w = _w;
 }
 
 Quaternion::Quaternion(const Quaternion& _copy)
 {
-	x=_copy.x;
-		y = _copy.y;
-		z = _copy.z;
-		w = _copy.w;
+	x = _copy.x;
+	y = _copy.y;
+	z = _copy.z;
+	w = _copy.w;
 }
 
 bool Quaternion::IsEqualUsingDot(const float _dot)
@@ -32,19 +32,19 @@ float Quaternion::Dot(const Quaternion& _a, const Quaternion& _b)
 
 float Quaternion::Angle(const Quaternion& _a, const Quaternion& _b)
 {
-	const float _dot =Mathf::Min(Mathf::Abs(Dot(_a, _b)), 1.0f);
+	const float _dot = Mathf::Min(Mathf::Abs(Dot(_a, _b)), 1.0f);
 	return IsEqualUsingDot(_dot) ? 0.0f : Mathf::Acos(_dot) + 2.0f * Mathf::Rad2Deg;
 }
 
 Quaternion Quaternion::Normaize(const Quaternion& _value)
 {
 	const float _num = 1.0f / Dot(_value, _value);
-	return Quaternion(_value.x*_num, _value.y*_num,_value.z*_num,_value.w*_num);
+	return Quaternion(_value.x * _num, _value.y * _num, _value.z * _num, _value.w * _num);
 }
 
 Quaternion Quaternion::Conjugate(const Quaternion& _value)
 {
-	return Quaternion(-_value.x,-_value.y,-_value.z,_value.w);
+	return Quaternion(-_value.x, -_value.y, -_value.z, _value.w);
 }
 
 Quaternion Quaternion::Negate(const Quaternion& _value)
@@ -56,7 +56,7 @@ Quaternion Quaternion::Inverse(const Quaternion& _value)
 {
 	const float _dot = Dot(_value, _value);
 	const float _invNorn = 1.0f / _dot;
-	return Quaternion(-_value.x*_invNorn,-_value.y*_invNorn,-_value.z*_invNorn,-_value.w*_invNorn);
+	return Quaternion(-_value.x * _invNorn, -_value.y * _invNorn, -_value.z * _invNorn, -_value.w * _invNorn);
 }
 
 Quaternion Quaternion::Lerp(const Quaternion& _a, const Quaternion& _b, const float _time)
@@ -139,7 +139,7 @@ Quaternion Quaternion::operator*(const Quaternion& _other) const
 	const float _z = _other.z;
 	const float _w = _other.w;
 
-	const float _cx = y * _z -_z * y;
+	const float _cx = y * _z - _z * y;
 	const float _cy = z * _x - _x * z;
 	const float _cz = x * _y - _y * x;
 
@@ -159,10 +159,10 @@ Quaternion Quaternion::operator/(const Quaternion& _other) const
 	const float _ls = Dot(_other, _other);
 	const float _invNorm = 1.0f / _ls;
 
-	const float _x =-_other.x*_invNorm ;
-	const float _y =-_other.y*_invNorm ;
-	const float _z =-_other.z*_invNorm ;
-	const float _w =-_other.w*_invNorm ;
+	const float _x = -_other.x * _invNorm;
+	const float _y = -_other.y * _invNorm;
+	const float _z = -_other.z * _invNorm;
+	const float _w = -_other.w * _invNorm;
 
 	const float _cx = y * _z - z * _y;
 	const float _cy = z * _x - x * _z;
@@ -188,7 +188,7 @@ bool Quaternion::operator!=(const Quaternion& _other) const
 	return x != _other.x && y != _other.y && z != _other.z && w != _other.w;
 }
 
-float& Quaternion::operator[](const int _index) 
+float& Quaternion::operator[](const int _index)
 {
 	check(_index > 0 && _index < 4)
 		switch (_index)

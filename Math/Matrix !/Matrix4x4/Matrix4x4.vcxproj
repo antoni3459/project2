@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{3d67229f-9e87-439e-8875-2fd34d6fbc3b}</ProjectGuid>
-    <RootNamespace>correctionQuaternion</RootNamespace>
+    <ProjectGuid>{a3e67230-5283-4922-8a6a-6c9bd82aead0}</ProjectGuid>
+    <RootNamespace>Matrix4x4</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -128,15 +128,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="AssertMacro.h" />
-    <ClInclude Include="Mathf.h" />
-    <ClInclude Include="Quaternion.h" />
+    <ClCompile Include="AssertMacro\AssertMacro.cpp" />
+    <ClCompile Include="Mathf\Mathf.cpp" />
+    <ClCompile Include="Matrix\Matrix.cpp" />
+    <ClCompile Include="Matrix4x4.cpp" />
+    <ClCompile Include="quaternion\Quaternion.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AssertMacro.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Mathf.cpp" />
-    <ClCompile Include="Quaternion.cpp" />
+    <ClInclude Include="AssertMacro\AssertMacro.h" />
+    <ClInclude Include="Mathf\Mathf.h" />
+    <ClInclude Include="Matrix\Matrix.h" />
+    <ClInclude Include="quaternion\Quaternion.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
