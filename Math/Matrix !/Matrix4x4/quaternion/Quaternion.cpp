@@ -25,6 +25,26 @@ bool Quaternion::IsEqualUsingDot(const float _dot)
 	return _dot > 1.0f - epsilon;
 }
 
+float Quaternion::GetX(const Quaternion& _value)
+{
+	return _value.x;
+}
+
+float Quaternion::GetY(const Quaternion& _value)
+{
+	return _value.y;
+}
+
+float Quaternion::GetZ(const Quaternion& _value)
+{
+	return _value.z;
+}
+
+float Quaternion::GetW(const Quaternion& _value)
+{
+	return _value.w;
+}
+
 float Quaternion::Dot(const Quaternion& _a, const Quaternion& _b)
 {
 	return _a.x * _b.x + _a.y * _b.y + _a.z * _b.z + _a.w * _b.w;

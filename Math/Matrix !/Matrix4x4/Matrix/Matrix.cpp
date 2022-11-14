@@ -1,4 +1,6 @@
 #include "Matrix.h"
+#include "../Mathf/Mathf.h"
+#include "../AssertMacro/AssertMacro.h"
 #include <format>
 #include <cmath>
 Matrix const Matrix::IdentityM = Matrix (1.0f,0.0f, 0.0f, 0.0f,
@@ -34,7 +36,7 @@ Matrix::Matrix(const Matrix& _copy)
 
 std::string Matrix::ToString()
 {
-	return std::format("{},{},{},{}\n{},{},{},{}\n{},{},{},{}\n{},{},{},{}", m11, m12, m13, m14,m21, m22, m23, m24,m31, m32, m33, m34,m41, m42, m43, m44);
+	return std::format("{} , {} , {} , {}\n{} , {} , {} , {}\n{} , {} , {} , {}\n{} , {} , {} , {}", m11, m12, m13, m14,m21, m22, m23, m24,m31, m32, m33, m34,m41, m42, m43, m44);
 }																			 
 
 Matrix Matrix::CreateTranslation(const float _x, const float _y, const float _z)
@@ -68,26 +70,27 @@ Matrix Matrix::CreateRotationX(const float _radians)
 Matrix Matrix::CreateRotationY(const float _radians)
 {
 	return Matrix(
-		cos(_radians), m12, -sin(_radians), m14,
-		m21,           m22, m23,            m24,
-		sin(_radians), m32, cos(_radians),  m34,
-		m41,           m42, m43,            m44);
+		m11, m12,            m13,           m14,
+		m21, cos(_radians),  sin(_radians), m24,
+		m31, -sin(_radians), cos(_radians), m34,
+		m41, m42,            m43,           m44);
 }
 
 Matrix Matrix::CreateRotationZ(const float _radians)
 {
-	return Matrix(cos(_radians),  sin(_radians), m13, m14,
-				  -sin(_radians), cos(_radians), m23, m24,
-				  m31,            m32,           m33, m34,
+	return Matrix(m11, m12, m13, m14,
+				  m21, cos(_radians), sin(_radians), m24,
+				  m31, -sin(_radians), cos(_radians), m34,
 				  m41,            m42,           m43, m44);
 }
 
 Matrix Matrix::CreateOrthographie(const float _width, const float _heigt, const float _nearPlane, const float _farPlane)
 {
-	return Matrix(2/(m11- m14),              m12,                m13,                        -(m11 + m14)/(m11 - m14),
-				  m21,                       1/(_heigt- _width), m23,                        -(_heigt+ _width)/(_heigt - _width),
-				  m31,                      m32,                 -2/(_farPlane- _nearPlane), -(_farPlane+ _nearPlane)/(_farPlane - _nearPlane),
-				  m41,                      m42,                 m43,                        m44);
+	return Matrix(
+		(m11*2)/ _width,              m12,                                 m13,                           m14, 
+		 m21,                         (m22*10) / (_nearPlane + _farPlane), m23,                           m24,
+		 m31,                         m32,                                 1 / (_nearPlane - _farPlane),  m34,
+		 m41,                         m42,                                 m43,                           m44);
 }
 
 Matrix Matrix::CreateFromQuaternion(Quaternion _quaternion)
@@ -97,11 +100,55 @@ Matrix Matrix::CreateFromQuaternion(Quaternion _quaternion)
 
 Matrix Matrix::Lerp(Matrix _matrix1, Matrix _matrix2, float _a)
 {
+	float _x = Quaternion::GetX();
+	float _y = Quaternion::GetY();
+	float _z = Quaternion::GetZ();
+	float _w = Quaternion::GetW();
 
-	return Matrix(IdentityM);
+	return Matrix(
+		1 - (2 * Mathf::Pow(_y)) - (2 * Mathf::Pow(_z)), (2 * _x * _y) + (2 * _z * _w), (2 * _x * _z) - (2 * _y * _w), m14,
+		(2 * _x * _y) - (2 * _z * _w), 1 - (2 * Mathf::Pow(_x)) - (2 * Mathf::Pow(_z)), (2 * _y * _z) + (2 * _x * _w), m24,
+		(2 * _x * _z) + (2 * _y * _w), (2 * _y * _z) - (2 * _x * _w), 1 - (2 * Mathf::Pow(_x)) - (2 * Mathf::Pow(_y)), m34,
+		m41, m42, m43, m44);
 }
 
 float Matrix::GetDeterminant()
 {
 	return m11*m22*m33*m44;
+}
+
+Matrix Matrix::operator+(const Matrix& _other) const
+{
+	return Matrix(
+		m11 + _other.m11, m12 + _other.m12, m13+ _other.m13, m14+ _other.m14,
+		m21 + _other.m21, m22 + _other.m22, m23+ _other.m23, m24+ _other.m24,
+		m31 + _other.m31, m32 + _other.m32, m33 + _other.m33, m34 + _other.m34,
+		m41 + _other.m41, m42 + _other.m42, m43 + _other.m43, m44 + _other.m44
+	);
+}
+
+Matrix Matrix::operator-(const Matrix& _other) const
+{
+	return Matrix(
+		m11 - _other.m11, m12 - _other.m12, m13 - _other.m13, m14 - _other.m14,
+		m21 - _other.m21, m22 - _other.m22, m23 - _other.m23, m24 - _other.m24,
+		m31 - _other.m31, m32 - _other.m32, m33 - _other.m33, m34 - _other.m34,
+		m41 - _other.m41, m42 - _other.m42, m43 - _other.m43, m44 - _other.m44);
+}
+
+Matrix Matrix::operator*(const Matrix& _other) const
+{
+	return Matrix();
+}
+
+float& Matrix::operator[](const int _index)
+{
+	check(_index > 0 && _index < 4)
+		switch (_index)
+		{
+		case 0:return x;
+		case 1:return y;
+		case 2:return z;
+		case 3:return z;
+		}
 }

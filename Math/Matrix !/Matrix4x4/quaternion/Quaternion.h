@@ -22,6 +22,10 @@ public:
 private:
 	static bool IsEqualUsingDot(const float _dot);
 public:
+	static float GetX(const Quaternion& _value);
+	static float GetY(const Quaternion& _value);
+	static float GetZ(const Quaternion& _value);
+	static float GetW(const Quaternion& _value);
 	static float Dot(const Quaternion& _a, const Quaternion& _b);
 	static float Angle(const Quaternion& _a, const Quaternion& _b);
 	static Quaternion Normaize(const Quaternion& _value);
@@ -29,9 +33,10 @@ public:
 	static Quaternion Negate(const Quaternion& _value);
 	static Quaternion Inverse(const Quaternion& _value);
 	static Quaternion Lerp(const Quaternion& _a, const Quaternion& _b, const float _time);
-	static Quaternion CreateFromYawPitchRoll(const float _yaw, const float _pitch, const float _roll);
+    static Quaternion CreateFromYawPitchRoll(const float _yaw, const float _pitch, const float _roll);
 	float Lenght() const;
 	float LenghtSquared()const;
+	
 #pragma endregion f/p
 
 #pragma region operator 

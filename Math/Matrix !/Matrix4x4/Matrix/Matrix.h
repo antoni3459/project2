@@ -34,5 +34,11 @@ public:
 	Matrix CreateFromQuaternion(Quaternion _quaternion);
 	Matrix Lerp(Matrix _matrix1, Matrix _matrix2, float _a);
 	float GetDeterminant();
+
+public:
+	Matrix operator+(const Matrix& _other) const;
+	Matrix operator-(const Matrix& _other) const;
+	Matrix operator*(const Matrix& _other) const;
+	float& operator[](const int _index);
 };
 
