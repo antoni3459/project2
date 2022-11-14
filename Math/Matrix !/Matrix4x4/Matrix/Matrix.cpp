@@ -91,7 +91,7 @@ Matrix Matrix::CreateOrthographie(const float _width, const float _heigt, const 
 		(m11*2)/ _width,              m12,                                 m13,											m14, 
 		 m21,                         2/ (_heigt),                         m23,											m24,
 		 m31,                         m32,                                 1 / (_nearPlane - _farPlane),				m34,
-		 m41,                         m42,                                _nearPlane / (_nearPlane - _farPlane),        m44);
+		 m41,                         m42,                                -(_nearPlane / (_farPlane - _nearPlane)),        m44);
 }
 
 Matrix Matrix::CreateFromQuaternion(Quaternion _quaternion)
