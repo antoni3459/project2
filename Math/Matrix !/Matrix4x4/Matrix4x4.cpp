@@ -5,7 +5,5 @@ int main()
 {
 	Matrix _matrix = Matrix::IdentityM;
 
-	 _matrix.CreateTranslation(5.0f,9.0f,10);
-	std::cout << _matrix.CreateScale(10,20,30).ToString() << std::endl;
-
+	std::cout << _matrix.CreateTranslation(10,25,45).ToString() << std::endl;
 }

@@ -34,19 +34,19 @@ Matrix::Matrix(const Matrix& _copy)
 
 std::string Matrix::ToString()
 {
-	return std::format("({},{},{},{}\n{},{},{},{}\n{},{},{},{}\n{},{},{},{}", m11, m12, m13, m14,m21, m22, m23, m24,m31, m32, m33, m34,m41, m42, m43, m44);
+	return std::format("{},{},{},{}\n{},{},{},{}\n{},{},{},{}\n{},{},{},{}", m11, m12, m13, m14,m21, m22, m23, m24,m31, m32, m33, m34,m41, m42, m43, m44);
 }																			 
 
-Matrix Matrix::CreateTranslation(float _x, float _y, float _z)				 
+Matrix Matrix::CreateTranslation(const float _x, const float _y, const float _z)
 {
 	return Matrix(
-		m11, m12, m13, m14 + _x,
-		m21, m22, m23, m24 + _y,
-		m31, m32, m33, m34 + _z,
-		m41, m42, m43, m44);
+		m11,      m12,      m13,      m14,
+		m21,      m22,      m23,      m24,
+		m31,      m32,      m33,      m34,
+		m41 + _x, m42 + _y, m43 + _z, m44);
 }
 
-Matrix Matrix::CreateScale(float _x, float _y, float _z)
+Matrix Matrix::CreateScale(const float _x, const float _y, const float _z)
 {
 	return Matrix(
 		m11*_x, m12, m13, m14,
@@ -55,7 +55,7 @@ Matrix Matrix::CreateScale(float _x, float _y, float _z)
 		m41, m42, m43, m44);
 }
 
-Matrix Matrix::CreateRotationX(float _radians)
+Matrix Matrix::CreateRotationX(const float _radians)
 {
 	return Matrix(
 		m11, m12,            m13,           m14,
@@ -65,7 +65,7 @@ Matrix Matrix::CreateRotationX(float _radians)
 	);
 }
 
-Matrix Matrix::CreateRotationY(float _radians)
+Matrix Matrix::CreateRotationY(const float _radians)
 {
 	return Matrix(
 		cos(_radians), m12, -sin(_radians), m14,
@@ -73,7 +73,8 @@ Matrix Matrix::CreateRotationY(float _radians)
 		sin(_radians), m32, cos(_radians),  m34,
 		m41,           m42, m43,            m44);
 }
-Matrix Matrix::CreateRotationZ(float _radians)
+
+Matrix Matrix::CreateRotationZ(const float _radians)
 {
 	return Matrix(cos(_radians),  sin(_radians), m13, m14,
 				  -sin(_radians), cos(_radians), m23, m24,
@@ -81,9 +82,12 @@ Matrix Matrix::CreateRotationZ(float _radians)
 				  m41,            m42,           m43, m44);
 }
 
-Matrix Matrix::CreateOrthographie(float _width, float _heigt, float _nearPlane, float _farPlane)
+Matrix Matrix::CreateOrthographie(const float _width, const float _heigt, const float _nearPlane, const float _farPlane)
 {
-	return Matrix(IdentityM);
+	return Matrix(2/(m11- m14),              m12,                m13,                        -(m11 + m14)/(m11 - m14),
+				  m21,                       1/(_heigt- _width), m23,                        -(_heigt+ _width)/(_heigt - _width),
+				  m31,                      m32,                 -2/(_farPlane- _nearPlane), -(_farPlane+ _nearPlane)/(_farPlane - _nearPlane),
+				  m41,                      m42,                 m43,                        m44);
 }
 
 Matrix Matrix::CreateFromQuaternion(Quaternion _quaternion)
@@ -93,5 +97,11 @@ Matrix Matrix::CreateFromQuaternion(Quaternion _quaternion)
 
 Matrix Matrix::Lerp(Matrix _matrix1, Matrix _matrix2, float _a)
 {
+
 	return Matrix(IdentityM);
+}
+
+float Matrix::GetDeterminant()
+{
+	return m11*m22*m33*m44;
 }

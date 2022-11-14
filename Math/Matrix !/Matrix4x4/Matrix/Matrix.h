@@ -25,13 +25,14 @@ public:
 
 public:
 	std::string ToString();
-	Matrix CreateTranslation(float _x, float _y, float _z);
-	Matrix CreateScale (float _x, float _y, float _z);
-	Matrix CreateRotationX(float _radians);
-	Matrix CreateRotationY(float _radians);
-	Matrix CreateRotationZ(float _radians);
-	Matrix CreateOrthographie(float _width,float _heigt,float _nearPlane,float _farPlane);
+	Matrix CreateTranslation(const float _x, const float _y, const float _z);
+	Matrix CreateScale (const float _x, const float _y, const float _z);
+	Matrix CreateRotationX(const float _radians);
+	Matrix CreateRotationY(const float _radians);
+	Matrix CreateRotationZ(const float _radians);
+	Matrix CreateOrthographie(const float _width, const float _heigt, const float _nearPlane, const float _farPlane);
 	Matrix CreateFromQuaternion(Quaternion _quaternion);
 	Matrix Lerp(Matrix _matrix1, Matrix _matrix2, float _a);
+	float GetDeterminant();
 };
 
