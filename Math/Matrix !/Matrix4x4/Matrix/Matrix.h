@@ -23,10 +23,11 @@ public:
 
 #pragma endregion constructeur 
 
+#pragma region method
 public:
 	std::string ToString();
 	Matrix CreateTranslation(const float _x, const float _y, const float _z);
-	Matrix CreateScale (const float _x, const float _y, const float _z);
+	Matrix CreateScale(const float _x, const float _y, const float _z);
 	Matrix CreateRotationX(const float _radians);
 	Matrix CreateRotationY(const float _radians);
 	Matrix CreateRotationZ(const float _radians);
@@ -35,10 +36,16 @@ public:
 	Matrix Lerp(Matrix _matrix1, Matrix _matrix2, float _a);
 	float GetDeterminant();
 
+#pragma endregion method
+
+#pragma region operator 
 public:
 	Matrix operator+(const Matrix& _other) const;
 	Matrix operator-(const Matrix& _other) const;
 	Matrix operator*(const Matrix& _other) const;
+	Matrix operator-();
 	float& operator[](const int _index);
+
+#pragma endregion operator 
 };
 
