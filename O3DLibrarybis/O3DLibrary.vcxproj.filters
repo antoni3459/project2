@@ -28,6 +28,21 @@
     <Filter Include="Core\PrimitiveType\Bollein">
       <UniqueIdentifier>{776dde5f-9dbf-4ff8-a8a5-dcb3761065ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Exeption">
+      <UniqueIdentifier>{0e84cd79-51f0-47fe-8512-1871b55bd5ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\PrimitiveType\Interger">
+      <UniqueIdentifier>{de81a490-1600-43c8-a610-fd482e7d8c8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Environement">
+      <UniqueIdentifier>{4cb2ca0e-b672-46a8-ba04-816fcc9ae1d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\diagnostic">
+      <UniqueIdentifier>{119ba872-924f-4c60-a924-9810a543b406}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\diagnostic\Process">
+      <UniqueIdentifier>{7404f9ec-10ac-4e1a-85d6-e719b5b34b25}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -47,6 +62,18 @@
     </ClInclude>
     <ClInclude Include="boolean.h">
       <Filter>Core\PrimitiveType\Bollein</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h">
+      <Filter>Core\Exeption</Filter>
+    </ClInclude>
+    <ClInclude Include="Interger.h">
+      <Filter>Core\PrimitiveType\Interger</Filter>
+    </ClInclude>
+    <ClInclude Include="Environement.h">
+      <Filter>Core\Environement</Filter>
+    </ClInclude>
+    <ClInclude Include="Process.h">
+      <Filter>Core\diagnostic\Process</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -68,5 +95,20 @@
     <ClCompile Include="boolean.cpp">
       <Filter>Core\PrimitiveType\Bollein</Filter>
     </ClCompile>
+    <ClCompile Include="Exception.cpp">
+      <Filter>Core\Exeption</Filter>
+    </ClCompile>
+    <ClCompile Include="Interger.cpp">
+      <Filter>Core\PrimitiveType\Interger</Filter>
+    </ClCompile>
+    <ClCompile Include="Environement.cpp">
+      <Filter>Core\Environement</Filter>
+    </ClCompile>
+    <ClCompile Include="Process.cpp">
+      <Filter>Core\diagnostic\Process</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

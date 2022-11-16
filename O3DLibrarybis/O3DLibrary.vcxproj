@@ -111,8 +111,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;O3DLIBRARY_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -141,16 +142,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="boolean.h" />
+    <ClInclude Include="Environement.h" />
+    <ClInclude Include="Exception.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="FString.h" />
+    <ClInclude Include="Interger.h" />
     <ClInclude Include="O3DLibrary.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Process.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="boolean.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Environement.cpp" />
+    <ClCompile Include="Exception.cpp" />
     <ClCompile Include="FString.cpp" />
+    <ClCompile Include="Interger.cpp" />
     <ClCompile Include="O3DLibrary.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="pch.cpp">
@@ -159,6 +167,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Process.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

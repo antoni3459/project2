@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "boolean.h"
+#include "FString.h"
 
 Core::PrimitiveType::boolean::boolean(const bool _value)
 {
@@ -11,7 +12,7 @@ Core::PrimitiveType::boolean::boolean(const boolean& _copy)
 	value = _copy.value;
 }
 
-Core::PrimitiveType::boolean Core::PrimitiveType::boolean::ToString() const
+Core::PrimitiveType::FString Core::PrimitiveType::boolean::ToString() const
 {
 	return value ? "true" : "false";
 }

@@ -10,7 +10,7 @@ namespace Core
 {
 	namespace PrimitiveType
 	{
-		class boolean;
+		class Booleain;
 
 		class FString sealed :public Object
 		{
@@ -28,13 +28,13 @@ namespace Core
 			FString(const char* _value)
 			{
 				if (_value == nullptr)_value = "";
-			const int _otherLength = strlen(_value);
-			const int _newLength = length + _otherLength;
-			char* _array = new char[_newLength + 1];
-			strcpy(_array, _value);
-			strcat(_array, _value);
-			value = _array;
-			length = _newLength;
+				const int _otherLength = strlen(_value);
+				const int _newLength = length + _otherLength;
+				char* _array = new char[_newLength + 1];
+				strcpy(_array, _value);
+				strcat(_array, _value);
+				value = _array;
+				length = _newLength;
 			}
 			FString(const FString& _copy)
 			{
@@ -89,9 +89,9 @@ namespace Core
 			}
 			O3DLIBRARY_API FString SubString(const int _begin, const int _end);
 			O3DLIBRARY_API FString SubString(const int _begin);
-			O3DLIBRARY_API FString Replace(const char _old, const char _new)const ;
-			O3DLIBRARY_API FString Replace (const FString& _old, const FString& _new)const ;
-			O3DLIBRARY_API boolean IsNullOrEpty(const FString& _str);
+			O3DLIBRARY_API FString Replace(const char _old, const char _new)const;
+			O3DLIBRARY_API FString Replace(const FString& _old, const FString& _new)const;
+			O3DLIBRARY_API Booleain IsNullOrEpty(const FString& _str);
 			O3DLIBRARY_API FString Trim()const;
 			O3DLIBRARY_API FString ToLower()const;
 			O3DLIBRARY_API FString ToUpper()const;
@@ -107,9 +107,11 @@ namespace Core
 				_os << _str.value;
 				return _os;
 			}
-			O3DLIBRARY_API boolean operator==(const FString& _other);
-			O3DLIBRARY_API boolean operator!=(const FString& _other);
-
+			O3DLIBRARY_API Booleain operator==(const FString& _other)const;
+			O3DLIBRARY_API Booleain operator!=(const FString& _other)const;
+			O3DLIBRARY_API FString operator+(const FString& _other)const;
+			O3DLIBRARY_API FString operator+=(const FString& _other);
+			O3DLIBRARY_API char operator[](const int _index);
 		};
 	}
 }
