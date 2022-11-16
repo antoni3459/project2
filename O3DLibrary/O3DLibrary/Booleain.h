@@ -1,26 +1,35 @@
 #pragma once
 #include "Object.h"
-#include "O3DLibrary.h"
+
+
 namespace Core
 {
 	namespace PrimitiveType
 	{
-		class Booleain sealed :public Object
+		class Boolean sealed : public Object
 		{
-
+#pragma region f/p
 		private:
 			bool value = false;
+#pragma endregion f/p
+#pragma region construtcor
 		public:
-			Booleain() = default;
-			O3DLIBRARY_API Booleain(const bool _value);
-			O3DLIBRARY_API Booleain(const Booleain& _copy);
-			O3DLIBRARY_API FString ToString() const override;
-
+			O3DLIBRAIRY_API Boolean() = default;
+			O3DLIBRAIRY_API Boolean(const bool _value);
+			O3DLIBRAIRY_API Boolean(const Boolean& _copy);
+#pragma endregion constructor
+#pragma region override
 		public:
-			Booleain operator==(const Booleain& _other) const;
-			Booleain operator !=(const Booleain& _other)const;
-			operator bool()const;
-			Booleain operator!()const;
+			O3DLIBRAIRY_API FString ToString() const override;
+#pragma endregion override
+#pragma region operator
+		public:
+			Boolean operator==(const Boolean& _other) const;
+			Boolean operator!=(const Boolean& _other) const;
+			operator bool() const;
+			Boolean operator!() const;
+#pragma endregion operator
 		};
 	}
 }
+

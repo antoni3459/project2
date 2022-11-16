@@ -28,6 +28,33 @@
     <Filter Include="Core\PrimitiveType\Booleain">
       <UniqueIdentifier>{cd1b4f3f-4c4a-4194-8770-f004beb70ce7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\PrimitiveType\Interger">
+      <UniqueIdentifier>{bb6ee148-fe5f-4020-bc32-e92267d83c4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Exception">
+      <UniqueIdentifier>{a0f27087-97f8-4896-abc1-45b2d3dcaf8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Environement">
+      <UniqueIdentifier>{817c0b1b-70ce-4fbd-a804-03a2c4da3530}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Diagnostic">
+      <UniqueIdentifier>{ca7e6d6d-0371-4b01-b7c4-ff3a41b5247d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Diagnostic\Process">
+      <UniqueIdentifier>{1b4a94b5-d87d-48d0-9fb4-243370a04dc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO">
+      <UniqueIdentifier>{8fca6463-0d45-4074-9c16-d6707061b33d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Stream">
+      <UniqueIdentifier>{ef91642e-257c-44f2-be70-267736352724}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Stream\TestWritter">
+      <UniqueIdentifier>{203e0772-df65-49c6-ba0a-5cb21e6bb9c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Stream\TextReader">
+      <UniqueIdentifier>{0b27ac75-5644-4d37-bfb4-5960904d75f2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -51,6 +78,24 @@
     <ClInclude Include="O3DLibrary.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Interger.h">
+      <Filter>Core\PrimitiveType\Interger</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h">
+      <Filter>Core\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="Environment.h">
+      <Filter>Core\Environement</Filter>
+    </ClInclude>
+    <ClInclude Include="Process.h">
+      <Filter>Core\Diagnostic\Process</Filter>
+    </ClInclude>
+    <ClInclude Include="TestWritter.h">
+      <Filter>Core\IO\Stream\TestWritter</Filter>
+    </ClInclude>
+    <ClInclude Include="TextReader.h">
+      <Filter>Core\IO\Stream\TextReader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -67,6 +112,24 @@
     </ClCompile>
     <ClCompile Include="Object.cpp">
       <Filter>Core\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Interger.cpp">
+      <Filter>Core\PrimitiveType\Interger</Filter>
+    </ClCompile>
+    <ClCompile Include="Exception.cpp">
+      <Filter>Core\Exception</Filter>
+    </ClCompile>
+    <ClCompile Include="Environment.cpp">
+      <Filter>Core\Environement</Filter>
+    </ClCompile>
+    <ClCompile Include="Process.cpp">
+      <Filter>Core\Diagnostic\Process</Filter>
+    </ClCompile>
+    <ClCompile Include="TestWritter.cpp">
+      <Filter>Core\IO\Stream\TestWritter</Filter>
+    </ClCompile>
+    <ClCompile Include="TextReader.cpp">
+      <Filter>Core\IO\Stream\TextReader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

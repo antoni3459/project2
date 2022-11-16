@@ -91,7 +91,7 @@
       <Filter>Core\IO\Stream\TestWritter</Filter>
     </ClInclude>
     <ClInclude Include="TextReader.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core\IO\Stream\TextReader</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -129,7 +129,7 @@
       <Filter>Core\IO\Stream\TestWritter</Filter>
     </ClCompile>
     <ClCompile Include="TextReader.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Core\IO\Stream\TextReader</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

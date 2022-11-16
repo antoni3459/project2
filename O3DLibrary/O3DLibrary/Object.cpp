@@ -1,8 +1,14 @@
 #include "pch.h"
 #include "Object.h"
 #include "FString.h"
+#include "Booleain.h"
 
-Core::PrimitiveType::FString Core::Object::ToString() const
+Core::PrimitiveType::Boolean Core::Object::Equals(const Object* _obj) const
 {
-	return " ";
+	return this == _obj;
+}
+
+O3DLIBRAIRY_API Core::PrimitiveType::FString Core::Object::ToString() const
+{
+	return "";
 }

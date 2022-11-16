@@ -1,38 +1,42 @@
 #include "pch.h"
 #include "Booleain.h"
-#include "FString.h"
+#include "Fstring.h"
 
-Core::PrimitiveType::Booleain::Booleain(const bool _value)
+#pragma region constructor
+Core::PrimitiveType::Boolean::Boolean(const bool _value)
 {
 	value = _value;
 }
 
-Core::PrimitiveType::Booleain::Booleain(const Booleain& _copy)
+Core::PrimitiveType::Boolean::Boolean(const Boolean& _copy)
 {
 	value = _copy.value;
 }
+#pragma endregion constructor
 
-Core::PrimitiveType::FString Core::PrimitiveType::Booleain::ToString() const
+#pragma region override
+Core::PrimitiveType::FString Core::PrimitiveType::Boolean::ToString() const
 {
 	return value ? "true" : "false";
 }
+#pragma endregion override 
 
-Core::PrimitiveType::Booleain Core::PrimitiveType::Booleain::operator==(const Booleain& _other) const
+#pragma region operator
+Core::PrimitiveType::Boolean Core::PrimitiveType::Boolean::operator==(const Boolean& _other) const
 {
 	return value == _other.value;
 }
-
-Core::PrimitiveType::Booleain Core::PrimitiveType::Booleain::operator!=(const Booleain& _other) const
+Core::PrimitiveType::Boolean Core::PrimitiveType::Boolean::operator!=(const Boolean& _other) const
 {
 	return value != _other.value;
 }
-
-Core::PrimitiveType::Booleain::operator bool() const
+Core::PrimitiveType::Boolean::operator bool() const
 {
 	return value;
 }
-
-Core::PrimitiveType::Booleain Core::PrimitiveType::Booleain::operator!() const
+Core::PrimitiveType::Boolean Core::PrimitiveType::Boolean::operator!() const
 {
 	return !value;
 }
+#pragma endregion operator
+
