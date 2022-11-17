@@ -1,6 +1,6 @@
 #include "TestWritter.h"
 #include "FString.h"
-#include "Booleain.h"
+#include "Boolean.h"
 
 Core::IO::TestWritter::TestWritter(const char* _path)
 {

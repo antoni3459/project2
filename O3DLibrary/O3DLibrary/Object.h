@@ -23,7 +23,7 @@ namespace Core
 		O3DLIBRAIRY_API virtual Core::PrimitiveType::FString ToString() const;
 #pragma endregion methods
 	};
-	//typedef Object* Object;
+	typedef Object* object;
 }
 
 

@@ -56,8 +56,8 @@ namespace Core
 		public:
 			O3DLIBRAIRY_API void Append(const FString& _str);
 			O3DLIBRAIRY_API void Append(const char _value);
-			O3DLIBRAIRY_API FString SubString(const int _begin, const int _end);
-			O3DLIBRAIRY_API FString SubString(const int _begin);
+			O3DLIBRAIRY_API FString SubString(const int _begin, const int _end)const;
+			O3DLIBRAIRY_API FString SubString(const int _begin)const;
 			O3DLIBRAIRY_API Integer Length() const;
 			O3DLIBRAIRY_API FString Replace(const char _old, const char _new) const;
 			O3DLIBRAIRY_API FString Replace(const FString& _old, const FString& _new)const;

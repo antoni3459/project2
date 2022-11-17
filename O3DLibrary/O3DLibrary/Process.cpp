@@ -1,6 +1,6 @@
 #include "Process.h"
 #include "FString.h"
-#include "Booleain.h"
+#include "Boolean.h"
 #include <shlObj_core.h>
 #include <shObjIdl_core.h>
 

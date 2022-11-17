@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "FString.h"
 #include "Interger.h"
-#include "Booleain.h"
+#include "Boolean.h"
 #include "Exception.h"
 
 Core::PrimitiveType::FString const Core::PrimitiveType::FString::Empty = "";
@@ -27,7 +27,7 @@ void Core::PrimitiveType::FString::Append(const char _value)
     length += 1;
 }
 
-Core::PrimitiveType::FString Core::PrimitiveType::FString::SubString(const int _begin, const int _end)
+Core::PrimitiveType::FString Core::PrimitiveType::FString::SubString(const int _begin, const int _end)const
 {
     FString _result = Empty;
     for (int i = _begin; i < _end; i++)
@@ -35,7 +35,7 @@ Core::PrimitiveType::FString Core::PrimitiveType::FString::SubString(const int _
     return _result;
 }
 
-Core::PrimitiveType::FString Core::PrimitiveType::FString::SubString(const int _begin)
+Core::PrimitiveType::FString Core::PrimitiveType::FString::SubString(const int _begin)const
 {
     return SubString(_begin, length);
 }

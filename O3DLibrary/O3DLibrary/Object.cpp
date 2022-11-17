@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Object.h"
 #include "FString.h"
-#include "Booleain.h"
+#include "Boolean.h"
 
 Core::PrimitiveType::Boolean Core::Object::Equals(const Object* _obj) const
 {
