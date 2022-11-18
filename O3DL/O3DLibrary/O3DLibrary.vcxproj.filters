@@ -79,6 +79,12 @@
     <Filter Include="Core\EDayOfWeek">
       <UniqueIdentifier>{970ca0b2-f9dd-422d-9cf3-94baa2342e7e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Box">
+      <UniqueIdentifier>{d66c32d4-4be4-438a-9e4f-3262100daab9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Box\BoxFile">
+      <UniqueIdentifier>{1fb7c5a0-045b-4ff8-a9f2-9fa7c4cfda08}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -147,6 +153,9 @@
     <ClInclude Include="EDayOfWeek.h">
       <Filter>Core\EDayOfWeek</Filter>
     </ClInclude>
+    <ClInclude Include="BoxFile.h">
+      <Filter>Core\Box\BoxFile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -199,6 +208,9 @@
     </ClCompile>
     <ClCompile Include="DateTime.cpp">
       <Filter>Core\DateTime</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxFile.cpp">
+      <Filter>Core\Box\BoxFile</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

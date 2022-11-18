@@ -10,6 +10,12 @@ using namespace std;
 
 string guessWord = "toto",
 current="";
+void InitWord();
+bool CheckEndGame(char _input);
+char GetInput();
+void GameLoop();
+void ShowGuess();
+
 
 void InitWord()
 {

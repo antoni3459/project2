@@ -18,20 +18,20 @@ Core::IO::TestWritter* Core::Console::Out_Internal()
 	return new Core::IO::TestWritter(_fullPath.ToCstr());
 }
 
-void Core::Console::WritLine(const object _obj, const EConsoleColor& _color)
+void Core::Console::WritLine(const PrimitiveType::FString& _label, const object _obj, const EConsoleColor& _color)
 {
 	SetConsoleTextAttribute(console, (int)_color);
 	const PrimitiveType::FString _now = DateTime::Now().ToStringFormat("h:m:s");
-	std::cout <<_now<< "[LOG] => " <<_obj->ToString() << std::endl;
-	*Out<<PrimitiveType::FString("[LOG] => ")+_obj->ToString();
+	std::cout << _now << ":"<<_label<<"=>" << _obj->ToString() << std::endl;
+	*Out << PrimitiveType::FString("[LOG] ") +_now+"=>"+ _obj->ToString();
 	SetConsoleTextAttribute(console, (int)EConsoleColor::Reset);
 }
 
-void Core::Console::WritLine(const object& _obj, const EConsoleColor& _color)
+void Core::Console::WritLine(const PrimitiveType::FString& _label, const object& _obj, const EConsoleColor& _color)
 {
 	SetConsoleTextAttribute(console, (int)_color);
 	const PrimitiveType::FString _now = DateTime::Now().ToStringFormat("h:m:s");
-	std::cout << _now<< "[LOG] => " <<_obj->ToString() << std::endl;
-	*Out << PrimitiveType::FString("[LOG] => ") + _obj->ToString();
+	std::cout << _now<<":"<< _label<<" => " <<_obj->ToString() << std::endl;
+	*Out << PrimitiveType::FString("[LOG] ") + _now + "=>"+ _obj->ToString();
 	SetConsoleTextAttribute(console, (int)EConsoleColor::Reset);
 }

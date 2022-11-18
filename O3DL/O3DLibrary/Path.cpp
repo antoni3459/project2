@@ -8,7 +8,7 @@ Core::PrimitiveType::FString Core::IO::Path::GetPath(const PrimitiveType::FStrin
 }
 Core::PrimitiveType::FString Core::IO::Path::GetParent(const PrimitiveType::FString& _path)
 {
-	PrimitiveType::FString _p = GetParent(_path);
+	PrimitiveType::FString _p = GetPath(_path);
 	const int _index = _path.LastIndexOf(DirectorySeparator);
 	return _path.SubString(0, _index);
 }
