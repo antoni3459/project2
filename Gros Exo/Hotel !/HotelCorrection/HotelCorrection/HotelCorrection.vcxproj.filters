@@ -103,7 +103,7 @@
       <Filter>Menu\Reservation\Display</Filter>
     </ClCompile>
     <ClCompile Include="ReservationRemoveMenu.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Menu\Reservation\Remove</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -150,7 +150,7 @@
       <Filter>Menu\Reservation\Display</Filter>
     </ClInclude>
     <ClInclude Include="ReservationRemoveMenu.h">
-      <Filter>Header Files</Filter>
+      <Filter>Menu\Reservation\Remove</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
