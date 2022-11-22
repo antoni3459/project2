@@ -1,6 +1,9 @@
 #include <iostream>
 #include "App.h"
-
+#include "Button.h"
+#include "Event.h"
+#include "EventSystem.h"
+#include "Rect.h"
 HINSTANCE  hInstance = HINSTANCE();
 HINSTANCE  hPrevInstance = HINSTANCE();
 LPSTR  lpCmdLine = LPSTR();

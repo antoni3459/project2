@@ -136,7 +136,6 @@
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="ConsoleInput.cpp" />
     <ClCompile Include="EventSystem.cpp" />
-    <ClCompile Include="Fenêtre.cpp" />
     <ClCompile Include="Rect.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -145,7 +144,6 @@
     <ClInclude Include="Console.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="EventSystem.h" />
-    <ClInclude Include="Fenêtre.h" />
     <ClInclude Include="Rect.h" />
     <ClInclude Include="Singleton.h" />
   </ItemGroup>

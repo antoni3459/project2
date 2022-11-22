@@ -13,56 +13,56 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="fenêtre">
-      <UniqueIdentifier>{9d5e6135-111c-4671-922f-0558e6017e26}</UniqueIdentifier>
+    <Filter Include="App">
+      <UniqueIdentifier>{3704a326-78ad-46c3-88e0-f2229e28f43e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rect">
+      <UniqueIdentifier>{e0a8d46e-b64b-43c0-88f6-07694ac6932a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Button">
+      <UniqueIdentifier>{488fb0ee-dd8f-489f-8dc7-782059c56fc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Event">
+      <UniqueIdentifier>{883bc664-71b8-450a-a854-5e4c56166991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Event\Systeme">
+      <UniqueIdentifier>{774e0ab5-7578-4ec9-8e3e-0b3899b4a951}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleInput.cpp">
+    <ClCompile Include="Create fenêtre.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="App.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>App</Filter>
     </ClCompile>
     <ClCompile Include="Rect.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Rect</Filter>
     </ClCompile>
     <ClCompile Include="Button.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Button</Filter>
     </ClCompile>
     <ClCompile Include="EventSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Console.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Fenêtre.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Event\Systeme</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h">
-      <Filter>Header Files</Filter>
+      <Filter>App</Filter>
     </ClInclude>
     <ClInclude Include="Rect.h">
-      <Filter>Header Files</Filter>
+      <Filter>Rect</Filter>
     </ClInclude>
     <ClInclude Include="Button.h">
-      <Filter>Header Files</Filter>
+      <Filter>Button</Filter>
     </ClInclude>
     <ClInclude Include="Event.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>Header Files</Filter>
+      <Filter>Event</Filter>
     </ClInclude>
     <ClInclude Include="EventSystem.h">
-      <Filter>Header Files</Filter>
+      <Filter>Event\Systeme</Filter>
     </ClInclude>
-    <ClInclude Include="Console.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Fenêtre.h">
+    <ClInclude Include="Singleton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,0 +1,26 @@
+#include "Button.h"
+#include "Rect.h"
+#include <iostream>
+
+Button::Button(const std::string& _content, Rect* _rect)
+{
+	content = _content;
+	rect = _rect;
+	std::cout << _content << std::endl;
+}
+
+Button::Button(const Button& _copy)
+{
+	content = _copy.content;
+	rect = _copy.rect;
+}
+
+void Button::OnClick()
+{
+	std::cout << content << " on click ! " << std::endl;
+}
+
+Rect* Button::GetRect() const
+{
+	return rect;
+}

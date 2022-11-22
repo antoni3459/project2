@@ -48,7 +48,35 @@ void WINAPI App::Wind(HINSTANCE _hInstance, HINSTANCE _hPrevInstance, LPSTR _lpC
         _hInstance,
         NULL
     );
+    HWND button=CreateWindowEx(
+        WS_EX_CLIENTEDGE,
+        L"BUTTON",
+        L"click here",
+        WS_VISIBLE | WS_CHILD,
+        100,
+        95,
+        80,
+        50,
+        hwnd,
+        NULL,
+        (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE),
+         NULL
+    );
 
+    HWND edit = CreateWindowEx(
+        WS_EX_CLIENTEDGE,
+        L"EDIT",
+        L"",
+        WS_VISIBLE | WS_CHILD,
+        50,
+        50,
+        80,
+        30,
+        hwnd,
+        NULL,
+        (HINSTANCE)GetWindowLongPtr(hwnd, GWLP_HINSTANCE),
+        NULL
+    );
     if (hwnd == NULL)
     {
         return ;
@@ -62,5 +90,12 @@ void WINAPI App::Wind(HINSTANCE _hInstance, HINSTANCE _hPrevInstance, LPSTR _lpC
     }
 
     return ;
+}
+
+LRESULT App::DefWindowProcA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
+{
+    //std::string a = "guggb";
+    //Msg = a;
+    return LRESULT();
 }
 

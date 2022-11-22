@@ -85,6 +85,15 @@
     <Filter Include="Core\Box\BoxFile">
       <UniqueIdentifier>{1fb7c5a0-045b-4ff8-a9f2-9fa7c4cfda08}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Windows">
+      <UniqueIdentifier>{96359b27-e7f4-47a8-bf62-79b61ec596d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Windows\Menu">
+      <UniqueIdentifier>{afae45bc-4370-41ef-9c0b-6747bb27bec7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Windows\Grapht">
+      <UniqueIdentifier>{1ffc7c3a-5eb1-4218-98e9-99b4e5b20e38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -156,6 +165,15 @@
     <ClInclude Include="BoxFile.h">
       <Filter>Core\Box\BoxFile</Filter>
     </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Core\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowMenu.h">
+      <Filter>Core\Windows\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowGrapht.h">
+      <Filter>Core\Windows\Grapht</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -211,6 +229,15 @@
     </ClCompile>
     <ClCompile Include="BoxFile.cpp">
       <Filter>Core\Box\BoxFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Core\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowMenu.cpp">
+      <Filter>Core\Windows\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowGrapht.cpp">
+      <Filter>Core\Windows\Grapht</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -19,8 +19,10 @@ namespace Core
 		class FString : public Object
 		{
 #pragma region f/p
+		private:
 			const char* value = "";
 			int length = 0;
+		public:
 			static const Core::PrimitiveType::FString Empty;
 #pragma endregion f/p
 #pragma region constructor

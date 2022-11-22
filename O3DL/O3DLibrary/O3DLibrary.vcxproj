@@ -163,6 +163,9 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="TestWritter.h" />
     <ClInclude Include="TextReader.h" />
+    <ClInclude Include="Window.h" />
+    <ClInclude Include="WindowGrapht.h" />
+    <ClInclude Include="WindowMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Boolean.cpp" />
@@ -188,6 +191,9 @@
     <ClCompile Include="Directory.cpp" />
     <ClCompile Include="TestWritter.cpp" />
     <ClCompile Include="TextReader.cpp" />
+    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="WindowGrapht.cpp" />
+    <ClCompile Include="WindowMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="O3DLibrary.rc" />
