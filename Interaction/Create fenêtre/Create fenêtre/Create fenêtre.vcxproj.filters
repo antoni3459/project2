@@ -14,6 +14,7 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="App">
+<<<<<<< Updated upstream:Interaction/Create fenêtre/Create fenêtre/Create fenêtre.vcxproj.filters
       <UniqueIdentifier>{3704a326-78ad-46c3-88e0-f2229e28f43e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Rect">
@@ -27,6 +28,21 @@
     </Filter>
     <Filter Include="Event\Systeme">
       <UniqueIdentifier>{774e0ab5-7578-4ec9-8e3e-0b3899b4a951}</UniqueIdentifier>
+=======
+      <UniqueIdentifier>{ce03e524-0088-4150-bf66-213dd3c0c611}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Button">
+      <UniqueIdentifier>{ab115097-d088-447a-91f2-d2cb0784a041}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Console">
+      <UniqueIdentifier>{5b770b34-32d2-414f-a29a-35239d752356}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EventSystem">
+      <UniqueIdentifier>{f682b083-8057-4670-b8b3-eac72f07f3f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rect">
+      <UniqueIdentifier>{7bdc1e74-3497-4d28-a985-b2cddc4e79cc}</UniqueIdentifier>
+>>>>>>> Stashed changes:ConsoleInput/ConsoleInput/ConsoleInput.vcxproj.filters
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -35,13 +51,17 @@
     </ClCompile>
     <ClCompile Include="App.cpp">
       <Filter>App</Filter>
+<<<<<<< Updated upstream:Interaction/Create fenêtre/Create fenêtre/Create fenêtre.vcxproj.filters
     </ClCompile>
     <ClCompile Include="Rect.cpp">
       <Filter>Rect</Filter>
+=======
+>>>>>>> Stashed changes:ConsoleInput/ConsoleInput/ConsoleInput.vcxproj.filters
     </ClCompile>
     <ClCompile Include="Button.cpp">
       <Filter>Button</Filter>
     </ClCompile>
+<<<<<<< Updated upstream:Interaction/Create fenêtre/Create fenêtre/Create fenêtre.vcxproj.filters
     <ClCompile Include="EventSystem.cpp">
       <Filter>Event\Systeme</Filter>
     </ClCompile>
@@ -56,14 +76,44 @@
     <ClInclude Include="Button.h">
       <Filter>Button</Filter>
     </ClInclude>
+=======
+    <ClCompile Include="Console.cpp">
+      <Filter>Console</Filter>
+    </ClCompile>
+    <ClCompile Include="EventSystem.cpp">
+      <Filter>EventSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Rect.cpp">
+      <Filter>Rect</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+>>>>>>> Stashed changes:ConsoleInput/ConsoleInput/ConsoleInput.vcxproj.filters
     <ClInclude Include="Event.h">
       <Filter>Event</Filter>
     </ClInclude>
+<<<<<<< Updated upstream:Interaction/Create fenêtre/Create fenêtre/Create fenêtre.vcxproj.filters
     <ClInclude Include="EventSystem.h">
       <Filter>Event\Systeme</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h">
       <Filter>Header Files</Filter>
+=======
+    <ClInclude Include="App.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Button</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Console</Filter>
+    </ClInclude>
+    <ClInclude Include="EventSystem.h">
+      <Filter>EventSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect.h">
+      <Filter>Rect</Filter>
+>>>>>>> Stashed changes:ConsoleInput/ConsoleInput/ConsoleInput.vcxproj.filters
     </ClInclude>
   </ItemGroup>
 </Project>
