@@ -2,8 +2,6 @@
 
 bool Réponse::GetReponse()
 {
-    int x ;
-    x->GetX()
-
-    return false;
+    std::string _question = "";
+    _question.GetQuestion();
 }

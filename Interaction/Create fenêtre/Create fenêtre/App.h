@@ -26,14 +26,7 @@ public:
 public:
 	static LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 	void WINAPI Wind(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow);
-	LRESULT DefWindowProcA(HWND   hWnd,UINT Msg, WPARAM wParam,LPARAM lParam);
+	BOOL CALLBACK WndProci(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 		
-		
-	
-		
-	
-	
-	
-
 };
 

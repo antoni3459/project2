@@ -30,6 +30,8 @@ void Core::WindowMenu::CreateButonMenu(const PrimitiveType::FString& _name)
 	handle->RegisterMenu(this);
 }
 
+
+
 void Core::WindowMenu::CreateSeparator() const
 {
 	AppendMenu(menu, MF_SEPARATOR, -1, nullptr);

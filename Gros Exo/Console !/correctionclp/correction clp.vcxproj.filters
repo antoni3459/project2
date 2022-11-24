@@ -87,8 +87,13 @@
     <ClCompile Include="Utils\Utils.cpp">
       <Filter>Utile</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
     <ClCompile Include="Command\Drive\DrivesCommand.cpp">
       <Filter>Command\Drive</Filter>
+=======
+    <ClCompile Include="Command\Manager\CommandManager.cpp">
+      <Filter>Source Files</Filter>
+>>>>>>> Stashed changes
     </ClCompile>
     <ClCompile Include="Utils\String\StringUtils.cpp">
       <Filter>Utile\string</Filter>
@@ -149,8 +154,13 @@
     <ClInclude Include="Utils\Utils.h">
       <Filter>Utile</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
     <ClInclude Include="Command\Drive\DrivesCommand.h">
       <Filter>Command\Drive</Filter>
+=======
+    <ClInclude Include="Command\Manager\CommandManager.h">
+      <Filter>Header Files</Filter>
+>>>>>>> Stashed changes
     </ClInclude>
     <ClInclude Include="Utils\String\StringUtils.h">
       <Filter>Utile\string</Filter>

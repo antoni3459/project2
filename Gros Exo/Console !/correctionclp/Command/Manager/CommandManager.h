@@ -1,8 +1,9 @@
 #pragma once
-#include "../Sigleton/Singleton.h"
-#include "../Command/ICommand.h"
+#include "../../Sigleton/Singleton.h"
+#include "../ICommand.h"
 #include <vector>
 #include <map>
+
 class ICommand;
 
 class CommandManager :public Singleton<CommandManager>

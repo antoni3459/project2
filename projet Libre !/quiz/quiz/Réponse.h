@@ -14,6 +14,5 @@ public:
 
 public:
 	static bool GetReponse();
-
 };
 

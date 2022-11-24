@@ -1,24 +1,32 @@
 #include "Window.h"
+#include "Shape.h"
+#include <Windows.h>
+#include <gdiplus.h>
+#include <iostream>
 
 Core::Window::Window(const PrimitiveType::FString& _name, const int _width, const int _height)
 {
 	name = _name;
-		width = _width;
-		height = _height;
+	width = _width;
+	height = _height;
 
-		const LPCWSTR _className = L"Default Window";
-		HINSTANCE _instance = HINSTANCE();
-		WNDCLASS _wnclass = {};
-		_wnclass.lpszClassName = _className;
-		_wnclass.hInstance = _instance;
-		//TODO Window Proc
-		_wnclass.lpfnWndProc = WindowProc_Internal;
-		_wnclass.hbrBackground = CreateSolidBrush(RGB(255, 255, 255));
-		_wnclass.hCursor = LoadCursor(_instance, IDC_HAND);
-		RegisterClass(&_wnclass);
-		windowInstance = CreateWindowEx(WS_EX_TOOLWINDOW, _className, _name.ToWString().c_str(),
-			WS_OVERLAPPEDWINDOW | WS_VISIBLE | WS_SYSMENU | WS_MINIMIZE, CW_USEDEFAULT, CW_USEDEFAULT,
-			width, height, nullptr, nullptr, _instance, this);
+	Gdiplus::GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, nullptr);
+
+	const LPCWSTR _className = L"Default Window";
+	HINSTANCE _instance = HINSTANCE();
+	WNDCLASS _wnclass = {};
+	_wnclass.lpszClassName = _className;
+	_wnclass.hInstance = _instance;
+	//TODO Window Proc
+	_wnclass.cbClsExtra = 0;
+	_wnclass.style = CS_HREDRAW | CS_VREDRAW;
+	_wnclass.lpfnWndProc = WindowProc_Internal;
+	_wnclass.hbrBackground = CreateSolidBrush(RGB(255, 255, 255));
+	_wnclass.hCursor = LoadCursor(_instance, IDC_HAND);
+	RegisterClass(&_wnclass);
+	windowInstance = CreateWindowEx(WS_EX_TOOLWINDOW, _className, _name.ToWString().c_str(),
+		WS_OVERLAPPEDWINDOW | WS_VISIBLE | WS_SYSMENU | WS_MINIMIZE, CW_USEDEFAULT, CW_USEDEFAULT,
+		width, height, nullptr, nullptr, _instance, this);
 
 }
 
@@ -38,6 +46,16 @@ LRESULT __stdcall Core::Window::WindowProc(HWND _hWindow, UINT _msg, WPARAM _wp,
 	case WM_CREATE:
 	{
 		AddMenu(_hWindow);
+		break;
+	}
+	case WM_PAINT:
+	{
+		hdc = BeginPaint(_hWindow, &paintSruct);
+
+		for (Shape* _shape : shapes)
+			_shape->Draw(hdc);
+
+		EndPaint(_hWindow, &paintSruct);
 		break;
 	}
 	case WM_DESTROY:
@@ -67,6 +85,11 @@ Core::WindowMenu* Core::Window::CreateWindowMenu(const char* _name)
 	return _menu;
 }
 
+O3DLIBRAIRY_API void Core::Window::Register(Shape* _shapes)
+{
+	shapes.push_back(_shapes);
+}
+
 int Core::Window::MenusCount() const
 {
 	return menus.size();
@@ -90,6 +113,7 @@ void Core::Window::Update()
 				DispatchMessage(&_msg);
 			}
 		}
+		Gdiplus::GdiplusShutdown(gdiplusToken);
 	}
 }
 

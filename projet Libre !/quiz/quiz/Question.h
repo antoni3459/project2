@@ -12,7 +12,9 @@ public:
 	~Question() = default;
 
 public:
-	int GetX();
 	std::string GetQuestion();
+	int GetX();
+
+
 };
 

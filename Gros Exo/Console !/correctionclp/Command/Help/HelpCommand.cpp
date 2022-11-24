@@ -1,5 +1,5 @@
 #include "HelpCommand.h"
-#include "../../Manager/CommandManager.h"
+#include "../Manager/CommandManager.h"
 
 
 bool HelpCommand::Execute(const std::vector<std::string>& _args)

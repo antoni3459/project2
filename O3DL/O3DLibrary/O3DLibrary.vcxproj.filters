@@ -91,8 +91,17 @@
     <Filter Include="Core\Windows\Menu">
       <UniqueIdentifier>{afae45bc-4370-41ef-9c0b-6747bb27bec7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Windows\Grapht">
-      <UniqueIdentifier>{1ffc7c3a-5eb1-4218-98e9-99b4e5b20e38}</UniqueIdentifier>
+    <Filter Include="Core\Windows\Shape">
+      <UniqueIdentifier>{0bfa82c0-354c-4041-9db8-a42ff9602d07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Windows\Shape\RectangleShape">
+      <UniqueIdentifier>{91af3af4-30f2-40f3-8fe9-9443f9efd180}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Windows\Shape\circleShape">
+      <UniqueIdentifier>{9e3591d7-27ab-43c1-abae-5a4d2ff01a2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Windows\Shape\ComplexShape">
+      <UniqueIdentifier>{f1479ddd-661f-4350-bed0-be30fdb2b460}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -171,8 +180,17 @@
     <ClInclude Include="WindowMenu.h">
       <Filter>Core\Windows\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="WindowGrapht.h">
-      <Filter>Core\Windows\Grapht</Filter>
+    <ClInclude Include="RectangleShape.h">
+      <Filter>Core\Windows\Shape\RectangleShape</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Core\Windows\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="ComplexShape.h">
+      <Filter>Core\Windows\Shape\ComplexShape</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleShape.h">
+      <Filter>Core\Windows\Shape\circleShape</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -236,8 +254,17 @@
     <ClCompile Include="WindowMenu.cpp">
       <Filter>Core\Windows\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="WindowGrapht.cpp">
-      <Filter>Core\Windows\Grapht</Filter>
+    <ClCompile Include="RectangleShape.cpp">
+      <Filter>Core\Windows\Shape\RectangleShape</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>Core\Windows\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="ComplexShape.cpp">
+      <Filter>Core\Windows\Shape\ComplexShape</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleShape.cpp">
+      <Filter>Core\Windows\Shape\circleShape</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

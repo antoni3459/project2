@@ -139,7 +139,7 @@
     <ClCompile Include="Command\Help\HelpCommand.cpp" />
     <ClCompile Include="IO\File\File.cpp" />
     <ClCompile Include="IO\Directory\Directory.cpp" />
-    <ClCompile Include="Manager\CommandManager.cpp" />
+    <ClCompile Include="Command\Manager\CommandManager.cpp" />
     <ClCompile Include="Command\Cls\ClsCommand.cpp" />
     <ClCompile Include="correction clp.cpp" />
     <ClCompile Include="Object\Object.cpp" />
@@ -161,7 +161,7 @@
     <ClInclude Include="Command\Help\HelpCommand.h" />
     <ClInclude Include="IO\File\File.h" />
     <ClInclude Include="IO\Directory\Directory.h" />
-    <ClInclude Include="Manager\CommandManager.h" />
+    <ClInclude Include="Command\Manager\CommandManager.h" />
     <ClInclude Include="Command\Cls\ClsCommand.h" />
     <ClInclude Include="Command\ICommand.h" />
     <ClInclude Include="Object\Object.h" />

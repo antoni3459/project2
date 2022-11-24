@@ -1,5 +1,5 @@
 #include "CommandManager.h"
-#include "../Command/ICommand.h"
+#include "../ICommand.h"
 #include <format>
 #include <iostream>
 #include <iomanip>
