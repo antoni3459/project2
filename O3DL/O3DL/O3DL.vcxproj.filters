@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{daa37713-72b3-4e26-9274-a7eb906183d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Object">
+      <UniqueIdentifier>{b84c08b4-7c3a-495e-ae84-3147135a8dd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\PrimitiveType">
+      <UniqueIdentifier>{817642b1-2cdb-4aaf-8a8f-62bd397c8ae0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\PrimitiveType\Boolean">
+      <UniqueIdentifier>{a3e11c87-cb4e-401c-9412-412758ce7743}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\PrimitiveType\FString">
+      <UniqueIdentifier>{1cf8e8ae-33b4-45e3-ba7a-5e0dfd7f3027}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\PrimitiveType\Interger">
+      <UniqueIdentifier>{5274e926-1de9-4a7b-b6a6-87c29fd0f0b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Box">
+      <UniqueIdentifier>{054bb65c-0a75-464f-b2ce-ced4f289778b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Box\BoxFile">
+      <UniqueIdentifier>{a5896829-cac9-42b8-956c-e5b98a122120}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Console">
+      <UniqueIdentifier>{11dfa97d-f173-4ebb-9d21-5917e9f1fce8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Console\Enum">
+      <UniqueIdentifier>{bb88a556-abdc-43fd-82c2-8edad3717122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\DateTime">
+      <UniqueIdentifier>{fb852781-cb21-4f04-8de5-020e506f1e3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\EDayOfWeek">
+      <UniqueIdentifier>{df8b9e45-5985-4e21-9d02-45d883c4f86d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Environment">
+      <UniqueIdentifier>{bf3cd054-5f0a-452f-94b0-dfd626c1434d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Exception">
+      <UniqueIdentifier>{4364c00e-7481-472a-93a8-60c02023c594}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO">
+      <UniqueIdentifier>{3b120b2e-b19a-4717-8777-34842e117894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Directory">
+      <UniqueIdentifier>{b96ef0b5-09eb-46b7-84a3-84e94a4f1403}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\File">
+      <UniqueIdentifier>{dc140db6-6590-4f77-9730-3b04f4f3cea2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\File\FileStream">
+      <UniqueIdentifier>{c266aec4-0687-4b13-8623-e3afbfba72e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Path">
+      <UniqueIdentifier>{1f867bff-478f-4a3a-a618-dba0e135a16f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Stream">
+      <UniqueIdentifier>{813600da-b337-4f85-bcf3-389d02c60e9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Stream\TestWritter">
+      <UniqueIdentifier>{449228b7-536b-48b4-b44b-6e1d01374602}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\IO\Stream\TextReader">
+      <UniqueIdentifier>{33ac165d-f63b-401d-88aa-75b30f664008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Window">
+      <UniqueIdentifier>{fe377ff2-d11f-451e-a5cb-260388c6ec44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Window\Menu">
+      <UniqueIdentifier>{2777ce62-2e4b-4339-ba9d-3f7ee9a5a724}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Window\Shape">
+      <UniqueIdentifier>{d30c95b1-913c-473f-b2e2-f38a93d1fce4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Window\Shape\CircleShape">
+      <UniqueIdentifier>{404225b3-6f79-4c79-906b-1f16ce84d2a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Window\Shape\ComplexShape">
+      <UniqueIdentifier>{bca7aad4-3351-440f-8872-2414fbd7086a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Window\Shape\RectangleShape">
+      <UniqueIdentifier>{02d15013-f543-4f1f-896f-816a7d672ad8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Core\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="O3DLibrary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Boolean.h">
+      <Filter>Core\PrimitiveType\Boolean</Filter>
+    </ClInclude>
+    <ClInclude Include="FString.h">
+      <Filter>Core\PrimitiveType\FString</Filter>
+    </ClInclude>
+    <ClInclude Include="Interger.h">
+      <Filter>Core\PrimitiveType\Interger</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxFile.h">
+      <Filter>Core\Box\BoxFile</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Core\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="EConsoleColor.h">
+      <Filter>Core\Console\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="DateTime.h">
+      <Filter>Core\DateTime</Filter>
+    </ClInclude>
+    <ClInclude Include="EDayOfWeek.h">
+      <Filter>Core\EDayOfWeek</Filter>
+    </ClInclude>
+    <ClInclude Include="Environment.h">
+      <Filter>Core\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h">
+      <Filter>Core\Exception</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreIO.h">
+      <Filter>Core\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Directory.h">
+      <Filter>Core\IO\Directory</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>Core\IO\File</Filter>
+    </ClInclude>
+    <ClInclude Include="FileStream.h">
+      <Filter>Core\IO\File\FileStream</Filter>
+    </ClInclude>
+    <ClInclude Include="Path.h">
+      <Filter>Core\IO\Path</Filter>
+    </ClInclude>
+    <ClInclude Include="TestWritter.h">
+      <Filter>Core\IO\Stream\TestWritter</Filter>
+    </ClInclude>
+    <ClInclude Include="TextReader.h">
+      <Filter>Core\IO\Stream\TextReader</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Core\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowMenu.h">
+      <Filter>Core\Window\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Core\Window\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleShape.h">
+      <Filter>Core\Window\Shape\CircleShape</Filter>
+    </ClInclude>
+    <ClInclude Include="ComplexShape.h">
+      <Filter>Core\Window\Shape\ComplexShape</Filter>
+    </ClInclude>
+    <ClInclude Include="RectangleShape.h">
+      <Filter>Core\Window\Shape\RectangleShape</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Core\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Boolean.cpp">
+      <Filter>Core\PrimitiveType\Boolean</Filter>
+    </ClCompile>
+    <ClCompile Include="FString.cpp">
+      <Filter>Core\PrimitiveType\FString</Filter>
+    </ClCompile>
+    <ClCompile Include="Interger.cpp">
+      <Filter>Core\PrimitiveType\Interger</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxFile.cpp">
+      <Filter>Core\Box\BoxFile</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>Core\Console</Filter>
+    </ClCompile>
+    <ClCompile Include="DateTime.cpp">
+      <Filter>Core\DateTime</Filter>
+    </ClCompile>
+    <ClCompile Include="Environment.cpp">
+      <Filter>Core\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="Exception.cpp">
+      <Filter>Core\Exception</Filter>
+    </ClCompile>
+    <ClCompile Include="Directory.cpp">
+      <Filter>Core\IO\Directory</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>Core\IO\File</Filter>
+    </ClCompile>
+    <ClCompile Include="FileStream.cpp">
+      <Filter>Core\IO\File\FileStream</Filter>
+    </ClCompile>
+    <ClCompile Include="Path.cpp">
+      <Filter>Core\IO\Path</Filter>
+    </ClCompile>
+    <ClCompile Include="TestWritter.cpp">
+      <Filter>Core\IO\Stream\TestWritter</Filter>
+    </ClCompile>
+    <ClCompile Include="TextReader.cpp">
+      <Filter>Core\IO\Stream\TextReader</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Core\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowMenu.cpp">
+      <Filter>Core\Window\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>Core\Window\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleShape.cpp">
+      <Filter>Core\Window\Shape\CircleShape</Filter>
+    </ClCompile>
+    <ClCompile Include="ComplexShape.cpp">
+      <Filter>Core\Window\Shape\ComplexShape</Filter>
+    </ClCompile>
+    <ClCompile Include="RectangleShape.cpp">
+      <Filter>Core\Window\Shape\RectangleShape</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="O3DL.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
