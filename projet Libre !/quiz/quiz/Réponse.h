@@ -6,13 +6,14 @@
 class Réponse
 {
 private:
-	std::string reponse[2] = { "1939-1945","1914-1918" };
-	int* x = nullptr;
+	std::string reponse[6] = { "1939-1945","1914-1918","6 juin 1944","1941","eisenhower","1940" };
+	 int score = 0;
 public:
 	Réponse() = default;
 	~Réponse() = default;
 
 public:
-	static bool GetReponse();
+	 bool GetReponse();
+	  int GetScore();
 };
 

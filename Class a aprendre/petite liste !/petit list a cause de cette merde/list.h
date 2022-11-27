@@ -40,11 +40,10 @@ template<typename T>
 List<T>::List(std::initializer_list<T> _tab)
 {
 	count = _tab.size();
-	tab = new T[count];
+	tab = new T[count];//initialize la liste
 	int _index = 0;
 	for (T _item : _tab)
 		tab[_index++] = _item;
-	
 }
 
 template<typename T>
