@@ -19,11 +19,16 @@ namespace Core
 
 	class Shape
 	{
+#pragma region f/p
+
 	protected:
 		Gdiplus::Pen* pen = nullptr;
 		Gdiplus::Graphics* graphics = nullptr;
 		Style style = Style();
 		Position position = Position();
+#pragma endregion f/p
+
+#pragma region constructors
 
 	public:
 		O3DLIBRAIRY_API Shape() = default;
@@ -31,13 +36,16 @@ namespace Core
 		O3DLIBRAIRY_API Shape(const Shape&) = default;
 		O3DLIBRAIRY_API ~Shape();
 
+#pragma endregion constructors
+
+#pragma region methods
 	public:
 		O3DLIBRAIRY_API Style GetStyle();
 		O3DLIBRAIRY_API Position& GetPositio();
 		O3DLIBRAIRY_API bool IsValid()const;
 		O3DLIBRAIRY_API void Init(HDC _hdc);
 		O3DLIBRAIRY_API virtual void Draw(HDC _hdc);
-
+#pragma endregion methods
 	};
 }
 

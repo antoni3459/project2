@@ -13,13 +13,15 @@ namespace Core
 		PrimitiveType::FString pathResult = "";
 		HRESULT hResult = HRESULT();
 #pragma endregion f/p
-#pragma region constructeur
+
+#pragma region constructor
 	public:
 		BoxFile() = default;
 		O3DLIBRAIRY_API BoxFile(const char* _title);
 		O3DLIBRAIRY_API BoxFile(const BoxFile& _copy);
 		O3DLIBRAIRY_API ~BoxFile()override = default;
-#pragma endregion constructeur
+#pragma endregion constructor
+
 #pragma region method
 	private:
 		O3DLIBRAIRY_API bool InitializeBox();

@@ -22,7 +22,7 @@ namespace Core
 		EDayOfWeek dayOfWeek = EDayOfWeek::Sunday;
 #pragma endregion f/p
 
-#pragma region constructeur
+#pragma region constructor
 	private:
 		O3DLIBRAIRY_API int CalculateDayOfWeek() const;
 
@@ -33,9 +33,9 @@ namespace Core
 		O3DLIBRAIRY_API DateTime(const int _day, const int _month, const int _year, const int _hour);
 		O3DLIBRAIRY_API DateTime(const int _day, const int _month, const int _year);
 		O3DLIBRAIRY_API DateTime(const DateTime& _copy);
-#pragma endregion constructeur
+#pragma endregion constructor
 
-#pragma region method
+#pragma region methods
 	public:
 		O3DLIBRAIRY_API static DateTime Now();
 	public:
@@ -47,7 +47,7 @@ namespace Core
 		O3DLIBRAIRY_API void AddSecond(const int _value);
 		O3DLIBRAIRY_API PrimitiveType::FString ToStringFormat(const PrimitiveType::FString& _format)const;
 		O3DLIBRAIRY_API PrimitiveType::Boolean Equals(const DateTime& _obj)const;
-#pragma endregion method
+#pragma endregion methods
 
 #pragma region override
 

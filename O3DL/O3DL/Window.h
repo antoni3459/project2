@@ -26,10 +26,16 @@ namespace Core
 		Gdiplus::GdiplusStartupInput gdiplusStartupInput = Gdiplus::GdiplusStartupInput();
 		ULONG_PTR gdiplusToken = 0;
 #pragma endregion f/P
+
+#pragma region constructeur
+
 	public:
 		Window() = default;
 		O3DLIBRAIRY_API Window(const PrimitiveType::FString& _name, const int _width, const int _height);
 		O3DLIBRAIRY_API ~Window()override;
+#pragma endregion constructeur
+
+#pragma region method
 
 	private:
 		O3DLIBRAIRY_API LRESULT __stdcall WindowProc(HWND _hWindow, UINT _msg, WPARAM _wp, LPARAM _lp);
@@ -47,5 +53,7 @@ namespace Core
 	public:
 		O3DLIBRAIRY_API void Open();
 		O3DLIBRAIRY_API void Close();
+#pragma endregion method
+
 	};
 }

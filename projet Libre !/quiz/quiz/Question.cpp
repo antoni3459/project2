@@ -1,5 +1,9 @@
 #include "Question.h"
+<<<<<<< Updated upstream
 #include "List.h"
+=======
+#include <Windows.h>
+>>>>>>> Stashed changes
 #include <random>
 
 int Question::GetX()
@@ -13,6 +17,7 @@ std::string Question::GetQuestion()
 {
 	bool* _reponse;
 	srand((unsigned int)time(NULL));
+<<<<<<< Updated upstream
 	x = (rand() % 6);
 	while (List::Contains(x)==true)
 	{
@@ -25,4 +30,11 @@ std::string Question::GetQuestion()
 	else
 		GetQuestion();
 }
+=======
+	x = (rand() % 3);
+	if (x < 3)
+		return question[x];
+	return "jbb";
+};
+>>>>>>> Stashed changes
 

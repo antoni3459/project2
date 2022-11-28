@@ -25,6 +25,7 @@ namespace Core
 		public:
 			static const Core::PrimitiveType::FString Empty;
 #pragma endregion f/p
+
 #pragma region constructor
 		public:
 			FString() = default;
@@ -54,6 +55,7 @@ namespace Core
 					Append(*_begin);
 			}
 #pragma endregion constructor
+
 #pragma region methods
 		public:
 			 void Append(const FString& _str);
@@ -82,28 +84,36 @@ namespace Core
 			 static FString Format(const FString& _str, Args... _args);
 
 #pragma endregion methods
+
 #pragma region override
 		public:
 			 FString ToString() const override;
 			 Boolean Equals(const Object* _obj) const override;
 #pragma endregion override
-			operator const char* ()
-			{
-				return value;
-			}
-			friend std::ostream& operator<<(std::ostream& _os, const FString& _str)
-			{
-				_os << _str.value;
-				return _os;
-			}
+
+#pragma region oprators
+
+			 operator const char* ()
+			 {
+				 return value;
+			 }
+			 friend std::ostream& operator<<(std::ostream& _os, const FString& _str)
+			 {
+				 _os << _str.value;
+				 return _os;
+			 }
 			 Boolean operator==(const FString& _other) const;
 			 Boolean operator!=(const FString& _other) const;
 			 FString operator+(const FString& _other) const;
 			 FString& operator+=(const FString& _other);
 			 char operator[](const int _index) const;
+#pragma endregion oprators
+
 		};
 
+
 #pragma region methods
+
 		template<typename ...Args>
 		inline FString FString::Format(const FString& _str, Args ..._args)
 		{

@@ -5,15 +5,15 @@ namespace Core
 {
 	namespace IO
 	{
-		class Path : public Object
+		class O3DLIBRAIRY_API Path : public Object
 		{
 		private:
 			static const char DirectorySeparator = '/';
 
 		public:
-			O3DLIBRAIRY_API static PrimitiveType::FString GetPath(const PrimitiveType::FString& _path);
-			O3DLIBRAIRY_API static PrimitiveType::FString GetParent(const PrimitiveType::FString& _path);
-			O3DLIBRAIRY_API static PrimitiveType::FString Combine(const std::initializer_list < PrimitiveType::FString>& _path);
+			 static PrimitiveType::FString GetPath(const PrimitiveType::FString& _path);
+			 static PrimitiveType::FString GetParent(const PrimitiveType::FString& _path);
+			 static PrimitiveType::FString Combine(const std::initializer_list < PrimitiveType::FString>& _path);
 
 		};
 	}

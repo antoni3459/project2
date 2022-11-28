@@ -97,6 +97,9 @@
     <Filter Include="Core\Window\Shape\RectangleShape">
       <UniqueIdentifier>{02d15013-f543-4f1f-896f-816a7d672ad8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Register">
+      <UniqueIdentifier>{f9f19707-a928-46f9-8a45-2acc40e67c7a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -183,6 +186,9 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Register.h">
+      <Filter>Core\Register</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -254,9 +260,12 @@
     <ClCompile Include="RectangleShape.cpp">
       <Filter>Core\Window\Shape\RectangleShape</Filter>
     </ClCompile>
+    <ClCompile Include="Register.cpp">
+      <Filter>Core\Register</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="O3DL.rc">
+    <ResourceCompile Include="O3DL.lib">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>

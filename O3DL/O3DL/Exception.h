@@ -11,10 +11,12 @@ namespace Core
 	private:
 		Core::PrimitiveType::FString error = "";
 #pragma endregion f/p
+
 #pragma region constructor
 	public:
 		O3DLIBRAIRY_API Exception(const Core::PrimitiveType::FString& _error = "exception", const std::source_location& _location = std::source_location::current());
 #pragma endregion constructor
+
 #pragma region override
 	public:
 		O3DLIBRAIRY_API Core::PrimitiveType::FString ToString() const override;
