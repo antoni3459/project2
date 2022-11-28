@@ -20,11 +20,11 @@ namespace Core
 	};
 
 
-	class Environment : public Object
+	class O3DLIBRAIRY_API Environment : public Object
 	{
 	public:
-		O3DLIBRAIRY_API static const inline PrimitiveType::FString CurrentDirectory = std::filesystem::current_path().string().c_str();
-		O3DLIBRAIRY_API static PrimitiveType::FString SpecialFolder(const ESpecialFolder& _specialFolder);
+		 static const inline PrimitiveType::FString CurrentDirectory = std::filesystem::current_path().string().c_str();
+		 static PrimitiveType::FString SpecialFolder(const ESpecialFolder& _specialFolder);
 	};
 }
 

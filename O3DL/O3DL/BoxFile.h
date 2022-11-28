@@ -5,7 +5,7 @@
 
 namespace Core
 {
-	class BoxFile :public Object
+	class O3DLIBRAIRY_API BoxFile :public Object
 	{
 #pragma region f/p
 	private:
@@ -17,20 +17,20 @@ namespace Core
 #pragma region constructor
 	public:
 		BoxFile() = default;
-		O3DLIBRAIRY_API BoxFile(const char* _title);
-		O3DLIBRAIRY_API BoxFile(const BoxFile& _copy);
-		O3DLIBRAIRY_API ~BoxFile()override = default;
+		 BoxFile(const char* _title);
+		 BoxFile(const BoxFile& _copy);
+		 ~BoxFile()override = default;
 #pragma endregion constructor
 
 #pragma region method
 	private:
-		O3DLIBRAIRY_API bool InitializeBox();
-		O3DLIBRAIRY_API bool CreateInstanceDialog(IFileOpenDialog*& _fileOpen);
-		O3DLIBRAIRY_API bool OpenFile(IFileOpenDialog* _fileOpen, IShellItem*& _item);
-		O3DLIBRAIRY_API bool GetDisplayName(IShellItem* _item, PWSTR& _filePath);
-		O3DLIBRAIRY_API void SaveResult(IFileOpenDialog* _fileOpen, IShellItem* _item, PWSTR _filePath);
+		 bool InitializeBox();
+		 bool CreateInstanceDialog(IFileOpenDialog*& _fileOpen);
+		 bool OpenFile(IFileOpenDialog* _fileOpen, IShellItem*& _item);
+		 bool GetDisplayName(IShellItem* _item, PWSTR& _filePath);
+		 void SaveResult(IFileOpenDialog* _fileOpen, IShellItem* _item, PWSTR _filePath);
 	public:
-		O3DLIBRAIRY_API void Open();
+		 void Open();
 		Core::PrimitiveType::FString Result() const;
 
 #pragma endregion method

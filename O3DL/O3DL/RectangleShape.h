@@ -5,17 +5,17 @@
 namespace Core
 {
 
-    class RectangleShape :public Shape
+    class O3DLIBRAIRY_API RectangleShape :public Shape
     {
     private:
         int width = 20,
             height = 10;
 
     public:
-        O3DLIBRAIRY_API RectangleShape(Position _position, int  _width, int _height);
+         RectangleShape(Position _position, int  _width, int _height);
 
     public:
-        O3DLIBRAIRY_API void Draw(HDC _hdc)override;
+         void Draw(HDC _hdc)override;
     };
 }
 

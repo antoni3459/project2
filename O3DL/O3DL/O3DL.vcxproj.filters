@@ -97,8 +97,17 @@
     <Filter Include="Core\Window\Shape\RectangleShape">
       <UniqueIdentifier>{02d15013-f543-4f1f-896f-816a7d672ad8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Register">
-      <UniqueIdentifier>{f9f19707-a928-46f9-8a45-2acc40e67c7a}</UniqueIdentifier>
+    <Filter Include="Core\FieldIAtion">
+      <UniqueIdentifier>{31b1a4e3-67ae-454c-8b25-e27f289682ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\FieldIAtion\FieldInfo">
+      <UniqueIdentifier>{105d4017-6667-4b50-837f-f60bdacdd50b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\FieldIAtion\BindingFlags">
+      <UniqueIdentifier>{acc1b91b-1e6f-4c7a-889a-b0f3bfb528f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\FieldIAtion\MethodInfo">
+      <UniqueIdentifier>{24de3b0b-9229-4335-a01f-4f7b29444efb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -186,8 +195,14 @@
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Register.h">
-      <Filter>Core\Register</Filter>
+    <ClInclude Include="FieldInfo.h">
+      <Filter>Core\FieldIAtion\FieldInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="BindingFlags.h">
+      <Filter>Core\FieldIAtion\BindingFlags</Filter>
+    </ClInclude>
+    <ClInclude Include="MethodsInfo.h">
+      <Filter>Core\FieldIAtion\MethodInfo</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -260,8 +275,11 @@
     <ClCompile Include="RectangleShape.cpp">
       <Filter>Core\Window\Shape\RectangleShape</Filter>
     </ClCompile>
-    <ClCompile Include="Register.cpp">
-      <Filter>Core\Register</Filter>
+    <ClCompile Include="FieldInfo.cpp">
+      <Filter>Core\FieldIAtion\FieldInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="MethodsInfo.cpp">
+      <Filter>Core\FieldIAtion\MethodInfo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,7 @@
 
 namespace Core
 {
-	class Exception : public Object
+	class O3DLIBRAIRY_API Exception : public Object
 	{
 #pragma region f/p
 	private:
@@ -14,12 +14,12 @@ namespace Core
 
 #pragma region constructor
 	public:
-		O3DLIBRAIRY_API Exception(const Core::PrimitiveType::FString& _error = "exception", const std::source_location& _location = std::source_location::current());
+		 Exception(const Core::PrimitiveType::FString& _error = "exception", const std::source_location& _location = std::source_location::current());
 #pragma endregion constructor
 
 #pragma region override
 	public:
-		O3DLIBRAIRY_API Core::PrimitiveType::FString ToString() const override;
+		 Core::PrimitiveType::FString ToString() const override;
 #pragma endregion override
 	};
 

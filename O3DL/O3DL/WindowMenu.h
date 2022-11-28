@@ -5,7 +5,7 @@
 namespace Core
 {
 	class Window;
-	class WindowMenu
+	class O3DLIBRAIRY_API WindowMenu
 	{
 #pragma region f/p
 

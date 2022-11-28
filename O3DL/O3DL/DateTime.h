@@ -8,7 +8,7 @@
 namespace Core
 {
 
-	class DateTime :public Object
+	class O3DLIBRAIRY_API DateTime :public Object
 	{
 #pragma region f/p
 
@@ -24,36 +24,36 @@ namespace Core
 
 #pragma region constructor
 	private:
-		O3DLIBRAIRY_API int CalculateDayOfWeek() const;
+		 int CalculateDayOfWeek() const;
 
 	public:
-		O3DLIBRAIRY_API EDayOfWeek DayOfWeek()const;
-		O3DLIBRAIRY_API DateTime(const int _day, const int _month, const int _year, const int _hour, const int _minute, const int _second);
-		O3DLIBRAIRY_API DateTime(const int _day, const int _month, const int _year, const int _hour, const int _minute);
-		O3DLIBRAIRY_API DateTime(const int _day, const int _month, const int _year, const int _hour);
-		O3DLIBRAIRY_API DateTime(const int _day, const int _month, const int _year);
-		O3DLIBRAIRY_API DateTime(const DateTime& _copy);
+		 EDayOfWeek DayOfWeek()const;
+		 DateTime(const int _day, const int _month, const int _year, const int _hour, const int _minute, const int _second);
+		 DateTime(const int _day, const int _month, const int _year, const int _hour, const int _minute);
+		 DateTime(const int _day, const int _month, const int _year, const int _hour);
+		 DateTime(const int _day, const int _month, const int _year);
+		 DateTime(const DateTime& _copy);
 #pragma endregion constructor
 
 #pragma region methods
 	public:
-		O3DLIBRAIRY_API static DateTime Now();
+		 static DateTime Now();
 	public:
-		O3DLIBRAIRY_API void AddDay(const int _value);
-		O3DLIBRAIRY_API void AddMonth(const int _value);
-		O3DLIBRAIRY_API void AddYear(const int _value);
-		O3DLIBRAIRY_API void AddHour(const int _value);
-		O3DLIBRAIRY_API void AddMinute(const int _value);
-		O3DLIBRAIRY_API void AddSecond(const int _value);
-		O3DLIBRAIRY_API PrimitiveType::FString ToStringFormat(const PrimitiveType::FString& _format)const;
-		O3DLIBRAIRY_API PrimitiveType::Boolean Equals(const DateTime& _obj)const;
+		 void AddDay(const int _value);
+		 void AddMonth(const int _value);
+		 void AddYear(const int _value);
+		 void AddHour(const int _value);
+		 void AddMinute(const int _value);
+		 void AddSecond(const int _value);
+		 PrimitiveType::FString ToStringFormat(const PrimitiveType::FString& _format)const;
+		 PrimitiveType::Boolean Equals(const DateTime& _obj)const;
 #pragma endregion methods
 
 #pragma region override
 
 	public:
-		O3DLIBRAIRY_API PrimitiveType::FString ToString()const override;
-		O3DLIBRAIRY_API PrimitiveType::Boolean Equals(const Object* _obj)const override;
+		 PrimitiveType::FString ToString()const override;
+		 PrimitiveType::Boolean Equals(const Object* _obj)const override;
 
 #pragma endregion override
 

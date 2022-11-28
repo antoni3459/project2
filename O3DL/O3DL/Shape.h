@@ -17,7 +17,7 @@ namespace Core
 		Gdiplus::Color backroufColor = Gdiplus::Color::White;
 	};
 
-	class Shape
+	class O3DLIBRAIRY_API Shape
 	{
 #pragma region f/p
 
@@ -31,20 +31,20 @@ namespace Core
 #pragma region constructors
 
 	public:
-		O3DLIBRAIRY_API Shape() = default;
-		O3DLIBRAIRY_API Shape(Position _position);
-		O3DLIBRAIRY_API Shape(const Shape&) = default;
-		O3DLIBRAIRY_API ~Shape();
+		 Shape() = default;
+		 Shape(Position _position);
+		 Shape(const Shape&) = default;
+		 ~Shape();
 
 #pragma endregion constructors
 
 #pragma region methods
 	public:
-		O3DLIBRAIRY_API Style GetStyle();
-		O3DLIBRAIRY_API Position& GetPositio();
-		O3DLIBRAIRY_API bool IsValid()const;
-		O3DLIBRAIRY_API void Init(HDC _hdc);
-		O3DLIBRAIRY_API virtual void Draw(HDC _hdc);
+		 Style GetStyle();
+		 Position& GetPositio();
+		 bool IsValid()const;
+		 void Init(HDC _hdc);
+		 virtual void Draw(HDC _hdc);
 #pragma endregion methods
 	};
 }

@@ -14,7 +14,7 @@ namespace Core
         class TestWritter;
     }
 
-    class Console : public Object
+    class O3DLIBRAIRY_API Console : public Object
     {
 #pragma region f/p
 
@@ -27,10 +27,10 @@ namespace Core
 #pragma region method
 
     private:
-        O3DLIBRAIRY_API static IO::TestWritter* Out_Internal();
+         static IO::TestWritter* Out_Internal();
     public:
-        O3DLIBRAIRY_API static void WritLine(const PrimitiveType::FString& _label, const object _obj, const EConsoleColor& _color = EConsoleColor::Reset);
-        O3DLIBRAIRY_API static void WritLine(const PrimitiveType::FString& _label, const object& _obj, const EConsoleColor& _color = EConsoleColor::Reset);
+         static void WritLine(const PrimitiveType::FString& _label, const object _obj, const EConsoleColor& _color = EConsoleColor::Reset);
+         static void WritLine(const PrimitiveType::FString& _label, const object& _obj, const EConsoleColor& _color = EConsoleColor::Reset);
 
 #pragma endregion method
 

@@ -64,6 +64,12 @@ Core::PrimitiveType::Integer::operator int() const
 {
 	return value;
 }
+Core::Object& Core::PrimitiveType::Integer::operator=(const Object* obj)
+{
+	const Integer* _other = dynamic_cast<const Integer*>(obj);
+	value = _other->value;
+	return *this;
+}
 Core::PrimitiveType::Integer Core::PrimitiveType::Integer::operator+(const Integer& _other) const
 {
 	return value + _other;

@@ -45,6 +45,7 @@ namespace Core
 
 		public:
 			 operator int()const;
+			 Object& operator=(const Object* obj);
 			 Integer operator+(const Integer& _other) const;
 			 Integer& operator+=(const Integer& _other);
 			 Integer operator-(const Integer& _other) const;
