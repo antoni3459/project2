@@ -22,6 +22,9 @@
     <Filter Include="liste">
       <UniqueIdentifier>{011d2dc8-51fa-435f-aed0-5a0d9de08cbe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{c17a7095-f3fe-49bb-97e5-74c7bdb656bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="quiz.cpp">
@@ -36,6 +39,9 @@
     <ClCompile Include="List.cpp">
       <Filter>liste</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Question.h">
@@ -46,6 +52,9 @@
     </ClInclude>
     <ClInclude Include="List.h">
       <Filter>liste</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
