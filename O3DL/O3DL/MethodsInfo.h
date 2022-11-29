@@ -15,7 +15,7 @@ namespace Core
 		PrimitiveType::FString name = "";
 		object reflectObject = nullptr;
 		BindingFlags flags = BindingFlags::Public;
-		std::map<const char*, MethodsInfo*> parametre = std::map<const char*, MethodsInfo*>();
+		std::map<const char* ,MethodsInfo*> parametre = std::map<const char*, MethodsInfo*>();
 
 #pragma endregion f/p
 
@@ -24,7 +24,7 @@ namespace Core
 	public:
 		MethodsInfo() = default;
 		MethodsInfo(const PrimitiveType::FString& _name, const object _reflectObject, std::map<const char*, MethodsInfo*> _parametre);
-
+		~MethodsInfo()override;
 #pragma endregion constructor
 
 #pragma region method
@@ -37,7 +37,7 @@ namespace Core
 		PrimitiveType::FString Name()const;
 		BindingFlags Flags()const;
 		object RefletdObject()const;
-		std::map<const char*, MethodsInfo*> Parametre()const;
+		std::map<const char*,MethodsInfo*> Parametre()const;
 #pragma endregion method
 
 #pragma region operrator

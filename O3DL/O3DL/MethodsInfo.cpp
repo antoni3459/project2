@@ -2,11 +2,19 @@
 #include "BindingFlags.h"
 #include "Boolean.h"
 
-Core::MethodsInfo::MethodsInfo(const PrimitiveType::FString& _name, const object _reflectObject, std::map<const char*, MethodsInfo*> _parametre)
+
+Core::MethodsInfo::MethodsInfo(const Core::PrimitiveType::FString& _name, const object _reflectObject, std::map<const char*, MethodsInfo*> _parametre)
 {
 	name = _name;
 	reflectObject = _reflectObject;
 	parametre = _parametre;
+}
+
+Core::MethodsInfo::~MethodsInfo()
+{
+	delete reflectObject;
+	reflectObject = nullptr;
+	name = "";
 }
 
 Core::PrimitiveType::Boolean Core::MethodsInfo::IsPublic() const

@@ -129,3 +129,5 @@ template<typename T, typename... Args>
 using Func = Delegates_Internal<T, Args...>;
 template<typename... Args>
 using Predicate = Delegates_Internal<bool, Args...>;
+
+
