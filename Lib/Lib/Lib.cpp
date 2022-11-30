@@ -28,6 +28,9 @@
 #include "RectangleShape.h"
 #include "Shape.h"
 #include "FieldInfo.h"
+#include "MethodInfo.h"
+#include "ParamatereInfo.h"
+#include "Enum.h"
 
 //using namespace Core::PrimitiveType;
 //using namespace Core;
@@ -42,6 +45,20 @@
 using namespace Core::PrimitiveType;
 using namespace Core;
 using namespace Core::IO;
+
+class A : public Object
+{
+
+public:
+	void Test(const FString& _msg, const FString& a)
+	{
+		LOG(_msg);
+		LOG(a);
+	}
+};
+
+ENUM(Test, Giusy = 1,Gabriel=15,Hugo)
+ENUM(Test1, Aymeric = 1,Thibaud=2,Benoit=5, Pierre)
 
 int main()
 {
@@ -63,28 +80,15 @@ int main()
 		std::cout << "time is DateTime" << std::endl;
 	}
 	return 0;*/
-	class A : public Object
+
+
+
+	std::cout << *Test::Giusy << std::endl;
+	for (Test1 t : Test1Support::Values())
 	{
-	private:
-		PrimitiveType::FString name = "";
-	public:
-		PrimitiveType::Integer age = 10;
-	public:
-		A()
-		{
-			RegisterField("name", &name, (int)BindingFlags::Private);
-			RegisterField("age", &age, (int)BindingFlags::Public);
-
-		}
-	};
-
-
-	A a;
-
-	for (FieldInfo* info : a.GetFields())
-	{
-		LOG(info);
+		std::cout << *t << std::endl;
 	}
+
 	return 0;
 
 }

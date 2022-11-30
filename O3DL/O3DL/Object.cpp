@@ -3,7 +3,6 @@
 #include "FString.h"
 #include "Boolean.h"
 #include "FieldInfo.h"
-#include "MethodsInfo.h"
 #include <ranges>
 
 
@@ -15,13 +14,7 @@ int Core::Object::RegisterField(const char* _name, Object* _obj, int _mask)
 	return fields.size();
 }
 
-int Core::Object::RegisterMethod(const char* _name, Object* _obj, int _mask, std::map<const char*, MethodsInfo*> _parametre)
-{
-	if (parametre.contains(_name)) return parametre.size();
-	parametre.insert(std::pair(_name, new MethodsInfo(_name, _obj, _parametre)));
 
-	return parametre.size();
-} 
 
 Core::PrimitiveType::Boolean Core::Object::Equals(const Object* _obj) const
 {

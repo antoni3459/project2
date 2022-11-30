@@ -97,17 +97,23 @@
     <Filter Include="Core\Window\Shape\RectangleShape">
       <UniqueIdentifier>{02d15013-f543-4f1f-896f-816a7d672ad8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\FieldIAtion">
+    <Filter Include="Core\Reflection">
       <UniqueIdentifier>{31b1a4e3-67ae-454c-8b25-e27f289682ab}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\FieldIAtion\FieldInfo">
+    <Filter Include="Core\Reflection\FieldInfo">
       <UniqueIdentifier>{105d4017-6667-4b50-837f-f60bdacdd50b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\FieldIAtion\BindingFlags">
+    <Filter Include="Core\Reflection\BindingFlags">
       <UniqueIdentifier>{acc1b91b-1e6f-4c7a-889a-b0f3bfb528f1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\FieldIAtion\MethodInfo">
+    <Filter Include="Core\Reflection\MethodInfo">
       <UniqueIdentifier>{24de3b0b-9229-4335-a01f-4f7b29444efb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Reflection\MethodInfo\PramaettreInfo">
+      <UniqueIdentifier>{9bfc7d26-53e5-4a87-8b42-78ecc98e15ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\PrimitiveType\Enum">
+      <UniqueIdentifier>{f767c508-f269-4730-afe1-918ef45bca38}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -196,13 +202,19 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FieldInfo.h">
-      <Filter>Core\FieldIAtion\FieldInfo</Filter>
+      <Filter>Core\Reflection\FieldInfo</Filter>
     </ClInclude>
     <ClInclude Include="BindingFlags.h">
-      <Filter>Core\FieldIAtion\BindingFlags</Filter>
+      <Filter>Core\Reflection\BindingFlags</Filter>
     </ClInclude>
-    <ClInclude Include="MethodsInfo.h">
-      <Filter>Core\FieldIAtion\MethodInfo</Filter>
+    <ClInclude Include="MethodInfo.h">
+      <Filter>Core\Reflection\MethodInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="ParamatereInfo.h">
+      <Filter>Core\Reflection\MethodInfo\PramaettreInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>Core\PrimitiveType\Enum</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -276,10 +288,7 @@
       <Filter>Core\Window\Shape\RectangleShape</Filter>
     </ClCompile>
     <ClCompile Include="FieldInfo.cpp">
-      <Filter>Core\FieldIAtion\FieldInfo</Filter>
-    </ClCompile>
-    <ClCompile Include="MethodsInfo.cpp">
-      <Filter>Core\FieldIAtion\MethodInfo</Filter>
+      <Filter>Core\Reflection\FieldInfo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
