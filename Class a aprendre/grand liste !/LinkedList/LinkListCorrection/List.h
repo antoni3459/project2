@@ -1,8 +1,3 @@
-#include "List.h"
-#include "List.h"
-#include "List.h"
-#include "List.h"
-#include "List.h"
 #pragma once
 #include <iostream>
 #include "Node.h"
@@ -44,7 +39,7 @@ public:
 
 
 template<typename T>
-List<T>::List(const initializer_list<T>& _tab)
+List<T>::List(const initializer_list<T>& _tab) //initialize la list 
 {
 	for (const T& _item : _tab)
 		AddLast(_item);
@@ -53,11 +48,7 @@ List<T>::List(const initializer_list<T>& _tab)
 template<typename T>
 List<T>::~List()
 {
-	count = 0;
-	delete[] head;
-	last = nullptr;
-	first = nullptr;
-	head = nullptr;
+	Clear();
 }
 
 template<typename T>
@@ -71,14 +62,11 @@ Node<T>* List<T>::Find(const T& _item)
 	return nullptr;
 }
 
-
-
-
 template<typename T>
 void List<T>::AddFirst(const T& _item)
 {
-	Node<T>* _newNode = new Node<T>(_item);
-	if (head == nullptr)
+	Node<T>* _newNode = new Node<T>(_item); 
+	if (head == nullptr) //initialize les pointeur 
 	{
 		head = _newNode;
 		first = _newNode;
@@ -100,10 +88,12 @@ void List<T>::AddLast(const T& _item)
 		AddFirst(_item);
 		return;
 	}
-	Node<T>* _newNode = new Node<T>(_item, nullptr, last);
-	//_newNode->SetPrev(last);
-	last->SetNext(_newNode);
-	last = _newNode;
+	else
+	{
+		Node<T>* newNode = new Node<T>(_item, nullptr, last);
+		last->SetPrev(newNode);
+		last = newNode;
+	}
 	count++;
 
 }
@@ -111,17 +101,15 @@ void List<T>::AddLast(const T& _item)
 template<typename T>
 void List<T>::Clear()
 {
-	count = 0;
 	if (count == 0 || count == 1)
 		delete head;
 	else
 		delete[] head;
-	delete[] head;
 	count = 0;
 	last = nullptr;
-	prev = nullptr;
-	head = nullptr;
+	first = nullptr;
 }
+
 template<typename T>
 void List<T>::Remove(const T& _item)
 {
@@ -142,6 +130,7 @@ void List<T>::Remove(const T& _item)
 
 
 }
+
 template<typename T>
 void List<T>::RemoveFirst()
 {
@@ -157,6 +146,7 @@ void List<T>::RemoveFirst()
 	}
 
 }
+
 template<typename T>
 void List<T>::RemoveLast()
 {
@@ -167,11 +157,13 @@ void List<T>::RemoveLast()
 	delete _last;
 	count--;
 }
+
 template<typename T>
 bool List<T>::Contains(const T& _item)
 {
 	return Find(_item) != nullptr;
 }
+
 template<typename T>
 inline void List<T>::AddBefore(const T& _index, const T& _item)
 {
@@ -211,7 +203,7 @@ void List<T>::Display()
 	Node<T>* _head = head;
 	while (_head != nullptr)
 	{
-		cout << _head->Data() << ", ";
+		cout << _head->Data() << std::endl;
 		_head = _head->Next();
 	}
 	cout << endl;

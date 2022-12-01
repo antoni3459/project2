@@ -13,7 +13,7 @@ private:
 	int count = 0;
 public:
 	List() = default;
-	List(const initializer_list<T>& _tab);	
+	List(const std::initializer_list<T>& _tab);	
 	~List();
 
 
@@ -27,7 +27,7 @@ public:
 };
 
 template<typename T>
-inline List<T>::List(const initializer_list<T>& _tab)
+inline List<T>::List(const std::initializer_list<T>& _tab)
 {
 }
 

@@ -8,17 +8,10 @@
 int main()
 {
     List<int> _list = List<int>();
-    _list.AddLast(10);
-    _list.AddLast(85);
-    _list.AddFirst(1);
-    try
-    {
-        _list.At(10);
-    }
-    catch (const exception& e)
-    {
-        cout << e.what() << endl;
-    }
+    _list.AddFirst(10);
+    _list.AddLast(50);
+
+    
     _list.Display();
 }
 
