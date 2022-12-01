@@ -40,7 +40,7 @@ template<typename T>
 List<T>::List(std::initializer_list<T> _tab)
 {
 	count = _tab.size();
-	tab = new T[count];//initialize la liste
+	tab = new T[count];
 	int _index = 0;
 	for (T _item : _tab)
 		tab[_index++] = _item;
@@ -95,12 +95,13 @@ void List<T>::RemoveAt(const int& _index)
 {
 	T* _tmp = tab;
 	tab = new T[count - 1];
-	for (int i = 0;i < _index;i++)// séléctionne le bon bloc
+	for (int i = 0;i < _index;i++)// il refait la liste jusqu'au bloc voulut 
 		tab[i] = _tmp[i];
-	for (int i = _index + 1;i < count;i++)// séléectionne le bon bloc 
+	for (int i = _index + 1;i < count;i++)// il continue la liste a partir du bloc choisie 
 		tab[i - 1] = _tmp[i]; // suprime le bloc en le faisant correspondre au celui d'aprés
 	count--;
 }
+
 
 template<typename T>
 void List<T>::RemoveAll(const T& _item)
