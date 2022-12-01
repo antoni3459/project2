@@ -3,17 +3,15 @@
 #include <string>
 #include "Question.h"
 
-class Réponse
+class Reponse
 {
 private:
 	std::string reponse[6] = { "1939-1945","1914-1918","6 juin 1944","1941","eisenhower","1940" };
-	 int score = 0;
 public:
-	Réponse() = default;
-	~Réponse() = default;
+	Reponse() = default;
+	~Reponse() = default;
 
 public:
 	 bool GetReponse();
-	  int GetScore();
 };
 

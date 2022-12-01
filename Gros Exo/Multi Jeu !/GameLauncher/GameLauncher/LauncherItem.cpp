@@ -24,7 +24,7 @@ void LauncherItem::OnClick()
 {
 	if (game == nullptr) throw std::exception("[Launcher Item] => current game is null !");
 	Utils::ClearConsole();
-	Utils::LoadingBar("Loading " + game->GameName());
+	//Utils::LoadingBar("Loading " + game->GameName());
 	game->OnStart();
 	game->DisplayMenu();
 	game->OnUpdate();

@@ -1,17 +1,18 @@
 #include <iostream>
 #include "Question.h"
 #include "Réponse.h"
+#include "QuizHist.h"
+#include "HomeMenu.h"
+#include "Item.h"
+#include <windows.h>
+
 
 int main()
 {
-	Réponse _rep = Réponse();
-	Question _ques = Question();
-	while(_rep.GetScore()<5)
-	{
-		std::cout << _ques.GetQuestion() << std::endl;
-		_rep.GetReponse();
-	}
-	std::cout << "vous êtes le grand gagnant " << std::endl;
-	return 0;
+	SetConsoleTitle(L"Launcher");
+	Laucher _laucher = Laucher({
+	new Item(new QuizHist()),
+		});
+	_laucher.Open(); 
 }
 

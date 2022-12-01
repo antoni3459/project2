@@ -13,17 +13,35 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="question">
-      <UniqueIdentifier>{ee37126a-edec-4111-bdfb-103162a09fe9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Reponse">
-      <UniqueIdentifier>{20e0ef24-8e53-4147-9458-dcb9721fc067}</UniqueIdentifier>
-    </Filter>
     <Filter Include="liste">
       <UniqueIdentifier>{011d2dc8-51fa-435f-aed0-5a0d9de08cbe}</UniqueIdentifier>
     </Filter>
     <Filter Include="Menu">
       <UniqueIdentifier>{c17a7095-f3fe-49bb-97e5-74c7bdb656bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{de90fbc2-f44b-47e1-98a2-21642fd3bb71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Launcher">
+      <UniqueIdentifier>{eea069ef-67d8-4daa-8ec2-62ab54722c54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Launcher\Item">
+      <UniqueIdentifier>{78a1d3e8-3ceb-477d-a756-0839cff750c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{02923bdc-36ac-42db-b98d-73e90c15acfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quiz Hist">
+      <UniqueIdentifier>{281894e1-11ce-43c5-9ba8-7df9ac2230b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quiz Hist\Reponse">
+      <UniqueIdentifier>{20e0ef24-8e53-4147-9458-dcb9721fc067}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quiz Hist\question">
+      <UniqueIdentifier>{ee37126a-edec-4111-bdfb-103162a09fe9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu\Home">
+      <UniqueIdentifier>{74ea8d4a-a5ca-4fe6-8ecd-6c06dcec30fd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -31,30 +49,63 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Question.cpp">
-      <Filter>question</Filter>
+      <Filter>Quiz Hist\question</Filter>
     </ClCompile>
     <ClCompile Include="Réponse.cpp">
-      <Filter>Reponse</Filter>
+      <Filter>Quiz Hist\Reponse</Filter>
     </ClCompile>
     <ClCompile Include="List.cpp">
       <Filter>liste</Filter>
     </ClCompile>
-    <ClCompile Include="Menu.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Object.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Launcher\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Laucher.cpp">
+      <Filter>Launcher</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="QuizHist.cpp">
+      <Filter>Quiz Hist</Filter>
+    </ClCompile>
+    <ClCompile Include="HomeMenu.cpp">
+      <Filter>Menu\Home</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Question.h">
-      <Filter>question</Filter>
+      <Filter>Quiz Hist\question</Filter>
     </ClInclude>
     <ClInclude Include="Réponse.h">
-      <Filter>Reponse</Filter>
+      <Filter>Quiz Hist\Reponse</Filter>
     </ClInclude>
     <ClInclude Include="List.h">
       <Filter>liste</Filter>
     </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Object</Filter>
+    </ClInclude>
     <ClInclude Include="Menu.h">
-      <Filter>Header Files</Filter>
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Launcher\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Laucher.h">
+      <Filter>Launcher</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="QuizHist.h">
+      <Filter>Quiz Hist</Filter>
+    </ClInclude>
+    <ClInclude Include="HomeMenu.h">
+      <Filter>Menu\Home</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

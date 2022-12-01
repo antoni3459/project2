@@ -1,12 +1,16 @@
 #pragma once
-class Menu
-{
-private:
-	bool isOpen = false;
+#include "Object.h"
+#include <string>
 
+class Menu:public Object
+{
 public:
 	virtual ~Menu() = default;
 
-
-};
+public:
+	virtual void Open() = 0;
+	virtual void Update() = 0;
+	virtual void Close() = 0;
+	virtual std::string GameName()=0;
+};	
 

@@ -76,6 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -90,6 +91,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -119,6 +121,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,17 +131,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="HomeMenu.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Laucher.cpp" />
     <ClCompile Include="List.cpp" />
-    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="Question.cpp" />
     <ClCompile Include="quiz.cpp" />
+    <ClCompile Include="QuizHist.cpp" />
     <ClCompile Include="Réponse.cpp" />
+    <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="HomeMenu.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="Laucher.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="Question.h" />
+    <ClInclude Include="QuizHist.h" />
     <ClInclude Include="Réponse.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
