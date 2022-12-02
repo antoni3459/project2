@@ -17,9 +17,11 @@ public:
     Node(const T& _data, Node* _next = nullptr, Node* _prev = nullptr);
     Node* Next() const;
     Node* Prev() const;
-    T Data() const;
+    T& Data() ;
     void SetNext(Node* _next);
     void SetPrev(Node* _perv);
+    bool operator==(const T& _item);
+    operator T();
 };
 
 template<typename T>
@@ -44,7 +46,7 @@ Node<T>* Node<T>::Prev() const
 }
 
 template<typename T>
-T Node<T>::Data() const
+T& Node<T>::Data() 
 {
     return data;
 }
@@ -59,4 +61,16 @@ template<typename T>
 void Node<T>::SetPrev(Node* _prev)
 {
     perv = _prev;
+}
+
+template<typename T>
+bool Node<T>::operator==(const T& _item)
+{
+    return data == _item;
+}
+
+template<typename T>
+Node<T>::operator T()
+{
+    return data;
 }

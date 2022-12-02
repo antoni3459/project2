@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Linked List", "Linked List.vcxproj", "{EB2563DD-991B-4E99-A75C-B38D7A51A401}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "correction", "..\correction\correction.vcxproj", "{9EA53FF4-6870-4022-8EB3-45361F3BDA3E}"
 EndProject
 Global
@@ -15,14 +13,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EB2563DD-991B-4E99-A75C-B38D7A51A401}.Debug|x64.ActiveCfg = Debug|x64
-		{EB2563DD-991B-4E99-A75C-B38D7A51A401}.Debug|x64.Build.0 = Debug|x64
-		{EB2563DD-991B-4E99-A75C-B38D7A51A401}.Debug|x86.ActiveCfg = Debug|Win32
-		{EB2563DD-991B-4E99-A75C-B38D7A51A401}.Debug|x86.Build.0 = Debug|Win32
-		{EB2563DD-991B-4E99-A75C-B38D7A51A401}.Release|x64.ActiveCfg = Release|x64
-		{EB2563DD-991B-4E99-A75C-B38D7A51A401}.Release|x64.Build.0 = Release|x64
-		{EB2563DD-991B-4E99-A75C-B38D7A51A401}.Release|x86.ActiveCfg = Release|Win32
-		{EB2563DD-991B-4E99-A75C-B38D7A51A401}.Release|x86.Build.0 = Release|Win32
 		{9EA53FF4-6870-4022-8EB3-45361F3BDA3E}.Debug|x64.ActiveCfg = Debug|x64
 		{9EA53FF4-6870-4022-8EB3-45361F3BDA3E}.Debug|x64.Build.0 = Debug|x64
 		{9EA53FF4-6870-4022-8EB3-45361F3BDA3E}.Debug|x86.ActiveCfg = Debug|Win32

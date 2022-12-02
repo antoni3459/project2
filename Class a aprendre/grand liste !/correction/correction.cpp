@@ -10,7 +10,11 @@ using namespace std;
 int main()
 {
 	List<int> list = List<int>();
-
-	
+	list.AddFirst(6);
+	list.AddLast(10);
+	list.AddFirst(50);
+	list.Display();
+	list.Clear();
+	list.Display() ;
 	
 }

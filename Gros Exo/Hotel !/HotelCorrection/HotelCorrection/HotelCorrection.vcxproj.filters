@@ -22,9 +22,6 @@
     <Filter Include="Object">
       <UniqueIdentifier>{435296b3-afb6-4a7c-8612-7fd1dbfcbbe7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Utils\Singleton">
-      <UniqueIdentifier>{90175980-8f71-4f28-97d9-992a51defa11}</UniqueIdentifier>
-    </Filter>
     <Filter Include="DateTime">
       <UniqueIdentifier>{cdbeb7f6-f03b-4494-9860-50da92967dcd}</UniqueIdentifier>
     </Filter>
@@ -57,6 +54,9 @@
     </Filter>
     <Filter Include="Menu\Reservation\Remove">
       <UniqueIdentifier>{3d13530e-da6e-4c93-9cfc-1f649595a930}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Singleton">
+      <UniqueIdentifier>{90175980-8f71-4f28-97d9-992a51defa11}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -117,7 +117,7 @@
       <Filter>Object</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h">
-      <Filter>Utils\Singleton</Filter>
+      <Filter>Singleton</Filter>
     </ClInclude>
     <ClInclude Include="DateTime.h">
       <Filter>DateTime</Filter>

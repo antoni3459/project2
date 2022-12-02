@@ -15,14 +15,16 @@ private:
 
 #pragma endregion f/p
 #pragma region constructor
-private:
-	Node<T>* Find(const T& _item);
+
 public:
 	List() = default;
 	List(const initializer_list<T>& _tab);
 	~List();
 #pragma endregion constructor
 #pragma region method
+
+private:
+	Node<T>* Find(const T& _item);
 public:
 	void AddFirst(const T& _item);
 	void AddLast(const T& _item);
@@ -35,6 +37,7 @@ public:
 	void AddAfter(const int& _index, const T& _item);
 	void Display();
 	int Count() const;
+	T& At(const int& _index);
 };
 
 template<typename T>
@@ -53,7 +56,7 @@ inline List<T>::~List() // destructeur détruit la liste
 template<typename T>
 inline void List<T>::AddFirst(const T& _item)
 {
-	Node<T>* _newNode = new Node(_item);
+	Node<T>* _newNode = new Node<T>(_item);
 	if (head == nullptr) // met une sécurité et initialise tout les pointeur
 	{
 		head = _newNode;
@@ -102,12 +105,12 @@ inline void List<T>::Clear()
 template<typename T>
 inline void List<T>::Remove(const T& _item)
 {
-	if (first == _item)
+	if (*first == _item)
 	{
 		RemoveFirst();
 		return;
 	}
-	if (last == _item)
+	if (*last == _item)
 	{
 		RemoveLast();
 		return;
@@ -125,9 +128,9 @@ template<typename T>
 inline void List<T>::RemoveFirst() //suprime le premier élément 
 {
 	const Node<T>* _head = head;
-	head = _head->Next; // c'est 2 ligne permet de chopper le premiers bloc
+	head = _head->Next(); // c'est 2 ligne permet de chopper le premiers bloc
 	if (head != nullptr)
-		head->Prev(nullptr);// la on sélectionne
+		head->SetPrev(nullptr);// la on sélectionne
 	delete _head;
 	count--;
 }
@@ -146,7 +149,16 @@ inline void List<T>::RemoveLast()
 template<typename T>
 inline bool List<T>::Contains(const T& _item)
 {
-	return Find(_item) != nullptr; // return si il existe le nombre choisis
+	if (Find(_item) != nullptr)
+	{
+		std::cout << "true" << std::endl;
+		return true;
+	}
+	else
+	{
+		std::cout << "false" << std::endl;
+		return false;
+	}
 }
 
 template<typename T>
@@ -175,10 +187,8 @@ inline void List<T>::AddAfter(const int& _index, const T& _item)
 		AddLast(_item);// si il y a pas c'est donc le dernier
 		return;
 	}
-	Node<T>* _newmode = new Node<T>(_item, _head, _head->Next(), _head);
+	Node<T>* _newmode = new Node<T>(_item, _head, _head->Next());
 	_head->SetNext(_newmode); // même chose sauf que c'est juste la place d'après
-	_head->SetNext(_newmode);
-
 	count++;
 
 }
@@ -189,7 +199,9 @@ Node<T>* List<T>::Find(const T& _item)
 	Node<T>* _head = head;
 	while (_head != nullptr)
 	{
-		if (*_head == _item) return _head; // enregistre le nombre mis dans le bloc
+		if (_head->operator==(_item))
+			return _head;/
+		_head = _head->Next();
 	}
 	return nullptr;
 }
@@ -201,13 +213,26 @@ inline void List<T>::Display()
 	Node<T>* _head = head;
 	while (_head != nullptr)
 	{
-		cout << _head << ", ";
+		cout << _head->Data() << ", ";
+		_head = _head->Next();
 	}
-	cout << _head << endl;
+	cout << endl;
 }
 
 template<typename T>
 inline int List<T>::Count() const
 {
 	return count;
+}
+
+template<typename T>
+T& List<T>::At(const int& _index)
+{
+	if (_index <0 || _index >count) throw out_of_range("out of range !");
+	Node<T>* _head = head;
+	for (int i = 0; i < _index && _head->Next(); i++)
+	{
+		_head = _head->Next();
+	}
+	return _head->Data();
 }

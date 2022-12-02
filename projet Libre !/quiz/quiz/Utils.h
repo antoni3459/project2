@@ -14,6 +14,7 @@ public:
 	static void Print(const std::string _msg);
 	template<typename T>
 	static T Choice(const std::string& _msg="");
+	static bool Contain(std::string _msg, char _obj);
 };
 
 
