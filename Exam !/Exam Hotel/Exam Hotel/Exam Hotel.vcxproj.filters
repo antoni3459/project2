@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{6c2ed805-390a-4efc-a50d-915de3e04dbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows">
+      <UniqueIdentifier>{f21744a1-d1a1-4420-926e-af06ebb28225}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{d3303c29-dbf0-4c55-bf2f-fe723de1bfb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Laucher">
+      <UniqueIdentifier>{f28528b6-6bea-4741-8a36-57c6cf88c342}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu\NewBooking">
+      <UniqueIdentifier>{4dd87be2-1ec5-41e0-a9f4-8ccd647c31b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Menu\NewBooking\Reserve">
+      <UniqueIdentifier>{5dbcf54d-4362-48fe-b369-30aa70c7eca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu\ViewAll">
+      <UniqueIdentifier>{5c92fed7-4a96-41e4-8479-c873bb55c548}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Exam Hotel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Launcher.cpp">
+      <Filter>Laucher</Filter>
+    </ClCompile>
+    <ClCompile Include="NewBooking.cpp">
+      <Filter>Menu\NewBooking</Filter>
+    </ClCompile>
+    <ClCompile Include="Reserve.cpp">
+      <Filter>Menu\NewBooking\Reserve</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewAll.cpp">
+      <Filter>Menu\ViewAll</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Object.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Launcher.h">
+      <Filter>Laucher</Filter>
+    </ClInclude>
+    <ClInclude Include="NewBooking.h">
+      <Filter>Menu\NewBooking</Filter>
+    </ClInclude>
+    <ClInclude Include="Reserve.h">
+      <Filter>Menu\NewBooking\Reserve</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewAll.h">
+      <Filter>Menu\ViewAll</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

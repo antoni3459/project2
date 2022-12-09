@@ -1,0 +1,18 @@
+tableau de bord
+
+
+pour aujourd'hui
+
+résoudre le problème de la class Items 
+(https://learn.microsoft.com/fr-fr/windows/win32/controls/create-a-month-calendar-control) insserer pour que cela fonctionne à l'aide de la class Windows ou Menu
+vérifier si on peut relier la class Menu et Windows 
+modifier la class windows a l'aide de (https://learn.microsoft.com/fr-fr/windows/win32/api/commctrl/nf-commctrl-button_getsplitinfo) pour qu'il fonctionne avec boutton et tt
+
+
+devoir pour se soir 
+
+regarder si le menu peut pas se faire avec ça (https://learn.microsoft.com/fr-fr/windows/win32/api/commctrl/nf-commctrl-listview_setitem)
+regarder pour la date (https://learn.microsoft.com/fr-fr/windows/win32/api/commctrl/nf-commctrl-monthcal_setcursel)
+controle général (https://learn.microsoft.com/fr-fr/windows/win32/controls/individual-control-info)
+celle la c'est que pour le callendrier (https://learn.microsoft.com/fr-fr/windows/win32/controls/month-calendar-control-reference) a voir ce qu'on peut faire
+(https://learn.microsoft.com/fr-fr/windows/win32/controls/about-buttons) vrai travaille faire marcher correctement les button
