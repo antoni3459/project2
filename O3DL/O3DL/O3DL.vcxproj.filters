@@ -5,10 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -118,6 +114,16 @@
     <Filter Include="Core\ClipBoard">
       <UniqueIdentifier>{572bf32a-07d4-400a-aa80-83ac6fa85a45}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Core\TimeZone">
+      <UniqueIdentifier>{e7a30b8a-9b21-40cb-a92a-6d2848818057}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\TimeZone\Enum">
+      <UniqueIdentifier>{cbf4d013-ef81-43d0-b877-a46a301e9a8c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -220,7 +226,13 @@
       <Filter>Core\PrimitiveType\Enum</Filter>
     </ClInclude>
     <ClInclude Include="ClipBoard.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core\ClipBoard</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeZone.h">
+      <Filter>Core\TimeZone</Filter>
+    </ClInclude>
+    <ClInclude Include="ETimeZoneName.h">
+      <Filter>Core\TimeZone\Enum</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -297,7 +309,10 @@
       <Filter>Core\Reflection\FieldInfo</Filter>
     </ClCompile>
     <ClCompile Include="ClipBoard.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Core\ClipBoard</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeZone.cpp">
+      <Filter>Core\TimeZone</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

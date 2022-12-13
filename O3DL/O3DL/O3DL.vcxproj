@@ -156,6 +156,7 @@
     <ClInclude Include="EDayOfWeek.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Environment.h" />
+    <ClInclude Include="ETimeZoneName.h" />
     <ClInclude Include="Exception.h" />
     <ClInclude Include="FieldInfo.h" />
     <ClInclude Include="File.h" />
@@ -175,6 +176,7 @@
     <ClInclude Include="Shape.h" />
     <ClInclude Include="TestWritter.h" />
     <ClInclude Include="TextReader.h" />
+    <ClInclude Include="TimeZone.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="WindowMenu.h" />
   </ItemGroup>
@@ -207,6 +209,7 @@
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="TestWritter.cpp" />
     <ClCompile Include="TextReader.cpp" />
+    <ClCompile Include="TimeZone.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WindowMenu.cpp" />
   </ItemGroup>
