@@ -19,6 +19,13 @@ std::string LabelControl::TextStr()
 void LabelControl::SetText(const wchar_t* _newText)
 {
 	text= _newText;
+	SetWindowTextA(instance, TextStr().c_str());
+}
+
+void LabelControl::SetText(const std::string& _str)
+{
+	const std::string _wstr(_str.begin(), _str.end());
+	SetText(_wstr.c_str());
 }
 
 std::wstring LabelControl::Text()

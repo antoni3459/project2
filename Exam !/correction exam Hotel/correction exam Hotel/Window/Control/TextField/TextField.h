@@ -22,6 +22,8 @@ public:
 
 public:
 	std::wstring CurrentText()const;
+	std::string CurrentTextStr()const;
+	void OnValueChange();
 	void OnTextChange(const wchar_t* _text);
 	HWND Create()override;
 

@@ -20,6 +20,7 @@ public:
 public:
 	std::string TextStr();
 	void SetText(const wchar_t* _newText);
+	void SetText(const std::string& _str);
 	std::wstring Text();
 	HWND Create()override;
 

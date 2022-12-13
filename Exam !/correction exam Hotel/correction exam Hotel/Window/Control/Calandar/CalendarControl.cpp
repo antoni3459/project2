@@ -1,11 +1,8 @@
 #include "CalendarControl.h"
-#pragma comment(lib, "Comctl32.lib")
-#pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
-#include <CommCtrl.h>
 #include <ctime>
 #include <Windows.h>
 
-CalendarControl::CalendarControl(int _controlID, HWND _owner, const Rect& _rect)
+CalendarControl::CalendarControl(int _controlID, HWND _owner, const Rect& _rect) : super(_controlID, _owner, _rect)
 {
 }
 
@@ -17,6 +14,30 @@ void CalendarControl::SetMaxSelected(UINT _value)
 {
     if (!isInitialized)return;
     MonthCal_SetMaxSelCount(instance, _value);
+}
+
+void CalendarControl::SetValue(const DateTime& _a, const DateTime& _b)
+{
+    const SYSTEMTIME _start = _a.ToSystemTime();
+    const SYSTEMTIME _end = _b.ToSystemTime();
+    LPSYSTEMTIME _tab = new SYSTEMTIME[2] (_start,_end) ;
+    MonthCal_SetSelRange(instance, _tab);
+}
+
+void CalendarControl::OnChoice(LPNMSELCHANGE _value)
+{
+    arrivedDate = DateTime(_value->stSelStart);
+    departdDate = DateTime(_value->stSelStart);
+}
+
+DateTime CalendarControl::ArrivedDate()const 
+{
+    return arrivedDate;
+}
+
+DateTime CalendarControl::DepartdDate()const 
+{
+    return departdDate;
 }
 
 HWND CalendarControl::Create()
@@ -35,6 +56,7 @@ HWND CalendarControl::Create()
     if (instance != NULL)
     {
         isInitialized = true;
+        calendars.insert(std::pair(controlID, this));
         Show();
     }
     return instance;

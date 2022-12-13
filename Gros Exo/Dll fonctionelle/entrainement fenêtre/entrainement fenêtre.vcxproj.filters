@@ -115,6 +115,9 @@
     <Filter Include="Core\Box\BoxFile">
       <UniqueIdentifier>{bc803c59-0c1c-4220-a725-24c4438f1f91}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\TimeZone">
+      <UniqueIdentifier>{c2395608-aac6-45c9-9055-eae1a06a1a63}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Object.cpp">
@@ -185,6 +188,9 @@
     </ClCompile>
     <ClCompile Include="BoxFile.cpp">
       <Filter>Core\Box\BoxFile</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeZone.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -276,6 +282,9 @@
       <Filter>Core\Box\BoxFile</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeZone.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,8 @@
 #pragma once
 #include "../../Object/Object.h"
 #include "../../Utils/Rect/Rect.h"
+#include "../../Utils/DateTime/DateTime.h"
+
 #include <Windows.h>
 
 class WindowControl : public Object

@@ -24,8 +24,9 @@ public:
 	DateTime(const SYSTEMTIME& _time);
 	DateTime(const DateTime& _copy);
 
-private:
+public:
 	static DateTime NowInternal();
+	SYSTEMTIME ToSystemTime()const;
 
 public:
 	std::string ToString()const override;

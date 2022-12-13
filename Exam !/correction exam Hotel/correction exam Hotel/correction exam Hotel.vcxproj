@@ -131,8 +131,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Window\Control\Button\ButtonBookingControl\ButtonBookingControl.cpp" />
+    <ClCompile Include="Window\Menu\BookingViewData\BookingViewData.cpp" />
+    <ClCompile Include="Window\Menu\BookingViewMenu\BookingViewMenu.cpp" />
     <ClCompile Include="Booking\Booking.cpp" />
     <ClCompile Include="Booking\Client\Client.cpp" />
+    <ClCompile Include="Booking\Manager\BookingManager.cpp" />
     <ClCompile Include="Utils\DateTime\DateTime.cpp" />
     <ClCompile Include="Window\Control\Calandar\CalendarControl.cpp" />
     <ClCompile Include="Window\Menu\BookinkMenu\BookingMenu.cpp" />
@@ -148,8 +152,13 @@
     <ClCompile Include="Window\Windows.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Window\Control\Button\ButtonBookingControl\ButtonBookingControl.h" />
+    <ClInclude Include="Window\Menu\BookingViewData\BookingViewData.h" />
+    <ClInclude Include="Window\Menu\BookingViewMenu\BookingViewMenu.h" />
     <ClInclude Include="Booking\Booking.h" />
     <ClInclude Include="Booking\Client\Client.h" />
+    <ClInclude Include="Booking\Manager\BookingManager.h" />
+    <ClInclude Include="Utils\Singleton\Singleton.h" />
     <ClInclude Include="Utils\DateTime\DateTime.h" />
     <ClInclude Include="Window\Control\Calandar\CalendarControl.h" />
     <ClInclude Include="Window\Menu\BookinkMenu\BookingMenu.h" />

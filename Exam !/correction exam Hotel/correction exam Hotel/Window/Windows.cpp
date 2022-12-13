@@ -1,6 +1,8 @@
 #include "Windows.h"
 #include "Control/Button/ButtonControl.h"
 #include "Menu/BaseMenu.h"
+#include "Control/TextField/TextField.h"
+#include "Control/Calandar/CalendarControl.h"
 #include <exception>
 #include <Windows.h>
 #include <format>
@@ -37,11 +39,6 @@ Windows::Windows(const wchar_t* _title, int _width, int _height)
     std::wstring _wstr = title;
     std::string _titleCstr(_wstr.begin(), _wstr.end());
     SetWindowTextA(windowsInstance, _titleCstr.c_str());
-
-    ButtonControl _b1 = ButtonControl(0, windowsInstance, Rect(10, 10, 150, 20), TEXT("Test"));
-        _b1.Create();
-        ButtonControl _b2 = ButtonControl(0, windowsInstance, Rect(10, 40, 150, 20), TEXT("Test"));
-        _b2.Create();
 }
 
 Windows::~Windows()
@@ -68,14 +65,54 @@ LRESULT __stdcall Windows::WindowsProc(HWND _hwindow, UINT _msg, WPARAM _wp, LPA
     if (_hwindow == nullptr) return false;
     switch (_msg)
     {
-    case WM_CREATE:
-    {
-
-    }
     case WM_COMMAND:
     {
-        if (!ButtonControl::buttons.contains(_wp))break;
-        ButtonControl::buttons[_wp]->OnClick.Invoke();
+        if (ButtonControl::buttons.contains(_wp))
+        {
+            ButtonControl::buttons[_wp]->OnClick.Invoke();
+            break;
+        }
+        WORD _word = HIWORD(_wp);
+        switch (_word)
+        {
+        case EN_CHANGE:
+        {
+            std::map<int, TextField*> textfields = TextField::textField;
+            for (std::pair<int, TextField*> _pair : textfields)
+            {
+                if (_pair.first == LOWORD(_wp))
+                {
+                    _pair.second->OnValueChange();
+                    break;
+                }
+
+            }
+            break;
+
+        }
+        }
+        break;
+    }
+    case WM_NOTIFY:
+    {
+        LPNMHDR _lpm = (LPNMHDR)_lp;
+        switch (_lpm->code)
+        {
+        case MCN_SELECT:
+        {
+            std::map<int, CalendarControl*> _calendars = CalendarControl::calendars;
+            for (std::pair<int, CalendarControl*> _pair : _calendars)
+            {
+                if (_pair.first == _wp)
+                {
+                    _pair.second->OnChoice((LPNMSELCHANGE)_lp);
+                    break;
+                }
+            }
+            break;
+        }
+        }
+        break;
     }
     case WM_DESTROY:
     {

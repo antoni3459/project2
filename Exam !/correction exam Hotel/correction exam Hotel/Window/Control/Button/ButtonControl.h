@@ -22,6 +22,7 @@ public:
 	ButtonControl(ButtonControl& copy);
 
 public:
+	virtual void OnUse();
 	HWND Create()override;
 };
 

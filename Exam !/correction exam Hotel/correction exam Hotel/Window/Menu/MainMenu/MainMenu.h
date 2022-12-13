@@ -8,9 +8,11 @@ class MainMenu: public BaseMenu
 public:
 	MainMenu() = default;
 	MainMenu(Windows* _owner);
-	MainMenu(MainMenu& _copy);
+	MainMenu(MainMenu& _copy)=default;
 
 public:
 	void Initialize()override;
+	void OpenBookingMenu();
+	void OpenBookingViewMenu();
 };
 

@@ -115,6 +115,9 @@
     <Filter Include="Core\PrimitiveType\Enum">
       <UniqueIdentifier>{f767c508-f269-4730-afe1-918ef45bca38}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\ClipBoard">
+      <UniqueIdentifier>{572bf32a-07d4-400a-aa80-83ac6fa85a45}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -216,6 +219,9 @@
     <ClInclude Include="Enum.h">
       <Filter>Core\PrimitiveType\Enum</Filter>
     </ClInclude>
+    <ClInclude Include="ClipBoard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -289,6 +295,9 @@
     </ClCompile>
     <ClCompile Include="FieldInfo.cpp">
       <Filter>Core\Reflection\FieldInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="ClipBoard.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
