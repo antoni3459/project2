@@ -83,11 +83,11 @@ int main()
 
 
 
-	std::cout << *Test::Giusy << std::endl;
-	for (Test1 t : Test1Support::Values())
-	{
-		std::cout << *t << std::endl;
-	}
+	//std::cout << *Test::Giusy << std::endl;
+	//for (Test1 t : Test1Support::Values())
+	//{
+	//	std::cout << *t << std::endl;
+	//}
 
 	return 0;
 

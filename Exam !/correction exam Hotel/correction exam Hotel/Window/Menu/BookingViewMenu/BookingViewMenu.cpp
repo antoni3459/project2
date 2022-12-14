@@ -20,6 +20,11 @@ void BookingViewMenu::ReturnMainMenu()
 	owner->SetCurrentMenu(MAINMENU);
 }
 
+void BookingViewMenu::LoadBookingData()
+{
+	owner->SetCurrentMenu(BOOKINGVIEWDATAMENU);
+}
+
 void BookingViewMenu::SetCurrentBooking(Booking* _booking)
 {
 	CurrentBooking = _booking;
@@ -86,7 +91,3 @@ void BookingViewMenu::Close()
 	}
 }
 
-void BookingViewMenu::LoadBookingData()
-{
-	owner->SetCurrentMenu(BOOKINGVIEWDATAMENU);
-}

@@ -22,6 +22,8 @@ public:
 
 private:
 	void ReturnMainMenu();
+	void LoadBookingData();
+
 public:
 	void SetCurrentBooking(Booking* _booking);
 	void DisplayBooking(const std::vector<Booking*>& _bookings);
@@ -30,6 +32,5 @@ public:
 	void Initialize()override;
 	void Open()override;
 	void Close()override;
-	void LoadBookingData();
 };
 

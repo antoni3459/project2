@@ -7,6 +7,17 @@
 #include <string>
 #include <iostream>
 
+Core::DateTime::DateTime(const SYSTEMTIME& _time)
+{
+	day=_time.wDay;
+	month = _time.wMonth;
+	year = _time.wYear;
+	hour = _time.wHour;
+	minute = _time.wMinute;
+	second = _time.wSecond;
+	dayOfWeek = (EDayOfWeek)CalculateDayOfWeek();
+}
+
 Core::DateTime::DateTime(const int _day, const int _month, const int _year, const int _hour, const int _minute, const int _second)
 {
 	day = _day;
@@ -62,7 +73,6 @@ Core::EDayOfWeek Core::DateTime::DayOfWeek()const
 
 void Core::DateTime::AddDay(const int _value)
 {
-
 	day += _value;
 	while (day > 30)
 	{
@@ -101,20 +111,20 @@ void Core::DateTime::AddHour(const int _value)
 
 void Core::DateTime::AddMinute(const int _value)
 {
-	hour += _value;
-	while (hour > 60)
+	minute += _value;
+	while (minute > 60)
 	{
-		hour -= 60;
+		minute -= 60;
 		AddHour(1);
 	}
 }
 
 void Core::DateTime::AddSecond(const int _value)
 {
-	hour += _value;
-	while (hour > 60)
+	second += _value;
+	while (second > 60)
 	{
-		hour -= 60;
+		second -= 60;
 		AddMinute(1);
 	}
 }

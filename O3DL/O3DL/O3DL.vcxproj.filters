@@ -121,9 +121,6 @@
     <Filter Include="Core\TimeZone">
       <UniqueIdentifier>{e7a30b8a-9b21-40cb-a92a-6d2848818057}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\TimeZone\Enum">
-      <UniqueIdentifier>{cbf4d013-ef81-43d0-b877-a46a301e9a8c}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -230,9 +227,6 @@
     </ClInclude>
     <ClInclude Include="TimeZone.h">
       <Filter>Core\TimeZone</Filter>
-    </ClInclude>
-    <ClInclude Include="ETimeZoneName.h">
-      <Filter>Core\TimeZone\Enum</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

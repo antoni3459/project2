@@ -8,6 +8,7 @@ int main()
     tab.Clear();
 
     tab.Insert(0, "thomas");
+    tab.Insert(2, "yep");
  
 
     for (KeyValuePair<int, std::string> _pair : tab)

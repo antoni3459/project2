@@ -117,7 +117,7 @@ void Map<TKey, TValue>::Insert(const TKey& _key, const TValue& _value)
 template<typename TKey, typename TValue>
 void Map<TKey, TValue>::Insert(const KeyValuePair<TKey, TValue>& _pair)
 {
-	if (Contains(_pair.Key()))// vérifie si elle n'est pas déja dedans 
+	if (Contains(_pair.Key()))// vérifie si la Key n'est pas déja dedans 
 		throw std::exception("key already exist"); // fait un message "d'erreur"
 	KeyValuePair<TKey, TValue>* _tmp = tab; // le reste c'est une liste classique 
 	tab = new KeyValuePair<TKey, TValue>[count + 1];

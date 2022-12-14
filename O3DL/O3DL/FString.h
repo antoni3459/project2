@@ -58,55 +58,56 @@ namespace Core
 
 #pragma region methods
 		public:
-			 void Append(const FString& _str);
-			 void Append(const char _value);
-			 FString SubString(const int _begin, const int _end)const;
-			 FString SubString(const int _begin)const;
-			 Integer Length() const;
-			 FString Replace(const char _old, const char _new) const;
-			 FString Replace(const FString& _old, const FString& _new)const;
-			 FString Trim() const;
-			 FString ToLower() const;
-			 FString ToUpper() const;
-			 Boolean StartWidth(const char _c) const;
-			 Boolean StartWidth(const FString& _str) const;
-			 Boolean EndWidth(const char _c) const;
-			 Boolean EndWidth(const FString& _str) const;
-			 Integer LastIndexOf(const char _c) const;
-			 Integer FirstIndexOf(const char _c) const;
-			 Integer Find(const FString& _str) const;
-			 Boolean Contains(const FString& _str) const;
-			 std::wstring ToWString() const;
-			 const char* ToCstr() const;
-			 static Boolean IsNullOrEmpty(const FString& _str);
-			 Boolean Equals(const FString& _other) const;
+			void Append(const FString& _str);
+			void Append(const char _value);
+			static FString Convert(const std::wstring& _wstring);
+			FString SubString(const int _begin, const int _end)const;
+			FString SubString(const int _begin)const;
+			Integer Length() const;
+			FString Replace(const char _old, const char _new) const;
+			FString Replace(const FString& _old, const FString& _new)const;
+			FString Trim() const;
+			FString ToLower() const;
+			FString ToUpper() const;
+			Boolean StartWidth(const char _c) const;
+			Boolean StartWidth(const FString& _str) const;
+			Boolean EndWidth(const char _c) const;
+			Boolean EndWidth(const FString& _str) const;
+			Integer LastIndexOf(const char _c) const;
+			Integer FirstIndexOf(const char _c) const;
+			Integer Find(const FString& _str) const;
+			Boolean Contains(const FString& _str) const;
+			std::wstring ToWString() const;
+			const char* ToCstr() const;
+			static Boolean IsNullOrEmpty(const FString& _str);
+			Boolean Equals(const FString& _other) const;
 			template<typename ...Args>
-			 static FString Format(const FString& _str, Args... _args);
+			static FString Format(const FString& _str, Args... _args);
 
 #pragma endregion methods
 
 #pragma region override
 		public:
-			 FString ToString() const override;
-			 Boolean Equals(const Object* _obj) const override;
+			FString ToString() const override;
+			Boolean Equals(const Object* _obj) const override;
 #pragma endregion override
 
 #pragma region oprators
 
-			 operator const char* ()
-			 {
-				 return value;
-			 }
-			 friend std::ostream& operator<<(std::ostream& _os, const FString& _str)
-			 {
-				 _os << _str.value;
-				 return _os;
-			 }
-			 Boolean operator==(const FString& _other) const;
-			 Boolean operator!=(const FString& _other) const;
-			 FString operator+(const FString& _other) const;
-			 FString& operator+=(const FString& _other);
-			 char operator[](const int _index) const;
+			operator const char* ()
+			{
+				return value;
+			}
+			friend std::ostream& operator<<(std::ostream& _os, const FString& _str)
+			{
+				_os << _str.value;
+				return _os;
+			}
+			Boolean operator==(const FString& _other) const;
+			Boolean operator!=(const FString& _other) const;
+			FString operator+(const FString& _other) const;
+			FString& operator+=(const FString& _other);
+			char operator[](const int _index) const;
 #pragma endregion oprators
 
 		};
@@ -114,29 +115,29 @@ namespace Core
 
 #pragma region methods
 
-		template<typename ...Args>
-		inline FString FString::Format(const FString& _str, Args ..._args)
+		template<typename... Args>
+		FString FString::Format(const FString& _str, Args ..._args)
 		{
-			FString _result = "";
-			std::vector<Object> _package = std::vector<Object>();
-			//size_t _count=sizeof...(_args);//=> nombre d'arguments dans _args
+			FString _res = "";
+			std::vector<object> _package = std::vector<object>();
+			//size_t _count = sizeof...(_args); => nb args
 			(_package.push_back(&_args), ...);
+			int _size = _package.size();
 			int _index = 0;
 			for (int i = 0; i < _str.length; i++)
 			{
-				if (_str[i] == '{' && _str[i + 1] == '{')
+				if (_str[i] == '{' && _str[i + 1] == '}')
 				{
-					_result.Append(_package[i]->ToString());
+					_res.Append(_package[_index]->ToString());
 					_index++, i++;
 				}
 				else
-					_result.Append(_str[i]);
+					_res.Append(_str[i]);
 			}
-			return _result;
+			return _res;
 		}
-	}
 #pragma endregion methods
-
+	}
 
 }
 

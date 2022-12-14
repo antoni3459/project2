@@ -22,7 +22,7 @@ namespace Core
 
 #pragma region override
 		public:
-			 FString ToString() const override;
+			PrimitiveType::FString ToString() const override;
 #pragma endregion override
 
 #pragma region operator

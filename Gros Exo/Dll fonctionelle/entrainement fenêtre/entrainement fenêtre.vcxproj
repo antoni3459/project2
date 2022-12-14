@@ -170,6 +170,7 @@
     <ClInclude Include="EDayOfWeek.h" />
     <ClInclude Include="Enum.h" />
     <ClInclude Include="Environment.h" />
+    <ClInclude Include="ETimeZoneName.h" />
     <ClInclude Include="Exception.h" />
     <ClInclude Include="FieldInfo.h" />
     <ClInclude Include="File.h" />

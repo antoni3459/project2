@@ -4,6 +4,7 @@
 #include "EDayOfWeek.h"
 #include <string>
 #include <iostream>
+#include <Windows.h>
 
 namespace Core
 {
@@ -23,22 +24,22 @@ namespace Core
 #pragma endregion f/p
 
 #pragma region constructor
-	private:
-		 int CalculateDayOfWeek() const;
-
 	public:
-		 EDayOfWeek DayOfWeek()const;
-		 DateTime(const int _day, const int _month, const int _year, const int _hour, const int _minute, const int _second);
-		 DateTime(const int _day, const int _month, const int _year, const int _hour, const int _minute);
-		 DateTime(const int _day, const int _month, const int _year, const int _hour);
-		 DateTime(const int _day, const int _month, const int _year);
-		 DateTime(const DateTime& _copy);
+		DateTime() = default;
+		DateTime(const SYSTEMTIME& _time);
+		DateTime(const int _day, const int _month, const int _year, const int _hour, const int _minute, const int _second);
+		DateTime(const int _day, const int _month, const int _year, const int _hour, const int _minute);
+		DateTime(const int _day, const int _month, const int _year, const int _hour);
+		DateTime(const int _day, const int _month, const int _year);
+		DateTime(const DateTime& _copy);
 #pragma endregion constructor
 
 #pragma region methods
+	private:
+		 int CalculateDayOfWeek() const;
 	public:
 		 static DateTime Now();
-	public:
+		 EDayOfWeek DayOfWeek()const;
 		 void AddDay(const int _value);
 		 void AddMonth(const int _value);
 		 void AddYear(const int _value);
@@ -47,6 +48,7 @@ namespace Core
 		 void AddSecond(const int _value);
 		 PrimitiveType::FString ToStringFormat(const PrimitiveType::FString& _format)const;
 		 PrimitiveType::Boolean Equals(const DateTime& _obj)const;
+
 #pragma endregion methods
 
 #pragma region override

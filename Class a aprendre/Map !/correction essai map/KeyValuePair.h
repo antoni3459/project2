@@ -1,6 +1,7 @@
 #pragma once
-template<typename TKey, typename TValue>
 
+
+template<typename TKey, typename TValue>
 class KeyValuePair
 {
 #pragma region f/p

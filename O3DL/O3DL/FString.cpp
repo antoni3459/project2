@@ -27,6 +27,12 @@ void Core::PrimitiveType::FString::Append(const char _value)
     length += 1;
 }
 
+Core::PrimitiveType::FString Core::PrimitiveType::FString::Convert(const std::wstring& _wstring)
+{
+    const std::string& _str = std::string(_wstring.begin(), _wstring.end());
+    return _str.c_str();
+}
+
 Core::PrimitiveType::FString Core::PrimitiveType::FString::SubString(const int _begin, const int _end)const
 {
     FString _result = Empty;
