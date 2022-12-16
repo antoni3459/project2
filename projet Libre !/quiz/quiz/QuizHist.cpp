@@ -21,7 +21,8 @@ void QuizHist::Update()
 		{
 			score++;
 		}
-		Utils::Print(std::to_string(score));
+		system("cls");
+		Utils::Print("SCORE : ",std::to_string(score));
 	}
 	std::cout << "vous êtes le grand gagnant " << std::endl;
 }

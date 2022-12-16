@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="liste">
       <UniqueIdentifier>{011d2dc8-51fa-435f-aed0-5a0d9de08cbe}</UniqueIdentifier>
     </Filter>
@@ -31,17 +27,23 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{02923bdc-36ac-42db-b98d-73e90c15acfa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Quiz Hist">
+    <Filter Include="quiz">
+      <UniqueIdentifier>{c0e28274-73bb-4c79-910f-457306ae172c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="quiz\Quiz Hist">
       <UniqueIdentifier>{281894e1-11ce-43c5-9ba8-7df9ac2230b2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Quiz Hist\Reponse">
+    <Filter Include="quiz\Quiz Hist\Reponse">
       <UniqueIdentifier>{20e0ef24-8e53-4147-9458-dcb9721fc067}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Quiz Hist\question">
+    <Filter Include="quiz\Quiz Hist\question">
       <UniqueIdentifier>{ee37126a-edec-4111-bdfb-103162a09fe9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Menu\Home">
-      <UniqueIdentifier>{74ea8d4a-a5ca-4fe6-8ecd-6c06dcec30fd}</UniqueIdentifier>
+    <Filter Include="quiz\O3P">
+      <UniqueIdentifier>{77bef17b-b064-4913-b0b2-4ed85fee15b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="quiz\O3P\Rep">
+      <UniqueIdentifier>{d5d5af86-5260-450e-b7e4-310711872a03}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -49,10 +51,10 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Question.cpp">
-      <Filter>Quiz Hist\question</Filter>
+      <Filter>quiz\Quiz Hist\question</Filter>
     </ClCompile>
     <ClCompile Include="Réponse.cpp">
-      <Filter>Quiz Hist\Reponse</Filter>
+      <Filter>quiz\Quiz Hist\Reponse</Filter>
     </ClCompile>
     <ClCompile Include="List.cpp">
       <Filter>liste</Filter>
@@ -70,18 +72,21 @@
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="QuizHist.cpp">
-      <Filter>Quiz Hist</Filter>
+      <Filter>quiz\Quiz Hist</Filter>
     </ClCompile>
-    <ClCompile Include="HomeMenu.cpp">
-      <Filter>Menu\Home</Filter>
+    <ClCompile Include="O3P.cpp">
+      <Filter>quiz\O3P</Filter>
+    </ClCompile>
+    <ClCompile Include="Rep.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Question.h">
-      <Filter>Quiz Hist\question</Filter>
+      <Filter>quiz\Quiz Hist\question</Filter>
     </ClInclude>
     <ClInclude Include="Réponse.h">
-      <Filter>Quiz Hist\Reponse</Filter>
+      <Filter>quiz\Quiz Hist\Reponse</Filter>
     </ClInclude>
     <ClInclude Include="List.h">
       <Filter>liste</Filter>
@@ -102,10 +107,13 @@
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="QuizHist.h">
-      <Filter>Quiz Hist</Filter>
+      <Filter>quiz\Quiz Hist</Filter>
     </ClInclude>
-    <ClInclude Include="HomeMenu.h">
-      <Filter>Menu\Home</Filter>
+    <ClInclude Include="O3P.h">
+      <Filter>quiz\O3P</Filter>
+    </ClInclude>
+    <ClInclude Include="Rep.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

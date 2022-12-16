@@ -131,26 +131,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="HomeMenu.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="Laucher.cpp" />
     <ClCompile Include="List.cpp" />
+    <ClCompile Include="O3P.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Question.cpp" />
     <ClCompile Include="quiz.cpp" />
     <ClCompile Include="QuizHist.cpp" />
+    <ClCompile Include="Rep.cpp" />
     <ClCompile Include="Réponse.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HomeMenu.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Laucher.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="O3P.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Question.h" />
     <ClInclude Include="QuizHist.h" />
+    <ClInclude Include="Rep.h" />
     <ClInclude Include="Réponse.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
