@@ -1,6 +1,3 @@
-// Lib.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include "FString.h"
 #include "Object.h"
@@ -34,6 +31,8 @@
 #include "Hash.h"
 #include "Map.h"
 #include "KeyValuePair.h"
+#include "WebClient.h"
+#include "Uri.h"
 
 //using namespace Core::PrimitiveType;
 //using namespace Core;
@@ -48,6 +47,7 @@
 using namespace Core::PrimitiveType;
 using namespace Core;
 using namespace Core::IO;
+using namespace Core::Net;
 
 class A : public Object
 {
@@ -102,15 +102,27 @@ int main()
 	//Integer hash2 = b.GetHashCode();
 	//LOG(hash2);
 
-	Collections::Map<Integer, FString>map = Collections::Map<Integer, FString>{
+	//Collections::Map<Integer, FString>map = Collections::Map<Integer, FString>{
+	//
+	//	{0,"hello"},
+	//	{1000,"World"}
+	//};
+	//map.Remove(0);
+	//LOG(map[1000]);
+	//map.Add(55, "Hey");
+	//LOG(map[55]);
 	
-		{0,"hello"},
-		{1000,"World"}
-	};
-	map.Remove(0);
-	LOG(map[1000]);
-	map.Add(55, "Hey");
-	LOG(map[55]);
+
+	//URL
+	try
+	{
+		WebClient _request = WebClient(Uri("........................."));
+		_request.DownloadFile("......");
+	}
+	catch (const Exception& e)
+	{
+		LOG_ERROR(e);
+	}
 
 	return 0;
 
