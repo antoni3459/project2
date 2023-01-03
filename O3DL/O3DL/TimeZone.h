@@ -1,6 +1,7 @@
 #pragma once
 #include "Object.h"
 #include "DateTime.h"
+#include "FString.h"
 #include <chrono>
 #include <time.h>
 #include <iostream>

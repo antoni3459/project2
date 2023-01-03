@@ -31,6 +31,9 @@
 #include "MethodInfo.h"
 #include "ParamatereInfo.h"
 #include "Enum.h"
+#include "Hash.h"
+#include "Map.h"
+#include "KeyValuePair.h"
 
 //using namespace Core::PrimitiveType;
 //using namespace Core;
@@ -88,6 +91,26 @@ int main()
 	//{
 	//	std::cout << *t << std::endl;
 	//}
+
+	//pour le hashage
+
+	//Integer a = 50;
+	//Integer b = 50;
+
+	//Integer hash = a.GetHashCode();
+	//LOG(hash);
+	//Integer hash2 = b.GetHashCode();
+	//LOG(hash2);
+
+	Collections::Map<Integer, FString>map = Collections::Map<Integer, FString>{
+	
+		{0,"hello"},
+		{1000,"World"}
+	};
+	map.Remove(0);
+	LOG(map[1000]);
+	map.Add(55, "Hey");
+	LOG(map[55]);
 
 	return 0;
 

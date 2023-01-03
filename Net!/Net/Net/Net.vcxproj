@@ -21,32 +21,32 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{28b7daf5-7bc8-44b1-9b3b-fee3e5605bea}</ProjectGuid>
-    <RootNamespace>O3DL</RootNamespace>
+    <ProjectGuid>{e1aff906-ff9a-4bc5-b1a8-44672f94b804}</ProjectGuid>
+    <RootNamespace>Net</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -74,16 +74,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;O3DL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -92,34 +89,28 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;O3DL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;O3DL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,101 +119,23 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;O3DL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Boolean.h" />
-    <ClInclude Include="BoxFile.h" />
-    <ClInclude Include="CircleShape.h" />
-    <ClInclude Include="ClipBoard.h" />
-    <ClInclude Include="ComplexShape.h" />
-    <ClInclude Include="Console.h" />
-    <ClInclude Include="CoreIO.h" />
-    <ClInclude Include="DateTime.h" />
-    <ClInclude Include="Directory.h" />
-    <ClInclude Include="EConsoleColor.h" />
-    <ClInclude Include="EDayOfWeek.h" />
-    <ClInclude Include="Enum.h" />
-    <ClInclude Include="Environment.h" />
-    <ClInclude Include="Exception.h" />
-    <ClInclude Include="FieldInfo.h" />
-    <ClInclude Include="File.h" />
-    <ClInclude Include="FileStream.h" />
-    <ClInclude Include="framework.h" />
-    <ClInclude Include="FString.h" />
-    <ClInclude Include="BindingFlags.h" />
-    <ClInclude Include="Hash.h" />
-    <ClInclude Include="Interger.h" />
-    <ClInclude Include="KeyValuePair.h" />
-    <ClInclude Include="Map.h" />
-    <ClInclude Include="MethodInfo.h" />
-    <ClInclude Include="O3DLibrary.h" />
-    <ClInclude Include="Object.h" />
-    <ClInclude Include="ParamatereInfo.h" />
-    <ClInclude Include="Path.h" />
-    <ClInclude Include="pch.h" />
-    <ClInclude Include="Process.h" />
-    <ClInclude Include="RectangleShape.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="Shape.h" />
-    <ClInclude Include="TestWritter.h" />
-    <ClInclude Include="TextReader.h" />
-    <ClInclude Include="TimeZone.h" />
-    <ClInclude Include="Uri.h" />
-    <ClInclude Include="WebClient.h" />
-    <ClInclude Include="Window.h" />
-    <ClInclude Include="WindowMenu.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Boolean.cpp" />
-    <ClCompile Include="BoxFile.cpp" />
-    <ClCompile Include="CircleShape.cpp" />
-    <ClCompile Include="ClipBoard.cpp" />
-    <ClCompile Include="ComplexShape.cpp" />
-    <ClCompile Include="Console.cpp" />
-    <ClCompile Include="DateTime.cpp" />
-    <ClCompile Include="Directory.cpp" />
-    <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="Environment.cpp" />
-    <ClCompile Include="Exception.cpp" />
-    <ClCompile Include="FieldInfo.cpp" />
-    <ClCompile Include="File.cpp" />
-    <ClCompile Include="FileStream.cpp" />
-    <ClCompile Include="FString.cpp" />
-    <ClCompile Include="Interger.cpp" />
-    <ClCompile Include="Object.cpp" />
-    <ClCompile Include="Path.cpp" />
-    <ClCompile Include="pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="Process.cpp" />
-    <ClCompile Include="RectangleShape.cpp" />
-    <ClCompile Include="Shape.cpp" />
-    <ClCompile Include="TestWritter.cpp" />
-    <ClCompile Include="TextReader.cpp" />
-    <ClCompile Include="TimeZone.cpp" />
-    <ClCompile Include="Uri.cpp" />
+    <ClCompile Include="Net.cpp" />
     <ClCompile Include="WebClient.cpp" />
-    <ClCompile Include="Window.cpp" />
-    <ClCompile Include="WindowMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="O3DL.lib" />
+    <ClInclude Include="WebClient.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
