@@ -151,6 +151,18 @@
     <Filter Include="Core\Diagnostic\process">
       <UniqueIdentifier>{f9a7f43b-ac87-41d8-8e7c-26f98c89009d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Net\WebCallback">
+      <UniqueIdentifier>{14704be2-0081-4a99-9a5b-99b61ca1cd60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Event">
+      <UniqueIdentifier>{b069be66-b1c0-4923-bff1-4b43da772175}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Event\Action">
+      <UniqueIdentifier>{f044ec96-a62b-42dc-851c-3f4c2283b95e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Event\Delegate">
+      <UniqueIdentifier>{d918e327-547b-4639-9fdb-897e544c0828}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -276,6 +288,15 @@
     <ClInclude Include="Process.h">
       <Filter>Core\Diagnostic\process</Filter>
     </ClInclude>
+    <ClInclude Include="WebCallBack.h">
+      <Filter>Core\Net\WebCallback</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionInternal.h">
+      <Filter>Core\Event\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Delegate.h">
+      <Filter>Core\Event\Delegate</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -364,6 +385,9 @@
     </ClCompile>
     <ClCompile Include="Process.cpp">
       <Filter>Core\Diagnostic\process</Filter>
+    </ClCompile>
+    <ClCompile Include="WebCallBack.cpp">
+      <Filter>Core\Net\WebCallback</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

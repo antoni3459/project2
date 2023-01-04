@@ -10,6 +10,7 @@ namespace Core
         class O3DLIBRAIRY_API Uri : public Object
         {
 #pragma region f/p
+
         private:
             PrimitiveType::FString path = "";
 
@@ -23,8 +24,10 @@ namespace Core
             Uri(const Uri& _copy);
 
 #pragma endregion constructor
+
         public:
             PrimitiveType::FString Path();
+
 #pragma region override
 
         public:

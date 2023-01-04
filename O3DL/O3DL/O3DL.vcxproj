@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ActionInternal.h" />
     <ClInclude Include="Boolean.h" />
     <ClInclude Include="BoxFile.h" />
     <ClInclude Include="CircleShape.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Console.h" />
     <ClInclude Include="CoreIO.h" />
     <ClInclude Include="DateTime.h" />
+    <ClInclude Include="Delegate.h" />
     <ClInclude Include="Directory.h" />
     <ClInclude Include="EConsoleColor.h" />
     <ClInclude Include="EDayOfWeek.h" />
@@ -181,6 +183,7 @@
     <ClInclude Include="TextReader.h" />
     <ClInclude Include="TimeZone.h" />
     <ClInclude Include="Uri.h" />
+    <ClInclude Include="WebCallBack.h" />
     <ClInclude Include="WebClient.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="WindowMenu.h" />
@@ -217,6 +220,7 @@
     <ClCompile Include="TextReader.cpp" />
     <ClCompile Include="TimeZone.cpp" />
     <ClCompile Include="Uri.cpp" />
+    <ClCompile Include="WebCallBack.cpp" />
     <ClCompile Include="WebClient.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WindowMenu.cpp" />
