@@ -1,5 +1,6 @@
 #pragma once
 #include "../BaseMenu.h"
+#include <iostream>
 
 class CalendarControl;
 class TextField;
@@ -27,5 +28,5 @@ private:
 
 public:
 	void Initialize()override;
-};
 
+};

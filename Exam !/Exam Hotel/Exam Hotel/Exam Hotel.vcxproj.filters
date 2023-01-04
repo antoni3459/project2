@@ -12,9 +12,6 @@
     <Filter Include="Object">
       <UniqueIdentifier>{6c2ed805-390a-4efc-a50d-915de3e04dbc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Windows">
-      <UniqueIdentifier>{f21744a1-d1a1-4420-926e-af06ebb28225}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Menu">
       <UniqueIdentifier>{d3303c29-dbf0-4c55-bf2f-fe723de1bfb1}</UniqueIdentifier>
     </Filter>
@@ -34,6 +31,9 @@
     <Filter Include="Menu\ViewAll">
       <UniqueIdentifier>{5c92fed7-4a96-41e4-8479-c873bb55c548}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Menu\Windows">
+      <UniqueIdentifier>{f21744a1-d1a1-4420-926e-af06ebb28225}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Exam Hotel.cpp">
@@ -43,7 +43,7 @@
       <Filter>Object</Filter>
     </ClCompile>
     <ClCompile Include="Windows.cpp">
-      <Filter>Windows</Filter>
+      <Filter>Menu\Windows</Filter>
     </ClCompile>
     <ClCompile Include="Launcher.cpp">
       <Filter>Laucher</Filter>
@@ -63,7 +63,7 @@
       <Filter>Object</Filter>
     </ClInclude>
     <ClInclude Include="Windows.h">
-      <Filter>Windows</Filter>
+      <Filter>Menu\Windows</Filter>
     </ClInclude>
     <ClInclude Include="Launcher.h">
       <Filter>Laucher</Filter>

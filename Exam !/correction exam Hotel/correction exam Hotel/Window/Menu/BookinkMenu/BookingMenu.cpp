@@ -42,15 +42,15 @@ void BookingMenu::Initialize()
 {
 	super::Initialize();
 	messageControl = CreateLabel(Rect(owner->Width() / 2, 50, 200, 20), TEXT(""));
-	firstName=CreateTextField(Rect(10, 50, 255, 20), L"first name...");
-	lastName=CreateTextField(Rect(10, 80, 255, 20), L"last name...");
-	numberOfPeople=CreateTextField(Rect(10, 100, 255, 20), L"number of people...");
+	firstName = CreateTextField(Rect(10, 50, 255, 20), L"first name...");
+	lastName = CreateTextField(Rect(10, 80, 255, 20), L"last name...");
+	numberOfPeople = CreateTextField(Rect(10, 110, 255, 20), L"number of people...");
 
 	ButtonControl* _saveControl=CreateButton(Rect(60, 360, 150,20), L"SaveBooking");
 	_saveControl->OnClick.SetDynamic(this, &BookingMenu::SaveBooking);
 
 	ButtonControl* _returnControl=CreateButton(Rect(10, 0, 100, 20), TEXT("Return"));
-	_returnControl->OnClick.SetDynamic(this, &BookingMenu::SaveBooking);
+	_returnControl->OnClick.SetDynamic(this, &BookingMenu::ReturnMainMenu);
 
 	calendar = CreateCalendar(Rect(10, 140, 150, 150));
 	calendar->SetMaxSelected(15);

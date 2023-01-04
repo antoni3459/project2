@@ -65,7 +65,7 @@ LRESULT __stdcall Windows::WindowProc(HWND _hWindow, UINT _msg, WPARAM _wp, LPAR
     {
         int test = Button_GetState(viewAllBookings);
         int test1 = Button_GetState(createNewBooking);
-
+        
         Button(test, test1, _msg);
 
     }
@@ -122,11 +122,15 @@ void Windows::Button(int _test, int _test1, UINT _msg)
         if (_test1 == 512 && _test == 0)
         {
             count = 1;
+            std::cout << "nique toi" << std::endl;
+
             Button_SetCheck(createNewBooking, BST_UNCHECKED);
             AddReserv();
         }
         if (_test1 == 0 && _test == 512)
         {
+            std::cout << "nique toi" << std::endl;
+
             count = 2;
             Button_SetCheck(viewAllBookings, BST_UNCHECKED);
             ViewAllM();

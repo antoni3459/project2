@@ -13,7 +13,7 @@ Core::Shape::~Shape()
 	graphics = nullptr;
 }
 
-Core::Style Core::Shape::GetStyle()
+Core::Style& Core::Shape::GetStyle()
 {
 	return style;
 }

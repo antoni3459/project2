@@ -28,6 +28,7 @@
 #include "MethodInfo.h"
 #include "ParamatereInfo.h"
 #include "Enum.h"
+#include "ComplexShape.h"
 
 
 using namespace Core::PrimitiveType;
@@ -37,10 +38,9 @@ using namespace Core::IO;
 int main()
 {
     Window window = Window("Test", 1000, 800);
-   
-    RectangleShape shape1 = RectangleShape({ 50,180 }, 100, 40);
-
-    CircleShape shape = CircleShape({ 50,20 }, 100);
+    window.Register(new CircleShape({ 56,200 }, 500));
+    std::vector<Gdiplus::PointF> _points = std::vector<Gdiplus::PointF>(120);
+    window.Register(new ComplexShape(_points));
     window.Open();
     return 0;
 }

@@ -2,11 +2,17 @@
 
 LabelControl::LabelControl(int _controlID, HWND _owner, Rect _rect, const wchar_t* _text):super(_controlID, _owner, _rect)
 {
+	controlID = _controlID;
+	owner = _owner;
+	rect = _rect;
 	text = _text;
 }
 
 LabelControl::LabelControl(LabelControl& copy) :super(copy)
 {
+	controlID=copy.controlID;
+	owner = copy.owner;
+	rect = copy.rect;
 	text = copy.text;
 }
 

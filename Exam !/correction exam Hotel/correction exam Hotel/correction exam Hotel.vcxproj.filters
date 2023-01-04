@@ -16,6 +16,69 @@
     <Filter Include="Object">
       <UniqueIdentifier>{1ac5cd1a-0e83-4ee1-b726-145b01f2dc9b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Booking">
+      <UniqueIdentifier>{555ad1ab-a5b1-4994-bd1a-b3464307d2e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Booking\Client">
+      <UniqueIdentifier>{5c83f728-8f73-4c27-af86-761447b6076f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Booking\Manager">
+      <UniqueIdentifier>{39ddd79c-b4d7-4721-b276-5a7b5c6456ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Delegate">
+      <UniqueIdentifier>{1e217ceb-c592-40bf-a7ec-611270c96568}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{e6172999-97b1-4c20-a26f-e6c19da95710}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\DataBase">
+      <UniqueIdentifier>{7d2aab45-a129-4f52-af91-918427a4f40b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\DateTime">
+      <UniqueIdentifier>{fc88a914-597c-4de9-a477-3844f55d74d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Rect">
+      <UniqueIdentifier>{8f2e0bb2-307b-40be-8d44-0621cd5e2dc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Singleton">
+      <UniqueIdentifier>{a39738ba-a769-4dc1-a811-f7bf840f7a67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows">
+      <UniqueIdentifier>{d69c4515-1c7a-45a1-afcd-2414722e9e9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Controle">
+      <UniqueIdentifier>{82eae1e2-1ffc-43b9-9f5f-63fe2918157f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Controle\Button">
+      <UniqueIdentifier>{d278c268-7705-4cc1-bf09-134993916a7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Controle\Button\Booking">
+      <UniqueIdentifier>{facb009c-0898-4654-b0eb-348393575906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Controle\Calandar">
+      <UniqueIdentifier>{950e7398-b00d-4f71-a82e-c5c4ad5dd8c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Controle\Label">
+      <UniqueIdentifier>{ee2b19d5-8f6c-4acb-9a0c-150d20e56618}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Controle\TextField">
+      <UniqueIdentifier>{c76631af-360f-4b81-a489-7799e0851ce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Menu">
+      <UniqueIdentifier>{5b52bb0e-465c-4949-8cd3-b99c25eb1687}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Menu\BookingMenu">
+      <UniqueIdentifier>{8313e3f3-6367-47ef-aa89-073ca11c5a3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Menu\BookingDataViewData">
+      <UniqueIdentifier>{aafcb160-8680-43c4-89cc-418feca01aac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Menu\BookingViewMenu">
+      <UniqueIdentifier>{a2045887-e233-436e-8b81-bab6341a56de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Menu\MainMenu">
+      <UniqueIdentifier>{9a763fdb-ef19-45a2-9b3e-d3c4fc5260a8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="correction exam Hotel.cpp">
@@ -24,121 +87,121 @@
     <ClCompile Include="Object\Object.cpp">
       <Filter>Object</Filter>
     </ClCompile>
-    <ClCompile Include="Window\Windows.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Window\Control\WindowControl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Window\Control\Button\ButtonControl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Utils\Rect\Rect.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Window\Control\Label\LabelControl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Window\Control\TextField\TextField.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Window\Menu\BaseMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Window\Menu\MainMenu\MainMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Window\Menu\BookinkMenu\BookingMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Window\Control\Calandar\CalendarControl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Utils\DateTime\DateTime.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Booking\Booking.cpp">
+      <Filter>Booking</Filter>
     </ClCompile>
     <ClCompile Include="Booking\Client\Client.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Booking\Booking.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Booking\Client</Filter>
     </ClCompile>
     <ClCompile Include="Booking\Manager\BookingManager.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Booking\Manager</Filter>
     </ClCompile>
-    <ClCompile Include="Window\Menu\BookingViewMenu\BookingViewMenu.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Utils\DateTime\DateTime.cpp">
+      <Filter>Utils\DateTime</Filter>
     </ClCompile>
-    <ClCompile Include="Window\Menu\BookingViewData\BookingViewData.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Utils\Rect\Rect.cpp">
+      <Filter>Utils\Rect</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Windows.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Control\WindowControl.cpp">
+      <Filter>Windows\Controle</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Control\Button\ButtonControl.cpp">
+      <Filter>Windows\Controle\Button</Filter>
     </ClCompile>
     <ClCompile Include="Window\Control\Button\ButtonBookingControl\ButtonBookingControl.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Windows\Controle\Button\Booking</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Control\Calandar\CalendarControl.cpp">
+      <Filter>Windows\Controle\Calandar</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Control\Label\LabelControl.cpp">
+      <Filter>Windows\Controle\Label</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Control\TextField\TextField.cpp">
+      <Filter>Windows\Controle\TextField</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Menu\BaseMenu.cpp">
+      <Filter>Windows\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Menu\BookinkMenu\BookingMenu.cpp">
+      <Filter>Windows\Menu\BookingMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Menu\BookingViewData\BookingViewData.cpp">
+      <Filter>Windows\Menu\BookingDataViewData</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Menu\BookingViewMenu\BookingViewMenu.cpp">
+      <Filter>Windows\Menu\BookingViewMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Menu\MainMenu\MainMenu.cpp">
+      <Filter>Windows\Menu\MainMenu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object\Object.h">
       <Filter>Object</Filter>
     </ClInclude>
-    <ClInclude Include="Window\Windows.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Window\Control\WindowControl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Window\Control\Button\ButtonControl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils\Rect\Rect.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Event\Delegate\Delegate.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Window\Control\Label\LabelControl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Window\Control\TextField\TextField.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Window\Menu\BaseMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Window\Menu\MainMenu\MainMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils\Interfarce\MenuInterfarce.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Window\Menu\BookinkMenu\BookingMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Window\Control\Calandar\CalendarControl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils\DateTime\DateTime.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Booking\Booking.h">
+      <Filter>Booking</Filter>
     </ClInclude>
     <ClInclude Include="Booking\Client\Client.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Booking\Booking.h">
-      <Filter>Header Files</Filter>
+      <Filter>Booking\Client</Filter>
     </ClInclude>
     <ClInclude Include="Booking\Manager\BookingManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Booking\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Event\Delegate\Delegate.h">
+      <Filter>Delegate</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Interfarce\MenuInterfarce.h">
+      <Filter>Utils\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\DateTime\DateTime.h">
+      <Filter>Utils\DateTime</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Rect\Rect.h">
+      <Filter>Utils\Rect</Filter>
     </ClInclude>
     <ClInclude Include="Utils\Singleton\Singleton.h">
-      <Filter>Header Files</Filter>
+      <Filter>Utils\Singleton</Filter>
     </ClInclude>
-    <ClInclude Include="Window\Menu\BookingViewMenu\BookingViewMenu.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Window\Windows.h">
+      <Filter>Windows</Filter>
     </ClInclude>
-    <ClInclude Include="Window\Menu\BookingViewData\BookingViewData.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Window\Control\WindowControl.h">
+      <Filter>Windows\Controle</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\Control\Button\ButtonControl.h">
+      <Filter>Windows\Controle\Button</Filter>
     </ClInclude>
     <ClInclude Include="Window\Control\Button\ButtonBookingControl\ButtonBookingControl.h">
-      <Filter>Header Files</Filter>
+      <Filter>Windows\Controle\Button\Booking</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\Control\Calandar\CalendarControl.h">
+      <Filter>Windows\Controle\Calandar</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\Control\Label\LabelControl.h">
+      <Filter>Windows\Controle\Label</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\Control\TextField\TextField.h">
+      <Filter>Windows\Controle\TextField</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\Menu\BaseMenu.h">
+      <Filter>Windows\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\Menu\BookinkMenu\BookingMenu.h">
+      <Filter>Windows\Menu\BookingMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\Menu\BookingViewData\BookingViewData.h">
+      <Filter>Windows\Menu\BookingDataViewData</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\Menu\BookingViewMenu\BookingViewMenu.h">
+      <Filter>Windows\Menu\BookingViewMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\Menu\MainMenu\MainMenu.h">
+      <Filter>Windows\Menu\MainMenu</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

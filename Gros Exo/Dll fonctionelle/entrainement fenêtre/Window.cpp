@@ -5,6 +5,7 @@
 #include <gdiplus.h>
 #include <iostream>
 #include <string>
+#include <gdiplus.h>
 
 #define IDM_ELLIPSE    1100
 #define IDM_RECTANGLE  1200
@@ -38,11 +39,13 @@ Core::Window::Window(const std::string& _name, const int _width, const int _heig
 		width, height, nullptr, nullptr, _instance, this);
 
 	//cette partie de rajouter plusieur chose dans la fenêtre 
-	HWND textField = CreateWindowEx(WS_EX_CLIENTEDGE, L"Static", L"test", WS_CHILD | WS_VISIBLE | WS_BORDER, //tatic tu écrit pas dans le bouton Edit si || WS_VSCROLL avec les autres WS il y a une barre de scroll
+	HWND textField = CreateWindowEx(WS_EX_CLIENTEDGE, L"Edit", L"test", WS_CHILD | WS_VISIBLE | WS_BORDER, //tatic tu écrit pas dans le bouton Edit si || WS_VSCROLL avec les autres WS il y a une barre de scroll
 		200, 60, 140, 20, windowInstance, NULL, _instance, NULL);
 	SetWindowTextA(windowInstance, _name.c_str());
 
 	SetWindowTextA(windowInstance, _name.c_str());// ça permet d'afficher le nom de la fenêtre 
+
+	Gdiplus::GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, nullptr);//initie Gdiplus qui nous permet de créer les formes
 }
 
 Core::Window::~Window() // il clear le menu
@@ -99,7 +102,7 @@ Core::WindowMenu* Core::Window::CreateWindowMenu(const char* _name)
 	return _menu;
 }
 
- void Core::Window::Register(Shape* _shapes)
+ void Core::Window::Register(Shape* _shapes)//
 {
 	shapes.push_back(_shapes);
 }
@@ -109,12 +112,12 @@ int Core::Window::MenusCount() const
 	return menus.size();
 }
 
-void Core::Window::RegisterMenu(WindowMenu* _menu)
+void Core::Window::RegisterMenu(WindowMenu* _menu)//
 {
 	menus.insert(std::pair<std::string, WindowMenu*>(_menu->Name(), _menu));
 }
 
-void Core::Window::Update()// il permet d'ajpiter ou enlever les différente chose qu'on choisi 
+void Core::Window::Update()// il permet d'ajouter ou enlever les différente chose qu'on choisi 
 {
 	MSG _msg = {};
 	while (isOpen)
@@ -131,7 +134,7 @@ void Core::Window::Update()// il permet d'ajpiter ou enlever les différente chos
 	Gdiplus::GdiplusShutdown(gdiplusToken);
 }
 
-void Core::Window::AddMenu(HWND _hwnd)
+void Core::Window::AddMenu(HWND _hwnd)//
 {
 	const WindowMenu* _menu = CreateWindowMenu("");
 	WindowMenu* _fileMenu = CreateWindowMenu("File");

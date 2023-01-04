@@ -1,10 +1,12 @@
 #pragma once
 #include "Object.h"
+#include "Shape.h"
 #include <Windows.h>
 #include <gdiplus.h>
 #include <vector>
 #include <string>
 #include <map>
+#include <gdiplus.h>
 
 #pragma comment(lib,"Gdiplus.lib")
 
@@ -14,21 +16,24 @@ namespace Core
 	class Window :public Object
 	{
 #pragma region f/P
-	// varible pour windows et menu
+	// varible pour windows 
 	private:
 		HWND windowInstance = nullptr;
 		std::string name = "";
 		int width = 1920;
 		int height = 1080;
 		bool isOpen = true;
+
+		//variable pur menu
 		std::map<std::string, WindowMenu*> menus = std::map<std::string, WindowMenu*>();
-		HDC hdc = HDC();
 
 		//varaible pour Shape
 		std::vector<class Shape*> shapes = std::vector<Shape*>();
 		PAINTSTRUCT paintStruct = PAINTSTRUCT();
 		Gdiplus::GdiplusStartupInput gdiplusStartupInput = Gdiplus::GdiplusStartupInput();
 		ULONG_PTR gdiplusToken = 0;
+		HDC hdc = HDC();
+
 	public:
 		Gdiplus::Color color = Gdiplus::Color(255, 255, 0, 0);
 		Gdiplus::Rect pos = Gdiplus::Rect(10, 10, 100, 100);
@@ -50,14 +55,14 @@ namespace Core
 
 	protected:
 		virtual void Update();
-		virtual void AddMenu(HWND _hwnd);
-		WindowMenu* CreateWindowMenu(const char* _name);
+		virtual void AddMenu(HWND _hwnd);//
+		WindowMenu* CreateWindowMenu(const char* _name);//
 	public:
-		void Register(Shape* _shapes);
+		void Register(Shape* _shapes);//
 		void Open();
 		void Close();
-		int MenusCount() const;
-		void RegisterMenu(WindowMenu* _menu);
+		int MenusCount() const;//
+		void RegisterMenu(WindowMenu* _menu);//
 #pragma endregion method
 
 	};

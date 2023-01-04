@@ -40,7 +40,7 @@ namespace Core
 
 #pragma region methods
 	public:
-		Style GetStyle();
+		Style& GetStyle();
 		Position& GetPosition();
 		bool IsValid()const;
 		void Init(HDC _hdc);

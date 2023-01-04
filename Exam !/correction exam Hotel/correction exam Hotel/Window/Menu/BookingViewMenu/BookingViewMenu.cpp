@@ -36,14 +36,14 @@ void BookingViewMenu::DisplayBooking(const std::vector<Booking*>& _bookings)
 	int _index = 0;
 	for (Booking* _booking : _bookings)
 	{
-		const Client _client = _booking->GetClient();
+		Client _client = _booking->GetClient();
 		const std::string _clientFullName = _client.FirstName() + " " + _client.LastName();
 		const std::wstring _fullNameWstr = std::wstring(_clientFullName.begin(), _clientFullName.end());
-
 		const int _width = _clientFullName.length() * 10;
-		ButtonBookingControl* _button = CreateBookingButton(Rect(_positionX, _positionY, 250, 20), _fullNameWstr.c_str(), _booking);
+		ButtonBookingControl* _button = CreateBookingButton(Rect(_positionX, _positionY, _width, 20), _fullNameWstr.c_str(), _booking);
 		_button->OnClickBooking.SetDynamic(this, &BookingViewMenu::SetCurrentBooking);
 		_button->OnClick.SetDynamic(this, &BookingViewMenu::LoadBookingData);
+
 
 		_positionX += _width + 10;
 		_index++;
@@ -52,15 +52,15 @@ void BookingViewMenu::DisplayBooking(const std::vector<Booking*>& _bookings)
 			_positionX = 10;
 			_positionY += 30;
 		}
-	}
+	}		 
 }
 
 void BookingViewMenu::Initialize()
 {
 	super::Initialize();
-	textControl = CreateLabel(Rect(10, 30, 250, 20), L"");
-	ButtonControl* _reuturnControl = CreateButton(Rect(10, 0, 100, 20), TEXT("Return"));
-	_reuturnControl->OnClick.SetDynamic(this, &BookingViewMenu::ReturnMainMenu);
+	textControl = CreateLabel(Rect(10, 20, 250, 20), L"");
+	ButtonControl* _returnControl = CreateButton(Rect(10, 0, 100, 20), TEXT("Return"));
+	_returnControl->OnClick.SetDynamic(this, &BookingViewMenu::ReturnMainMenu);
 	isInitialized = true;
 	Close();
 }
@@ -83,11 +83,12 @@ void BookingViewMenu::Open()
 void BookingViewMenu::Close()
 {
 	const size_t _size = controls.size();
-	for (size_t i = 3;i < _size;i++)
+	for (size_t i = 3; i < _size; i++)
 	{
 		controls[3]->Hide();
 		delete controls[3];
-		controls.erase(controls.begin() + 1);
+		controls.erase(controls.begin() + 3);
 	}
+	super::Close();
 }
 
