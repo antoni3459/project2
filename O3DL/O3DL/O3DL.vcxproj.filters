@@ -121,6 +121,48 @@
     <Filter Include="Core\TimeZone">
       <UniqueIdentifier>{e7a30b8a-9b21-40cb-a92a-6d2848818057}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Utils">
+      <UniqueIdentifier>{de30efe5-bc65-4642-9d2b-08001788afa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Utils\Hash">
+      <UniqueIdentifier>{81efdbf5-bdd1-46ab-ae7a-8c217e308c71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Collections">
+      <UniqueIdentifier>{a215d545-93bc-4a78-8fe1-773d617f3cea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Collections\Map">
+      <UniqueIdentifier>{b9bb8205-ae99-493b-966d-e72c0d4acfbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Collections\KeyValuePair">
+      <UniqueIdentifier>{16f362ce-bc0c-4f92-a585-01c0974b9368}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Net">
+      <UniqueIdentifier>{d8757a96-2cef-4864-80e5-9dd6d2fac37b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Net\WebClient">
+      <UniqueIdentifier>{9e13aaca-28c7-49dc-8a54-61011929df05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Net\Uri">
+      <UniqueIdentifier>{cbf55a4c-d37e-4e26-888f-5782d4c5f10b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Diagnostic">
+      <UniqueIdentifier>{c7e79959-8836-449f-a3d8-84836f4c3ad1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Diagnostic\process">
+      <UniqueIdentifier>{f9a7f43b-ac87-41d8-8e7c-26f98c89009d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Net\WebCallback">
+      <UniqueIdentifier>{14704be2-0081-4a99-9a5b-99b61ca1cd60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Event">
+      <UniqueIdentifier>{b069be66-b1c0-4923-bff1-4b43da772175}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Event\Action">
+      <UniqueIdentifier>{f044ec96-a62b-42dc-851c-3f4c2283b95e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Event\Delegate">
+      <UniqueIdentifier>{d918e327-547b-4639-9fdb-897e544c0828}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -228,6 +270,33 @@
     <ClInclude Include="TimeZone.h">
       <Filter>Core\TimeZone</Filter>
     </ClInclude>
+    <ClInclude Include="Hash.h">
+      <Filter>Core\Utils\Hash</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Core\Collections\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyValuePair.h">
+      <Filter>Core\Collections\KeyValuePair</Filter>
+    </ClInclude>
+    <ClInclude Include="Uri.h">
+      <Filter>Core\Net\Uri</Filter>
+    </ClInclude>
+    <ClInclude Include="WebClient.h">
+      <Filter>Core\Net\WebClient</Filter>
+    </ClInclude>
+    <ClInclude Include="Process.h">
+      <Filter>Core\Diagnostic\process</Filter>
+    </ClInclude>
+    <ClInclude Include="WebCallBack.h">
+      <Filter>Core\Net\WebCallback</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionInternal.h">
+      <Filter>Core\Event\Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Delegate.h">
+      <Filter>Core\Event\Delegate</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -307,6 +376,18 @@
     </ClCompile>
     <ClCompile Include="TimeZone.cpp">
       <Filter>Core\TimeZone</Filter>
+    </ClCompile>
+    <ClCompile Include="Uri.cpp">
+      <Filter>Core\Net\Uri</Filter>
+    </ClCompile>
+    <ClCompile Include="WebClient.cpp">
+      <Filter>Core\Net\WebClient</Filter>
+    </ClCompile>
+    <ClCompile Include="Process.cpp">
+      <Filter>Core\Diagnostic\process</Filter>
+    </ClCompile>
+    <ClCompile Include="WebCallBack.cpp">
+      <Filter>Core\Net\WebCallback</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

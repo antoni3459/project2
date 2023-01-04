@@ -3,6 +3,7 @@
 #include "FString.h"
 #include "Boolean.h"
 #include "FieldInfo.h"
+#include "Hash.h"
 #include <ranges>
 
 
@@ -23,7 +24,12 @@ Core::PrimitiveType::Boolean Core::Object::Equals(const Object* _obj) const
 
 Core::PrimitiveType::FString Core::Object::ToString() const
 {
-	return "";
+	return typeid(*this).name();
+}
+
+int Core::Object::GetHashCode() const
+{
+	return Core::Utils::Hash::HashCode(ToString());
 }
 
 std::vector<Core::FieldInfo*> Core::Object::GetFields() const

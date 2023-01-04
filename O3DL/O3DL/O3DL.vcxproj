@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ActionInternal.h" />
     <ClInclude Include="Boolean.h" />
     <ClInclude Include="BoxFile.h" />
     <ClInclude Include="CircleShape.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Console.h" />
     <ClInclude Include="CoreIO.h" />
     <ClInclude Include="DateTime.h" />
+    <ClInclude Include="Delegate.h" />
     <ClInclude Include="Directory.h" />
     <ClInclude Include="EConsoleColor.h" />
     <ClInclude Include="EDayOfWeek.h" />
@@ -163,19 +165,26 @@
     <ClInclude Include="framework.h" />
     <ClInclude Include="FString.h" />
     <ClInclude Include="BindingFlags.h" />
+    <ClInclude Include="Hash.h" />
     <ClInclude Include="Interger.h" />
+    <ClInclude Include="KeyValuePair.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="MethodInfo.h" />
     <ClInclude Include="O3DLibrary.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ParamatereInfo.h" />
     <ClInclude Include="Path.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Process.h" />
     <ClInclude Include="RectangleShape.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="TestWritter.h" />
     <ClInclude Include="TextReader.h" />
     <ClInclude Include="TimeZone.h" />
+    <ClInclude Include="Uri.h" />
+    <ClInclude Include="WebCallBack.h" />
+    <ClInclude Include="WebClient.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="WindowMenu.h" />
   </ItemGroup>
@@ -204,11 +213,15 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Process.cpp" />
     <ClCompile Include="RectangleShape.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="TestWritter.cpp" />
     <ClCompile Include="TextReader.cpp" />
     <ClCompile Include="TimeZone.cpp" />
+    <ClCompile Include="Uri.cpp" />
+    <ClCompile Include="WebCallBack.cpp" />
+    <ClCompile Include="WebClient.cpp" />
     <ClCompile Include="Window.cpp" />
     <ClCompile Include="WindowMenu.cpp" />
   </ItemGroup>

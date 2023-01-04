@@ -6,6 +6,7 @@
 
 Core::PrimitiveType::FString const Core::PrimitiveType::FString::Empty = "";
 
+
 void Core::PrimitiveType::FString::Append(const FString& _str)
 {
     const int _newLength = length + _str.length;

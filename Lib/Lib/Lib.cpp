@@ -1,6 +1,3 @@
-// Lib.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include "FString.h"
 #include "Object.h"
@@ -31,6 +28,11 @@
 #include "MethodInfo.h"
 #include "ParamatereInfo.h"
 #include "Enum.h"
+#include "Hash.h"
+#include "Map.h"
+#include "KeyValuePair.h"
+#include "WebClient.h"
+#include "Uri.h"
 
 //using namespace Core::PrimitiveType;
 //using namespace Core;
@@ -45,20 +47,35 @@
 using namespace Core::PrimitiveType;
 using namespace Core;
 using namespace Core::IO;
+using namespace Core::Net;
 
-class A : public Object
+//class A : public Object
+//{
+//
+//public:
+//	void Test(const FString& _msg, const FString& a)
+//	{
+//		LOG(_msg);
+//		LOG(a);
+//	}
+//};
+//
+//ENUM(Test, Giusy = 1,Gabriel=15,Hugo)
+//ENUM(Test1, Aymeric = 1,Thibaud=2,Benoit=5, Pierre)
+
+class Progress :public Object
 {
-
 public:
-	void Test(const FString& _msg, const FString& a)
+	void Display(float _value)
 	{
-		LOG(_msg);
-		LOG(a);
+		const char* _str = "====================================================================";
+		const int _width = 60;
+		const int _pad = (_value / 100) * _width;
+		const int _rpad = _width - _pad;
+		printf("\r%.0f%% [%.*s%s%*s]", _value, _pad, _str, ">", _rpad, "");
 	}
 };
 
-ENUM(Test, Giusy = 1,Gabriel=15,Hugo)
-ENUM(Test1, Aymeric = 1,Thibaud=2,Benoit=5, Pierre)
 
 int main()
 {
@@ -89,6 +106,41 @@ int main()
 	//	std::cout << *t << std::endl;
 	//}
 
+	//pour le hashage
+
+	//Integer a = 50;
+	//Integer b = 50;
+
+	//Integer hash = a.GetHashCode();
+	//LOG(hash);
+	//Integer hash2 = b.GetHashCode();
+	//LOG(hash2);
+
+	//Collections::Map<Integer, FString>map = Collections::Map<Integer, FString>{
+	//
+	//	{0,"hello"},
+	//	{1000,"World"}
+	//};
+	//map.Remove(0);
+	//LOG(map[1000]);
+	//map.Add(55, "Hey");
+	//LOG(map[55]);
+	
+
+	////URL
+	//try
+	//{
+	//	WebClient _request = WebClient(Uri(".........................(url a telecharger"));
+	//	_request.DownloadFile("......(nom du fichier quand il sera télécharger");
+	//}
+	//catch (const Exception& e)
+	//{
+	//	LOG_ERROR(e);
+	//}
+	Progress progressBar = Progress();
+	WebClient client = WebClient(Uri(".........................(url a telecharger"));
+	client.OnDownloadProgress.AddDynamic(&progressBar, &Progress::Display);
+	client.DownloadFile("......(nom du fichier quand il sera télécharger");
 	return 0;
 
 }
