@@ -143,19 +143,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FlappyBird\Flappy\Flappy.cpp" />
+    <ClCompile Include="FlappyBird\game\Flappy\Flappy.cpp" />
     <ClCompile Include="FlappyBiredSFML.cpp" />
+    <ClCompile Include="FlappyBird\game\Game.cpp" />
     <ClCompile Include="Input\Input.cpp" />
-    <ClCompile Include="FlappyBird\Pipe\Pipe.cpp" />
-    <ClCompile Include="FlappyBird\Menu.cpp" />
+    <ClCompile Include="FlappyBird\game\Pipe\Pipe.cpp" />
+    <ClCompile Include="FlappyBird\menu\Menu.cpp" />
+    <ClCompile Include="FlappyBird\Lose\Lose.cpp" />
     <ClCompile Include="Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Event\Event.h" />
-    <ClInclude Include="FlappyBird\Flappy\Flappy.h" />
+    <ClInclude Include="FlappyBird\game\Flappy\Flappy.h" />
+    <ClInclude Include="FlappyBird\game\Game.h" />
     <ClInclude Include="Input\Input.h" />
-    <ClInclude Include="FlappyBird\Pipe\Pipe.h" />
-    <ClInclude Include="FlappyBird\Menu.h" />
+    <ClInclude Include="FlappyBird\game\Pipe\Pipe.h" />
+    <ClInclude Include="FlappyBird\menu\Menu.h" />
+    <ClInclude Include="FlappyBird\Lose\Lose.h" />
     <ClInclude Include="Time\Time.h" />
     <ClInclude Include="Window\Window.h" />
   </ItemGroup>

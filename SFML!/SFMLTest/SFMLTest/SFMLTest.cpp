@@ -70,6 +70,7 @@ int main()
     while (window.isOpen())
     {
         sf::Sprite sprite;
+        sf::Sprite sprite2;
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -78,12 +79,22 @@ int main()
             if (!texture.loadFromFile("../FP/flappy.png"))
             {
             }
+
         } 
         sprite.setScale(sf::Vector2f(0.3f, 0.3f)); // facteurs d'échelle absolus
+        sprite2.setScale(sf::Vector2f(0.3f, 0.3f)); // facteurs d'échelle absolus
+        sprite.setPosition(400, 400);
+        sprite2.setPosition(400, 400);
         sprite.setTexture(texture);
+        sprite2.setTexture(texture);
+        sprite.setOrigin(400.f, 400.f);
+        sprite2.setOrigin(400.f, 400.f);
+
+        sprite.rotate(50.f);
 
         window.clear();
         window.draw(sprite);
+        window.draw(sprite2);
         window.display();
     }
     return 0;

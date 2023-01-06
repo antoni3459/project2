@@ -27,13 +27,19 @@
     <ClCompile Include="Window\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FlappyBird\Flappy\Flappy.cpp">
+    <ClCompile Include="FlappyBird\game\Flappy\Flappy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FlappyBird\Pipe\Pipe.cpp">
+    <ClCompile Include="FlappyBird\game\Pipe\Pipe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FlappyBird\Menu.cpp">
+    <ClCompile Include="FlappyBird\menu\Menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyBird\game\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FlappyBird\Lose\Lose.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,13 +56,19 @@
     <ClInclude Include="Window\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FlappyBird\Flappy\Flappy.h">
+    <ClInclude Include="FlappyBird\game\Flappy\Flappy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FlappyBird\Pipe\Pipe.h">
+    <ClInclude Include="FlappyBird\game\Pipe\Pipe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FlappyBird\Menu.h">
+    <ClInclude Include="FlappyBird\menu\Menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird\game\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyBird\Lose\Lose.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

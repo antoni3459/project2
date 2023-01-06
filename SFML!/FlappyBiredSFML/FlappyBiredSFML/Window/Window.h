@@ -6,11 +6,10 @@ class Window
 private:
 	float width = 1920;
 	float height = 1080;
-	const char* title = "default Window";
-	sf::RenderWindow* window = nullptr;
-
+	const char* title = "Flappy Bird";
 protected:
 	bool eventIfNotFocus = false;
+	sf::RenderWindow* window = nullptr;
 
 public:
 	Window() = default;

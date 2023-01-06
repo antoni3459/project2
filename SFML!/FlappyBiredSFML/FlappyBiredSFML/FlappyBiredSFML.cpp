@@ -2,9 +2,11 @@
 //
 
 #include <iostream>
-#include "FlappyBird/Flappy/Flappy.h"
-#include "FlappyBird/Pipe/Pipe.h"
-#include "FlappyBird/Menu.h"
+#include "FlappyBird/game/Flappy/Flappy.h"
+#include "FlappyBird/game/Pipe/Pipe.h"
+#include "FlappyBird/menu/Menu.h"
+#include "FlappyBird/game/Game.h"
+#include "FlappyBird/Lose/Lose.h"
 
 int main()
 {
