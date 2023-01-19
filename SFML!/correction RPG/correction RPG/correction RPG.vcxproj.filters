@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Corre">
+      <UniqueIdentifier>{23f98dba-10ad-4a4d-b88a-fd5fde011644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{522699ba-46b7-4951-aec3-a11b820b7062}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Object">
+      <UniqueIdentifier>{58eda5f9-166a-4b5f-8a6a-1f2bd77da562}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Utils">
+      <UniqueIdentifier>{c66968cb-d80b-4d3c-92a7-9a40704a5579}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Utils\Debug">
+      <UniqueIdentifier>{d20fa2d7-959b-4f99-83d9-01e6eaf5e114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Utils\Singleton">
+      <UniqueIdentifier>{21ec6db0-843d-4d25-823d-d3477004de9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Utils\Math">
+      <UniqueIdentifier>{c16a8786-e4a5-4417-a49f-9c91fae97196}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Utils\Path">
+      <UniqueIdentifier>{6971af21-c07e-4d7c-9a18-1eaee2b9a36f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Environement">
+      <UniqueIdentifier>{35f07aa9-7548-4d73-887f-d56c237a4d1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Event">
+      <UniqueIdentifier>{b2c79127-590d-401c-97ae-31b9184297f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Event\Delegate">
+      <UniqueIdentifier>{091b4cf4-a67d-44f7-be5f-0b030d28b41f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Input">
+      <UniqueIdentifier>{ce13c536-ffeb-4831-b7e1-7e42ce558dfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Enum">
+      <UniqueIdentifier>{369099fc-d71f-4e95-a5eb-2777e3158945}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Window">
+      <UniqueIdentifier>{95442b6e-8a1d-45c2-a256-4e48d5b10e3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Time">
+      <UniqueIdentifier>{4a421cce-700f-4ae5-9dc6-c87b8b9028c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\UI">
+      <UniqueIdentifier>{fd8703aa-8200-4021-8e58-dbad14e70d38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\UI\Label">
+      <UniqueIdentifier>{f1962f64-2b7d-464d-ba96-76da0dce8c6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\UI\Image">
+      <UniqueIdentifier>{02fea279-aceb-4650-b7de-c212eb7895eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\UI\Button">
+      <UniqueIdentifier>{aafc0703-925b-4217-9914-496537dabce0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Manager">
+      <UniqueIdentifier>{67d20f56-0a9d-41a5-836a-04709eacd7ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Manager\Base">
+      <UniqueIdentifier>{5bab71fc-79bb-42fb-9616-865b42f69f32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Manager\Font">
+      <UniqueIdentifier>{e16c66ee-c6f1-4900-bc5d-be36685c247c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Manager\Texture">
+      <UniqueIdentifier>{f5f15bed-0dea-45d1-a131-e52286cfb712}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\Window\Menu">
+      <UniqueIdentifier>{c4ad0c1f-826f-4335-857f-e4d018b8c3dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Corre\GameObject">
+      <UniqueIdentifier>{85103d61-3edd-4809-9bfb-173e2cc77756}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="correction RPG.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Object\Object.cpp">
+      <Filter>Corre\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Utils\Debug\Debug.cpp">
+      <Filter>Corre\Utils\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Utils\Mathf\Mathf.cpp">
+      <Filter>Corre\Utils\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Utils\Path\Path.cpp">
+      <Filter>Corre\Utils\Path</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Input\Input.cpp">
+      <Filter>Corre\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Environement\Environement.cpp">
+      <Filter>Corre\Environement</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Window\Window.cpp">
+      <Filter>Corre\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Time\Time.cpp">
+      <Filter>Corre\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\UI\Label\Label.cpp">
+      <Filter>Corre\UI\Label</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\UI\UIElement.cpp">
+      <Filter>Corre\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\UI\Image\Image.cpp">
+      <Filter>Corre\UI\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\UI\Button\Button.cpp">
+      <Filter>Corre\UI\Button</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Manager\Base\BaseManager.cpp">
+      <Filter>Corre\Manager\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Manager\Font\FontManager.cpp">
+      <Filter>Corre\Manager\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Window\Menu\BaseMenu.cpp">
+      <Filter>Corre\Window\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Manager\Texture\TextureManager.cpp">
+      <Filter>Corre\Manager\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\GameObject\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Manager\GameObject\GameObjectManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Gif\Gif.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Interfarce\IInteractable\IInteractable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Entity\Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Entity\Stat\EntityStats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Entity\Mob\Mob.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Coin\Coin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Player\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Window\GameWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Window\Menu\MainMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\Object\Object.h">
+      <Filter>Corre\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Utils\Debug\Debug.h">
+      <Filter>Corre\Utils\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Utils\Singleton\Singleton.h">
+      <Filter>Corre\Utils\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Utils\Mathf\Mathf.h">
+      <Filter>Corre\Utils\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Event\Delegate\Delegate.h">
+      <Filter>Corre\Event\Delegate</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Enum\Enum.h">
+      <Filter>Corre\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Utils\Path\Path.h">
+      <Filter>Corre\Utils\Path</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Input\Input.h">
+      <Filter>Corre\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Environement\Environement.h">
+      <Filter>Corre\Environement</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Window\Window.h">
+      <Filter>Corre\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Time\Time.h">
+      <Filter>Corre\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\UI\Label\Label.h">
+      <Filter>Corre\UI\Label</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\UI\UIElement.h">
+      <Filter>Corre\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\UI\Image\Image.h">
+      <Filter>Corre\UI\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\UI\Button\Button.h">
+      <Filter>Corre\UI\Button</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Manager\Base\BaseManager.h">
+      <Filter>Corre\Manager\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Manager\Font\FontManager.h">
+      <Filter>Corre\Manager\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Window\Menu\BaseMenu.h">
+      <Filter>Corre\Window\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Manager\Texture\TextureManager.h">
+      <Filter>Corre\Manager\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\GameObject\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Manager\GameObject\GameObjectManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Utils\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Gif\Gif.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Interfarce\IInteractable\IInteractable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Entity\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Entity\Stat\EntityStats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Entity\Mob\Mob.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Coin\Coin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Player\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Physics\Physique.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Window\GameWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Window\Menu\MainMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
