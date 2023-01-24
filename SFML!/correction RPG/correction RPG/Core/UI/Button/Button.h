@@ -26,6 +26,7 @@ namespace Core
 
 
 			// Inherited via UIElement
+			void SetActive(bool status)override;
 			bool IsValid()const override;
 			void Draw()override;
 			void OnUpdate()override;

@@ -24,7 +24,7 @@ namespace Core
 			~UIElement();
 
 		public:
-			void SetActive(bool _status);
+			virtual void SetActive(bool _status);
 			bool IsActive()const;
 			virtual bool IsValid()const;
 			virtual void Draw();

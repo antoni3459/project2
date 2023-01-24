@@ -3,7 +3,7 @@
 #include <filesystem>
 
 const std::string Core::Environement::CurrentDirectory = std::filesystem::current_path().string();
-const std::string Core::Environement::AssetPath = Core::Utils::Path::Combine({ CurrentDirectory,"Asset" });
+const std::string Core::Environement::AssetPath = Core::Utils::Path::Combine({ CurrentDirectory,"Assets" });
 
 std::vector<std::string> Core::Environement::GetAllFilesWithExtension(const char* _directory, const char* _extension)
 {

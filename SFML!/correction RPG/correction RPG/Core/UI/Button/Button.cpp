@@ -19,6 +19,12 @@ Core::UI::Button::~Button()
     image = nullptr;
 }
 
+void Core::UI::Button::SetActive(bool status)
+{
+    image->SetActive(status);
+
+}
+
 bool Core::UI::Button::IsValid() const
 {
     return image==nullptr && image->IsValid();
