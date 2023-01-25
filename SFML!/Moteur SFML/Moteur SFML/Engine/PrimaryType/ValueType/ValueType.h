@@ -5,7 +5,7 @@ namespace Engine::PrimaryType
 {
 	class ValueType:public Object
 	{
-		DECLARE_CLASS_INFO(ValueType, Object,classFlags::Type)
+		DECLARE_CLASS_FLAGS(ValueType, Object,classFlags::Type)
 
 	public:
 		ValueType() = default;

@@ -10,7 +10,7 @@ $str += "#include `"Domain/AppDomain.h`"`n"
 Write-Output "test"
 Write-Output $assemblyPath
 
-Get-ChildItem $path -Recurse -Filter *.h | 
+Get-ChildItem $path -Recurse -Filter *.h |
     Foreach-Object{
         $fullPath = $_.FullName
         $className = (Get-Item $fullPath).BaseName

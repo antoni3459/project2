@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <windows.h>
-#include "Manager/CommandManager.h"
+#include "Command/Manager/CommandManager.h"
 #include "Assembly.h"
 #include "Domain/AppDomain.h"
 #include "Utils/Utils.h"

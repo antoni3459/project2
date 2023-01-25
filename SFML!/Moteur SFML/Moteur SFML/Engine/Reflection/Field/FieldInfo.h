@@ -21,8 +21,6 @@ namespace Engine::Reflection
     public:
         FieldInfo() = default;
         FieldInfo(const PrimaryType::String _name, Object* _reflectedObject, BindingFlags _flags);
-        //FieldInfo(const FieldInfo& _copy);
-        //~FieldInfo()override;
 
     public:
         PrimaryType::Boolean IsPublic()const;

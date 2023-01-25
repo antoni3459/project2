@@ -145,7 +145,9 @@
   <ItemGroup>
     <ClCompile Include="Engine\GameObject\GameObject.cpp" />
     <ClCompile Include="Engine\Reflection\Field\FieldInfo.cpp" />
-    <ClCompile Include="Engine\Reflection\MethodInfo\MethodInfo.cpp" />
+    <ClCompile Include="Engine\Reflection\Function\Parameter\ParameterInfo.cpp" />
+    <ClCompile Include="Engine\Reflection\Function\Function.cpp" />
+    <ClCompile Include="Test.cpp" />
     <ClCompile Include="Test\PrimaryType\Double\DoubleTest.cpp" />
     <ClCompile Include="Engine\PrimaryType\Double\Double.cpp" />
     <ClCompile Include="Engine\PrimaryType\Float\Float.cpp" />
@@ -170,7 +172,11 @@
     <ClInclude Include="Engine\Utils\Singleton\Singleton.h" />
     <ClInclude Include="Engine\GameObject\GameObject.h" />
     <ClInclude Include="Engine\Reflection\Field\FieldInfo.h" />
-    <ClInclude Include="Engine\Reflection\MethodInfo\MethodInfo.h" />
+    <ClInclude Include="Engine\Reflection\Function\MethodInfo\MethodInfo.h" />
+    <ClInclude Include="Engine\Reflection\Function\Parameter\ParameterInfo.h" />
+    <ClInclude Include="Engine\Reflection\Function\Function.h" />
+    <ClInclude Include="TestPowershell.h" />
+    <ClInclude Include="Test.h" />
     <ClInclude Include="Test\Reflection\ReflectionTest.h" />
     <ClInclude Include="Test\PrimaryType\Double\DoubleTest.h" />
     <ClInclude Include="Engine\PrimaryType\Double\Double.h" />
@@ -186,6 +192,9 @@
     <ClInclude Include="Engine\PrimaryType\Float\Float.h" />
     <ClInclude Include="Test\PrimaryType\Float\FloatTest.h" />
     <ClInclude Include="Test\PrimaryType\Interger\IntergerTest.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TestPowershell.ps1" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

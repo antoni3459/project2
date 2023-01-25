@@ -6,6 +6,7 @@
 #include "Engine/PrimaryType/Boolean/Boolean.h"
 #include "Engine/Utils/DebugMacro.h"
 #include "Test/Reflection/ReflectionTest.h"
+#include "Test.h"
 
 int main()
 {

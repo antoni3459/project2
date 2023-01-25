@@ -81,7 +81,13 @@
     <ClCompile Include="Test\Reflection\ReflectionTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Reflection\MethodInfo\MethodInfo.cpp">
+    <ClCompile Include="Engine\Reflection\Function\Parameter\ParameterInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Reflection\Function\Function.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -152,11 +158,26 @@
     <ClInclude Include="Test\Reflection\ReflectionTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Reflection\MethodInfo\MethodInfo.h">
+    <ClInclude Include="Engine\Reflection\Function\MethodInfo\MethodInfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Reflection\BaseMethodInfo\BaseMethodInfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\Reflection\Function\Parameter\ParameterInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Reflection\Function\Function.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TestPowershell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TestPowershell.ps1" />
   </ItemGroup>
 </Project>

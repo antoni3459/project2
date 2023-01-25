@@ -5,9 +5,29 @@
 #include "../../Engine/Reflection/Field/FieldInfo.h"
 #include "../../Engine/Reflection/Flags/BindingFlags.h"
 
+void Test::ReflectionTest::Update()
+{
+    LOG("Update call!")
+}
+
+void Test::ReflectionTest::Display(const std::string& _msg)
+{
+    LOG(_msg);
+}
+
 void Test::ReflectionTest::Test()
 {
     ReflectionTest test = ReflectionTest();
+    /*test.Invoke<void>("Update");
+
+    Engine::Reflection::MethodInfo<void, std::string>* _method = test.GetFunction<void, std::string>("Display");
+
+    for (Engine::Reflection::ParameterInfo* _parameter : _method->Parameters())
+    {
+        LOG(_parameter)
+    }
+    _method->Invoke(&test, "salut salut");*/
+
     Engine::Reflection::FieldInfo* _field = test.GetField("name");
     LOG("[Reflection][Test] => GetField(name)");
     checkLow((_field != nullptr), "[Reflection][Test] => field is nullptr");
