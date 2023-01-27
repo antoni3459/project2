@@ -15,6 +15,7 @@
 #define UCLASS(...)
 
 #define REGISTER_FIELD(name, field, flags) const int field##name = InsertField(#name, (Object*)field, flags);
+
 #define REGISTER_METHOD(name, method,params, flags) const int Method##name = InsertMethod(#name, method, params, flags);
 
 #define DECLARE_CLASS_INFO_FLAGS(current, parent, flags)\
@@ -83,6 +84,9 @@ namespace Engine
 		int RegisterClassInfo(int _flags);
 		template<typename Res, typename Class, typename... Params>
 		int InsertMethod(const std::string& _name, Res(Class::*ptr)(Params...),const std::vector<Reflection::ParameterInfo*>& _params,  const BindingFlags& _flags);
+		template<typename Res, typename... Params>
+
+		int InsertMethod(const std::string& _name, Res(*ptr)(Params...),const std::vector<Reflection::ParameterInfo*>& _params,  const BindingFlags& _flags);
 
 
 		int InsertField(const std::string& _name, Object* _var, const BindingFlags& _flags);
@@ -102,6 +106,14 @@ namespace Engine
 	}
 	template<typename Res, typename Class, typename... Params>
 	int Object::InsertMethod(const std::string& _name, Res(Class::* ptr)(Params...), const std::vector<Reflection::ParameterInfo*>& _params, const BindingFlags& _flags)
+	{
+		if (functions.contains(_name)) return functions.size();
+		Reflection::MethodInfo<Res, Params...>* _function = new Reflection::MethodInfo<Res, Params...>(_name, ptr, _params, _flags);
+		functions.insert(std::pair(_name, _function));
+		return functions.size();
+	}
+	template<typename Res, typename... Params>
+	int Object::InsertMethod(const std::string& _name, Res(*ptr)(Params...), const std::vector<Reflection::ParameterInfo*>& _params, const BindingFlags& _flags)
 	{
 		if (functions.contains(_name)) return functions.size();
 		Reflection::MethodInfo<Res, Params...>* _function = new Reflection::MethodInfo<Res, Params...>(_name, ptr, _params, _flags);

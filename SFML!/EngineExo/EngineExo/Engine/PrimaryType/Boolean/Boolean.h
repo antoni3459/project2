@@ -5,7 +5,7 @@
 namespace Engine::PrimaryType
 {
 	UCLASS()
-	class Boolean : ValueType
+	class Boolean : public ValueType
 	{
 		DECLARE_CLASS_INFO(Boolean, ValueType)
 	private:

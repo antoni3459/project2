@@ -17,6 +17,7 @@ REGISTER_FIELD(name, &name, BindingFlags::NoPublic | BindingFlags::Static)
 REGISTER_FIELD(life, life, BindingFlags::NoPublic | BindingFlags::Static)
     
 public:
-    UFUNCTION() static int Test();
+    UFUNCTION() int Test(int _a);
+REGISTER_METHOD(Test, &A::Test, (std::vector<Engine::Reflection::ParameterInfo*>{new Engine::Reflection::ParameterInfo("_a", 0)}), BindingFlags::Public)
 };
 

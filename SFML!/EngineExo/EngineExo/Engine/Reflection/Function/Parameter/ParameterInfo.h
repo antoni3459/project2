@@ -6,7 +6,7 @@
 
 namespace Engine::Reflection
 {
-	struct ParameterInfo :public Object
+	class ParameterInfo 
 	{
 		DECLARE_CLASS_INFO(ParameterInfo, Object)
 	private:
@@ -16,14 +16,12 @@ namespace Engine::Reflection
 	public:
 		ParameterInfo() = default;
 		ParameterInfo(const std::string& _name, int _position);
-		~ParameterInfo()override = default;
+		virtual ~ParameterInfo() = default;
 
 	public:
 		std::string Name()const;
 		int Position();
 
-	public:
-		PrimaryType::String ToString()const override;
 
 	};
 }

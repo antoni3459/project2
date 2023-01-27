@@ -16,7 +16,10 @@ namespace Engine::Reflection
 #pragma region f/p
     private:
         typedef Res(Object::* FunctionType)(Params...);
+        typedef Res(*StaticFunctionType)(Params...);
+
         FunctionType function = nullptr;
+        StaticFunctionType staticFunction = nullptr;
         BindingFlags flags = BindingFlags::NoPublic;
 #pragma endregion f/p
 
@@ -25,7 +28,7 @@ namespace Engine::Reflection
     public:
         MethodInfo() = default;
         template<typename Class>
-        MethodInfo(const std::string _name, Res(Class::* ptr)(Params...), const std::vector<ParameterInfo*>& _params, const BindingFlags _flags)
+        MethodInfo(const std::string& _name, Res(Class::* ptr)(Params...), const std::vector<ParameterInfo*>& _params, const BindingFlags _flags)
             :Function(_name, _params)
         {
             if constexpr (!std::is_base_of_v < Object, Class>)
@@ -33,7 +36,12 @@ namespace Engine::Reflection
             function = reinterpret_cast<FunctionType>(ptr);
             flags = _flags;
         }
-
+        MethodInfo(const std::string& _name, Res(*ptr)(Params...), const std::vector<ParameterInfo*>& _params, const BindingFlags _flags)
+            :Function(_name, _params)
+        {
+            staticFunction = ptr;
+            flafs = _flags;
+        }
 #pragma endregion constructor
 
 #pragma region method
@@ -46,22 +54,26 @@ namespace Engine::Reflection
 
         Res Invoke(Object* _instance, Params... _params)
         {
-            return (_instance->*function)(_params...);
+            if (function != nullptr)
+                return (_instance->*function)(_params...);
+            return staticFunction(_params...);
         }
 
         void* GetAddress()const
         {
-            return (void*&)&function;
+            if (function != nullptr)
+                return (void&*) ;
+            return staticFunction(_params...);
         }
 
     public:
         bool operator==(nullptr_t)
         {
-            return function == nullptr;
+            return function == nullptr || staticFunction == nullptr;
         }
         bool operator!=(nullptr_t)
         {
-            return function != nullptr;
+            return function != nullptr || staticFunction != nullptr;
         }
 
 

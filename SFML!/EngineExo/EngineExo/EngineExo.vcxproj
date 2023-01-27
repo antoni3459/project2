@@ -205,6 +205,8 @@
     <ClInclude Include="Test\PrimaryType\Integer\IntegerTest.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ReflectionFunction.ps1" />
+    <None Include="ReflectionProperty.ps1" />
     <None Include="test.ps1" />
     <None Include="Test\test.ps1" />
   </ItemGroup>

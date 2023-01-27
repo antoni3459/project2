@@ -20,7 +20,3 @@ int Engine::Reflection::ParameterInfo::Position()
     return position;
 }
 
-Engine::PrimaryType::String Engine::Reflection::ParameterInfo::ToString() const
-{
-    return std::format("Name: {}, position: {}", name, position).c_str();
-}

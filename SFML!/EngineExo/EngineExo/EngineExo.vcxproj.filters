@@ -165,5 +165,7 @@
   <ItemGroup>
     <None Include="Test\test.ps1" />
     <None Include="test.ps1" />
+    <None Include="ReflectionFunction.ps1" />
+    <None Include="ReflectionProperty.ps1" />
   </ItemGroup>
 </Project>
