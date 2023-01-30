@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include "../../Utils/Interfarce/Log/ILogger.h"
 
 namespace Engine
 {
@@ -14,7 +15,7 @@ namespace Engine::Reflection
 {
 	class ParameterInfo;
 
-	class Function
+	class Function:public Interfarce::ILogger
 	{
 	private:
 		std::string name = "";
@@ -28,6 +29,11 @@ namespace Engine::Reflection
 	public:
 		Engine::PrimaryType::String Name()const;
 		std::vector<ParameterInfo*> Parameters()const;
+
+
+		// Inherited via ILogger
+		virtual Engine::PrimaryType::String ToString() const override;
+
 	};
 }
 

@@ -153,9 +153,13 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\Window\Engine\EngineWindow.cpp" />
+    <ClCompile Include="Engine\Component\Component.cpp" />
     <ClCompile Include="Engine\Reflection\Function\Function.cpp" />
     <ClCompile Include="Engine\Reflection\Function\Parameter\ParameterInfo.cpp" />
     <ClCompile Include="Engine\Utils\Singleton\Singleton.cpp" />
+    <ClCompile Include="Engine\Manager\GameObject\GameObjectManager.cpp" />
+    <ClCompile Include="Test\List\ListTest.cpp" />
     <ClCompile Include="Test\A.cpp" />
     <ClCompile Include="Engine\GameObject\GameObject.cpp" />
     <ClCompile Include="Engine\Reflection\Field\FieldInfo.cpp" />
@@ -175,11 +179,20 @@
     <ClCompile Include="Test\PrimaryType\Integer\IntegerTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\Window\Engine\EngineWindow.h" />
+    <ClInclude Include="Engine\Component\Component.h" />
+    <ClInclude Include="Engine\PrimaryType\List\IList.h" />
+    <ClInclude Include="Engine\PrimaryType\List\List.h" />
     <ClInclude Include="Engine\Reflection\BaseMethodInfo\BaseMethodInfo.h" />
     <ClInclude Include="Engine\Reflection\Function\Function.h" />
     <ClInclude Include="Engine\Reflection\Function\MethodInfo\MethodInfo.h" />
     <ClInclude Include="Engine\Reflection\Function\Parameter\ParameterInfo.h" />
-    <ClInclude Include="Engine\Utils\Template.h" />
+    <ClInclude Include="Engine\Utils\CorreDefine.h" />
+    <ClInclude Include="Engine\Utils\Interfarce\Log\ILogger.h" />
+    <ClInclude Include="Engine\Utils\Template\Pointer.h" />
+    <ClInclude Include="Engine\Manager\GameObject\GameObjectManager.h" />
+    <ClInclude Include="Engine\Window\Window.h" />
+    <ClInclude Include="Test\List\ListTest.h" />
     <ClInclude Include="Test\A.h" />
     <ClInclude Include="Engine\Event\Action\Action.h" />
     <ClInclude Include="Engine\Event\Delegate\Delegate.h" />

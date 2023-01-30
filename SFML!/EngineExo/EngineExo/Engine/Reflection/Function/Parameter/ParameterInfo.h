@@ -6,7 +6,7 @@
 
 namespace Engine::Reflection
 {
-	class ParameterInfo 
+	class ParameterInfo :public Interfarce::ILogger
 	{
 		DECLARE_CLASS_INFO(ParameterInfo, Object)
 	private:
@@ -21,7 +21,7 @@ namespace Engine::Reflection
 	public:
 		std::string Name()const;
 		int Position();
-
+		PrimaryType::String ToString()const override;
 
 	};
 }

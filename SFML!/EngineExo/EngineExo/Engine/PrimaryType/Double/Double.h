@@ -8,7 +8,7 @@ namespace Engine::PrimaryType
 		DECLARE_CLASS_INFO(Double, ValueType)
 
 	private:
-		float value = -1.0f;
+		double value = -1.0f;
 
 	public:
 		static const Double MinValue;

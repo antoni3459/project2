@@ -40,7 +40,7 @@ namespace Engine::Reflection
             :Function(_name, _params)
         {
             staticFunction = ptr;
-            flafs = _flags;
+            flags = _flags;
         }
 #pragma endregion constructor
 
@@ -59,11 +59,11 @@ namespace Engine::Reflection
             return staticFunction(_params...);
         }
 
-        void* GetAddress()const
+        void* GetAddress() const
         {
             if (function != nullptr)
-                return (void&*) ;
-            return staticFunction(_params...);
+                return (void*&)function;
+            return (void*&)staticFunction;
         }
 
     public:

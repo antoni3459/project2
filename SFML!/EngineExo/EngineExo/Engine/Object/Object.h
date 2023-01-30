@@ -3,6 +3,7 @@
 #include "../Reflection/Flags/BindingFlags.h"
 #include "../Reflection/Function/MethodInfo/MethodInfo.h"
 #include "../Reflection/Function/Function.h"
+#include "../Utils/Interfarce/Log/ILogger.h"
 #include <string>
 #include <format>
 
@@ -14,9 +15,9 @@
 #define UPROPERTY(...)
 #define UCLASS(...)
 
-#define REGISTER_FIELD(name, field, flags) const int field##name = InsertField(#name, (Object*)field, flags);
+#define REGISTER_FIELD(name, field, flags) const size_t field##name = InsertField(#name, (Object*)field, flags);
 
-#define REGISTER_METHOD(name, method,params, flags) const int Method##name = InsertMethod(#name, method, params, flags);
+#define REGISTER_METHOD(name, method,params, flags) const size_t Method##name = InsertMethod(#name, method, params, flags);
 
 #define DECLARE_CLASS_INFO_FLAGS(current, parent, flags)\
 	public:\
@@ -45,7 +46,7 @@ namespace Engine
 	{
 		class FieldInfo;
 	}
-	class Object
+	class Object : public Interfarce::ILogger
 	{
 	private:
 		int flags = 0;
@@ -89,7 +90,7 @@ namespace Engine
 		int InsertMethod(const std::string& _name, Res(*ptr)(Params...),const std::vector<Reflection::ParameterInfo*>& _params,  const BindingFlags& _flags);
 
 
-		int InsertField(const std::string& _name, Object* _var, const BindingFlags& _flags);
+		size_t InsertField(const std::string& _name, Object* _var, const BindingFlags& _flags);
 	public:
 		virtual Object& operator=(const Object* _obj);
 	};

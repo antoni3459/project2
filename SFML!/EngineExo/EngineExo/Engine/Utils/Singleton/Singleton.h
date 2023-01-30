@@ -9,7 +9,7 @@ namespace Engine::Utils
 		DECLARE_CLASS_INFO(Singleton<T>, Object)
 
 	private:
-		static T* instance = nullptr;
+		static inline T* instance = nullptr;
 
 	public:
 		Singleton() = default;
@@ -31,5 +31,7 @@ namespace Engine::Utils
 			instance = nullptr;
 		}
 		virtual void OnDestroy(){}
+
+
 	};
 }

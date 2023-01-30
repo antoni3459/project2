@@ -7,10 +7,10 @@ namespace Engine::PrimaryType
 	UCLASS()
 	class String : public ValueType
 	{
-		DECLARE_CLASS_INFO_FLAGS(String, ValueType, ClassFlags::Type)
+		DECLARE_CLASS_INFO(String, ValueType)
 	private:
 		const char* value = nullptr;
-		int length = 0;
+		size_t length = 0;
 
 	public:
 		String() = default;
@@ -27,27 +27,32 @@ namespace Engine::PrimaryType
 		static Boolean IsNullOrEmpty(const String& _str);
 
 
-		String SubString(int _begin) const;
-		String SubString(int _begin, int _end) const;
+		String SubString(size_t _begin) const;
+		String SubString(size_t _begin, size_t _end) const;
 		String Replace(const String& _old, const String _new) const;
 		String Replace(char & _old, char _new);
 		String Trim();
 		String ToLower() const;
 		String ToUpper() const;
-		int FindFirstOf(char _c);
-		int FindLastOf(char _c);
-		int Length() const;
+		size_t FindFirstOf(char _c);
+		size_t FindLastOf(char _c);
+		size_t Length() const;
 		void Append(const char* _str);
 		void Append(const String& _str);
 		const char* ToCstr() const;
 	public:
 		String ToString() const override;
 	public:
+		String& operator+=(const char* _str);
+		String& operator+=(const String& _str);
+
 		String& operator=(const String& _other);
 		operator const char* ();
 		operator const char* () const;
-		Boolean operator==(const String& _str);
-		Boolean operator!=(const String& _str);
+		Boolean operator==(const String& _str) const;
+		Boolean operator!=(const String& _str) const;
+		Boolean operator==(const char* _str)const;
+		Boolean operator!=(const char* _str)const;
 		virtual Object& operator=(const Object* _obj);
 	};
 }

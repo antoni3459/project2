@@ -1,6 +1,9 @@
 #include "GameObject.h"
 #include "../Utils/DebugMacro.h"
 #include "../PrimaryType/Boolean/Boolean.h"
+#include "../Component/Component.h"
+#include <SFML/Graphics/RectangleShape.hpp>
+#include <SFML/Graphics/CircleShape.hpp>
 
 Engine::GameObject::GameObject(const Engine::PrimaryType::String& _name) : super()
 {
@@ -18,6 +21,18 @@ Engine::GameObject::~GameObject()
     delete shape;
     shape = nullptr;
 }
+
+void Engine::GameObject::AddComponent(Component* _component)
+{
+    _component->gameobject = this;
+    components.Add(_component);
+}
+
+Engine::PrimaryType::List<Engine::Component*> Engine::GameObject::Components() const
+{
+    return components;
+}
+
 
 sf::Shape* Engine::GameObject::Shape() const
 {

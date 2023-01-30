@@ -21,7 +21,7 @@ void Test::ReflectionTest::Test()
 	Engine::Reflection::MethodInfo<void, std::string>* _method = test.GetFunction<void, std::string>("Display");
 	for (Engine::Reflection::ParameterInfo* _parameter : _method->Parameters())
 	{
-		LOG(_parameter);
+		//LOG(_parameter);
 	}
 	_method->Invoke(&test, "Salut Salut");
 

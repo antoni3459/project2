@@ -61,11 +61,11 @@ std::vector<Engine::Reflection::FieldInfo*> Engine::Object::Fields() const
     return _result;
 }
 
-int Engine::Object::InsertField(const std::string& _name, Object* _var, const BindingFlags& _flags)
+size_t Engine::Object::InsertField(const std::string& _name, Object* _var, const BindingFlags& _flags)
 {
-  check(!fields.contains(_name), std::format("[Object][Reflection] => {} already register in fields", _name), fields.size())
-      fields.insert(std::pair(_name, new Engine::Reflection::FieldInfo(_name.c_str(), _var, _flags)));
-  return fields.size();
+    check(!fields.contains(_name), std::format("[Object][Reflection] => {} already register in fields", _name), fields.size())
+        fields.insert(std::pair(_name, new Engine::Reflection::FieldInfo(_name.c_str(), _var, _flags)));
+    return fields.size();
 }
 
 Engine::Object& Engine::Object::operator=(const Object* _obj)

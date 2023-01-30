@@ -26,6 +26,7 @@ Engine::PrimaryType::Boolean Engine::PrimaryType::Integer::TryParse(const String
 	try
 	{
 		_output = std::stoi((std::string)_str);
+		return true;
 	}
 	catch (...)
 	{

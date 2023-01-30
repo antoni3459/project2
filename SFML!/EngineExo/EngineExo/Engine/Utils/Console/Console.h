@@ -17,15 +17,15 @@ namespace Engine::Utils
 	public:
 		static void Log(const std::string& _msg);
 		static void Log(const Object& _msg);
-		static void Log(const Object* _msg);
+		static void Log(const ILogger* _msg);
 
 		static void LogWarning(const std::string& _msg);
 		static void LogWarning(const Object& _msg);
-		static void LogWarning(const Object* _msg);
+		static void LogWarning(const ILogger* _msg);
 
 		static void LogError(const std::string& _msg);
 		static void LogError(const Object& _msg);
-		static void LogError(const Object* _msg);
+		static void LogError(const ILogger* _msg);
 	};
 }
 
