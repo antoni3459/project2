@@ -60,6 +60,7 @@ namespace Engine
 
 	public:
 		virtual PrimaryType::String ToString() const;
+		PrimaryType::String ClassName()const;
 		virtual PrimaryType::Boolean IsClass() const;
 		Reflection::FieldInfo* GetField(const PrimaryType::String& _name);
 		std::vector<Reflection::FieldInfo*> Fields(const BindingFlags& _flags);
@@ -69,6 +70,13 @@ namespace Engine
 		void SetValue(Object* _obj);
 		template<typename T>
 		void SetFieldValue(const std::string& _name, T* _value);
+
+		virtual void Serialize(std::ostream& _os);
+		virtual void DeSerialize(std::istream& _os);
+		virtual void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName);
+		virtual void DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName);
+
+
 
 		template<typename Res, typename... Params>
 		Reflection::MethodInfo<Res, Params...>* GetFunction(const std::string& _name);

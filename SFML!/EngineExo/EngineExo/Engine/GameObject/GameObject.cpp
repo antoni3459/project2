@@ -2,24 +2,33 @@
 #include "../Utils/DebugMacro.h"
 #include "../PrimaryType/Boolean/Boolean.h"
 #include "../Component/Component.h"
+#include "../Manager/GameObject/GameObjectManager.h"
+#include "../Window/Engine/EngineWindow.h"
+
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
 
 Engine::GameObject::GameObject(const Engine::PrimaryType::String& _name) : super()
 {
     name = _name;
+    transform = AddComponent<Transform>();
+    Manager::GameObjectManager::Instance()->Register(this);
 }
 
 Engine::GameObject::GameObject(const GameObject& _copy) : super(_copy)
 {
     name = _copy.name;
     shape = _copy.shape;
+    Manager::GameObjectManager::Instance()->Register(this);
+
 }
 
 Engine::GameObject::~GameObject()
 {
     delete shape;
     shape = nullptr;
+    Manager::GameObjectManager::Instance()->UnRegister(this);
+
 }
 
 void Engine::GameObject::AddComponent(Component* _component)
@@ -58,6 +67,13 @@ Engine::GameObject* Engine::GameObject::CreatePrimitive(const PrimitiveType _typ
         break;
     }
     return _result;
+}
+
+void Engine::GameObject::Draw(const Engine::Window::EngineWindow* _window)const 
+{
+    if (shape == nullptr)return;
+    shape->setPosition(transform->position);
+    _window->Draw(shape);
 }
 
 Engine::GameObject& Engine::GameObject::operator=(const GameObject& _other)

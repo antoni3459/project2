@@ -18,12 +18,19 @@ void Engine::Manager::GameObjectManager::Update() const
 		{
 			if (_component->enabled)
 			{
-				Reflection::MethodInfo<void>* _method = _component->GetFunction<void>("Upate");
+				Reflection::MethodInfo<void>* _method = _component->GetFunction<void>("Update");
 				if (_method == nullptr)continue;
 				_method->Invoke(_component);
 			}
 		}
 	}
+}
+
+void Engine::Manager::GameObjectManager::Draw(const Engine::Window::EngineWindow* _window)
+{
+	for (const GameObject* _object : gameObjects)
+		_object->Draw(_window);
+
 }
 
 void Engine::Manager::GameObjectManager::OnDestroy()

@@ -5,6 +5,10 @@
 namespace Engine
 {
 	class GameObject;
+	namespace Window
+	{
+		class EngineWindow;
+	}
 }
 namespace Engine::Manager
 {
@@ -14,10 +18,12 @@ namespace Engine::Manager
 
 	private:
 		std::vector<GameObject*> gameObjects = std::vector<GameObject*>();
+
 	public:
 		void Register(GameObject* _object);
 		void UnRegister(GameObject* _object);
 		void Update()const;
+		void Draw(const Engine::Window::EngineWindow* _window);
 		void OnDestroy();
 		
 	};

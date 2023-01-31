@@ -15,6 +15,14 @@ Engine::PrimaryType::String Engine::PrimaryType::Boolean::ToString() const
     return value ? "true" : "false";
 }
 
+void Engine::PrimaryType::Boolean::SerializeField(std::ostream& _os, const String& _fieldName)
+{
+    if (String::IsNullOrEmpty(_fieldName))
+        _os << std::string("\"") + ToString().ToCstr() + "\":\"" + ToString().ToCstr() + "\"";
+    else
+        _os << std::string("\"") + _fieldName.ToString().ToCstr() + "\":\"" + ToString().ToCstr() + "\"";
+}
+
 Engine::PrimaryType::Boolean& Engine::PrimaryType::Boolean::operator=(const Boolean& _other)
 {
     value = _other.value;

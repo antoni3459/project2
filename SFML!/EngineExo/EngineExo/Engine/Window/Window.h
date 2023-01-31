@@ -11,9 +11,9 @@ namespace Engine::Window
 	template<typename T>
 	class Window : public Engine::Utils::Singleton<T>
 	{
-		DECLARE_CLASS_INFO(Window, Singleton<T>)
+		DECLARE_CLASS_INFO(Window, Engine::Utils::Singleton<T>)
 
-	private:
+	protected:
 		sf::RenderWindow* render = nullptr;
 		PrimaryType::String name = "";
 		PrimaryType::Integer width = 0;
@@ -30,7 +30,7 @@ namespace Engine::Window
 			height = _height;
 		}
 
-		Wondow(const Window&) = delete;
+		Window(const Window&) = delete;
 
 	private:
 		void Update()
@@ -46,7 +46,9 @@ namespace Engine::Window
 					if (hasFocus)
 						OnReciveEvent(currentevent);
 				}
+				OnUpdate();
 			}
+
 		}
 						
 
@@ -59,7 +61,8 @@ namespace Engine::Window
 	public:
 		virtual void Open()
 		{
-			render = new sf::RenderWindow(sf::VideoMode(width, heigth), name.ToCstr());
+			render = new sf::RenderWindow(sf::VideoMode(width, height), name.ToCstr());
+			SetFrameLimit(60);
 			Update();
 		}
 		void Close()
@@ -86,6 +89,7 @@ namespace Engine::Window
 	protected:
 		virtual void OnUpdate() 
 		{
+
 		}
 		virtual void OnDraw() {}
 		virtual void OnClear() const{}

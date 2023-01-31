@@ -27,6 +27,9 @@ namespace Engine::PrimaryType
 
 	public:
 		String ToString() const override;
+		void SerializeField(std::ostream& _os, const String& _fieldName)override;
+
+	public:
 		Integer& operator=(const Integer& _other);
 		operator int();
 		operator int() const;
