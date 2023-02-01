@@ -38,6 +38,7 @@ namespace Engine::PrimaryType
 		size_t FindLastOf(char _c);
 		size_t Length() const;
 		void Append(const char* _str);
+		void Append(char _c);
 		void Append(const String& _str);
 		const char* ToCstr() const;
 	public:
@@ -46,6 +47,7 @@ namespace Engine::PrimaryType
 
 	public:
 		String& operator+=(const char* _str);
+		String& operator+=(char _str);
 		String& operator+=(const String& _str);
 
 		String& operator=(const String& _other);

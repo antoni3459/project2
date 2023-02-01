@@ -2,10 +2,11 @@
 #include "../FString/String.h"
 #include "../Boolean/Boolean.h"
 #include "../../Utils/Template/Template.h"
-
+#include <iostream>
 
 const Engine::PrimaryType::Integer Engine::PrimaryType::Integer::MaxValue = INT_MAX;
 const Engine::PrimaryType::Integer Engine::PrimaryType::Integer::MinValue = INT_MIN;
+
 Engine::PrimaryType::Integer::Integer(int _value) : super()
 {
     value = _value;
@@ -46,6 +47,26 @@ void Engine::PrimaryType::Integer::SerializeField(std::ostream& _os, const Strin
 		_os << std::string("\"") + ToString().ToCstr() + "\":\"" + ToString().ToCstr() + "\"";
 	else
 		_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\":\"" + ToString().ToCstr() + "\"";
+}
+
+void Engine::PrimaryType::Integer::DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName)
+{
+	std::string _result = "";
+	if (String::IsNullOrEmpty(_fieldName))
+		return;
+	while (std::getline(_os, _result))
+	{
+		String _str = _result.c_str();
+		if (_str.Contains(_fieldName))
+		{
+			_str = _str.SubString(_str.FindFirstOf(':'));
+			_str = _str.SubString(0, _str.FindLastOf('\"'));
+			_str = _str.SubString(_str.FindLastOf('"') + 1);
+			value = std::stoi(_str.ToCstr());
+			std::cout << ":" << _str << std::endl;
+			std::cout << value << std::endl;
+		}
+	}
 }
 
 Engine::PrimaryType::Integer& Engine::PrimaryType::Integer::operator=(const Integer& _other)
