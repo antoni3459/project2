@@ -16,8 +16,10 @@ namespace Test
 		UPROPERTY() Engine::PrimaryType::Integer age = 0;
 REGISTER_FIELD(age, &age, BindingFlags::NoPublic)
 
+
 		UPROPERTY() Engine::PrimaryType::Float f = 20.f;
 REGISTER_FIELD(f, &f, BindingFlags::NoPublic)
+
 		
 		UPROPERTY() Engine::PrimaryType::Double Dooble = 10;
 REGISTER_FIELD(Dooble, &Dooble, BindingFlags::NoPublic)
@@ -25,11 +27,14 @@ REGISTER_FIELD(Dooble, &Dooble, BindingFlags::NoPublic)
 		UPROPERTY() Engine::PrimaryType::String name = "st";
 REGISTER_FIELD(name, &name, BindingFlags::NoPublic)
 
+
 		UPROPERTY() Engine::PrimaryType::Boolean boolean = true;
 REGISTER_FIELD(boolean, &boolean, BindingFlags::NoPublic)
 
+
 		UPROPERTY() Engine::PrimaryType::Vector2 vector2 = Engine::PrimaryType::Vector2(5,6);
 REGISTER_FIELD(vector2, &vector2, BindingFlags::NoPublic)
+
 
 	};
 }

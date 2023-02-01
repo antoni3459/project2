@@ -34,6 +34,7 @@ namespace Engine::PrimaryType
 	public:
 		String ToString() const override;
 		void SerializeField(std::ostream& _os, const String& _fieldName)override;
+		void DeSerializeField(std::istream& _is, const String& _fieldName)override;
 
 	public:
 		Float& operator=(const Float& _other);

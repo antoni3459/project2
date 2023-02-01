@@ -21,6 +21,7 @@ namespace Engine::PrimaryType
 	public:
 		PrimaryType::String ToString() const override;
 		void SerializeField(std::ostream& _os, const String& _fieldName)override;
+		void DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName)override;
 
 	public:
 		Boolean& operator=(const Boolean& _other);

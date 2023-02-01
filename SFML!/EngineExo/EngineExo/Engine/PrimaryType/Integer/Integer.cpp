@@ -49,22 +49,18 @@ void Engine::PrimaryType::Integer::SerializeField(std::ostream& _os, const Strin
 		_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\":\"" + ToString().ToCstr() + "\"";
 }
 
-void Engine::PrimaryType::Integer::DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName)
+void Engine::PrimaryType::Integer::DeSerializeField(std::istream& _is, const PrimaryType::String& _fieldName)
 {
-	std::string _result = "";
-	if (String::IsNullOrEmpty(_fieldName))
-		return;
-	while (std::getline(_os, _result))
+	std::string _line;
+	while (std::getline(_is, _line))
 	{
-		String _str = _result.c_str();
-		if (_str.Contains(_fieldName))
+		if (_line.find(std::string("\"") + _fieldName.ToCstr() + "\"") != std::string::npos)
 		{
+			String _str = _line.c_str();
 			_str = _str.SubString(_str.FindFirstOf(':'));
-			_str = _str.SubString(0, _str.FindLastOf('\"'));
-			_str = _str.SubString(_str.FindLastOf('"') + 1);
-			value = std::stoi(_str.ToCstr());
-			std::cout << ":" << _str << std::endl;
-			std::cout << value << std::endl;
+			_str = _str.SubString(_str.FindFirstOf('"'), _str.FindLastOf('"')).Replace("\"", "");
+			*this = std::stof(_str.ToCstr());
+			break;
 		}
 	}
 }
