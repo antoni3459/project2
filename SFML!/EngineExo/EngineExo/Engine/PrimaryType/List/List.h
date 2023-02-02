@@ -10,7 +10,7 @@
 
 namespace Engine::PrimaryType
 {
-	template<typename InElementType,typename InSizeType =size_t>
+	template<typename InElementType, typename InSizeType = size_t>
 	class List : public ValueType, public IList
 	{
 	private:
@@ -36,8 +36,8 @@ namespace Engine::PrimaryType
 		void Remove(InElementType _item)
 		{
 			const size_t _index = Find(_item);
-				if (_index == INDEX_NONE)return;
-				RemoveAt(_index);
+			if (_index == INDEX_NONE)return;
+			RemoveAt(_index);
 		}
 		void RemoveAt(size_t _index)
 		{
@@ -61,7 +61,7 @@ namespace Engine::PrimaryType
 		ConstIterator begin() const { return data.begin(); }
 		Iterator end() { return data.end(); }
 		ConstIterator end() const { return data.end(); }
-		size_t Count()const override {return data.size(); }
+		size_t Count()const override { return data.size(); }
 
 		//String ToString()const override
 		//{
@@ -92,14 +92,14 @@ namespace Engine::PrimaryType
 				{
 					if (data[i]->IsClass())
 						data[i]->Serialize(_os);
-					else 
+					else
 						data[i]->SerializeField(_os, "", _index);
 				}
 				else
 				{
 					if (data[i].IsClass())
 						data[i].Serialize(_os);
-					else 
+					else
 						data[i].SerializeField(_os, "", _index);
 				}
 				if (i < _size - 1)
@@ -115,7 +115,6 @@ namespace Engine::PrimaryType
 			std::string _line = "";
 			while (std::getline(_is, _line))
 			{
-
 				if (_line.find(std::string("\"") + _fieldName.ToCstr() + "\"") != std::string::npos)
 				{
 					_inList = true;
