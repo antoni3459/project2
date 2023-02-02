@@ -6,6 +6,7 @@
 #include "../Integer/Integer.h"
 #include "../../Utils/CorreDefine.h"
 #include "../FString/String.h"
+#include "../../Utils/Template/Template.h"
 
 namespace Engine::PrimaryType
 {
@@ -64,34 +65,67 @@ namespace Engine::PrimaryType
 
 		//String ToString()const override
 		//{
-		//	const size_t _size = data.size();
-		//	for (size_t i = 0;i < _size;++i)
-		//	{
 
-		//	}
 		//}
 
-		//void SerializeField(std::ostream& _os, const String& _fieldName)override
-		//{
-		//	_os << "\"" + std::string(_fieldName.ToString().ToCstr()) + "\" : \"" + ToString().ToCstr() + "\"";
-		//}
+		void SerializeField(std::ostream& _os, const String& _fieldName, int _index) override
+		{
+			if (String::IsNullOrEmpty(_fieldName))
+				_os << "[\n";
+			else
+				_os << "\"" + std::string(_fieldName.ToCstr()) + "\" : ";
 
-		//void DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName)override
-		//{
-		//	std::string _line = "";
-		//	while (std::getline(_is, _line))
-		//	{
-		//		if (_line.find(std::string("\"") + _fieldName.ToCstr() + "\"") != std::string::npos)
-		//		{
-		//			String _str = _line.c_str();
-		//			_str = _str.SubString(_str.FindFirstOf('('), _str.FindFirstOf(')'));
-		//			String _x = _str.SubString(_str.FindFirstOf('(') + 1, _str.FindFirstOf(','));
-		//			String _y = _str.SubString(_str.FindFirstOf('(') + 1);
-		//			*this = Vector2(std::stof(_x.ToCstr()), std::stof(_y.ToCstr()));
-		//			break;
-		//		}
-		//	}
-		//}
+
+			if constexpr (IsPointer<InElementType>::Value)
+				_os << "\"" << data[0]->ClassName().ToCstr() << "\"";
+			else
+				_os << "\"" << data[0].ClassName().ToCstr() << "\"";
+
+			_os << " [\n";
+
+
+			const size_t _size = data.size();
+			for (size_t i = 0; i < _size; ++i)
+			{
+				_os << std::string(_index, '\t') << "\t\t";
+				if constexpr (IsPointer<InElementType>::Value)
+				{
+					if (data[i]->IsClass())
+						data[i]->Serialize(_os);
+					else 
+						data[i]->SerializeField(_os, "", _index);
+				}
+				else
+				{
+					if (data[i].IsClass())
+						data[i].Serialize(_os);
+					else 
+						data[i].SerializeField(_os, "", _index);
+				}
+				if (i < _size - 1)
+					_os << ",";
+				_os << "\n";
+			}
+			_os << std::string(_index, '\t') << "]";
+		}
+
+		void DeSerializeField(std::istream& _is, const PrimaryType::String& _fieldName)override
+		{
+			bool _inList = false;
+			std::string _line = "";
+			while (std::getline(_is, _line))
+			{
+
+				if (_line.find(std::string("\"") + _fieldName.ToCstr() + "\"") != std::string::npos)
+				{
+					_inList = true;
+				}
+				if (_inList)
+				{
+
+				}
+			}
+		}
 
 	public:
 		InElementType& operator[](size_t _index)
@@ -104,16 +138,3 @@ namespace Engine::PrimaryType
 		}
 	};
 }
-
-
- 
-  
-   
-    
-     
-      
-       
-        
-         
-          
-            

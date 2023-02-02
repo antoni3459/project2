@@ -43,7 +43,7 @@ namespace Engine::PrimaryType
 		const char* ToCstr() const;
 	public:
 		String ToString() const override;
-		void SerializeField(std::ostream& _os, const String& _fieldName)override;
+		void SerializeField(std::ostream& _os, const String& _fieldName, int _index)override;
 		void DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName)override;
 
 	public:

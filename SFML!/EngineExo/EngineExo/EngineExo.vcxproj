@@ -159,7 +159,7 @@
     <ClCompile Include="Engine\Reflection\Function\Parameter\ParameterInfo.cpp" />
     <ClCompile Include="Engine\Utils\Singleton\Singleton.cpp" />
     <ClCompile Include="Engine\Manager\GameObject\GameObjectManager.cpp" />
-    <ClCompile Include="Test\Reflection\Json\Json.cpp" />
+    <ClCompile Include="Test\Reflection\Json\JsonTest.cpp" />
     <ClCompile Include="Test\Component\PlayerComponent.cpp" />
     <ClCompile Include="Test\List\ListTest.cpp" />
     <ClCompile Include="Test\A.cpp" />
@@ -197,6 +197,8 @@
     <ClInclude Include="Engine\Utils\Template\Pointer.h" />
     <ClInclude Include="Engine\Manager\GameObject\GameObjectManager.h" />
     <ClInclude Include="Engine\Window\Window.h" />
+    <ClInclude Include="Test\B.h" />
+    <ClInclude Include="Test\C.h" />
     <ClInclude Include="Test\Reflection\Json\JsonTest.h" />
     <ClInclude Include="Test\Component\PlayerComponent.h" />
     <ClInclude Include="Test\List\ListTest.h" />

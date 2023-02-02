@@ -1,8 +1,11 @@
 "A" : {
-"Dooble":"5.0",
-"age":"20",
-"boolean":"false",
-"f":"10.00",
-"name":"toto",
-"vector2":"X 7 ,Y 8 "
-}
+	"age" : "0",
+	"classes" : "String" [
+			"Giusy",
+			"Romain",
+			"Benoit",
+			"Pierre-Louis"
+	],
+	"f" : "0.000000",
+	"vector2" : "(7 , 4)"
+	}

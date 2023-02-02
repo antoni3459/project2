@@ -67,27 +67,27 @@ std::vector<Engine::Reflection::FieldInfo*> Engine::Object::Fields() const
     return _result;
 }
 
-void Engine::Object::Serialize(std::ostream& _os)
+void Engine::Object::Serialize(std::ostream& _os, int _index)
 {
     const std::vector<Reflection::FieldInfo*> _fields = Fields();
     const size_t _length = _fields.size();
-    //add Class Name to file => os
     _os << std::string("\"") + ClassName().ToCstr() + "\" : " + "{\n";
-    for (size_t i = 0;i < _length;i++)
+    for (size_t i = 0; i < _length; i++)
     {
-        if (_fields[i]->ReflectedObject() == nullptr)continue;
+        _os << std::string(_index, '\t');
+        if (_fields[i]->ReflectedObject() == nullptr) continue;
         if (_fields[i]->IsReflectedClass())
         {
-            _fields[i]->ReflectedObject()->Serialize(_os);
+            _fields[i]->ReflectedObject()->Serialize(_os, _index + 1);
         }
         else
         {
-            _fields[i]->ReflectedObject()->SerializeField(_os, _fields[i]->Name());
+            _fields[i]->ReflectedObject()->SerializeField(_os, _fields[i]->Name(), _index);
         }
         if (i < _length - 1)
             _os << ",\n";
     }
-    _os << "\n}";
+    _os << "\n" << std::string(_index--, '\t') + "}\n";
 }
 
 void Engine::Object::DeSerialize(std::istream& _os)
@@ -105,7 +105,7 @@ void Engine::Object::DeSerialize(std::istream& _os)
 }
 
 
-void Engine::Object::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName){}
+void Engine::Object::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName, int _index){}
 
 
 void Engine::Object::DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName){}

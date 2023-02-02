@@ -1,12 +1,13 @@
 #pragma once
 #include "../ValueType/ValueType.h"
+
 namespace Engine::PrimaryType
 {
 	class String;
 	class Boolean;
 
 	UCLASS()
-	class Integer : ValueType
+	class Integer : public ValueType
 	{
 		DECLARE_CLASS_INFO(Integer, ValueType)
 	private:
@@ -27,7 +28,7 @@ namespace Engine::PrimaryType
 
 	public:
 		String ToString() const override;
-		void SerializeField(std::ostream& _os, const String& _fieldName)override;
+		void SerializeField(std::ostream& _os, const String& _fieldName, int _index)override;
 		void DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName)override;
 
 	public:
@@ -55,7 +56,6 @@ namespace Engine::PrimaryType
 		Integer operator++(int);
 		Integer operator--(int);
 		Integer operator-();
-
 		Object& operator=(const Object* _obj) override;
 
 	};

@@ -96,7 +96,7 @@
     <ClCompile Include="Engine\PrimaryType\Vector2\Vector2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Test\Reflection\Json\Json.cpp">
+    <ClCompile Include="Test\Reflection\Json\JsonTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -225,6 +225,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Test\Reflection\Json\JsonTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test\C.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test\B.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

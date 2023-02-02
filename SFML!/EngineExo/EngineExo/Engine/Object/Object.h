@@ -71,9 +71,10 @@ namespace Engine
 		template<typename T>
 		void SetFieldValue(const std::string& _name, T* _value);
 
-		virtual void Serialize(std::ostream& _os);
+	public:
+		virtual void Serialize(std::ostream& _os, int _index = 1);
 		virtual void DeSerialize(std::istream& _os);
-		virtual void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName);
+		virtual void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName,int _index);
 		virtual void DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName);
 
 

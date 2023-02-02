@@ -8,6 +8,7 @@ namespace Engine
 		{
 			DECLARE_CLASS_INFO_FLAGS(ValueType, Object, ClassFlags::Type)
 
+		public:
 			ValueType() = default;
 			ValueType(const ValueType& _copy) = default;
 			~ValueType() override = default;
