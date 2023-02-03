@@ -99,6 +99,9 @@
     <ClCompile Include="Test\Reflection\Json\JsonTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\Reflection\Utils\ReflectionUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Object\Object.h">
@@ -231,6 +234,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Test\B.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Reflection\Utils\ReflectionUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

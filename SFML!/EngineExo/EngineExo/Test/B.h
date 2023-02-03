@@ -13,11 +13,13 @@ namespace Test
 	UCLASS()
 		class B:public Engine::Object
 	{
-	private:
+	public:
 		UPROPERTY() C c = C();
-REGISTER_FIELD(c, &c, BindingFlags::NoPublic)
+REGISTER_FIELD(c, &c, BindingFlags::Public)
 
 		UPROPERTY() Engine::PrimaryType::Float mana = 105.015452f;
-REGISTER_FIELD(mana, &mana, BindingFlags::NoPublic)
+REGISTER_FIELD(mana, &mana, BindingFlags::Public)
+
+
 	};
 }

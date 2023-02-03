@@ -63,11 +63,6 @@ namespace Engine::PrimaryType
 		ConstIterator end() const { return data.end(); }
 		size_t Count()const override { return data.size(); }
 
-		//String ToString()const override
-		//{
-
-		//}
-
 		void SerializeField(std::ostream& _os, const String& _fieldName, int _index) override
 		{
 			if (String::IsNullOrEmpty(_fieldName))
@@ -75,12 +70,10 @@ namespace Engine::PrimaryType
 			else
 				_os << "\"" + std::string(_fieldName.ToCstr()) + "\" : ";
 
-
 			if constexpr (IsPointer<InElementType>::Value)
 				_os << "\"" << data[0]->ClassName().ToCstr() << "\"";
 			else
 				_os << "\"" << data[0].ClassName().ToCstr() << "\"";
-
 			_os << " [\n";
 
 
@@ -91,16 +84,16 @@ namespace Engine::PrimaryType
 				if constexpr (IsPointer<InElementType>::Value)
 				{
 					if (data[i]->IsClass())
-						data[i]->Serialize(_os);
+						data[i]->Serialize(_os, _index + 2);
 					else
-						data[i]->SerializeField(_os, "", _index);
+						data[i]->SerializeField(_os, "", _index + 1);
 				}
 				else
 				{
 					if (data[i].IsClass())
-						data[i].Serialize(_os);
+						data[i].Serialize(_os, _index + 2);
 					else
-						data[i].SerializeField(_os, "", _index);
+						data[i].SerializeField(_os, "", _index + 1);
 				}
 				if (i < _size - 1)
 					_os << ",";
@@ -109,31 +102,73 @@ namespace Engine::PrimaryType
 			_os << std::string(_index, '\t') << "]";
 		}
 
-		void DeSerializeField(std::istream& _is, const PrimaryType::String& _fieldName)override
+		void DeSerializeField(std::istream& _is, const String& _fieldName) override
 		{
-			bool _inList = false;
-			std::string _line = "";
+			std::string _line;
+			bool _isStarted = false;
+			std::vector<InElementType> _result = std::vector<InElementType>();
+			size_t _index = 0;
+			typedef typename RemovePointer<InElementType>::Type TypeNoPointer;
+
+			TypeNoPointer _element = TypeNoPointer();
+
 			while (std::getline(_is, _line))
 			{
 				if (_line.find(std::string("\"") + _fieldName.ToCstr() + "\"") != std::string::npos)
 				{
-					_inList = true;
+					_isStarted = true;
+					_index = _is.tellg();
+					++_index;
 				}
-				if (_inList)
+				if (_isStarted)
 				{
-
+					if (_element.IsClass())
+					{
+						if (_line.find('}') != std::string::npos && _line.find(',') == std::string::npos) break;
+					}
+					else if (_line.find(']') != std::string::npos) break;
+					_is.clear();
+					_is.seekg(_index);
+					if constexpr (IsPointer<InElementType>::Value)
+					{
+						InElementType _element = new typename RemovePointer<InElementType>::Type();
+						if (_element->IsClass())
+							_element->DeSerialize(_is);
+						else
+							_element->DeSerializeField(_is, "");
+						_result.push_back(_element);
+					}
+					else
+					{
+						InElementType _element = InElementType();
+						if (_element.IsClass())
+							_element.DeSerialize(_is);
+						else
+							_element.DeSerializeField(_is, "");
+						_result.push_back(_element);
+					}
+					_index = _is.tellg();
 				}
 			}
+			*this = _result;
 		}
 
 	public:
+		List& operator=(const std::vector<InElementType>& _other)
+		{
+			data = _other;
+			return *this;
+		}
+
 		InElementType& operator[](size_t _index)
 		{
 			return data[_index];
 		}
+
 		InElementType operator[](size_t _index)const
 		{
 			return data[_index];
 		}
+	
 	};
 }

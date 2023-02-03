@@ -1,4 +1,5 @@
 #pragma once
+#include "../../Reflection/Utils/ReflectionUtils.h"
 #include "../../Object/Object.h"
 namespace Engine
 {

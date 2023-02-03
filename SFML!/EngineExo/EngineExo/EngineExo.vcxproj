@@ -153,6 +153,7 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\Reflection\Utils\ReflectionUtils.cpp" />
     <ClCompile Include="Engine\Window\Engine\EngineWindow.cpp" />
     <ClCompile Include="Engine\Component\Component.cpp" />
     <ClCompile Include="Engine\Reflection\Function\Function.cpp" />
@@ -183,6 +184,7 @@
     <ClCompile Include="Engine\PrimaryType\Vector2\Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\Reflection\Utils\ReflectionUtils.h" />
     <ClInclude Include="Engine\Time\Time.h" />
     <ClInclude Include="Engine\Window\Engine\EngineWindow.h" />
     <ClInclude Include="Engine\Component\Component.h" />

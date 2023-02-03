@@ -1,11 +1,13 @@
 "A" : {
-	"age" : "0",
-	"classes" : "String" [
-			"Giusy",
-			"Romain",
-			"Benoit",
-			"Pierre-Louis"
+	"age" : "20",
+	"classes" : "Integer" [
+			"44534",
+			"44534",
+			"44534",
+			"44534",
+			"44534",
+			"44534"
 	],
-	"f" : "0.000000",
-	"vector2" : "(7 , 4)"
+	"f" : "50.000000",
+	"vector2" : "(5 , 6)"
 	}

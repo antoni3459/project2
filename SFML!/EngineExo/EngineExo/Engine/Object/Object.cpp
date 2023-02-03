@@ -87,7 +87,7 @@ void Engine::Object::Serialize(std::ostream& _os, int _index)
         if (i < _length - 1)
             _os << ",\n";
     }
-    _os << "\n" << std::string(_index--, '\t') + "}\n";
+    _os << "\n" << std::string(_index--, '\t') << "}";
 }
 
 void Engine::Object::DeSerialize(std::istream& _os)

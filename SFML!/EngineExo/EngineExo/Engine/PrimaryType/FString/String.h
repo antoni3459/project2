@@ -34,8 +34,8 @@ namespace Engine::PrimaryType
 		String Trim();
 		String ToLower() const;
 		String ToUpper() const;
-		size_t FindFirstOf(char _c);
-		size_t FindLastOf(char _c);
+		size_t FindFirstOf(char _c)const;
+		size_t FindLastOf(char _c)const;
 		size_t Length() const;
 		void Append(const char* _str);
 		void Append(char _c);

@@ -84,6 +84,7 @@ Engine::PrimaryType::String Engine::PrimaryType::String::SubString(size_t _begin
 
 Engine::PrimaryType::String Engine::PrimaryType::String::Replace(const String& _old, const String _new) const
 {
+	if (String::IsNullOrEmpty(_old))return *this;
 	std::string _str = value;
 	size_t _startPos = 0;
 	const std::string& _from = _old.value;
@@ -133,7 +134,7 @@ Engine::PrimaryType::String Engine::PrimaryType::String::ToUpper() const
 	return _array;
 }
 
-size_t Engine::PrimaryType::String::FindFirstOf(char _c)
+size_t Engine::PrimaryType::String::FindFirstOf(char _c) const
 {
 
 	for (size_t i = 0; i < length; i++)
@@ -141,7 +142,7 @@ size_t Engine::PrimaryType::String::FindFirstOf(char _c)
 	return -1;
 }
 
-size_t Engine::PrimaryType::String::FindLastOf(char _c)
+size_t Engine::PrimaryType::String::FindLastOf(char _c) const 
 {
 	size_t _result = -1;
 	for (size_t i = 0; i < length; i++)
@@ -192,26 +193,14 @@ Engine::PrimaryType::String Engine::PrimaryType::String::ToString() const
 
 void Engine::PrimaryType::String::SerializeField(std::ostream& _os, const String& _fieldName, int _index)
 {
-	if (IsNullOrEmpty(_fieldName))
-		_os << "\"" << ToString().ToCstr() << "\"";
-	else
-		_os << std::string("\"") + _fieldName.ToString().ToCstr() + "\" : \"" + ToString().ToCstr() + "\"";
+	Reflection::ReflectionUtils::SerializePrimaryType(_os, this, _fieldName);
 }
 
 void Engine::PrimaryType::String::DeSerializeField(std::istream& _is, const PrimaryType::String& _fieldName)
 {
-	std::string _line;
-	while (std::getline(_is, _line))
-	{
-		if (_line.find(std::string("\"") + _fieldName.ToCstr() + "\"") != std::string::npos)
-		{
-			String _str = _line.c_str();
-			_str = _str.SubString(_str.FindFirstOf(':'));
-			_str = _str.SubString(_str.FindFirstOf('"') + 1, _str.FindLastOf('"')).Replace("\"", "");
-			*this = _str;
-			break;
-		}
-	}
+	String _str = Reflection::ReflectionUtils::GetLine(_is, _fieldName);
+	_str = _str.Replace("\"", "").Replace("\t", "").Replace(",", "").Replace(_fieldName, "").Replace(":", "").Trim();
+	*this = _str;
 }
 
 Engine::PrimaryType::String& Engine::PrimaryType::String::operator+=(const char* _str)

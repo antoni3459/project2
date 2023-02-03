@@ -13,18 +13,13 @@ namespace Test
 	UCLASS()
 		class A : public Engine::Object
 	{
-	private:
-		UPROPERTY() Engine::PrimaryType::List<Engine::PrimaryType::String> classes = { "Giusy","Romain","Benoit","Pierre-Louis" };
-REGISTER_FIELD(classes, &classes, BindingFlags::NoPublic)
+	public:
+		UPROPERTY() Engine::PrimaryType::List<Engine::PrimaryType::Integer> classes = { 1,2,4,5,6,8 };
+REGISTER_FIELD(classes, &classes, BindingFlags::Public)
 
-		UPROPERTY() Engine::PrimaryType::Integer age = 20;
-REGISTER_FIELD(age, &age, BindingFlags::NoPublic)
+			UPROPERTY() Engine::PrimaryType::List<B*> blist = { new B(),new B(),new B() };
+REGISTER_FIELD(blist, &blist, BindingFlags::Public)
 
-		UPROPERTY() Engine::PrimaryType::Float f = 50.f;
-REGISTER_FIELD(f, &f, BindingFlags::NoPublic)
-
-		UPROPERTY() Engine::PrimaryType::Vector2 vector2 = Engine::PrimaryType::Vector2(5,6);
-REGISTER_FIELD(vector2, &vector2, BindingFlags::NoPublic)
 
 
 	};
