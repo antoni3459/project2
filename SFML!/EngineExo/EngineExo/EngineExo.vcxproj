@@ -153,6 +153,7 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\AssetDataBase\AssetDataBase.cpp" />
     <ClCompile Include="Engine\Reflection\Utils\ReflectionUtils.cpp" />
     <ClCompile Include="Engine\Window\Engine\EngineWindow.cpp" />
     <ClCompile Include="Engine\Component\Component.cpp" />
@@ -160,10 +161,10 @@
     <ClCompile Include="Engine\Reflection\Function\Parameter\ParameterInfo.cpp" />
     <ClCompile Include="Engine\Utils\Singleton\Singleton.cpp" />
     <ClCompile Include="Engine\Manager\GameObject\GameObjectManager.cpp" />
+    <ClCompile Include="Engine\Selection\Selection.cpp" />
     <ClCompile Include="Test\Reflection\Json\JsonTest.cpp" />
     <ClCompile Include="Test\Component\PlayerComponent.cpp" />
     <ClCompile Include="Test\List\ListTest.cpp" />
-    <ClCompile Include="Test\A.cpp" />
     <ClCompile Include="Engine\GameObject\GameObject.cpp" />
     <ClCompile Include="Engine\Reflection\Field\FieldInfo.cpp" />
     <ClCompile Include="Test\Reflection\ReflectionTest.cpp" />
@@ -184,8 +185,10 @@
     <ClCompile Include="Engine\PrimaryType\Vector2\Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\AssetDataBase\AssetDataBase.h" />
     <ClInclude Include="Engine\Reflection\Utils\ReflectionUtils.h" />
     <ClInclude Include="Engine\Time\Time.h" />
+    <ClInclude Include="Engine\Utils\ObjectMacro.h" />
     <ClInclude Include="Engine\Window\Engine\EngineWindow.h" />
     <ClInclude Include="Engine\Component\Component.h" />
     <ClInclude Include="Engine\PrimaryType\List\IList.h" />
@@ -199,12 +202,11 @@
     <ClInclude Include="Engine\Utils\Template\Pointer.h" />
     <ClInclude Include="Engine\Manager\GameObject\GameObjectManager.h" />
     <ClInclude Include="Engine\Window\Window.h" />
-    <ClInclude Include="Test\B.h" />
-    <ClInclude Include="Test\C.h" />
+    <ClInclude Include="Engine\Selection\Selection.h" />
+    <ClInclude Include="Assembly.h" />
     <ClInclude Include="Test\Reflection\Json\JsonTest.h" />
     <ClInclude Include="Test\Component\PlayerComponent.h" />
     <ClInclude Include="Test\List\ListTest.h" />
-    <ClInclude Include="Test\A.h" />
     <ClInclude Include="Engine\Event\Action\Action.h" />
     <ClInclude Include="Engine\Event\Delegate\Delegate.h" />
     <ClInclude Include="Engine\Reflection\Flags\BindingFlags.h" />
@@ -232,10 +234,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="a.asset" />
+    <None Include="Assets\test.asset" />
     <None Include="ReflectionFunction.ps1" />
     <None Include="ReflectionProperty.ps1" />
     <None Include="test.ps1" />
     <None Include="Test\test.ps1" />
+    <None Include="TestRegister.ps1" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

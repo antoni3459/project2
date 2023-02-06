@@ -20,7 +20,7 @@ namespace Engine::Event
 		}
 
 		template<typename Class>
-		ActionInternal(Class* _instace, Res(Class::* ptr)(Params..))
+		ActionInternal(Class* _instance, Res(Class::* ptr)(Params...))
 		{
 			checkBaseOf(Object, Class)
 			delegates.push_back(Delegate<Res, Params...>(_instance, ptr));
@@ -35,11 +35,11 @@ namespace Engine::Event
 			delegates.push_back(Delegate<Res, Params...>(_instance, ptr));
 		}
 
-		termplate<typename Class>
-			void RemoveDynamic(Class* _instance, Res(Class::*ptr)(Params...))
+		template<typename Class>
+		void RemoveDynamic(Class* _instance, Res(Class::* ptr)(Params...))
 		{
 			checkBaseOf(Object, Class)
-				std::vector<Delegate<Res, Params...>>::iterator it ) delegates.begin();
+			typename std::vector<Delegate<Res, Params...>>::iterator it = delegates.begin();
 			for (; it != delegates.end(); ++it)
 			{
 				if (*it.GetAdress() == (void*&)ptr && *it.Instance() == _instance)
@@ -78,7 +78,7 @@ namespace Engine::Event
 		}
 		ActionInternal& operator=(const ActionInternal& _other)
 		{
-			delegate = _other.delegates;
+			delegates = _other.delegates;
 			return *this;
 		}
 		Res operator()(Params... _params)

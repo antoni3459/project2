@@ -1,6 +1,7 @@
 #pragma once
 #include "../../Utils/DebugMacro.h"
 #include "../../Object/Object.h"
+#include "../../PrimaryType/Boolean/Boolean.h"
 
 namespace Engine::Event
 {
@@ -44,10 +45,10 @@ namespace Engine::Event
 
 		Res Invoke(Params... _params)
 		{
-			return (instance->*function)(_params)
+			return (instance->*function)(_params...);
 		}
 
-		PrimaryType::Boolean IsValid() const
+		Engine::PrimaryType::Boolean IsValid() const
 		{
 			return instance != nullptr && function != nullptr;
 		}
@@ -57,13 +58,13 @@ namespace Engine::Event
 			return (void*&)function;
 		}
 
-		Primary::Boolean operator==(const Delegate& _other)
+		Engine::PrimaryType::Boolean operator==(const Delegate& _other)
 		{
-			return GetAddress() == _other.GetAdress();
+			return GetAdress() == _other.GetAdress();
 		}
 
 		template<typename Class>
-		Primary::Boolean operator==(Res(Class::* ptr)(Params...))
+		Engine::PrimaryType::Boolean operator==(Res(Class::* ptr)(Params...))
 		{
 
 			return *this;

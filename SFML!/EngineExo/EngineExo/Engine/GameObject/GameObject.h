@@ -20,15 +20,20 @@ namespace Engine
     class GameObject : public Object
     {
         DECLARE_CLASS_INFO(GameObject, Object)
+
     private:
-        Engine::PrimaryType::List<Component*> components = Engine::PrimaryType::List<Component*>();
+        UPROPERTY() Engine::PrimaryType::List<Component*> components = Engine::PrimaryType::List<Component*>();
+REGISTER_FIELD(components, &components, BindingFlags::NoPublic)
 
     protected:
         sf::Shape* shape = nullptr;
 
     public:
-        PrimaryType::String name = "";
-        Engine::Transform* transform;
+        UPROPERTY() PrimaryType::String name = "";
+REGISTER_FIELD(name, &name, BindingFlags::Public)
+
+        UPROPERTY() Engine::Transform* transform = nullptr;
+REGISTER_FIELD(transform, transform, BindingFlags::Public)
     public:
         GameObject() = default;
         GameObject(const PrimaryType::String& _name);

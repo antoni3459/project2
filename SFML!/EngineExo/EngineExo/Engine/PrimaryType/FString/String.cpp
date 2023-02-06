@@ -35,7 +35,7 @@ Engine::PrimaryType::Boolean Engine::PrimaryType::String::EndWith(char _c) const
 
 Engine::PrimaryType::Boolean Engine::PrimaryType::String::StartWith(const String& _str) const
 {
-	for (int i = 0; i < length; ++i)
+	for (int i = 0; i < _str.length; ++i)
 		if (value[i] != _str.value[i])
 			return false;
 	return true;

@@ -63,9 +63,6 @@
     <ClCompile Include="Test\Reflection\ReflectionTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Test\A.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\Reflection\Function\Function.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -100,6 +97,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Reflection\Utils\ReflectionUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Selection\Selection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\AssetDataBase\AssetDataBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -170,9 +173,6 @@
     <ClInclude Include="Test\Reflection\ReflectionTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Test\A.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\Reflection\Function\Function.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -230,13 +230,19 @@
     <ClInclude Include="Test\Reflection\Json\JsonTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Test\C.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Test\B.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\Reflection\Utils\ReflectionUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Selection\Selection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\AssetDataBase\AssetDataBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Utils\ObjectMacro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Assembly.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -246,5 +252,7 @@
     <None Include="ReflectionFunction.ps1" />
     <None Include="ReflectionProperty.ps1" />
     <None Include="a.asset" />
+    <None Include="Assets\test.asset" />
+    <None Include="TestRegister.ps1" />
   </ItemGroup>
 </Project>

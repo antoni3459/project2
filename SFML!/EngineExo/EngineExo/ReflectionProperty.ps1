@@ -99,7 +99,7 @@ Get-ChildItem $path -Recurse -Filter *.h |
                     $field = $field.TrimStart()
                     if ($field.Contains(">"))
                     {
-                        $str = $field.Substring($field.IndexOf(">"))
+                        $str = $field.Substring($field.IndexOf(">"),$field.IndexOf("="))
                         $isPointer = $str.Contains("*")
                     }
                     $field = $field.Substring($field.IndexOf(' ') + 1)

@@ -5,7 +5,7 @@
 #include "../Flags/BindingFlags.h"
 namespace Engine::Reflection
 {
-	UCLASS();
+	UCLASS()
 	class FieldInfo : public Object
 	{
 		DECLARE_CLASS_INFO(FieldInfo, Object)

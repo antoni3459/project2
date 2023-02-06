@@ -38,7 +38,6 @@ Engine::Reflection::FieldInfo* Engine::Object::GetField(const PrimaryType::Strin
 {
     check(fields.contains(_name.ToCstr()), std::format("[Object][Reflection] => {} doesn't exist in the field", _name), nullptr)
         return dynamic_cast<Reflection::FieldInfo*>(fields[_name.ToCstr()]);
-
 }
 
 std::vector<Engine::Reflection::FieldInfo*> Engine::Object::Fields(const BindingFlags& _flags)

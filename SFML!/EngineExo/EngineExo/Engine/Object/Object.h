@@ -4,6 +4,7 @@
 #include "../Reflection/Function/MethodInfo/MethodInfo.h"
 #include "../Reflection/Function/Function.h"
 #include "../Utils/Interfarce/Log/ILogger.h"
+#include "../Utils/ObjectMacro.h"
 #include <string>
 #include <format>
 
@@ -154,3 +155,4 @@ namespace Engine
 		return Invoke<Res, Params...>(_name, this, _params...);
 	}
 }
+
