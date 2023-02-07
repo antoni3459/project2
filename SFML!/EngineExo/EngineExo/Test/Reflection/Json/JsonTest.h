@@ -1,8 +1,10 @@
 #pragma once
+#include "../../../Engine/Object/Object.h"
 
 namespace Test
 {
-	class JsonTest
+	UCLASS()
+	class JsonTest :public Engine::Object
 	{
 	public:
 		static void Test();

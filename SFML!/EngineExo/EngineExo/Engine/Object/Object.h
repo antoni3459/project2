@@ -47,6 +47,8 @@ namespace Engine
 	{
 		class FieldInfo;
 	}
+
+	UCLASS()
 	class Object : public Interfarce::ILogger
 	{
 	private:

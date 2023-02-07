@@ -4,6 +4,7 @@
 
 namespace Engine
 {
+	UCLASS()
 	class Selection : public Object
 	{
 		DECLARE_CLASS_INFO(Selection, Object)

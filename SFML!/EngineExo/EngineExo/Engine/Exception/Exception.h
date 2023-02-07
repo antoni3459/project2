@@ -6,6 +6,7 @@
 
 namespace Engine
 {
+	UCLASS()
 	class Exception : public Object
 	{
 		DECLARE_CLASS_INFO(Exception , Object)

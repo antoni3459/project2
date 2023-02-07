@@ -3,73 +3,172 @@ param(
     [string]$path
 )
 
-$assemblyPath = $path + "\Assembly.h"
-$str = "#pragma once`n"
-$str += "#include `"Engine/Utils/ObjectMacro.h`"`n"
-
-function ReplaceStr
+class FData
 {
-    param([string]$str, [string[]]$toReplace, [string]$to)
-    $count = $toReplace.Count
-    for ($i = 0; $i -lt $toReplace.Count; $i = $i + 1)
+    [Collections.Generic.List[string]]$classes
+    [string]$namespace
+
+    FData()
     {
-        $str = $str.Replace($toReplace[$i], $to)
+        $this.classes = New-Object Collections.Generic.List[string]
     }
-    return $str
 }
 
-function AddNamespace
+$allDatas =New-Object Collections.Generic.List[FData]
+
+function GetIndex
 {
-    param([string]$str, [string[]]$toReplace, [string]$to)
-    $count = $toReplace.Count
-    for ($i = 0; $i -lt $toReplace.Count; $i = $i + 1)
+    param([string]$fullPath)
+    for($i = 0; $i -lt $allDatas.Count; $i =$i +1)
     {
-        $str = $str.Replace($toReplace[$i], $to)
+        if($allDatas[$i].namespace -eq $namespace)
+        {
+            return $i
+        }
     }
-    return $str
+    return -1
 }
 
-Get-ChildItem $path -Recurse -Filter *.h |
-        ForEach-Object {
+function IsUClass
+{
+    param([Collections.ArrayList] $fileContents)
+    for ($i = 0; $i -lt $fileContents.Count; $i = $i + 1)
+    {
+        if ($fileContents[$i].Contains("UCLASS") -and $fileContents[$i] -notmatch "UCLASS(...)")
+        {
+            return $true
+        }
+    }
+    return $false
+}
 
-            $scriptPath = $_.FullName
+function IsForwardedNameSpace
+{
+    param([Collections.ArrayList]$contents,[Int16]$index)
+    $parenthesisCount = 0
+    for($i = $index + 1; $i -lt $contents.Count; $i = $i + 1)
+    {
+        $line = $contents[$i]
+        if($line.Contains("{"))
+        {
+            $parenthesisCount = $parenthesisCount + 1
+        }
+        if($line.Contains("}"))
+        {
+            $parenthesisCount = $parenthesisCount - 1
+        }
+        if($line.Contains("UCLASS()"))
+        {
+            return $false
+        }
+        if($parenthesisCount -eq 0)
+        {
+            return $true
+        }
+    }
+    return $false
+}
 
-            $className = (Get-Item $scriptPath).BaseName
-            $filecontents = Get-Content -Path $scriptPath
-            $finalPath = ReplaceStr -str $scriptPath -toReplace "C:\Users\PRAIT2401\Desktop\project2\project2\SFML!\EngineExo\EngineExo\" -to ""
-            $isPublic = $false
-            $isNoTemplate = $true
+function Exist
+{
+    param([string]$namespace)
+    for($i = 0;$i -lt $allDatas.Count; $i = $i +1)
+    {
+        if($allDatas[$i].namespace -eq $namespace)
+        {
+            return $true
+        }
+    }
+    return $false
+}
 
-            for ($i = 0; $i -lt $filecontents.Count; $i = $i + 1)
-            { 
-                $line = $filecontents[$i]
-                if($line -match "public")
-                {
-                    $isPublic = $true
-                }
+function GetALLNamespaces
+{
+    param([Collections.Generic.List[String]] $allUClass)
 
-                if($line -match "template")
-                {
-                    $isNoTemplate = $false
-                }
-            }
-
-            if($isPublic -and $isNoTemplate)
+    for ($x = 0; $x -lt $allUClass.Count; $x = $x + 1)
+    {
+        $fullPath = $allUClass[$x]
+        $className = (Get-Item $fullPath).BaseName
+        $fileContents = (Get-Content -Path $fullPath) -as [Collections.ArrayList]
+        $currentNamespace = ""
+        for ($i = 0; $i -lt $fileContents.Count; $i = $i + 1)
+        {
+            $line = $fileContents[$i]
+            if ($line.Contains("namespace"))
             {
-                $str += "#include `"$finalPath`"`n"
-                $str +="REGISTER_TYPE("
-                for ($i = 0; $i -lt $filecontents.Count; $i = $i + 1)
-                { 
-                    $line = $filecontents[$i]
-                    if($line -match "namespace")
+                $isForwarded = IsForwardedNameSpace -contents $fileContents -index $i
+                if (-not $isForwarded)
+                {
+                    $namespaces = $line.Replace("namespace", "").Trim()
+                    if ([String]::IsNullOrEmpty($currentNamespace))
                     {
-
+                        $currentNamespace = $namespaces
+                    }
+                    else
+                    {
+                        $currentNamespace += "::$namespaces"
                     }
                 }
-                $str += "$className)`n"
-                
             }
         }
+        if (-not [string]::IsNullOrEmpty($currentNamespace))
+        {
+            #$result.Add($currentNamespace)
+            if (-not(Exist -namespace $currentNamespace))
+            {
+                $data = [FData]::new()
+                $data.namespace = $currentNamespace
+                $data.classes.Add($fullPath)
+                $allDatas.Add($data)
+            }
+            else
+            {
+                $index = GetIndex _namespace $currentNamespace
+                $allDatas[$index].classes.Add($fullPath)
+            }
+        }
+    }
+}
 
+function GetALLUClass
+{
+    $uclass= New-Object Collections.Generic.List[string]
+    Get-ChildItem $path -Recurse -Filter *.h |
+        ForEach-Object {
+            $fullPath = $_.FullName
+            $fileContents = (Get-Content -Path $fullPath) -as [Collections.ArrayList]
+            if (IsUClass -fileContents $fileContents)
+            {
+                $uclass.Add($fullPath)
+            }
+        }
+        return $uclass
+}
 
-$str | out-File $assemblyPath
+function CreateFile
+{
+    $assemblyPath = "$path\Assembly.h"
+    $result = "#pragma once`n"
+    $result += "#include `"Engine/Utils/ObjectMacro.h`"`n`n"
+    foreach ($h in $allDatas)
+    {
+        $namespace = $h.namespace
+        $result +="using namespace $namespace;`n`n"
+        $classes = $h.classes
+        for($i = 0;$i -lt $classes.Count ;$i =$i +1)
+        {
+            $includePath = $classes[$i].Replace($path,"").TrimStart()
+            $classesName = $includePath.SubString($includePath.LastIndexOf('\')+ 1)
+            $classesName = $classesName.Replace(".h","").TrimEnd()
+            $result += "#include `"$includePath`"`n"
+            $result += "REGISTER_TYPE($classesName)`n"
+        }
+    }
+    Set-Content -Path $assemblyPath -Value $result
+}
+
+$allUClass = GetALLUClass
+GetALLNamespaces -allUClass $allUClass
+
+CreateFile

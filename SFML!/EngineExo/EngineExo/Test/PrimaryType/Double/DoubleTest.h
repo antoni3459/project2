@@ -1,7 +1,10 @@
 #pragma once
+#include "../../../Engine/Object/Object.h"
+
 namespace Test
 {
-	class DoubleTest
+	UCLASS()
+	class DoubleTest : public Engine::Object
 	{
 	public:
 		static void Test();

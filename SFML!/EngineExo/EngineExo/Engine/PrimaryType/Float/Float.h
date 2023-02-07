@@ -2,6 +2,7 @@
 #include "../ValueType/ValueType.h"
 namespace Engine::PrimaryType
 {
+	UCLASS()
 	class Float : public ValueType
 	{
 		DECLARE_CLASS_INFO(Float, ValueType)

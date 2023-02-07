@@ -6,6 +6,7 @@
 
 namespace Test
 {
+	UCLASS()
 	class ReflectionTest : public Engine::Object
 	{
 	private:

@@ -6,7 +6,7 @@
 namespace Engine
 {
 	UCLASS()
-	class Transform:public Component
+	class Transform : public Component
 	{
 		DECLARE_CLASS_INFO(Transform, Component)
 

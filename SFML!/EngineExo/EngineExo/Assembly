@@ -1,0 +1,32 @@
+#pragma once
+#include "Engine/Utils/ObjectMacro.h"
+
+using namespace Engine;
+
+#include "Engine\Component\Component.h"
+REGISTER_TYPE(Component.h)
+#include "Engine\GameObject\GameObject.h"
+REGISTER_TYPE(GameObject.h)
+#include "Engine\Object\Object.h"
+REGISTER_TYPE(Object.h)
+using namespace Engine::PrimaryType;
+
+#include "Engine\PrimaryType\Boolean\Boolean.h"
+REGISTER_TYPE(Boolean.h)
+#include "Engine\PrimaryType\FString\String.h"
+REGISTER_TYPE(String.h)
+#include "Engine\PrimaryType\Integer\Integer.h"
+REGISTER_TYPE(Integer.h)
+#include "Engine\PrimaryType\Vector2\Vector2.h"
+REGISTER_TYPE(Vector2.h)
+using namespace Engine::Reflection;
+
+#include "Engine\Reflection\Field\FieldInfo.h"
+REGISTER_TYPE(FieldInfo.h)
+#include "Engine\Transform\Transform.h"
+REGISTER_TYPE(Transform.h)
+using namespace Test;
+
+#include "Test\Component\PlayerComponent.h"
+REGISTER_TYPE(PlayerComponent.h)
+
