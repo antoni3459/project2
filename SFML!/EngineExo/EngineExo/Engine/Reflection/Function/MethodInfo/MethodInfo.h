@@ -65,7 +65,9 @@ namespace Engine::Reflection
                 return (void*&)function;
             return (void*&)staticFunction;
         }
+#pragma endregion method
 
+#pragma region operator
     public:
         bool operator==(nullptr_t)
         {
@@ -75,7 +77,6 @@ namespace Engine::Reflection
         {
             return function != nullptr || staticFunction != nullptr;
         }
-
 
         bool operator==(const MethodInfo& _other)
         {
@@ -98,6 +99,6 @@ namespace Engine::Reflection
         {
             return GetAddress() != (void*&)ptr;
         }
-#pragma endregion method
+#pragma endregion operator
     };
 }

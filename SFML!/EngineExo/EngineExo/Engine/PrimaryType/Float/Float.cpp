@@ -2,26 +2,31 @@
 #include "../FString/String.h"
 #include "../Boolean/Boolean.h"
 
+#pragma region f/p
 const Engine::PrimaryType::Float Engine::PrimaryType::Float::MinValue = -3.40282347E+38f;
 const Engine::PrimaryType::Float Engine::PrimaryType::Float::MaxValue = 3.40282347E+38f;
 const Engine::PrimaryType::Float Engine::PrimaryType::Float::Epsilon = 1.401298E-45f;
 const Engine::PrimaryType::Float Engine::PrimaryType::Float::PositiveInfinity = (1e+300 * 1e+300);
 const Engine::PrimaryType::Float Engine::PrimaryType::Float::NegativeInfinity = -PositiveInfinity;
 const Engine::PrimaryType::Float Engine::PrimaryType::Float::NaN = 0.0f * PositiveInfinity;
+#pragma endregion f/p
 
+#pragma region constructor
 Engine::PrimaryType::Float::Float(float _value)
 {
-    value = _value;
+	value = _value;
 }
 
 Engine::PrimaryType::Float::Float(const Float& _copy)
 {
-    value = _copy.value;
+	value = _copy.value;
 }
+#pragma endregion constructor
 
+#pragma region method
 Engine::PrimaryType::Float Engine::PrimaryType::Float::Parse(const String& _str)
 {
-    return std::stof(_str.ToCstr());
+	return std::stof(_str.ToCstr());
 }
 
 Engine::PrimaryType::Boolean Engine::PrimaryType::Float::TryParse(const String& _str, Float& _output)
@@ -57,7 +62,9 @@ Engine::PrimaryType::Boolean Engine::PrimaryType::Float::IsNegativeInfinity(cons
 {
 	return _value == NegativeInfinity;
 }
+#pragma endregion method
 
+#pragma region override
 Engine::PrimaryType::String Engine::PrimaryType::Float::ToString() const
 {
 	if (IsNaN(*this)) return "NaN";
@@ -79,7 +86,9 @@ void Engine::PrimaryType::Float::DeSerializeField(std::istream& _is, const Strin
 	*this = std::stof(_str.ToCstr());
 
 }
+#pragma endregion override
 
+#pragma region operator
 Engine::PrimaryType::Float& Engine::PrimaryType::Float::operator=(const Float& _other)
 {
 	value = _other.value;
@@ -175,3 +184,4 @@ Engine::PrimaryType::Boolean Engine::PrimaryType::Float::operator!=(float _other
 {
 	return value != _other;
 }
+#pragma endregion operator

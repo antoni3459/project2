@@ -11,19 +11,27 @@ namespace Engine
 	{
 		DECLARE_CLASS_INFO(Exception , Object)
 
+#pragma region f/p
 	private:
 		PrimaryType::String message = "";
+#pragma endregion f/p
 
+#pragma region constructor
 	public:
 		Exception(const std::source_location& _source = std::source_location::current());
 		Exception(const char* _error, const std::source_location& _source = std::source_location::current());
 		Exception(const Exception& _copy);
+#pragma endregion constructor
 
+#pragma region method
 	public:
 		PrimaryType::String Error() const;
+#pragma endregion method
 
+#pragma region override
 	public:
 		PrimaryType::String ToString() const override;
+#pragma endregion override
 	};
 }
 

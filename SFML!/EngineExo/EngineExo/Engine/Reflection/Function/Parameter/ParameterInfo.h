@@ -9,20 +9,30 @@ namespace Engine::Reflection
 	class ParameterInfo :public Interfarce::ILogger
 	{
 		DECLARE_CLASS_INFO(ParameterInfo, Object)
+
+#pragma region f/p
 	private:
 		std::string name = "";
 		int position = 0;
+#pragma endregion f/p
 
+#pragma region constructor
 	public:
 		ParameterInfo() = default;
 		ParameterInfo(const std::string& _name, int _position);
 		virtual ~ParameterInfo() = default;
+#pragma endregion constructor
 
+#pragma region method
 	public:
 		std::string Name()const;
 		int Position();
-		PrimaryType::String ToString()const override;
+#pragma endregion method
 
+#pragma region override
+	public:
+		PrimaryType::String ToString()const override;
+#pragma endregion override
 	};
 }
 

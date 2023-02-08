@@ -8,6 +8,7 @@ namespace Engine::PrimaryType
 	{
 	public:
 		virtual ~IList() = default;
+
 		virtual size_t Count()const = 0;
 	};
 }

@@ -16,16 +16,19 @@ namespace Engine::Manager
 	{
 		DECLARE_CLASS_INFO(GameObjectManager, Singleton< GameObjectManager>)
 
+#pragma region f/p
 	private:
 		std::vector<GameObject*> gameObjects = std::vector<GameObject*>();
+#pragma endregion f/p
 
+#pragma region method
 	public:
 		void Register(GameObject* _object);
 		void UnRegister(GameObject* _object);
 		void Update()const;
 		void Draw(const Engine::Window::EngineWindow* _window);
 		void OnDestroy();
-		
+#pragma endregion method
 	};
 }
 

@@ -5,12 +5,14 @@
 #include "../Utils/DebugMacro.h"
 #include <ranges>
 
+#pragma region construcctor
 Engine::Object::Object(const Object& _copy)
 {
     flags = _copy.flags;
 }
+#pragma endregion construcctor
 
-
+#pragma region method
 Engine::PrimaryType::String Engine::Object::ToString() const
 {
     return ClassName();
@@ -20,7 +22,7 @@ Engine::PrimaryType::String Engine::Object::ToString() const
 Engine::PrimaryType::String Engine::Object::ClassName() const
 {
     PrimaryType::String _str = typeid(*this).name();
-    _str= _str.Replace("class", "");
+    _str = _str.Replace("class", "");
     return _str.SubString(_str.FindLastOf(':') + 1).Trim();
 }
 
@@ -61,7 +63,7 @@ std::vector<Engine::Reflection::FieldInfo*> Engine::Object::Fields() const
     {
         Reflection::FieldInfo* _field = dynamic_cast<Reflection::FieldInfo*>(_o);
         if (_field == nullptr) continue;
-            _result.push_back(_field);
+        _result.push_back(_field);
     }
     return _result;
 }
@@ -104,10 +106,10 @@ void Engine::Object::DeSerialize(std::istream& _os)
 }
 
 
-void Engine::Object::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName, int _index){}
+void Engine::Object::SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName, int _index) {}
 
 
-void Engine::Object::DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName){}
+void Engine::Object::DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName) {}
 
 size_t Engine::Object::InsertField(const std::string& _name, Object* _var, const BindingFlags& _flags)
 {
@@ -115,10 +117,13 @@ size_t Engine::Object::InsertField(const std::string& _name, Object* _var, const
         fields.insert(std::pair(_name, new Engine::Reflection::FieldInfo(_name.c_str(), _var, _flags)));
     return fields.size();
 }
+#pragma endregion method
 
+#pragma region operator
 Engine::Object& Engine::Object::operator=(const Object* _obj)
 {
     flags = _obj->flags;
     fields = _obj->fields;
     return *this;
 }
+#pragma endregion operator

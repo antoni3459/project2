@@ -2,6 +2,7 @@
 #include "../Boolean/Boolean.h"
 #include "../../Utils/Template/Template.h"
 
+#pragma region constructor
 Engine::PrimaryType::String::String(const char* _value) : super()
 {
 	if (value == nullptr) value = "";
@@ -10,8 +11,8 @@ Engine::PrimaryType::String::String(const char* _value) : super()
 	char* _array = new char[_newLength + 1];
 	strcpy(_array, value);
 	strcat(_array, _value);
-	value = _array; 
-	length = _newLength; 
+	value = _array;
+	length = _newLength;
 }
 
 Engine::PrimaryType::String::String(const String& _copy) : super(_copy)
@@ -22,7 +23,9 @@ Engine::PrimaryType::String::String(const String& _copy) : super(_copy)
 	memcpy(_array, _copy.value, length + 1);
 	value = _array;
 }
+#pragma endregion constructor
 
+#pragma region method
 Engine::PrimaryType::Boolean Engine::PrimaryType::String::StartWith(char _c) const
 {
 	return value[0] == _c;
@@ -142,7 +145,7 @@ size_t Engine::PrimaryType::String::FindFirstOf(char _c) const
 	return -1;
 }
 
-size_t Engine::PrimaryType::String::FindLastOf(char _c) const 
+size_t Engine::PrimaryType::String::FindLastOf(char _c) const
 {
 	size_t _result = -1;
 	for (size_t i = 0; i < length; i++)
@@ -185,7 +188,9 @@ const char* Engine::PrimaryType::String::ToCstr() const
 {
 	return value;
 }
+#pragma endregion method
 
+#pragma region override
 Engine::PrimaryType::String Engine::PrimaryType::String::ToString() const
 {
 	return value;
@@ -202,7 +207,9 @@ void Engine::PrimaryType::String::DeSerializeField(std::istream& _is, const Prim
 	_str = _str.Replace("\"", "").Replace("\t", "").Replace(",", "").Replace(_fieldName, "").Replace(":", "").Trim();
 	*this = _str;
 }
+#pragma endregion override
 
+#pragma region operator
 Engine::PrimaryType::String& Engine::PrimaryType::String::operator+=(const char* _str)
 {
 	Append(_str);
@@ -262,7 +269,7 @@ Engine::Object& Engine::PrimaryType::String::operator=(const Object* _obj)
 	return *this;
 }
 
-Engine::PrimaryType::Boolean Engine::PrimaryType::String::operator==(const char* _str) const 
+Engine::PrimaryType::Boolean Engine::PrimaryType::String::operator==(const char* _str) const
 {
 	if (length != strlen(_str)) return false;
 	for (int i = 0; i < length; ++i)
@@ -270,7 +277,8 @@ Engine::PrimaryType::Boolean Engine::PrimaryType::String::operator==(const char*
 	return true;
 }
 
-Engine::PrimaryType::Boolean Engine::PrimaryType::String::operator!=(const char* _str) const 
+Engine::PrimaryType::Boolean Engine::PrimaryType::String::operator!=(const char* _str) const
 {
 	return !this->operator==(_str);
 }
+#pragma endregion operator

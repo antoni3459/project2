@@ -1,6 +1,7 @@
 #include "Exception.h"
 #include <format>
 
+#pragma region constructor
 Engine::Exception::Exception(const std::source_location& _source) : self("error", _source)
 {
 }
@@ -18,13 +19,18 @@ Engine::Exception::Exception(const Exception& _copy)
 {
 	message = _copy.message;
 }
+#pragma endregion constructor
 
+#pragma region method
 Engine::PrimaryType::String Engine::Exception::Error() const
 {
 	return message;
 }
+#pragma endregion method
 
+#pragma region override
 Engine::PrimaryType::String Engine::Exception::ToString() const
 {
 	return message;
 }
+#pragma endregion override

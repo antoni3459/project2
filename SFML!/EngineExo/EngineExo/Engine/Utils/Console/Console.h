@@ -4,9 +4,12 @@
 
 namespace Engine::Utils
 {
+#pragma region color
 #define color_red 4
 #define color_yellow 14
 #define color_white 15
+#pragma endregion color
+
 	class Console : public Object
 	{
 		DECLARE_CLASS_INFO(Console, Object)

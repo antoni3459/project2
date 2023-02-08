@@ -4,22 +4,27 @@
 #include "../../Utils/Template/Template.h"
 #include <iostream>
 
+#pragma region f/p
 const Engine::PrimaryType::Integer Engine::PrimaryType::Integer::MaxValue = INT_MAX;
 const Engine::PrimaryType::Integer Engine::PrimaryType::Integer::MinValue = INT_MIN;
+#pragma endregion f/p
 
+#pragma region constructor
 Engine::PrimaryType::Integer::Integer(int _value) : super()
 {
-    value = _value;
+	value = _value;
 }
 
 Engine::PrimaryType::Integer::Integer(const Integer& _copy) : super(_copy)
 {
-    value = _copy.value;
+	value = _copy.value;
 }
+#pragma endregion constructor
 
+#pragma region method
 Engine::PrimaryType::Integer Engine::PrimaryType::Integer::Parse(const String& _str)
 {
-    return std::stoi((std::string)_str);
+	return std::stoi((std::string)_str);
 }
 
 Engine::PrimaryType::Boolean Engine::PrimaryType::Integer::TryParse(const String& _str, Integer& _output)
@@ -35,7 +40,9 @@ Engine::PrimaryType::Boolean Engine::PrimaryType::Integer::TryParse(const String
 		return false;
 	}
 }
+#pragma endregion method
 
+#pragma region override
 Engine::PrimaryType::String Engine::PrimaryType::Integer::ToString() const
 {
 	return std::to_string(value).c_str();
@@ -52,7 +59,9 @@ void Engine::PrimaryType::Integer::DeSerializeField(std::istream& _is, const Pri
 	_str = _str.Replace("\"", "").Replace("\t", "").Replace(",", "").Replace(_fieldName, "").Replace(":", "").Trim();
 	*this = std::stoi(_str.ToCstr());
 }
+#pragma endregion override
 
+#pragma region operator
 Engine::PrimaryType::Integer& Engine::PrimaryType::Integer::operator=(const Integer& _other)
 {
 	value = _other.value;
@@ -193,3 +202,4 @@ Engine::Object& Engine::PrimaryType::Integer::operator=(const Object* _obj)
 	value = _int->value;
 	return *this;
 }
+#pragma endregion operator

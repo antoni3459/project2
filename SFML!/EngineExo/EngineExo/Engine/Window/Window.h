@@ -13,6 +13,7 @@ namespace Engine::Window
 	{
 		DECLARE_CLASS_INFO(Window, Engine::Utils::Singleton<T>)
 
+#pragma region f/p
 	protected:
 		sf::RenderWindow* render = nullptr;
 		PrimaryType::String name = "";
@@ -20,7 +21,9 @@ namespace Engine::Window
 		PrimaryType::Integer height = 0;
 		PrimaryType::Boolean hasFocus = false;
 		sf::Event currentevent = sf::Event();
+#pragma endregion f/p
 
+#pragma region constructor/destructor
 	public:
 		Window() = delete;
 		Window(const char* _name, const int _width = 800, const int _height = 600)
@@ -29,9 +32,10 @@ namespace Engine::Window
 			width = _width;
 			height = _height;
 		}
-
 		Window(const Window&) = delete;
+#pragma endregion constructor/destructor
 
+#pragma region method
 	private:
 		void Update()
 		{
@@ -50,7 +54,7 @@ namespace Engine::Window
 			}
 
 		}
-						
+
 
 		void SetFocus(const sf::Event::EventType& _eventType)
 		{
@@ -87,13 +91,13 @@ namespace Engine::Window
 		}
 
 	protected:
-		virtual void OnUpdate() 
+		virtual void OnUpdate()
 		{
 
 		}
 		virtual void OnDraw() {}
-		virtual void OnClear() const{}
-		virtual void OnReciveEvent(const sf::Event& _event) const{}
+		virtual void OnClear() const {}
+		virtual void OnReciveEvent(const sf::Event& _event) const {}
 		void Clear()const
 		{
 			render->clear();
@@ -103,7 +107,9 @@ namespace Engine::Window
 		{
 			render->display();
 		}
+#pragma endregion method
 
+#pragma region override
 	public:
 		PrimaryType::String ToString()const override
 		{
@@ -117,7 +123,7 @@ namespace Engine::Window
 			_result += "\n====================================\n";
 			return _result;
 		}
-
+#pragma endregion override
 
 	};
 

@@ -7,6 +7,7 @@ namespace Engine::PrimaryType
 	{
 		DECLARE_CLASS_INFO(Float, ValueType)
 
+#pragma region f/p
 	private:
 		float value = -1.0f;
 
@@ -17,12 +18,16 @@ namespace Engine::PrimaryType
 		static const Float NaN;
 		static const Float PositiveInfinity;
 		static const Float NegativeInfinity;
+#pragma endregion f/p
 
+#pragma region constructor
 	public:
 		Float() = default;
 		Float(float _value);
 		Float(const Float& _copy);
+#pragma endregion constructor
 
+#pragma region method
 	public:
 		static Float Parse(const String& _str);
 		static class Boolean TryParse(const String& _str, Float& _output);
@@ -30,13 +35,16 @@ namespace Engine::PrimaryType
 		static Boolean IsEpsilon(const Float& _value);
 		static Boolean IsPositiveInfinity(const Float& _value);
 		static Boolean IsNegativeInfinity(const Float& _value);
+#pragma endregion method
 
-
+#pragma region override
 	public:
 		String ToString() const override;
 		void SerializeField(std::ostream& _os, const String& _fieldName, int _index)override;
 		void DeSerializeField(std::istream& _is, const String& _fieldName)override;
+#pragma endregion override
 
+#pragma region operator
 	public:
 		Float& operator=(const Float& _other);
 		operator float();
@@ -47,10 +55,10 @@ namespace Engine::PrimaryType
 		Float operator/(float _other) const;
 		Float operator-() const;
 
-		Float& operator+=(float _other) ;
-		Float& operator-=(float _other) ;
-		Float& operator*=(float _other) ;
-		Float& operator/=(float _other) ;
+		Float& operator+=(float _other);
+		Float& operator-=(float _other);
+		Float& operator*=(float _other);
+		Float& operator/=(float _other);
 
 		Boolean operator<(float _other) const;
 		Boolean operator<=(float _other) const;
@@ -58,6 +66,7 @@ namespace Engine::PrimaryType
 		Boolean operator>=(float _other) const;
 		Boolean operator==(float _other) const;
 		Boolean operator!=(float _other) const;
+#pragma endregion operator
 	};
 }
 

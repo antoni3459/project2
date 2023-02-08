@@ -13,12 +13,15 @@ namespace Engine::PrimaryType
 	template<typename InElementType, typename InSizeType = size_t>
 	class List : public ValueType, public IList
 	{
+#pragma region f/p
 	private:
 		typedef typename std::vector<InElementType>::iterator Iterator;
 		typedef typename std::vector<InElementType>::const_iterator ConstIterator;
 		typedef std::vector<InElementType> ElementType;
 		ElementType data = ElementType();
+#pragma endregion f/p
 
+#pragma region constructor
 	public:
 		List() = default;
 		List(List&&) = default;
@@ -28,6 +31,9 @@ namespace Engine::PrimaryType
 			for (const InElementType& _item : _tab)
 				Add(_item);
 		}
+#pragma endregion constructor
+
+#pragma region method
 	public:
 		void Add(InElementType _item)
 		{
@@ -62,7 +68,10 @@ namespace Engine::PrimaryType
 		Iterator end() { return data.end(); }
 		ConstIterator end() const { return data.end(); }
 		size_t Count()const override { return data.size(); }
+#pragma endregion method
 
+#pragma region override
+	public:
 		void SerializeField(std::ostream& _os, const String& _fieldName, int _index) override
 		{
 			if (String::IsNullOrEmpty(_fieldName))
@@ -131,7 +140,7 @@ namespace Engine::PrimaryType
 					_is.seekg(_index);
 					if constexpr (IsPointer<InElementType>::Value)
 					{
-						InElementType _element = new typename RemovePointer<InElementType>::Type();
+						InElementType _element = InElementType();
 						if (_element->IsClass())
 							_element->DeSerialize(_is);
 						else
@@ -152,7 +161,9 @@ namespace Engine::PrimaryType
 			}
 			*this = _result;
 		}
+#pragma endregion override
 
+#pragma region operator
 	public:
 		List& operator=(const std::vector<InElementType>& _other)
 		{
@@ -169,6 +180,6 @@ namespace Engine::PrimaryType
 		{
 			return data[_index];
 		}
-	
+#pragma endregion operator
 	};
 }

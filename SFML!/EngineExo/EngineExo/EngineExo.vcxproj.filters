@@ -69,9 +69,6 @@
     <ClCompile Include="Engine\Reflection\Function\Parameter\ParameterInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Utils\Singleton\Singleton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\Component\Component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

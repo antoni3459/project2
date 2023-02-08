@@ -1,5 +1,6 @@
 #include "Selection.h"
 
+#pragma region method
 void Engine::Selection::SetSelection(Object* _obj)
 {
     if (selected == _obj)return;
@@ -11,3 +12,4 @@ Engine::Object* Engine::Selection::GetSelected()
 {
     return selected;
 }
+#pragma endregion method

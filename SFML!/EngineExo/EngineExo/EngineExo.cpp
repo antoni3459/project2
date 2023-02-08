@@ -17,10 +17,10 @@
 
 int main(int argc, char* argv[])
 {
-    //Engine::GameObject* _gameObject = Engine::GameObject::CreatePrimitive(PrimitiveType::Circle, "Test");
-    //_gameObject->AddComponent<Test::PlayerComponent>();
+    Engine::GameObject* _gameObject = Engine::GameObject::CreatePrimitive(PrimitiveType::Circle, "Test");
+    _gameObject->AddComponent<Test::PlayerComponent>();
 
-    //Engine::AssetDataBase::CreateAsset(_gameObject, "Assets/test.asset");
+    Engine::AssetDataBase::CreateAsset(_gameObject, "Assets/test.asset");
 
     //Engine::Window::EngineWindow::Instance()->Open();
     //Engine::Manager::GameObjectManager::Instance()->Destroy();

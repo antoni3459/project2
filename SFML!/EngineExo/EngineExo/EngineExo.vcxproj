@@ -159,7 +159,6 @@
     <ClCompile Include="Engine\Component\Component.cpp" />
     <ClCompile Include="Engine\Reflection\Function\Function.cpp" />
     <ClCompile Include="Engine\Reflection\Function\Parameter\ParameterInfo.cpp" />
-    <ClCompile Include="Engine\Utils\Singleton\Singleton.cpp" />
     <ClCompile Include="Engine\Manager\GameObject\GameObjectManager.cpp" />
     <ClCompile Include="Engine\Selection\Selection.cpp" />
     <ClCompile Include="Test\Reflection\Json\JsonTest.cpp" />

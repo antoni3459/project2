@@ -1,5 +1,6 @@
 #include "Boolean.h"
 
+#pragma region constructor
 Engine::PrimaryType::Boolean::Boolean(bool _value) : super()
 {
     value = _value;
@@ -9,7 +10,9 @@ Engine::PrimaryType::Boolean::Boolean(const Boolean& _copy) : super(_copy)
 {
     value = _copy.value;
 }
+#pragma endregion constructor
 
+#pragma region override
 Engine::PrimaryType::String Engine::PrimaryType::Boolean::ToString() const
 {
     return value ? "true" : "false";
@@ -28,7 +31,9 @@ void Engine::PrimaryType::Boolean::DeSerializeField(std::istream& _is, const Pri
     _str = _str.Replace("\"", "").Replace("\t", "").Replace(",", "").Replace(_fieldName, "").Replace(":", "").Trim();
     *this = _str == "true";
 }
+#pragma endregion override
 
+#pragma region operator
 Engine::PrimaryType::Boolean& Engine::PrimaryType::Boolean::operator=(const Boolean& _other)
 {
     value = _other.value;
@@ -50,4 +55,4 @@ Engine::PrimaryType::Boolean::operator bool() const
     return value;
 }
 
-
+#pragma endregion operator

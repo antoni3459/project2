@@ -51,16 +51,21 @@ namespace Engine
 	UCLASS()
 	class Object : public Interfarce::ILogger
 	{
+#pragma region f/p
 	private:
 		int flags = 0;
 		std::map<std::string, Object*> fields = std::map<std::string, Object*>();
 		std::map<std::string, Reflection::Function*> functions = std::map<std::string, Reflection::Function*>();
+#pragma endregion f/p
 
+#pragma region constructor/destructor
 	public:
 		Object() = default;
 		Object(const Object& _copy);
 		virtual ~Object() = default;
+#pragma endregion constructor/destructor
 
+#pragma region method
 	public:
 		virtual PrimaryType::String ToString() const;
 		PrimaryType::String ClassName()const;
@@ -74,13 +79,10 @@ namespace Engine
 		template<typename T>
 		void SetFieldValue(const std::string& _name, T* _value);
 
-	public:
 		virtual void Serialize(std::ostream& _os, int _index = 1);
 		virtual void DeSerialize(std::istream& _os);
-		virtual void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName,int _index);
+		virtual void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName, int _index);
 		virtual void DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName);
-
-
 
 		template<typename Res, typename... Params>
 		Reflection::MethodInfo<Res, Params...>* GetFunction(const std::string& _name);
@@ -88,24 +90,28 @@ namespace Engine
 		template<typename Res, typename... Params>
 		Res Invoke(const std::string& _name, Object* _instance, Params..._params);
 
-
 		template<typename Res, typename... Params>
 		Res Invoke(const std::string& _name, Params..._params);
 
-
 	protected:
 		int RegisterClassInfo(int _flags);
+
 		template<typename Res, typename Class, typename... Params>
-		int InsertMethod(const std::string& _name, Res(Class::*ptr)(Params...),const std::vector<Reflection::ParameterInfo*>& _params,  const BindingFlags& _flags);
+		size_t InsertMethod(const std::string& _name, Res(Class::*ptr)(Params...),const std::vector<Reflection::ParameterInfo*>& _params,  const BindingFlags& _flags);
+		
 		template<typename Res, typename... Params>
-
-		int InsertMethod(const std::string& _name, Res(*ptr)(Params...),const std::vector<Reflection::ParameterInfo*>& _params,  const BindingFlags& _flags);
-
-
+		size_t InsertMethod(const std::string& _name, Res(*ptr)(Params...),const std::vector<Reflection::ParameterInfo*>& _params,  const BindingFlags& _flags);
 		size_t InsertField(const std::string& _name, Object* _var, const BindingFlags& _flags);
+#pragma endregion method
+
+#pragma region operator
 	public:
 		virtual Object& operator=(const Object* _obj);
+#pragma endregion operator
 	};
+
+
+#pragma region method
 	template<typename T>
 	void Object::SetValue(Object* _obj)
 	{
@@ -118,7 +124,7 @@ namespace Engine
 		fields[_name]->SetValue<T>(_value);
 	}
 	template<typename Res, typename Class, typename... Params>
-	int Object::InsertMethod(const std::string& _name, Res(Class::* ptr)(Params...), const std::vector<Reflection::ParameterInfo*>& _params, const BindingFlags& _flags)
+	size_t Object::InsertMethod(const std::string& _name, Res(Class::* ptr)(Params...), const std::vector<Reflection::ParameterInfo*>& _params, const BindingFlags& _flags)
 	{
 		if (functions.contains(_name)) return functions.size();
 		Reflection::MethodInfo<Res, Params...>* _function = new Reflection::MethodInfo<Res, Params...>(_name, ptr, _params, _flags);
@@ -126,7 +132,7 @@ namespace Engine
 		return functions.size();
 	}
 	template<typename Res, typename... Params>
-	int Object::InsertMethod(const std::string& _name, Res(*ptr)(Params...), const std::vector<Reflection::ParameterInfo*>& _params, const BindingFlags& _flags)
+	size_t Object::InsertMethod(const std::string& _name, Res(*ptr)(Params...), const std::vector<Reflection::ParameterInfo*>& _params, const BindingFlags& _flags)
 	{
 		if (functions.contains(_name)) return functions.size();
 		Reflection::MethodInfo<Res, Params...>* _function = new Reflection::MethodInfo<Res, Params...>(_name, ptr, _params, _flags);
@@ -144,7 +150,7 @@ namespace Engine
 	template<typename Res, typename... Params>
 	Res Object::Invoke(const std::string& _name, Object* _instance, Params..._params)
 	{
-		Reflection::MethodInfo<Res, Params...>* _method = GetFunction<Res, Params...> (_name);
+		Reflection::MethodInfo<Res, Params...>* _method = GetFunction<Res, Params...>(_name);
 		if (_method == nullptr)
 			throw std::exception(std::format("[Object][Reflection] => function {} doesn't exist", _name).c_str());
 		return _method->Invoke(_instance, _params...);
@@ -156,5 +162,6 @@ namespace Engine
 	{
 		return Invoke<Res, Params...>(_name, this, _params...);
 	}
+#pragma endregion method
 }
 

@@ -2,15 +2,16 @@
 #include "../Boolean/Boolean.h"
 #include "../FString/String.h"
 
+#pragma region f/p
 const Engine::PrimaryType::Double Engine::PrimaryType::Double::MinValue = -1.7976931348623157E+308;
 const Engine::PrimaryType::Double Engine::PrimaryType::Double::MaxValue = 1.7976931348623157E+308;
 const Engine::PrimaryType::Double Engine::PrimaryType::Double::Epsilon = 4.94865645841247E-324;
 const Engine::PrimaryType::Double Engine::PrimaryType::Double::PositiveInfinity = (1e+300 * 1e+300);
 const Engine::PrimaryType::Double Engine::PrimaryType::Double::NegativeInfinity = -PositiveInfinity;
 const Engine::PrimaryType::Double Engine::PrimaryType::Double::NaN = 0.0f * PositiveInfinity;
+#pragma endregion f/p
 
-
-
+#pragma region constructor
 Engine::PrimaryType::Double::Double(double _value)
 {
     value = _value;
@@ -20,7 +21,9 @@ Engine::PrimaryType::Double::Double(const Double& _copy)
 {
     value = _copy.value;
 }
+#pragma endregion constructor
 
+#pragma region method
 Engine::PrimaryType::Double Engine::PrimaryType::Double::Parse(const String& _str)
 {
     return std::stod(_str.ToCstr());
@@ -59,7 +62,9 @@ Engine::PrimaryType::Boolean Engine::PrimaryType::Double::IsNegativeInfinity(con
 {
     return _value == NegativeInfinity;
 }
+#pragma endregion method
 
+#pragma region override
 Engine::PrimaryType::String Engine::PrimaryType::Double::ToString() const
 {
     if (IsNaN(*this)) return "NaN";
@@ -81,7 +86,9 @@ void Engine::PrimaryType::Double::DeSerializeField(std::istream& _is, const Stri
     _str = _str.Replace("\"", "").Replace("\t", "").Replace(",", "").Replace(_fieldName, "").Replace(":", "").Trim();
     *this = std::stod(_str.ToCstr());
 }
+#pragma endregion override
 
+#pragma region operator
 Engine::PrimaryType::Double& Engine::PrimaryType::Double::operator=(const Double& _other)
 {
     value = _other.value;
@@ -176,3 +183,4 @@ Engine::PrimaryType::Boolean Engine::PrimaryType::Double::operator!=(double _oth
 {
     return value != _other;
 }
+#pragma endregion operator

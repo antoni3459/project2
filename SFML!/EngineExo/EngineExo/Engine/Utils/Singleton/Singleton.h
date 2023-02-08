@@ -8,9 +8,12 @@ namespace Engine::Utils
 	{
 		DECLARE_CLASS_INFO(Singleton<T>, Object)
 
+#pragma region f/p
 	private:
 		static inline T* instance = nullptr;
+#pragma endregion f/p
 
+#pragma region constructor/destructor
 	public:
 		Singleton() = default;
 		Singleton(const Singleton&) = delete;
@@ -18,7 +21,9 @@ namespace Engine::Utils
 		{
 			OnDestroy();
 		}
+#pragma endregion constructor/destructor
 
+#pragma region method
 	public:
 		static T* Instance()
 		{
@@ -30,8 +35,8 @@ namespace Engine::Utils
 			delete instance;
 			instance = nullptr;
 		}
-		virtual void OnDestroy(){}
-
+		virtual void OnDestroy() {}
+#pragma endregion method
 
 	};
 }

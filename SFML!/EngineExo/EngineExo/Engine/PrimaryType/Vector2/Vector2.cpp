@@ -4,17 +4,15 @@
 #include "../../Exception/Exception.h"
 #include "../../Reflection/Utils/ReflectionUtils.h"
 
+#pragma region constructor
 Engine::PrimaryType::Vector2::Vector2(float _x, float _y)
 {
     x = _x;
     y = _y;
 }
+#pragma endregion constructor
 
-Engine::PrimaryType::Vector2::operator sf::Vector2<float>() const
-{
-    return sf::Vector2f(x, y);
-}
-
+#pragma region method
 Engine::PrimaryType::Vector2  Engine::PrimaryType::Vector2::MoveTowars(const Vector2& _current, const Vector2& _target, float _dt)
 {
     const float _x = _target.x - _current.x;
@@ -27,10 +25,12 @@ Engine::PrimaryType::Vector2  Engine::PrimaryType::Vector2::MoveTowars(const Vec
     const float _dist = sqrt(_distance);
     return Vector2(_current.x + _x / _dist * _dt, _current.y / _dist * _dt);
 }
+#pragma endregion method
 
+#pragma region override
 Engine::PrimaryType::String Engine::PrimaryType::Vector2::ToString() const
 {
-    return std::format("({} , {})",x,y).c_str();
+    return std::format("({} , {})", x, y).c_str();
 }
 
 void Engine::PrimaryType::Vector2::SerializeField(std::ostream& _os, const String& _fieldName, int _index)
@@ -44,8 +44,15 @@ void Engine::PrimaryType::Vector2::DeSerializeField(std::istream& _is, const Pri
     //_str = _str.Replace("\"", "").Replace("\t", "").Trim();
     const String& _str = Reflection::ReflectionUtils::GetLine(_is, _fieldName);
     const String& _x = _str.SubString(_str.FindFirstOf('(') + 1, _str.FindFirstOf(','));
-    const String& _y = _str.SubString(_str.FindFirstOf(',') + 1,_str.FindFirstOf(')'));
+    const String& _y = _str.SubString(_str.FindFirstOf(',') + 1, _str.FindFirstOf(')'));
     *this = Vector2(std::stof(_x.ToCstr()), std::stof(_y.ToCstr()));
+}
+#pragma endregion override
+
+#pragma region operator
+Engine::PrimaryType::Vector2::operator sf::Vector2<float>() const
+{
+    return sf::Vector2f(x, y);
 }
 
 Engine::Object& Engine::PrimaryType::Vector2::operator=(const Object* _obj)
@@ -55,6 +62,7 @@ Engine::Object& Engine::PrimaryType::Vector2::operator=(const Object* _obj)
     super::operator=(_obj);
     x = _other->x;
     y = _other->y;
+    return *this;
 }
 
 Engine::PrimaryType::Vector2& Engine::PrimaryType::Vector2::operator=(const Vector2& _other)
@@ -66,7 +74,7 @@ Engine::PrimaryType::Vector2& Engine::PrimaryType::Vector2::operator=(const Vect
 
 Engine::PrimaryType::Vector2& Engine::PrimaryType::Vector2::operator+=(const Vector2& _other)
 {
-    x+=_other.x;
+    x += _other.x;
     y += _other.y;
     return *this;
 }
@@ -152,3 +160,4 @@ Engine::PrimaryType::Float Engine::PrimaryType::Vector2::operator[](size_t _inde
         throw Exception("[Vector2] => index out of range !");
     }
 }
+#pragma endregion operator
