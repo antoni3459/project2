@@ -77,10 +77,13 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>..\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -92,12 +95,15 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>..\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -107,10 +113,13 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>..\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -122,39 +131,46 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>..\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Item.cpp" />
-    <ClCompile Include="Laucher.cpp" />
-    <ClCompile Include="List.cpp" />
-    <ClCompile Include="O3P.cpp" />
-    <ClCompile Include="Object.cpp" />
-    <ClCompile Include="Question.cpp" />
+    <ClCompile Include="HomeMenu\HomeMenu.cpp" />
+    <ClCompile Include="Launcher\Item\Item.cpp" />
+    <ClCompile Include="Launcher\Launcher.cpp" />
+    <ClCompile Include="List\List.cpp" />
+    <ClCompile Include="quiz\O3P\O3P.cpp" />
+    <ClCompile Include="Object\Object.cpp" />
+    <ClCompile Include="quiz\O3P\QuestionO\QuestionO.cpp" />
+    <ClCompile Include="quiz\Quizhis\Question\Question.cpp" />
     <ClCompile Include="quiz.cpp" />
-    <ClCompile Include="QuizHist.cpp" />
-    <ClCompile Include="Rep.cpp" />
-    <ClCompile Include="Réponse.cpp" />
-    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="quiz\Quizhis\QuizHist.cpp" />
+    <ClCompile Include="quiz\O3P\ReponseO\ReponseO.cpp" />
+    <ClCompile Include="quiz\Quizhis\Reponse\Réponse.cpp" />
+    <ClCompile Include="Utils\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Item.h" />
-    <ClInclude Include="Laucher.h" />
-    <ClInclude Include="List.h" />
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="O3P.h" />
-    <ClInclude Include="Object.h" />
-    <ClInclude Include="Question.h" />
-    <ClInclude Include="QuizHist.h" />
-    <ClInclude Include="Rep.h" />
-    <ClInclude Include="Réponse.h" />
-    <ClInclude Include="Utils.h" />
+    <ClInclude Include="HomeMenu\HomeMenu.h" />
+    <ClInclude Include="Launcher\Item\Item.h" />
+    <ClInclude Include="Launcher\Launcher.h" />
+    <ClInclude Include="List\List.h" />
+    <ClInclude Include="Menu\Menu.h" />
+    <ClInclude Include="quiz\O3P\O3P.h" />
+    <ClInclude Include="Object\Object.h" />
+    <ClInclude Include="quiz\O3P\QuestionO\QuestionO.h" />
+    <ClInclude Include="quiz\Quizhis\Question\Question.h" />
+    <ClInclude Include="quiz\Quizhis\QuizHist.h" />
+    <ClInclude Include="quiz\O3P\ReponseO\ReponseO.h" />
+    <ClInclude Include="quiz\Quizhis\Reponse\Réponse.h" />
+    <ClInclude Include="Utils\Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

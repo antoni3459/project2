@@ -111,6 +111,11 @@ void Engine::Object::SerializeField(std::ostream& _os, const PrimaryType::String
 
 void Engine::Object::DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName) {}
 
+Engine::Object* Engine::Object::Clone()
+{
+    return new Object(*this);
+}
+
 size_t Engine::Object::InsertField(const std::string& _name, Object* _var, const BindingFlags& _flags)
 {
     check(!fields.contains(_name), std::format("[Object][Reflection] => {} already register in fields", _name), fields.size())

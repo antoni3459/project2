@@ -45,74 +45,89 @@
     <Filter Include="quiz\O3P\Rep">
       <UniqueIdentifier>{d5d5af86-5260-450e-b7e4-310711872a03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="quiz\O3P\Quest">
+      <UniqueIdentifier>{efac2a06-e423-4d76-8b0f-93056bb00483}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="quiz.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Question.cpp">
+    <ClCompile Include="quiz\Quizhis\Question\Question.cpp">
       <Filter>quiz\Quiz Hist\question</Filter>
     </ClCompile>
-    <ClCompile Include="Réponse.cpp">
+    <ClCompile Include="quiz\Quizhis\Reponse\Réponse.cpp">
       <Filter>quiz\Quiz Hist\Reponse</Filter>
     </ClCompile>
-    <ClCompile Include="List.cpp">
+    <ClCompile Include="List\List.cpp">
       <Filter>liste</Filter>
     </ClCompile>
-    <ClCompile Include="Object.cpp">
+    <ClCompile Include="Object\Object.cpp">
       <Filter>Object</Filter>
     </ClCompile>
-    <ClCompile Include="Item.cpp">
+    <ClCompile Include="Launcher\Item\Item.cpp">
       <Filter>Launcher\Item</Filter>
     </ClCompile>
-    <ClCompile Include="Laucher.cpp">
+    <ClCompile Include="Launcher\Launcher.cpp">
       <Filter>Launcher</Filter>
     </ClCompile>
-    <ClCompile Include="Utils.cpp">
+    <ClCompile Include="Utils\Utils.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="QuizHist.cpp">
+    <ClCompile Include="quiz\Quizhis\QuizHist.cpp">
       <Filter>quiz\Quiz Hist</Filter>
     </ClCompile>
-    <ClCompile Include="O3P.cpp">
+    <ClCompile Include="quiz\O3P\O3P.cpp">
       <Filter>quiz\O3P</Filter>
     </ClCompile>
-    <ClCompile Include="Rep.cpp">
+    <ClCompile Include="quiz\O3P\ReponseO\ReponseO.cpp">
+      <Filter>quiz\O3P\Rep</Filter>
+    </ClCompile>
+    <ClCompile Include="quiz\O3P\QuestionO\QuestionO.cpp">
+      <Filter>quiz\O3P\Quest</Filter>
+    </ClCompile>
+    <ClCompile Include="HomeMenu\HomeMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Question.h">
+    <ClInclude Include="quiz\Quizhis\Question\Question.h">
       <Filter>quiz\Quiz Hist\question</Filter>
     </ClInclude>
-    <ClInclude Include="Réponse.h">
+    <ClInclude Include="quiz\Quizhis\Reponse\Réponse.h">
       <Filter>quiz\Quiz Hist\Reponse</Filter>
     </ClInclude>
-    <ClInclude Include="List.h">
+    <ClInclude Include="List\List.h">
       <Filter>liste</Filter>
     </ClInclude>
-    <ClInclude Include="Object.h">
+    <ClInclude Include="Object\Object.h">
       <Filter>Object</Filter>
     </ClInclude>
-    <ClInclude Include="Menu.h">
+    <ClInclude Include="Menu\Menu.h">
       <Filter>Menu</Filter>
     </ClInclude>
-    <ClInclude Include="Item.h">
+    <ClInclude Include="Launcher\Item\Item.h">
       <Filter>Launcher\Item</Filter>
     </ClInclude>
-    <ClInclude Include="Laucher.h">
+    <ClInclude Include="Launcher\Launcher.h">
       <Filter>Launcher</Filter>
     </ClInclude>
-    <ClInclude Include="Utils.h">
+    <ClInclude Include="Utils\Utils.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="QuizHist.h">
+    <ClInclude Include="quiz\Quizhis\QuizHist.h">
       <Filter>quiz\Quiz Hist</Filter>
     </ClInclude>
-    <ClInclude Include="O3P.h">
+    <ClInclude Include="quiz\O3P\O3P.h">
       <Filter>quiz\O3P</Filter>
     </ClInclude>
-    <ClInclude Include="Rep.h">
+    <ClInclude Include="quiz\O3P\ReponseO\ReponseO.h">
+      <Filter>quiz\O3P\Rep</Filter>
+    </ClInclude>
+    <ClInclude Include="quiz\O3P\QuestionO\QuestionO.h">
+      <Filter>quiz\O3P\Quest</Filter>
+    </ClInclude>
+    <ClInclude Include="HomeMenu\HomeMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

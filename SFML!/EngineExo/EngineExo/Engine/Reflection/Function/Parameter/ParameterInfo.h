@@ -8,7 +8,6 @@ namespace Engine::Reflection
 {
 	class ParameterInfo :public Interfarce::ILogger
 	{
-		DECLARE_CLASS_INFO(ParameterInfo, Object)
 
 #pragma region f/p
 	private:
@@ -20,6 +19,7 @@ namespace Engine::Reflection
 	public:
 		ParameterInfo() = default;
 		ParameterInfo(const std::string& _name, int _position);
+		ParameterInfo(const ParameterInfo&) = default;
 		virtual ~ParameterInfo() = default;
 #pragma endregion constructor
 

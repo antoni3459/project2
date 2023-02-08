@@ -9,10 +9,13 @@ namespace Engine::Event
 	class ActionInternal : public Object
 	{
 		DECLARE_CLASS_INFO(ActionInternal, Object)
+
+#pragma region f/p
 	private:
 		std::vector < Delegate<Res, Params...>> delegates = std::vector <Delegate<Res, Params...>>();
+#pragma endregion f/p
 
-
+#pragma region constructor
 	public:
 		ActionInternal(nullptr_t)
 		{
@@ -23,8 +26,10 @@ namespace Engine::Event
 		ActionInternal(Class* _instance, Res(Class::* ptr)(Params...))
 		{
 			checkBaseOf(Object, Class)
-			delegates.push_back(Delegate<Res, Params...>(_instance, ptr));
+				delegates.push_back(Delegate<Res, Params...>(_instance, ptr));
 		}
+#pragma endregion constructor
+
 
 	public:
 

@@ -10,11 +10,14 @@ namespace Engine::Event
 	{
 		DECLARE_CLASS_INFO(Delegate, Object)
 
+#pragma region f/p
 	private:
 		typedef Res(Object::* Function)(Params...);
 		Function function = nullptr;
 		Object* instance = nullptr;
+#pragma endregion f/p
 
+#pragma region f/p
 	public:
 		Delegate(nullptr_t)
 		{
@@ -26,10 +29,13 @@ namespace Engine::Event
 		Delegate(Class* _instance, Res(Class::* ptr)(Params...))
 		{
 			checkBaseOf(Object, Class)
-			instance = _instance;
+				instance = _instance;
 			function = reinterpret_cast<Function>(ptr);
 		}
+#pragma endregion f/p
 
+#pragma region method
+	public:
 		void SetDynamic(nullptr_t)
 		{
 			function = nullptr;
@@ -62,7 +68,9 @@ namespace Engine::Event
 		{
 			return GetAdress() == _other.GetAdress();
 		}
+#pragma endregion method
 
+#pragma region operator
 		template<typename Class>
 		Engine::PrimaryType::Boolean operator==(Res(Class::* ptr)(Params...))
 		{
@@ -81,5 +89,6 @@ namespace Engine::Event
 		{
 			return (instance->*function)(_params...);
 		}
+#pragma endregion operator
 	};
 }

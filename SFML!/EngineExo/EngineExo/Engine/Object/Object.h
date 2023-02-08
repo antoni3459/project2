@@ -20,16 +20,25 @@
 
 #define REGISTER_METHOD(name, method,params, flags) const size_t Method##name = InsertMethod(#name, method, params, flags);
 
+#define DECLARE_COPY(Class) \
+    public:\
+        Object* Clone() override \
+        {\
+            return new Class(*this);\
+        }
+
 #define DECLARE_CLASS_INFO_FLAGS(current, parent, flags)\
 	public:\
 		typedef current self;\
 		typedef parent super;\
-		const int flagsInfo = RegisterClassInfo((int)flags);
+		const int flagsInfo = RegisterClassInfo((int)flags);\
+		DECLARE_COPY(current)
 
 #define DECLARE_CLASS_INFO(current, parent)\
 	public:\
 		typedef current self;\
-		typedef parent super;
+		typedef parent super;\
+		DECLARE_COPY(current)
 
 ENUM(ClassFlags, Class, Type)
 
@@ -83,6 +92,7 @@ namespace Engine
 		virtual void DeSerialize(std::istream& _os);
 		virtual void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName, int _index);
 		virtual void DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName);
+		virtual Object* Clone();
 
 		template<typename Res, typename... Params>
 		Reflection::MethodInfo<Res, Params...>* GetFunction(const std::string& _name);
