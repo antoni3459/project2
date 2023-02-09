@@ -92,3 +92,9 @@ namespace Engine::Event
 #pragma endregion operator
 	};
 }
+	template<typename Res, typename... Params>
+	Engine::Event::Delegate< Res, Params... >::Delegate(const Delegate& _copy) : super(_copy)
+	{
+		function=_copy.function;
+		instance = _copy.instance;
+	}

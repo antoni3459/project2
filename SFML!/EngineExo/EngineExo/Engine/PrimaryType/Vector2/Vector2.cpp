@@ -10,6 +10,13 @@ Engine::PrimaryType::Vector2::Vector2(float _x, float _y)
     x = _x;
     y = _y;
 }
+
+Engine::PrimaryType::Vector2::Vector2(const Vector2& _copy) :super(_copy)
+{
+    x = _copy.x;
+    y = _copy.y;
+}
+
 #pragma endregion constructor
 
 #pragma region method

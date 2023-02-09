@@ -92,7 +92,11 @@ namespace Engine::Event
 		}
 	};
 }
-
+template<typename Res, typename... Params>
+Engine::Event::ActionInternal< Res, Params...>::ActionInternal(const ActionInternal& _copy)
+{
+	delegates = _copy.delegates;
+}
 
 template<typename... Params>
 using Action = Engine::Event::ActionInternal<void, Params...>;

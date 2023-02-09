@@ -32,7 +32,7 @@ namespace Engine::Window
 			width = _width;
 			height = _height;
 		}
-		Window(const Window&) = delete;
+
 #pragma endregion constructor/destructor
 
 #pragma region method
@@ -126,5 +126,14 @@ namespace Engine::Window
 #pragma endregion override
 
 	};
+
+}
+
+template<typename T>
+Engine::Window::Window<T>::Window(const Window& _copy) :super(_copy)
+{
+	name=_copy.name;
+	width = _copy.width;
+	height = _copy.height;
 
 }

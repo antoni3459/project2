@@ -10,6 +10,7 @@ Engine::Reflection::ParameterInfo::ParameterInfo(const std::string& _name, int _
     position = _position;
 
 }
+
 #pragma endregion constructor
 
 #pragma region method

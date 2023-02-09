@@ -6,6 +6,11 @@
 Engine::Window::EngineWindow::EngineWindow() :super("Engine", 1920, 1080)
 {
 }
+
+Engine::Window::EngineWindow::EngineWindow(const EngineWindow& _copy) : Window<EngineWindow>(_copy)
+{
+	clock = _copy.clock;
+}
 #pragma endregion constructor
 
 #pragma region method

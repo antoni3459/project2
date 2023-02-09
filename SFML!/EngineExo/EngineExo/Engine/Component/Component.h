@@ -21,7 +21,6 @@ REGISTER_FIELD(gameobject, gameobject, BindingFlags::Public)
 #pragma region constructor/destructor
 	public:
 		Component() = default;
-		Component(const Component&) = default;
 		~Component()override = default;
 #pragma endregion constructor/destructor
 

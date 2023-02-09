@@ -26,7 +26,7 @@ namespace Engine
         UPROPERTY() Engine::PrimaryType::List<Component*> components = Engine::PrimaryType::List<Component*>();
 REGISTER_FIELD(components, &components, BindingFlags::NoPublic)
 
-    protected:
+    public:
         sf::Shape* shape = nullptr;
 
     public:
@@ -41,7 +41,6 @@ REGISTER_FIELD(transform, transform, BindingFlags::Public)
     public:
         GameObject() = default;
         GameObject(const PrimaryType::String& _name);
-        GameObject(const GameObject& _copy);
         ~GameObject() override;
 #pragma endregion constructor/destructor
 
@@ -57,6 +56,7 @@ REGISTER_FIELD(transform, transform, BindingFlags::Public)
         T* AddComponent();
         template<typename T>
         T* GetComponent();
+        void OnDeserializeFinish() override;
 #pragma endregion method
 
 #pragma region operator
@@ -71,7 +71,7 @@ REGISTER_FIELD(transform, transform, BindingFlags::Public)
     T* GameObject::AddComponent()
     {
         static_assert(std::is_base_of_v<Component, T>, "T must be inherited of Component");
-        T* _component = new T();
+        T* _component = new T ();
         _component->gameobject = this;
         components.Add(_component);
         return _component;

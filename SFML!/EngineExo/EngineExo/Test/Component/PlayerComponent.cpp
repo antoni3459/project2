@@ -3,6 +3,8 @@
 #include "../../Engine/Utils/DebugMacro.h"
 #include "../../Engine/Time/Time.h"
 
+Test::PlayerComponent::PlayerComponent(const PlayerComponent& _copy) :super(_copy) {}
+
 void Test::PlayerComponent::Update()
 {
 	Engine::PrimaryType::Vector2& _position = gameobject->transform->position;

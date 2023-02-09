@@ -19,7 +19,6 @@ namespace Engine::PrimaryType
 	public:
 		String() = default;
 		String(const char* _value);
-		String(const String& _copy);
 #pragma endregion constructor
 
 #pragma region method

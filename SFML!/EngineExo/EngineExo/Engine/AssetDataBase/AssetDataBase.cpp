@@ -3,6 +3,11 @@
 #include "../PrimaryType/Boolean/Boolean.h"
 #include <filesystem>
 
+Engine::AssetDataBase::AssetDataBase(const AssetDataBase& _copy) :super(_copy)
+{
+
+}
+
 void Engine::AssetDataBase::CreateAsset(Object* _asset, PrimaryType::String _path)
 {
 	if (_path.StartWith("Assets"))

@@ -15,7 +15,8 @@ namespace Engine::Window
 #pragma region method
     public:
         EngineWindow();
-        EngineWindow(const EngineWindow&) = default;
+        
+
 #pragma endregion method
 
 #pragma region override

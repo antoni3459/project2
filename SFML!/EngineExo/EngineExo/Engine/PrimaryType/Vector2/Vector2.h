@@ -23,7 +23,6 @@ REGISTER_FIELD(y, &y, BindingFlags::NoPublic)
 	public:
 		Vector2() = default;
 		Vector2(float _x, float _y);
-		Vector2(const Vector2&) = default;
 #pragma endregion constructor
 
 #pragma region method

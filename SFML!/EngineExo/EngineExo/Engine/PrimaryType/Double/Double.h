@@ -25,7 +25,6 @@ namespace Engine::PrimaryType
 	public:
 		Double() = default;
 		Double(double _value);
-		Double(const Double& _copy);
 #pragma endregion constructor
 
 #pragma region method

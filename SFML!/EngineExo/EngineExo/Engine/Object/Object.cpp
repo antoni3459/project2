@@ -76,7 +76,11 @@ void Engine::Object::Serialize(std::ostream& _os, int _index)
     for (size_t i = 0; i < _length; i++)
     {
         _os << std::string(_index, '\t');
-        if (_fields[i]->ReflectedObject() == nullptr) continue;
+        if (_fields[i]->ReflectedObject() == nullptr)
+        {
+            ++nullCount;
+            continue;
+        }
         if (_fields[i]->IsReflectedClass())
         {
             _fields[i]->ReflectedObject()->Serialize(_os, _index + 1);
@@ -111,10 +115,7 @@ void Engine::Object::SerializeField(std::ostream& _os, const PrimaryType::String
 
 void Engine::Object::DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName) {}
 
-Engine::Object* Engine::Object::Clone()
-{
-    return new Object(*this);
-}
+
 
 size_t Engine::Object::InsertField(const std::string& _name, Object* _var, const BindingFlags& _flags)
 {

@@ -7,6 +7,12 @@ Engine::Reflection::FieldInfo::FieldInfo(const Engine::PrimaryType::String _name
     reflectedObject = _reflectedObject;
     flags = _flags;
 }
+Engine::Reflection::FieldInfo::FieldInfo(const FieldInfo& _copy) : super(_copy)
+{
+    name = _copy.name;
+    reflectedObject = _copy.reflectedObject;
+    flags = _copy.flags;
+}
 #pragma endregion constructor
 
 #pragma region method

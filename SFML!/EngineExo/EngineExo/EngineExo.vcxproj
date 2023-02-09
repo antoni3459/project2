@@ -161,6 +161,7 @@
     <ClCompile Include="Engine\Reflection\Function\Parameter\ParameterInfo.cpp" />
     <ClCompile Include="Engine\Manager\GameObject\GameObjectManager.cpp" />
     <ClCompile Include="Engine\Selection\Selection.cpp" />
+    <ClCompile Include="Engine\UIElement\Slider\Slider.cpp" />
     <ClCompile Include="Test\Reflection\Json\JsonTest.cpp" />
     <ClCompile Include="Test\Component\PlayerComponent.cpp" />
     <ClCompile Include="Test\List\ListTest.cpp" />
@@ -182,6 +183,7 @@
     <ClCompile Include="Test\PrimaryType\Integer\IntegerTest.cpp" />
     <ClCompile Include="Engine\Transform\Transform.cpp" />
     <ClCompile Include="Engine\PrimaryType\Vector2\Vector2.cpp" />
+    <ClCompile Include="Engine\UIElement\UIElement.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\AssetDataBase\AssetDataBase.h" />
@@ -203,6 +205,7 @@
     <ClInclude Include="Engine\Window\Window.h" />
     <ClInclude Include="Engine\Selection\Selection.h" />
     <ClInclude Include="Assembly.h" />
+    <ClInclude Include="Engine\UIElement\Slider\Slider.h" />
     <ClInclude Include="Test\Reflection\Json\JsonTest.h" />
     <ClInclude Include="Test\Component\PlayerComponent.h" />
     <ClInclude Include="Test\List\ListTest.h" />
@@ -230,6 +233,7 @@
     <ClInclude Include="Test\PrimaryType\Integer\IntegerTest.h" />
     <ClInclude Include="Engine\Transform\Transform.h" />
     <ClInclude Include="Engine\PrimaryType\Vector2\Vector2.h" />
+    <ClInclude Include="Engine\UIElement\UIElement.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="a.asset" />

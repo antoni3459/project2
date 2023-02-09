@@ -8,13 +8,17 @@ namespace Engine
 	class Selection : public Object
 	{
 		DECLARE_CLASS_INFO(Selection, Object)
-
 #pragma region f/p
 	private:
 		static inline Object* selected = nullptr;
 	public:
 		static inline Action<Object*> OnSelectionGhanged = nullptr;
 #pragma endregion f/p
+
+#pragma region constructor
+	public:
+		Selection() = default;
+#pragma endregion constructor
 
 #pragma region method
 	public:

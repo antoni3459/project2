@@ -76,6 +76,12 @@ void Engine::GameObject::Draw(const Engine::Window::EngineWindow* _window)const
     _window->Draw(shape);
 }
 
+void Engine::GameObject::OnDeserializeFinish()
+{
+    for (Component*& _component : components)
+        _component->gameobject = this;
+}
+
 Engine::GameObject& Engine::GameObject::operator=(const GameObject& _other)
 {
     name = _other.name;

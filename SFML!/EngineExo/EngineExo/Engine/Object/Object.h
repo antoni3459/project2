@@ -20,25 +20,26 @@
 
 #define REGISTER_METHOD(name, method,params, flags) const size_t Method##name = InsertMethod(#name, method, params, flags);
 
-#define DECLARE_COPY(Class) \
+#define DECLARE_CLONE(TClass) \
     public:\
+		TClass(const TClass& _copy);\
         Object* Clone() override \
         {\
-            return new Class(*this);\
+            return new TClass(*this);\
         }
 
 #define DECLARE_CLASS_INFO_FLAGS(current, parent, flags)\
 	public:\
+		DECLARE_CLONE(current)\
 		typedef current self;\
 		typedef parent super;\
-		const int flagsInfo = RegisterClassInfo((int)flags);\
-		DECLARE_COPY(current)
+		const int flagsInfo = RegisterClassInfo((int)flags);
 
 #define DECLARE_CLASS_INFO(current, parent)\
 	public:\
+		DECLARE_CLONE(current)\
 		typedef current self;\
-		typedef parent super;\
-		DECLARE_COPY(current)
+		typedef parent super;
 
 ENUM(ClassFlags, Class, Type)
 
@@ -62,6 +63,7 @@ namespace Engine
 	{
 #pragma region f/p
 	private:
+		int nullCount = 0;
 		int flags = 0;
 		std::map<std::string, Object*> fields = std::map<std::string, Object*>();
 		std::map<std::string, Reflection::Function*> functions = std::map<std::string, Reflection::Function*>();
@@ -92,7 +94,12 @@ namespace Engine
 		virtual void DeSerialize(std::istream& _os);
 		virtual void SerializeField(std::ostream& _os, const PrimaryType::String& _fieldName, int _index);
 		virtual void DeSerializeField(std::istream& _os, const PrimaryType::String& _fieldName);
-		virtual Object* Clone();
+		virtual void OnDeserializeFinish() {
+		}
+		virtual Object* Clone()
+		{
+			return new Object(*this);
+		}
 
 		template<typename Res, typename... Params>
 		Reflection::MethodInfo<Res, Params...>* GetFunction(const std::string& _name);

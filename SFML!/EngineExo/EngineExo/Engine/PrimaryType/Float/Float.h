@@ -24,7 +24,6 @@ namespace Engine::PrimaryType
 	public:
 		Float() = default;
 		Float(float _value);
-		Float(const Float& _copy);
 #pragma endregion constructor
 
 #pragma region method

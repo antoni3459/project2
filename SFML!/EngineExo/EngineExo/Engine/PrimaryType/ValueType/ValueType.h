@@ -13,7 +13,6 @@ namespace Engine
 #pragma region constructor/destructor
 		public:
 			ValueType() = default;
-			ValueType(const ValueType& _copy) = default;
 			~ValueType() override = default;
 #pragma endregion constructor/destructor
 

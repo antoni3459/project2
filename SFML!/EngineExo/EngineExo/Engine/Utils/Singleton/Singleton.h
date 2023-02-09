@@ -16,7 +16,6 @@ namespace Engine::Utils
 #pragma region constructor/destructor
 	public:
 		Singleton() = default;
-		Singleton(const Singleton&) = delete;
 		~Singleton() override
 		{
 			OnDestroy();
@@ -39,4 +38,10 @@ namespace Engine::Utils
 #pragma endregion method
 
 	};
+}
+
+template<typename T>
+Engine::Utils::Singleton<T>::Singleton(const Singleton& _copy) :super(_copy)
+{
+	instance = _copy.instance;
 }

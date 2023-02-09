@@ -1,5 +1,10 @@
 #include "GameObjectManager.h"
 
+Engine::Manager::GameObjectManager::GameObjectManager(const GameObjectManager& _copy) :super( _copy)
+{
+	gameObjects = _copy.gameObjects;
+}
+
 void Engine::Manager::GameObjectManager::Register(GameObject* _object)
 {
 	gameObjects.push_back(_object);

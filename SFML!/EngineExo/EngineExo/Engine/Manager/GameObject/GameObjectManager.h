@@ -24,7 +24,6 @@ namespace Engine::Manager
 #pragma region constructeur
 	public:
 		GameObjectManager() = default;
-		GameObjectManager(const GameObjectManager&) {}
 #pragma endregion constructeur
 
 #pragma region method
