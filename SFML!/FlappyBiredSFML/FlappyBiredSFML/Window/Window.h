@@ -14,7 +14,7 @@ protected:
 public:
 	Window() = default;
 	Window(const float _widht, const float _height, const char* _title);
-	Window(const Window& _copy) = delete;
+	Window(const Window& ) = delete;
 	virtual ~Window();
 
 private:
@@ -26,9 +26,9 @@ public:
 	bool HasFocus()const;
 	void SetFrameLimit(const int _frame);
 	void Draw(sf::Drawable* _drawable);
+
 protected:
-	virtual void OnDraw() = 0;
+	virtual void OnDraw() = 0;	
 	virtual void OnUpdate() = 0;
 	virtual void OnReceiveEvent(sf::Event& _event);
 };
-

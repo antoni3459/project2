@@ -145,11 +145,13 @@
   <ItemGroup>
     <ClCompile Include="Homemnu.cpp" />
     <ClCompile Include="SFMLTest.cpp" />
+    <ClCompile Include="SliderTest.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Event.h" />
     <ClInclude Include="Homemnu.h" />
+    <ClInclude Include="SliderTest.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
