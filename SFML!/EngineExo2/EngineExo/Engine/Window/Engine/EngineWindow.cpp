@@ -16,7 +16,6 @@ Engine::Window::EngineWindow::EngineWindow() : super("Engine", 1920, 1080)
 Engine::Window::EngineWindow::EngineWindow(const EngineWindow& _copy)
     : super(_copy.name, _copy.width, _copy.height) { }
 
-
 void Engine::Window::EngineWindow::Test()
 {
     LOG("Button Click !")
@@ -35,8 +34,7 @@ void Engine::Window::EngineWindow::Open()
     slider->SetPosition(PrimaryType::Vector2(100, 250));
 
     UI::TextField* textField = new UI::TextField("", "text", PrimaryType::Vector2(100, 250));
-    slider->SetPosition(PrimaryType::Vector2(100, 250));
-
+    textField->SetPosition(PrimaryType::Vector2(100, 250));
 
     /*UI::Button* button = new UI::Button("Play", 250, 40);
     button->AddListener(this, &EngineWindow::Test);
