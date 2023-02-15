@@ -176,6 +176,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\A\ATest.cpp" />
     <ClCompile Include="EngineExo.cpp" />
     <ClCompile Include="Engine\AssetDataBase\AssetDataBase.cpp" />
     <ClCompile Include="Engine\Component\Component.cpp" />
@@ -203,6 +204,7 @@
     <ClCompile Include="Engine\Utils\Console\Console.cpp" />
     <ClCompile Include="Engine\Window\Engine\EngineWindow.cpp" />
     <ClCompile Include="Engine\UI\Slider\Slider.cpp" />
+    <ClCompile Include="Engine\UI\Label\Label.cpp" />
     <ClCompile Include="Test\Component\PlayerComponent.cpp" />
     <ClCompile Include="Test\PrimaryType\Double\DoubleTest.cpp" />
     <ClCompile Include="Test\PrimaryType\Float\FloatTest.cpp" />
@@ -211,9 +213,11 @@
     <ClCompile Include="Test\Reflection\Json\JsonTest.cpp" />
     <ClCompile Include="Engine\UI\Toggle\Toggle.cpp" />
     <ClCompile Include="Engine\Manager\Texture\TextureManager.cpp" />
+    <ClCompile Include="Engine\UI\TextField\TextField.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assembly.h" />
+    <ClInclude Include="Engine\A\ATest.h" />
     <ClInclude Include="Engine\AssetDataBase\AssetDataBase.h" />
     <ClInclude Include="Engine\Component\Component.h" />
     <ClInclude Include="Engine\Event\Action\ActionInternal.h" />
@@ -248,6 +252,7 @@
     <ClInclude Include="Engine\UI\Interface\IPointerEnterHandler.h" />
     <ClInclude Include="Engine\UI\Interface\IPointerExitHandler.h" />
     <ClInclude Include="Engine\UI\Interface\IPointerMoveHandler.h" />
+    <ClInclude Include="Engine\UI\Interface\ITextEntered.h" />
     <ClInclude Include="Engine\Utils\Console\Console.h" />
     <ClInclude Include="Engine\Utils\CoreDefine.h" />
     <ClInclude Include="Engine\Utils\DebugMacro.h" />
@@ -259,6 +264,7 @@
     <ClInclude Include="Engine\Window\Engine\EngineWindow.h" />
     <ClInclude Include="Engine\Window\Window.h" />
     <ClInclude Include="Engine\UI\Slider\Slider.h" />
+    <ClInclude Include="Engine\UI\Label\Label.h" />
     <ClInclude Include="Test\Component\PlayerComponent.h" />
     <ClInclude Include="Test\PrimaryType\Double\DoubleTest.h" />
     <ClInclude Include="Test\PrimaryType\Float\FloatTest.h" />
@@ -267,6 +273,7 @@
     <ClInclude Include="Test\Reflection\Json\JsonTest.h" />
     <ClInclude Include="Engine\UI\Toggle\Toggle.h" />
     <ClInclude Include="Engine\Manager\Texture\TextureManager.h" />
+    <ClInclude Include="Engine\UI\TextField\TextField.h" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Engine\Gabriel.asset" />

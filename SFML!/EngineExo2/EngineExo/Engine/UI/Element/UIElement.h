@@ -43,7 +43,7 @@ namespace Engine::UI
         virtual float Rotation() const;
         virtual PrimaryType::Vector2 Scale() const;
         virtual PrimaryType::Vector2 Origin() const;
-        virtual PrimaryType::String Label() const;
+        virtual PrimaryType::String LabelText() const;
         virtual void Draw(sf::RenderWindow* _window);
 #pragma endregion methods
 #pragma region operator

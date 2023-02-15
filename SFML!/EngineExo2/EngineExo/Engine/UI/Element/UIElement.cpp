@@ -100,7 +100,7 @@ Engine::PrimaryType::Vector2 Engine::UI::UIElement::Origin() const
     check((shape != nullptr), "shape is nullptr", PrimaryType::Vector2(0,0))
     return shape->getOrigin();
 }
-Engine::PrimaryType::String Engine::UI::UIElement::Label() const
+Engine::PrimaryType::String Engine::UI::UIElement::LabelText() const
 {
     return labelText.getString().toAnsiString().c_str();
 }

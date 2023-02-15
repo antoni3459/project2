@@ -50,7 +50,10 @@ Engine::UI::Slider::~Slider()
 
 void Engine::UI::Slider::UpdateHandlePosition()
 {
-	const float _x = maxValue * currentValue / 100.0 + shape->getPosition().x;
+	const float _diff = maxValue - minValue;
+	const float _diffNewValue = currentValue - minValue;
+	const float _boxSizeDiff = box->getSize().x / _diff;
+	const float _x = (_boxSizeDiff * _diffNewValue) + shape->getPosition().x;
 	handle->setPosition(sf::Vector2f(_x, handle->getPosition().y));
 }
 
@@ -77,18 +80,19 @@ void Engine::UI::Slider::Draw(sf::RenderWindow* _window)
 	super::Draw(_window);
 	_window->draw(*box);
 	_window->draw(*handle);
-
 }
 
 void Engine::UI::Slider::SetPosition(const PrimaryType::Vector2& _position)
 {
 	super::SetPosition(_position);
-	box->setPosition(_position + PrimaryType::Vector2(labelText.getGlobalBounds().width+40,5));
-	handle->setPosition((shape->getPosition() - sf::Vector2f(0, 10) + sf::Vector2f(labelText.getGlobalBounds().width + 40, 5)));
+	box->setPosition(_position);
+	handle->setPosition(_position - sf::Vector2f(0, 5));
 
 }
 
 void Engine::UI::Slider::OnPointerMove(float _x, float _y)
 {
-	Setvalue(_x - shape->getPosition().x);
+	const float _newValue = minValue + (_x - shape->getPosition().x) / box->getSize().x * (maxValue - minValue);
+	Setvalue(_newValue);
+
 }

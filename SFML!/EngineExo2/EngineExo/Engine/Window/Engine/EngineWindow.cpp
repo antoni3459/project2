@@ -6,6 +6,7 @@
 #include "../../Time/Time.h"
 #include "../../UI/Button/Button.h"
 #include "../../UI/Toggle/Toggle.h"
+#include "../../UI/Slider/Slider.h"
 
 Engine::Window::EngineWindow::EngineWindow() : super("Engine", 1920, 1080)
 {
@@ -22,13 +23,15 @@ void Engine::Window::EngineWindow::Test()
 
 void Engine::Window::EngineWindow::Open()
 {
-    UI::Button* button = new UI::Button("Play", 200, 40);
+    UI::Button* button = new UI::Button("Play", 250, 40);
     button->AddListener(this, &EngineWindow::Test);
     button->SetPosition(PrimaryType::Vector2(100, 50));
 
-    UI::Toggle toggle = UI::Toggle(true);
-    toggle.SetPosition(PrimaryType::Vector2(100, 150));
+    UI::Toggle* toggle = new UI::Toggle(false);
+    toggle->SetPosition(PrimaryType::Vector2(100, 150));
 
+    UI::Slider* slider = new UI::Slider(0.0f, 100.0f, 50.0f);
+    slider->SetPosition(PrimaryType::Vector2(100, 250));
     super::Open();
 }
 
@@ -36,17 +39,20 @@ void Engine::Window::EngineWindow::OnUpdate()
 {
     Time::deltaTime = clock.restart().asSeconds();
     Manager::GameObjectManager::Instance()->Update();
-    Manager::EventSystem::Instance()->Update(currentEvent, renderer);
     Clear();
     Manager::GameObjectManager::Instance()->Draw(this);
     Manager::EventSystem::Instance()->Draw(renderer);
     Display();
 }
+
+
 void Engine::Window::EngineWindow::OnClear() const
 {
     super::OnClear();
 }
+
 void Engine::Window::EngineWindow::OnReceiveEvent(const sf::Event& _event)
 {
     super::OnReceiveEvent(_event);
+    Manager::EventSystem::Instance()->Update(currentEvent, renderer);
 }

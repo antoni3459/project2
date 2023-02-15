@@ -59,6 +59,7 @@ namespace Engine::Window
         virtual void Open()
         {
             renderer = new sf::RenderWindow(sf::VideoMode(width, height), name.ToCstr());
+            renderer->setKeyRepeatEnabled(false);
             SetFrameLimit(60);
             Update();
         }

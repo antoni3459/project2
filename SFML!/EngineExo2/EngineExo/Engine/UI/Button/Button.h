@@ -47,6 +47,7 @@ namespace Engine::UI
         void SetPosition(const PrimaryType::Vector2& _position) override;
         void Draw(sf::RenderWindow* _window) override;
         void OnPointerClick(const sf::Event& _event) override;
+        void OnPointerUnClick()override {}
 #pragma endregion override
     };
 }

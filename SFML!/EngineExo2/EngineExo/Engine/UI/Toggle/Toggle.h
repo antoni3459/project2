@@ -24,6 +24,7 @@ namespace Engine::UI
 	public:
 		void SetStatus(bool _status);
 		void OnPointerClick(const sf::Event& _event)override;
+		void OnPointerUnClick()override {};
 	};
 };
 

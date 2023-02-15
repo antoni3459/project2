@@ -4,6 +4,7 @@
 #include "../../UI/Interface/IPointerEnterHandler.h"
 #include "../../UI/Interface/IPointerExitHandler.h"
 #include "../../UI/Interface/IPointerMoveHandler.h"
+#include "../../UI/Interface/ITextEntered.h"
 
 #pragma region constructor
 Engine::Manager::EventSystem::EventSystem(const EventSystem& _copy) = default;
@@ -31,7 +32,13 @@ void Engine::Manager::EventSystem::CheckPointerClickHandler(const sf::Event& _ev
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
     {
         IPointerClickHandler* _mouseClick = dynamic_cast<IPointerClickHandler*>(_element);
-        if (_mouseClick != nullptr) _mouseClick->OnPointerClick(_event);
+        if (_mouseClick != nullptr)
+        {
+            if (pointerClickHandler != nullptr) pointerClickHandler->OnPointerUnClick();
+            pointerClickHandler = _mouseClick;
+        }
+        _mouseClick->OnPointerClick(_event);
+
     }
 }
 void Engine::Manager::EventSystem::CheckEnterHandler(UI::UIElement* _element)
@@ -64,14 +71,24 @@ void Engine::Manager::EventSystem::Update(const sf::Event& _event, const sf::Win
     const sf::Vector2f _mousePosition = sf::Vector2f(_position.x, _position.y);
     for (UI::UIElement* _element : elements)
     {
-        if (!_element->IsActive() || !_element->CanInteract()) continue;
+        if (_element->Shape() == nullptr || !_element->IsActive() || !_element->CanInteract()) continue;
         if (_element->Shape()->getGlobalBounds().contains(_mousePosition))
         {
             CheckPointerMoveHandler(_event, _element);
             CheckPointerClickHandler(_event, _element);
             CheckEnterHandler(_element);
+            CheckTextEntered(_event, _element);
         }
         else CheckExitHandler(_element);
+        CheckTextEntered(_event, _element);
+    }
+}
+void Engine::Manager::EventSystem::CheckTextEntered(const sf::Event& _event, Engine::UI::UIElement* _element)
+{
+    if (_event.type == sf::Event::TextEntered)
+    {
+        ITextEntered* _textEnterd = dynamic_cast<ITextEntered*>(_element);
+        if (_textEnterd != nullptr)_textEnterd->OnTextEntered(_event.text.unicode);
     }
 }
 void Engine::Manager::EventSystem::CheckPointerMoveHandler(const sf::Event& _event, Engine::UI::UIElement* _element)
@@ -79,7 +96,16 @@ void Engine::Manager::EventSystem::CheckPointerMoveHandler(const sf::Event& _eve
     if (_event.type == sf::Event::MouseMoved && sf::Mouse::isButtonPressed(sf::Mouse::Left))
     {
         IPointerMoveHandler* _moveHandler = dynamic_cast<IPointerMoveHandler*>(_element);
-        if (_moveHandler != nullptr)_moveHandler->OnPointerMove((float)_event.mouseMove.x, (float)_event.mouseMove.y);
+        IPointerClickHandler* _clickHandler= dynamic_cast<IPointerClickHandler*>(_element);
+        if (_moveHandler != nullptr)
+        {
+            if (pointerClickHandler != _clickHandler)
+            {
+                if (pointerClickHandler != nullptr)pointerClickHandler->OnPointerUnClick();
+                pointerClickHandler = _clickHandler;
+            }
+            _moveHandler->OnPointerMove((float)_event.mouseMove.x, (float)_event.mouseMove.y);
+        }
     }
 }
 void Engine::Manager::EventSystem::Draw(sf::RenderWindow* _window) const
