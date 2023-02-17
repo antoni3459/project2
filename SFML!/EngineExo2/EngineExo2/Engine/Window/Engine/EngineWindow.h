@@ -9,6 +9,7 @@ namespace Engine::Window
 #pragma region f/p
     private:
         sf::Clock clock = sf::Clock();
+    public:
         bool isClick = false;
 #pragma endregion f/p
 #pragma region constructor

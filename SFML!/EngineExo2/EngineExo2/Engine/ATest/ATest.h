@@ -1,38 +1,28 @@
 #pragma once
 #include "../Object/Object.h"
 
-namespace Engine::UI
-{
-	class Button;
-	class Label;
-	class Slider;
-	class TextField;
-	class Toggle;
-}
-
 namespace Engine
 {
-	class ATest :public Object
-	{
-		DECLARE_CLASS_INFO(ATest, Object)
+    class ATest :public Object
+    {
+        DECLARE_CLASS_INFO(ATest, Object)
 
-	private:
-		std::string text = "";
-		bool toggle = false;
-		float nbr = 0;
+    private:
+        bool toggle = false;
+        float slider = 0.0f;
+        std::string textField = "";
+        bool isClick = false;
 
-	public:
-		ATest();
-		ATest(std::string _text, bool _toogle, int _nbr);
+    public:
+        ATest();
 
-	public:
-		std::string GetText()const;
-		bool GetToggle()const;
-		float GetNbr()const;
+    public:
+        void Open();
+        void Draw();
+        void SetToggle();
+        void SetSlider();
+        void SetTextField();
 
-		void SetText(float _nbr);
-		void SetToggle(float _nbr);
-		void SetNbr(float _nbr);
-	};
+    };
 }
 

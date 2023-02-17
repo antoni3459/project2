@@ -26,6 +26,7 @@ namespace Engine::UI
 
     public:
         void SetText(const char* _text);
+        std::string GetInputText();
 
     public:
         void Draw(sf::RenderWindow* _window)override;
@@ -36,6 +37,8 @@ namespace Engine::UI
         void OnPointerEnter()override;
         void OnPointerExit()override;
         void OnPointerUnClick() override;
+
+
     };
 }
 

@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Engine\ATest\ATest.cpp" />
     <ClCompile Include="Engine\UI\Rectangle\Rectangle.cpp" />
     <ClCompile Include="Test\Reflection\Json\JsonTest.cpp" />
     <ClCompile Include="Test\PrimaryType\List\ListTest.cpp" />
@@ -156,7 +157,6 @@
     <ClCompile Include="Engine\PrimaryType\Boolean\Boolean.cpp" />
     <ClCompile Include="Engine\Component\Component.cpp" />
     <ClCompile Include="Engine\AssetDataBase\AssetDataBase.cpp" />
-    <ClCompile Include="Engine\ATest\ATest.cpp" />
     <ClCompile Include="EngineExo2.cpp" />
     <ClCompile Include="Engine\Exception\Exception.cpp" />
     <ClCompile Include="Engine\GameObject\GameObject.cpp" />
@@ -185,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Assembly.h" />
+    <ClInclude Include="Engine\ATest\ATest.h" />
     <ClInclude Include="Engine\UI\Rectangle\Rectangle.h" />
     <ClInclude Include="Test\Reflection\Json\JsonTest.h" />
     <ClInclude Include="Test\PrimaryType\List\ListTest.h" />
@@ -198,7 +199,6 @@
     <ClInclude Include="Engine\PrimaryType\Boolean\Boolean.h" />
     <ClInclude Include="Engine\Component\Component.h" />
     <ClInclude Include="Engine\AssetDataBase\AssetDataBase.h" />
-    <ClInclude Include="Engine\ATest\ATest.h" />
     <ClInclude Include="Engine\Event\Action\ActionInternal.h" />
     <ClInclude Include="Engine\Event\Delegate\Delegate.h" />
     <ClInclude Include="Engine\Exception\Exception.h" />

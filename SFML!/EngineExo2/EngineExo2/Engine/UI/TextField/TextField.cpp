@@ -41,6 +41,11 @@ void Engine::UI::TextField::SetText(const char* _text)
 	text.setString(inputText);
 }
 
+std::string Engine::UI::TextField::GetInputText()
+{
+	return inputText;
+}
+
 void Engine::UI::TextField::Draw(sf::RenderWindow* _window)
 {
 	super::Draw(_window);

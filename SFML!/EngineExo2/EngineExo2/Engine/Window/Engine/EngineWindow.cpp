@@ -9,6 +9,7 @@
 #include "../../UI/Slider/Slider.h"
 #include "../../UI/TextField/TextField.h"
 #include "../../UI/Rectangle/Rectangle.h"
+#include "../../ATest/ATest.h"
 
 Engine::Window::EngineWindow::EngineWindow() : super("Engine", 1920, 1080)
 {
@@ -19,8 +20,9 @@ Engine::Window::EngineWindow::EngineWindow(const EngineWindow& _copy)
 
 void Engine::Window::EngineWindow::Test()
 {
+    ATest atest = ATest();
+    atest.Open();
     isClick = true;
-    LOG("isClick true")
 }
 
 void Engine::Window::EngineWindow::Open()
@@ -34,19 +36,6 @@ void Engine::Window::EngineWindow::Open()
     UI::Button* Asset = new UI::Button("Asset", 100, 100,18);
     Asset->AddListener(this, &EngineWindow::Test);
     Asset->SetPosition(PrimaryType::Vector2(200, 760));
-
-    if(isClick)
-    {
-        UI::Toggle* toggle = new UI::Toggle(false);
-        toggle->SetPosition(PrimaryType::Vector2(1540, 150));
-
-        UI::Slider* slider = new UI::Slider(0.0f, 100.0f, 40.0f);
-        slider->SetPosition(PrimaryType::Vector2(1510, 250));
-
-
-        UI::TextField* textField = new UI::TextField("", "text", PrimaryType::Vector2(90, 90));
-        textField->SetPosition(PrimaryType::Vector2(1530, 350));
-    }
 
     super::Open();
 }

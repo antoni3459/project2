@@ -37,6 +37,7 @@ namespace Engine::UI
         void Draw(sf::RenderWindow* _window)override;
         void SetPosition(const PrimaryType::Vector2& _position)override;
         void OnPointerMove(float _x, float _y) override;
+        float GetCurrentValue();
     };
 }
 

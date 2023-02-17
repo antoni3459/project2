@@ -51,4 +51,9 @@ void Engine::UI::Toggle::OnPointerClick(const sf::Event& _event)
     }
 }
 
+bool Engine::UI::Toggle::GetStatus()
+{
+    return status;
+}
+
 #pragma endregion

@@ -1,50 +1,62 @@
 #include "ATest.h"
+#include "../Window/Engine/EngineWindow.h"
+#include "../UI/Slider/Slider.h"
+#include "../UI/Toggle/Toggle.h"
+#include "../UI/TextField/TextField.h"
+#include "../PrimaryType/Vector/Vector2.h"
 
 Engine::ATest::ATest() :super()
 {
-
-}
-
-Engine::ATest::ATest(std::string _text, bool _toogle, int _nbr) :super()
-{
-	text = _text;
-	toggle = _toogle;
-	nbr = _nbr;
 }
 
 Engine::ATest::ATest(const ATest& _copy) :super(_copy)
 {
-	text = _copy.text;
 	toggle = _copy.toggle;
-	nbr = _copy.nbr;
+	slider = _copy.slider;
+	textField = _copy.textField;
 }
 
-std::string Engine::ATest::GetText() const
+void Engine::ATest::Open()
 {
-	return text;
+	if (isClick)
+	{
+		SetToggle();
+		SetSlider();
+		SetTextField();
+	}
+	Draw();
+	isClick = true;
 }
 
-bool Engine::ATest::GetToggle() const
+void Engine::ATest::Draw()
 {
-	return toggle;
+	UI::Toggle* toggle = new UI::Toggle(false);
+	toggle->SetPosition(PrimaryType::Vector2(1540, 150));
+	
+	UI::Slider* slider = new UI::Slider(0.0f, 100.0f, 40.0f);
+	slider->SetPosition(PrimaryType::Vector2(1510, 250));
+	
+	UI::TextField* textField = new UI::TextField("", "text", PrimaryType::Vector2(90, 90));
+	textField->SetPosition(PrimaryType::Vector2(1530, 350));
 }
 
-float Engine::ATest::GetNbr() const
+void Engine::ATest::SetToggle()
 {
-	return nbr;
+	UI::Toggle* toggleP = nullptr;
+	toggle = toggleP->GetStatus();
+	delete toggleP;
 }
 
-void Engine::ATest::SetText(float _text)
+void Engine::ATest::SetSlider()
 {
-	text = _text;
+	UI::Slider* sliderP = nullptr;
+	slider = sliderP->GetCurrentValue();
+	delete sliderP;
 }
 
-void Engine::ATest::SetToggle(float _toggle)
+void Engine::ATest::SetTextField()
 {
-	toggle = _toggle;
-}
-
-void Engine::ATest::SetNbr(float _nbr)
-{
-	nbr = _nbr;
+	UI::TextField* textFieldP = nullptr;
+	textField = textFieldP->GetInputText();
+	delete textFieldP;
 }

@@ -95,3 +95,8 @@ void Engine::UI::Slider::OnPointerMove(float _x, float _y)
 	const float _newValue = minValue + (_x - shape->getPosition().x) / box->getSize().x * (maxValue - minValue);
 	Setvalue(_newValue);
 }
+
+float Engine::UI::Slider::GetCurrentValue()
+{
+	return currentValue;
+}
