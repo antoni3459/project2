@@ -44,19 +44,16 @@ void Engine::ATest::SetToggle()
 {
 	UI::Toggle* toggleP = nullptr;
 	toggle = toggleP->GetStatus();
-	delete toggleP;
 }
 
 void Engine::ATest::SetSlider()
 {
 	UI::Slider* sliderP = nullptr;
 	slider = sliderP->GetCurrentValue();
-	delete sliderP;
 }
 
 void Engine::ATest::SetTextField()
 {
 	UI::TextField* textFieldP = nullptr;
 	textField = textFieldP->GetInputText();
-	delete textFieldP;
 }

@@ -1,6 +1,5 @@
 #pragma once
 #include <format>
-
 #include "../PrimaryType/Enum/Enum.h"
 #include "../Reflection/Flags/BindingFlag.h"
 #include "../Reflection/Function/MethodInfo/MethodInfo.h"
