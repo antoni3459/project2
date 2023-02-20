@@ -3,6 +3,7 @@
 #include "../../Manager/FontManager.h"
 #include "../../PrimaryType/Vector/Vector2.h"
 #include "../../PrimaryType/String/String.h"
+#include "../../UI/Slider/Slider.h"
 
 Engine::UI::Label::Label()
 {
@@ -38,6 +39,13 @@ void Engine::UI::Label::SetCharacterSize(int _value)
 void Engine::UI::Label::SetColor(const sf::Color& _color)
 {
     text.setColor(_color);
+}
+
+int Engine::UI::Label::SetCurrentValue()
+{
+    UI::Slider* sliderP = nullptr;
+    slider = sliderP->GetCurrentValue();
+    return slider;
 }
 
 void Engine::UI::Label::SetPosition(const PrimaryType::Vector2& _position)

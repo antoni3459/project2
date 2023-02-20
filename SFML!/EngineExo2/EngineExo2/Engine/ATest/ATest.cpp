@@ -3,41 +3,41 @@
 #include "../UI/Slider/Slider.h"
 #include "../UI/Toggle/Toggle.h"
 #include "../UI/TextField/TextField.h"
+#include "../UI/Label/Label.h"
 #include "../PrimaryType/Vector/Vector2.h"
+#include "../Manager/EventSystem/EventSystem.h"
+
+#include <string>
+#include <format>
 
 Engine::ATest::ATest() :super()
 {
+	engineWindow = new Engine::Window::EngineWindow();
 }
 
 Engine::ATest::ATest(const ATest& _copy) :super(_copy)
 {
-	toggle = _copy.toggle;
-	slider = _copy.slider;
+	toggle=_copy.toggle;
 	textField = _copy.textField;
+	isClick = _copy.isClick;
+	engineWindow = _copy.engineWindow;
 }
 
-void Engine::ATest::Open()
+void Engine::ATest::OpenTest()
 {
-	if (isClick)
-	{
-		SetToggle();
-		SetSlider();
-		SetTextField();
-	}
 	Draw();
-	isClick = true;
 }
 
 void Engine::ATest::Draw()
 {
 	UI::Toggle* toggle = new UI::Toggle(false);
 	toggle->SetPosition(PrimaryType::Vector2(1540, 150));
-	
-	UI::Slider* slider = new UI::Slider(0.0f, 100.0f, 40.0f);
-	slider->SetPosition(PrimaryType::Vector2(1510, 250));
-	
+
 	UI::TextField* textField = new UI::TextField("", "text", PrimaryType::Vector2(90, 90));
 	textField->SetPosition(PrimaryType::Vector2(1530, 350));
+
+	slider = new UI::Slider(0.0f, 100.0f, 40.0f);
+	slider->SetPosition(PrimaryType::Vector2(1510, 250));
 }
 
 void Engine::ATest::SetToggle()
@@ -49,7 +49,7 @@ void Engine::ATest::SetToggle()
 void Engine::ATest::SetSlider()
 {
 	UI::Slider* sliderP = nullptr;
-	slider = sliderP->GetCurrentValue();
+	sliderInt = sliderP->GetCurrentValue();
 }
 
 void Engine::ATest::SetTextField()
@@ -57,3 +57,5 @@ void Engine::ATest::SetTextField()
 	UI::TextField* textFieldP = nullptr;
 	textField = textFieldP->GetInputText();
 }
+
+

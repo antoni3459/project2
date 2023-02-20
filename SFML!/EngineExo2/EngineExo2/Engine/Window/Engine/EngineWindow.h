@@ -1,6 +1,11 @@
 #pragma once
 #include "../Window.h"
+#include "../../UI/Label/Label.h"
 
+namespace Engine::UI
+{
+    class Slider;
+}
 namespace Engine::Window
 {
     class EngineWindow : public Window<EngineWindow>
@@ -9,8 +14,11 @@ namespace Engine::Window
 #pragma region f/p
     private:
         sf::Clock clock = sf::Clock();
-    public:
+        UI::Label* pourcentage = new UI::Label();
         bool isClick = false;
+
+    public:
+        int count = 0;
 #pragma endregion f/p
 #pragma region constructor
     public:

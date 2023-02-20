@@ -9,6 +9,7 @@ namespace Engine::UI
 
     private:
         sf::Text text = sf::Text();
+        float slider = 0;
 
     public:
         Label();
@@ -18,6 +19,8 @@ namespace Engine::UI
         void SetFont(const char* _fontName);
         void SetCharacterSize(int _value);
         void SetColor(const sf::Color& _color);
+        int SetCurrentValue();
+
 
     public:
         void SetPosition(const PrimaryType::Vector2& _position) override;

@@ -32,12 +32,12 @@ namespace Engine::UI
         void Setvalue(float _value);
         void SetMin(float _min);
         void SetMax(float _max);
+        float GetCurrentValue();
 
     public:
         void Draw(sf::RenderWindow* _window)override;
         void SetPosition(const PrimaryType::Vector2& _position)override;
-        void OnPointerMove(float _x, float _y) override;
-        float GetCurrentValue();
+        void OnPointerMove(float _x, float _y)override;
     };
 }
 
