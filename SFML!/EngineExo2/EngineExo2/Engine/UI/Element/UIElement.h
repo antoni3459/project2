@@ -11,6 +11,7 @@ namespace Engine::PrimaryType
 
 namespace Engine::UI
 {
+    UCLASS()
     class UIElement : public Object
     {
         DECLARE_CLASS_INFO(UIElement, Object)

@@ -8,6 +8,7 @@
 
 namespace Engine::UI
 {
+	UCLASS()
 	class Toggle :public UIElement, public IPointerClickHandler
 	{
 		DECLARE_CLASS_INFO(Toggle, UIElement)

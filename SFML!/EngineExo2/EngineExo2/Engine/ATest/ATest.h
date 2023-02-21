@@ -4,6 +4,7 @@
 
 namespace Engine
 {
+    UCLASS()
     class ATest :public Object
     {
         DECLARE_CLASS_INFO(ATest, Object)

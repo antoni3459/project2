@@ -9,6 +9,7 @@
 
 namespace Engine::UI
 {
+    UCLASS()
     class TextField :public UIElement, public IPointerClickHandler, public ITextEntered, public IPointerEnterHandler, public IPointerExitHandler
     {
         DECLARE_CLASS_INFO(TextField, UIElement)

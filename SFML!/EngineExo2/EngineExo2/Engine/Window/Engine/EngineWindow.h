@@ -6,6 +6,7 @@
 
 namespace Engine::Window
 {
+    UCLASS()
     class EngineWindow : public Window<EngineWindow>
     {
         DECLARE_CLASS_INFO(EngineWindow, Window<EngineWindow>)

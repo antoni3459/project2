@@ -85,6 +85,9 @@
       <AdditionalLibraryDirectories>..\SFML-2.5.1\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>powershell.exe -ExecutionPolicy Bypass -File Reflection.ps1  -path $(ProjectDir)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -105,6 +108,9 @@
       <AdditionalLibraryDirectories>..\SFML-2.5.1\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>powershell.exe -ExecutionPolicy Bypass -File Reflection.ps1  -path $(ProjectDir)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -121,6 +127,9 @@
       <AdditionalLibraryDirectories>..\SFML-2.5.1\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>powershell.exe -ExecutionPolicy Bypass -File Reflection.ps1  -path $(ProjectDir)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -141,10 +150,14 @@
       <AdditionalLibraryDirectories>..\SFML-2.5.1\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>powershell.exe -ExecutionPolicy Bypass -File Reflection.ps1  -path $(ProjectDir)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Test\A\A.cpp" />
     <ClCompile Include="Engine\ATest\ATest.cpp" />
-    <ClCompile Include="Engine\UI\Rectangle\Rectangle.cpp" />
+    <ClCompile Include="Engine\UI\Rectangle\RectangleBox.cpp" />
     <ClCompile Include="Test\Reflection\Json\JsonTest.cpp" />
     <ClCompile Include="Test\PrimaryType\List\ListTest.cpp" />
     <ClCompile Include="Test\PrimaryType\Integer\IntegerTest.cpp" />
@@ -184,9 +197,10 @@
     <ClCompile Include="Test\Component\PlayerComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Test\A\A.h" />
     <ClInclude Include="Assembly.h" />
     <ClInclude Include="Engine\ATest\ATest.h" />
-    <ClInclude Include="Engine\UI\Rectangle\Rectangle.h" />
+    <ClInclude Include="Engine\UI\Rectangle\RectangleBox.h" />
     <ClInclude Include="Test\Reflection\Json\JsonTest.h" />
     <ClInclude Include="Test\PrimaryType\List\ListTest.h" />
     <ClInclude Include="Test\PrimaryType\Integer\IntegerTest.h" />
@@ -247,6 +261,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assembly.ps1" />
+    <None Include="Assets\a.asset" />
+    <None Include="Assets\GameObjectTest.asset" />
+    <None Include="cpp.hint" />
     <None Include="Reflection.ps1" />
     <None Include="ReflectionFunction.ps1" />
     <None Include="ReflectionProperty.ps1" />

@@ -3,6 +3,7 @@
 
 namespace Engine::UI
 {
+    UCLASS()
     class Label : public UIElement
     {
         DECLARE_CLASS_INFO(Label, UIElement)

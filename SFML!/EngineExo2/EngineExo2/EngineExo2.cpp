@@ -8,6 +8,7 @@
 #include "Engine/AssetDataBase/AssetDataBase.h"
 #include "Engine/Manager/FontManager.h"
 #include "Engine/Manager/GameObject/GameObjectManager.h"
+#include "Test/Component/PlayerComponent.h"
 
 using namespace Engine;
 
@@ -15,16 +16,16 @@ using namespace Engine;
 int main()
 {
     Manager::FontManager::Instance()->Init();
-    // Test::JsonTest::Test();
-    // Engine::GameObject* _gameObject = Engine::GameObject::CreatePrimitive(PrimitiveType::Circle, "Test");
-    // _gameObject->AddComponent<Test::PlayerComponent>();
-    //
-    // Engine::AssetDataBase::CreateAsset(_gameObject, "Assets/GameObjectTest.asset");
+    Test::JsonTest::Test();
+    Engine::GameObject* _gameObject = Engine::GameObject::CreatePrimitive(PrimitiveType::Circle, "Test");
+    _gameObject->AddComponent<Test::PlayerComponent>();
+    
+    Engine::AssetDataBase::CreateAsset(_gameObject, "Assets/GameObjectTest.asset");
 
-    Window::EngineWindow::Instance()->Open();
-
-
+    Engine::Window::EngineWindow::Instance()->Open();
+    
     Manager::GameObjectManager::Instance()->Destroy();
     Manager::FontManager::Instance()->Destroy();
+
     return 0;
 }

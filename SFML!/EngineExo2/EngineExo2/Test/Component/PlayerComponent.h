@@ -14,6 +14,6 @@ namespace Test
     public:
         PlayerComponent() = default;
         UFUNCTION() void Update();
-        REGISTER_METHOD(Update, &PlayerComponent::Update, {}, BindingFlags::Public)
+REGISTER_METHOD(Update, &PlayerComponent::Update, {}, BindingFlags::Public)
     };
 }

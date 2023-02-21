@@ -126,10 +126,13 @@
     <ClCompile Include="Test\Reflection\Json\JsonTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\UI\Rectangle\Rectangle.cpp">
+    <ClCompile Include="Engine\UI\Rectangle\RectangleBox.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Engine\ATest\ATest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test\A\A.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -308,10 +311,13 @@
     <ClInclude Include="Assembly.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\UI\Rectangle\Rectangle.h">
+    <ClInclude Include="Engine\UI\Rectangle\RectangleBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Engine\ATest\ATest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test\A\A.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -320,5 +326,8 @@
     <None Include="Reflection.ps1" />
     <None Include="ReflectionFunction.ps1" />
     <None Include="ReflectionProperty.ps1" />
+    <None Include="Assets\a.asset" />
+    <None Include="Assets\GameObjectTest.asset" />
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

@@ -29,7 +29,7 @@ namespace Engine::PrimaryType
         Boolean EqualsIgnoreCase(const String& _str) const;
         Boolean Contains(const String& _str) const;
         UFUNCTION() static Boolean IsNullOrEmpty(const String& _str);
-        REGISTER_METHOD(IsNullOrEmpty, &String::IsNullOrEmpty, (std::vector<Engine::Reflection::ParameterInfo*>{new Engine::Reflection::ParameterInfo("_str", 0)}), BindingFlags::Public | BindingFlags::Static)
+REGISTER_METHOD(IsNullOrEmpty, &String::IsNullOrEmpty, (std::vector<Engine::Reflection::ParameterInfo*>{new Engine::Reflection::ParameterInfo("_str", 0)}), BindingFlags::Public | BindingFlags::Static)
             String SubString(size_t _begin) const;
         String SubString(size_t _begin, size_t _end) const;
         String Replace(const String& _old, const String& _new) const;

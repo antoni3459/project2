@@ -7,6 +7,7 @@
 
 namespace Engine::UI
 {
+    UCLASS()
     class Button : public UIElement, public IPointerClickHandler, public IPointerEnterHandler, public IPointerExitHandler
     {
         DECLARE_CLASS_INFO(Button, UIElement)

@@ -22,12 +22,12 @@ namespace Engine
 #pragma region f/p
     private:
         UPROPERTY() PrimaryType::List<Component*> components = PrimaryType::List<Component*>();
-        REGISTER_FIELD(components, &components, BindingFlags::NoPublic)
+REGISTER_FIELD(components, &components, BindingFlags::NoPublic)
     protected:
         sf::Shape* shape = nullptr;
     public:
         UPROPERTY() PrimaryType::String name = "";
-        REGISTER_FIELD(name, &name, BindingFlags::Public)
+REGISTER_FIELD(name, &name, BindingFlags::Public)
             Transform* transform = nullptr;
 #pragma endregion f/p
 #pragma region constructor/destructor

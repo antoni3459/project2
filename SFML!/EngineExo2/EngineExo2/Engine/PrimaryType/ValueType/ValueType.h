@@ -4,6 +4,7 @@
 
 namespace Engine::PrimaryType
 {
+    UCLASS()
     class ValueType : public Object
     {
         DECLARE_CLASS_INFO_FLAGS(ValueType, Object, ClassFlags::Type)

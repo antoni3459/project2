@@ -14,14 +14,14 @@ class FData
     }
 }
 
-$allDatas = New-Object Collections.Generic.List[FData]
+$allDatas =New-Object Collections.Generic.List[FData]
 
 function GetIndex
 {
-    param([string]$namespace)
-    for ($i = 0; $i -lt $allDatas.Count; $i = $i + 1)
+    param([string]$fullPath)
+    for($i = 0; $i -lt $allDatas.Count; $i =$i +1)
     {
-        if ($allDatas[$i].namespace -eq $namespace)
+        if($allDatas[$i].namespace -eq $namespace)
         {
             return $i
         }
@@ -42,26 +42,26 @@ function IsUClass
     return $false
 }
 
-function IsForwardedNamespace
+function IsForwardedNameSpace
 {
-    param([Collections.ArrayList]$contents, [Int16]$index)
+    param([Collections.ArrayList]$contents,[Int16]$index)
     $parenthesisCount = 0
-    for ($i = $index + 1; $i -lt $contents.Count; $i = $i + 1)
+    for($i = $index + 1; $i -lt $contents.Count; $i = $i + 1)
     {
         $line = $contents[$i]
-        if ($line.Contains("{"))
+        if($line.Contains("{"))
         {
             $parenthesisCount = $parenthesisCount + 1
         }
-        if ($line.Contains("}"))
+        if($line.Contains("}"))
         {
             $parenthesisCount = $parenthesisCount - 1
         }
-        if ($line.Contains("UCLASS()"))
+        if($line.Contains("UCLASS()"))
         {
             return $false
         }
-        if ($parenthesisCount -eq 0)
+        if($parenthesisCount -eq 0)
         {
             return $true
         }
@@ -72,9 +72,9 @@ function IsForwardedNamespace
 function Exist
 {
     param([string]$namespace)
-    for ($i = 0; $i -lt $allDatas.Count; $i = $i + 1)
+    for($i = 0;$i -lt $allDatas.Count; $i = $i +1)
     {
-        if ($allDatas[$i].namespace -eq $namespace)
+        if($allDatas[$i].namespace -eq $namespace)
         {
             return $true
         }
@@ -82,9 +82,9 @@ function Exist
     return $false
 }
 
-function GetAllNamespaces
+function GetALLNamespaces
 {
-    param([Collections.Generic.List[string]] $allUClass)
+    param([Collections.Generic.List[String]] $allUClass)
 
     for ($x = 0; $x -lt $allUClass.Count; $x = $x + 1)
     {
@@ -95,26 +95,26 @@ function GetAllNamespaces
         for ($i = 0; $i -lt $fileContents.Count; $i = $i + 1)
         {
             $line = $fileContents[$i]
-            if ( $line.Contains("namespace"))
+            if ($line.Contains("namespace"))
             {
-                $isFowarded = IsForwardedNamespace -contents $fileContents -index $i
-                if (-not$isFowarded)
+                $isForwarded = IsForwardedNameSpace -contents $fileContents -index $i
+                if (-not $isForwarded)
                 {
-                    $namespace = $line.Replace("namespace", "").Trim()
-
-                    if ( [string]::IsNullOrEmpty($currentNamespace))
+                    $namespaces = $line.Replace("namespace", "").Trim()
+                    if ([String]::IsNullOrEmpty($currentNamespace))
                     {
-                        $currentNamespace = $namespace
+                        $currentNamespace = $namespaces
                     }
                     else
                     {
-                        $currentNamespace += "::$namespace"
+                        $currentNamespace += "::$namespaces"
                     }
                 }
             }
         }
         if (-not [string]::IsNullOrEmpty($currentNamespace))
         {
+            #$result.Add($currentNamespace)
             if (-not(Exist -namespace $currentNamespace))
             {
                 $data = [FData]::new()
@@ -124,51 +124,51 @@ function GetAllNamespaces
             }
             else
             {
-                $index = GetIndex -namespace $currentNamespace
+                $index = GetIndex _namespace $currentNamespace
                 $allDatas[$index].classes.Add($fullPath)
             }
         }
     }
 }
 
-function GetAllUClass
+function GetALLUClass
 {
-    $uclass = New-Object Collections.Generic.List[string]
+    $uclass= New-Object Collections.Generic.List[string]
     Get-ChildItem $path -Recurse -Filter *.h |
-            ForEach-Object {
-                $fullPath = $_.FullName
-                $fileContents = (Get-Content -Path $fullPath) -as [Collections.ArrayList]
-                if (IsUClass -fileContents $fileContents)
-                {
-                    $uclass.Add($fullPath)
-                }
+        ForEach-Object {
+            $fullPath = $_.FullName
+            $fileContents = (Get-Content -Path $fullPath) -as [Collections.ArrayList]
+            if (IsUClass -fileContents $fileContents)
+            {
+                $uclass.Add($fullPath)
             }
-    return $uclass
+        }
+        return $uclass
 }
 
 function CreateFile
 {
-    $assemblyPath = "$path/Assembly.h"
+    $assemblyPath = "$path\Assembly.h"
     $result = "#pragma once`n"
     $result += "#include `"Engine/Utils/ObjectMacro.h`"`n`n"
     foreach ($h in $allDatas)
     {
         $namespace = $h.namespace
-        $result += "using namespace $namespace;`n`n"
+        $result +="using namespace $namespace;`n`n"
         $classes = $h.classes
-        for ($i = 0; $i -lt $classes.Count; $i = $i + 1)
+        for($i = 0;$i -lt $classes.Count ;$i =$i +1)
         {
-            $includePath = $classes[$i].Replace($path, "").TrimStart()
-            $className = $includePath.SubString($includePath.LastIndexOf('\') + 1)
-            $className = $className.Replace(".h", "").TrimEnd()
+            $includePath = $classes[$i].Replace($path,"").TrimStart()
+            $classesName = $includePath.SubString($includePath.LastIndexOf('\')+ 1)
+            $classesName = $classesName.Replace(".h","").TrimEnd()
             $result += "#include `"$includePath`"`n"
-            $result += "REGISTER_TYPE($className)`n"
+            $result += "REGISTER_TYPE($classesName)`n"
         }
     }
     Set-Content -Path $assemblyPath -Value $result
 }
 
-$allUClass = GetAllUClass
-GetAllNamespaces -allUClass $allUClass
+$allUClass = GetALLUClass
+GetALLNamespaces -allUClass $allUClass
 
 CreateFile

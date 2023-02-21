@@ -13,9 +13,9 @@ namespace Engine::PrimaryType
 #pragma region f/p
     public:
         UPROPERTY() Float x = 0.0f;
-        REGISTER_FIELD(x, &x, BindingFlags::Public)
+REGISTER_FIELD(x, &x, BindingFlags::Public)
             UPROPERTY() Float y = 0.0f;
-        REGISTER_FIELD(y, &y, BindingFlags::Public)
+REGISTER_FIELD(y, &y, BindingFlags::Public)
 #pragma endregion f/p
 #pragma region constructor
     public:

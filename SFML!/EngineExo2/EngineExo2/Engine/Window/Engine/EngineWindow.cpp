@@ -7,7 +7,7 @@
 #include "../../UI/Toggle/Toggle.h"
 #include "../../UI/Slider/Slider.h"
 #include "../../UI/TextField/TextField.h"
-#include "../../UI/Rectangle/Rectangle.h"
+#include "../../UI/Rectangle/RectangleBox.h"
 #include "../../UI/Label/Label.h"
 #include "../../ATest/ATest.h"
 #include "../../UI/Label/Label.h"
@@ -38,19 +38,19 @@ void Engine::Window::EngineWindow::Test()
 
 void Engine::Window::EngineWindow::Open()
 {
-    UI::Rectangle* rectangleHor = new UI::Rectangle(1700, 230);
+    UI::RectangleBox* rectangleHor = new UI::RectangleBox(1700, 230);
     rectangleHor->SetPosition(PrimaryType::Vector2(10, 700));
 
-    UI::Rectangle* rectangleVert = new UI::Rectangle(300, 688);
+    UI::RectangleBox* rectangleVert = new UI::RectangleBox(300, 688);
     rectangleVert->SetPosition(PrimaryType::Vector2(1410, 10));
 
-    UI::Rectangle* rectangleAsset = new UI::Rectangle(140, 50);
+    UI::RectangleBox* rectangleAsset = new UI::RectangleBox(140, 50);
     rectangleAsset->SetPosition(PrimaryType::Vector2(10, 649));
 
     UI::Label* labelAsset = new UI::Label("Asset", 25);
     labelAsset->SetPosition(PrimaryType::Vector2(47, 655));
 
-    UI::Rectangle* rectangleInspector = new UI::Rectangle(300, 70);
+    UI::RectangleBox* rectangleInspector = new UI::RectangleBox(300, 70);
     rectangleInspector->SetPosition(PrimaryType::Vector2(1410, 10));
 
     UI::Label* labelInspector = new UI::Label("Inspector", 25);

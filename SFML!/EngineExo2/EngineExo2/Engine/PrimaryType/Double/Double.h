@@ -3,6 +3,7 @@
 
 namespace Engine::PrimaryType
 {
+    UCLASS()
     class Double : public ValueType
     {
         DECLARE_CLASS_INFO(Double, ValueType)

@@ -7,6 +7,7 @@
 
 namespace Engine::UI
 {
+    UCLASS()
     class Slider :public UIElement, public IPointerMoveHandler
     {
         DECLARE_CLASS_INFO(Slider, UIElement)

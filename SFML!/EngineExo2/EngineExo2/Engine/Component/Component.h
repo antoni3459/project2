@@ -12,7 +12,7 @@ namespace Engine
 #pragma region f/p
     public:
         UPROPERTY() PrimaryType::Boolean enabled = true;
-        REGISTER_FIELD(enabled, &enabled, BindingFlags::Public)
+REGISTER_FIELD(enabled, &enabled, BindingFlags::Public)
             GameObject* gameobject = nullptr;
 #pragma endregion f/p
 #pragma region constructor
