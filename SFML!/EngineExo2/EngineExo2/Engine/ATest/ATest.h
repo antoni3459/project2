@@ -4,11 +4,6 @@
 
 namespace Engine
 {
-    namespace Window
-    {
-        class EngineWindow;
-    }
-
     class ATest :public Object
     {
         DECLARE_CLASS_INFO(ATest, Object)
@@ -18,13 +13,10 @@ namespace Engine
         float sliderInt = 0.0f;
         std::string textField = "";
         bool isClick = false;
-        Engine::Window::EngineWindow* engineWindow = nullptr;
+        //UI::Slider* slider = nullptr;
 
     public:
-        UI::Slider* slider = nullptr;
-
-    public:
-        ATest();
+        ATest() = default;
 
     public:
         void OpenTest();

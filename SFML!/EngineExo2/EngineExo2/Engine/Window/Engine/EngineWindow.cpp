@@ -1,5 +1,4 @@
 #include "EngineWindow.h"
-
 #include "../../Manager/EventSystem/EventSystem.h"
 #include "../../Manager/GameObject/GameObjectManager.h"
 #include "../../PrimaryType/Vector/Vector2.h"
@@ -25,8 +24,15 @@ Engine::Window::EngineWindow::EngineWindow(const EngineWindow& _copy)
 
 void Engine::Window::EngineWindow::Test()
 {
-    ATest atest = ATest();
-    atest.OpenTest();
+    UI::Toggle* toggle = new UI::Toggle(false);
+	toggle->SetPosition(PrimaryType::Vector2(1540, 150));
+
+	UI::TextField* textField = new UI::TextField("", "text", PrimaryType::Vector2(90, 90));
+	textField->SetPosition(PrimaryType::Vector2(1530, 350));
+
+	slider = new UI::Slider(0.0f, 100.0f, 40.0f);
+	slider->SetPosition(PrimaryType::Vector2(1510, 250));
+
     isClick = true;
 }
 
@@ -61,9 +67,7 @@ void Engine::Window::EngineWindow::OnUpdate()
 {
     if (isClick)
     {
-        ATest* at = nullptr;
-        at = at->slider;
-        pourcentage = new UI::Label(std::to_string(at->slider->GetCurrentValue()).c_str());
+        pourcentage = new UI::Label(std::to_string(slider->GetCurrentValue()).c_str());
         pourcentage->SetPosition(PrimaryType::Vector2(1510, 255));
     }
     Time::deltaTime = clock.restart().asSeconds();
@@ -71,8 +75,10 @@ void Engine::Window::EngineWindow::OnUpdate()
     Clear();
     Manager::GameObjectManager::Instance()->Draw(this);
     Manager::EventSystem::Instance()->Draw(renderer);
-   
+    
     Display();
+    pourcentage->Clear();
+
 }
 
 void Engine::Window::EngineWindow::OnClear() const

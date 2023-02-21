@@ -41,11 +41,9 @@ void Engine::UI::Label::SetColor(const sf::Color& _color)
     text.setColor(_color);
 }
 
-int Engine::UI::Label::SetCurrentValue()
+void Engine::UI::Label::Clear()
 {
-    UI::Slider* sliderP = nullptr;
-    slider = sliderP->GetCurrentValue();
-    return slider;
+    text = sf::Text();
 }
 
 void Engine::UI::Label::SetPosition(const PrimaryType::Vector2& _position)
